@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CID-AI</title>
+    <meta name="description" content="Get in touch for early access or schedule a technical conversation about CID-AI.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --border: #374155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 140px 2rem 60px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        section {
+            padding: 60px 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-options {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .contact-card h2 {
+            font-size: 24px;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .direct-contact {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .direct-contact h3 {
+            font-size: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .direct-contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .direct-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .hero { padding: 120px 1.5rem 40px; }
+            section { padding: 40px 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">CID-AI</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="demo/01-cognitive-dashboard.html">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Get in Touch</h1>
+        <p class="subtitle">Request early access for prototype evaluation or schedule a technical conversation</p>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 1rem; font-style: italic;">
+            CID-AI is currently in prototype phase. We're engaging with investors, advisors, and technical evaluators.
+        </p>
+    </div>
+
+    <section>
+        <div class="contact-options">
+            <div class="contact-card">
+                <h2>📧 Early Access Request</h2>
+                <p>Interested in evaluating CID-AI? Submit your information and we'll be in touch.</p>
+                
+                <form id="earlyAccessForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role / Organization</label>
+                        <input type="text" id="role" name="role" placeholder="e.g., VP Investment at XYZ Capital">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">Primary Interest *</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select one...</option>
+                            <option value="investor">Investor - evaluating AI infrastructure</option>
+                            <option value="advisor">Advisor - seeking decision support tools</option>
+                            <option value="decision-maker">Decision-maker - high-stakes use cases</option>
+                            <option value="technical">Technical team - architecture evaluation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Context</label>
+                        <textarea id="message" name="message" placeholder="What specific decision-making challenges are you looking to address?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Submit Request</button>
+                    <p class="note">Note: This is a demonstration form. In production, this would connect to a backend system.</p>
+                </form>
+            </div>
+
+            <div class="contact-card">
+                <h2>📅 Schedule a Conversation</h2>
+                <p>Prefer to discuss CID-AI directly? Schedule a 30-minute technical conversation.</p>
+                
+                <form id="scheduleForm">
+                    <div class="form-group">
+                        <label for="schedule-name">Name *</label>
+                        <input type="text" id="schedule-name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="schedule-email">Email *</label>
+                        <input type="email" id="schedule-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timezone">Timezone</label>
+                        <select id="timezone" name="timezone">
+                            <option value="">Select timezone...</option>
+                            <option value="PT">Pacific Time (PT)</option>
+                            <option value="MT">Mountain Time (MT)</option>
+                            <option value="CT">Central Time (CT)</option>
+                            <option value="ET">Eastern Time (ET)</option>
+                            <option value="GMT">GMT (London)</option>
+                            <option value="CET">CET (Central Europe)</option>
+                            <option value="BRT">BRT (São Paulo)</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="focus">Conversation Focus</label>
+                        <textarea id="focus" name="focus" placeholder="What aspects of CID-AI would you like to discuss?" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Request Meeting</button>
+                    <p class="note">Note: This is a demonstration form. In production, this would integrate with calendar scheduling.</p>
+                </form>
+            </div>
+        </div>
+
+        <div class="direct-contact">
+            <h3>Direct Contact</h3>
+            <p style="margin-bottom: 1rem; color: var(--text-secondary);">Prefer email?</p>
+            <a href="/cdn-cgi/l/email-protection#a9cac6c7ddc8cadde9cac0cdc8c087c8c0"><span class="__cf_email__" data-cfemail="a0c3cfced4c1c3d4e0c3c9c4c1c98ec1c9">[email&#160;protected]</span></a>
+            <p class="note" style="margin-top: 1.5rem;">Response time: Within 48 hours for qualified inquiries</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 CID-AI. Cognitive Intelligence for Decision-Making.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a> • 
+            <a href="about.html" style="color: var(--text-muted); text-decoration: none;">About</a> • 
+            <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Privacy</a>
+        </p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Form submission handlers (demo only)
+        document.getElementById('earlyAccessForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! In production, this would send your request to our team.');
+        });
+
+        document.getEle

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CID-AI</title>
+    <meta name="description" content="Vision, architecture, and approach behind CID-AI decision intelligence system.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --border: #374155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 140px 2rem 60px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        section {
+            padding: 60px 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--accent);
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .principle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .principle strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            .hero { padding: 120px 1.5rem 40px; }
+            section { padding: 40px 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">CID-AI</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="demo/01-cognitive-dashboard.html">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>About CID-AI</h1>
+        <p class="subtitle">Building decision intelligence systems with transparent reasoning and preserved human authority</p>
+    </div>
+
+    <section>
+        <h2>Vision</h2>
+        <p>
+            Most AI systems optimize for convenience and speed, treating transparency as optional. 
+            CID-AI starts from the opposite premise: <strong>decision support that cannot be explained cannot be trusted</strong>.
+        </p>
+        <p>
+            We're building decision intelligence infrastructure for situations where understanding the reasoning matters as much as getting an answer. 
+            This means investors evaluating deals, advisors supporting clients, executives making strategic calls, and anyone making high-stakes decisions with incomplete information.
+        </p>
+
+        <h2>Core Principles</h2>
+
+        <div class="principle">
+            <strong>1. Transparency Over Convenience</strong>
+            <p>Every recommendation includes reasoning chains, confidence scores, and explicit assumptions. Users can validate logic and identify blind spots.</p>
+        </div>
+
+        <div class="principle">
+            <strong>2. Human Authority Preserved</strong>
+            <p>AI recommends, human decides. Clear separation with full audit trail of who decided what and why.</p>
+        </div>
+
+        <div class="principle">
+            <strong>3. Uncertainty Acknowledged</strong>
+            <p>Systems should be honest about confidence levels. Better to flag uncertainty than overstate certainty.</p>
+        </div>
+
+        <div class="principle">
+            <strong>4. Longitudinal Context</strong>
+            <p>Decision quality improves when systems understand objectives, constraints, and patterns over time through Personal Decision Models (PDM).</p>
+        </div>
+
+        <div class="principle">
+            <strong>5. Architecture for Evolution</strong>
+            <p>Early-stage implementation with production-grade architecture. Built to evolve into persistent decision intelligence infrastructure.</p>
+        </div>
+
+        <h2>Technical Approach</h2>
+
+        <h3>Modular Analysis</h3>
+        <p>
+            Domain-specific modules (CFO, CLO, etc.) provide specialized analysis with explicit reasoning chains. 
+            Each module operates independently but feeds into unified decision context.
+        </p>
+
+        <h3>Personal Decision Model (PDM)</h3>
+        <p>
+            Longitudinal decision context capturing objectives, preferences, constraints, assumptions, and historical outcomes. 
+            <strong>Not just decision history</strong> — an evolving personal decision intelligence layer that learns patterns and context over time.
+        </p>
+        <p>
+            PDM distinguishes CID-AI from simple decision logs or business intelligence dashboards. It's a user-centric model that understands <em>your</em> decision patterns, preferences, and constraints longitudinally.
+        </p>
+        <p>
+            <em>Status: Early-stage implementation with architecturally intentional design for future evolution.</em>
+        </p>
+
+        <h3>Confidence Scoring</h3>
+        <p>
+            Every claim, inference, and recommendation includes explicit confidence rating. 
+            System distinguishes between high-confidence assertions backed by data and lower-confidence extrapolations.
+        </p>
+
+        <h3>Audit Trail</h3>
+        <p>
+            Complete record of reasoning steps, data sources, assumptions made, alternatives considered, and final decision with rationale. 
+            Built for governance, compliance, and retrospective analysis.
+        </p>
+
+        <h2>Current Status</h2>
+        <p>
+            CID-AI is a <strong>working interactive prototype</strong> demonstrating core architecture and reasoning transparency. 
+            Available for evaluation by investors, advisors, and decision-makers interested in explainable AI infrastructure.
+        </p>
+
+        <p>
+            This is not production software — it's a technical demonstration of what decision intelligence can look like when transparency is non-negotiable.
+        </p>
+
+        <h2>Who This Is For</h2>
+        <ul>
+            <li><strong>Investors</strong> evaluating AI infrastructure and decision support systems</li>
+            <li><strong>Advisors</strong> seeking transparent tools for client decision support</li>
+            <li><strong>Decision-makers</strong> who need explainable AI for high-stakes choices</li>
+            <li><strong>Technical teams</strong> interested in auditable reasoning architecture</li>
+        </ul>
+
+        <div class="cta-box">
+            <h3 style="margin-top: 0; color: var(--text-primary);">Explore the Prototype</h3>
+            <p style="margin-bottom: 1.5rem;">See transparent reasoning and confidence scoring in action.</p>
+            <a href="demo/01-cognitive-dashboard.html" class="btn">View Interactive Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 CID-AI. Cognitive Intelligence for Decision-Making.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a> • 
+            <a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact</a> • 
+            <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Privacy</a>
+        </p>
+    </footer>
+</body>
+</html>

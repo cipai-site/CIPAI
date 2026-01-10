@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - CID-AI</title>
+    <meta name="description" content="Privacy policy and data handling practices for CID-AI.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --border: #374155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 140px 2rem 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        section {
+            padding: 40px 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            letter-spacing: -0.02em;
+            color: var(--accent);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .notice-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .notice-box strong {
+            color: var(--accent);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 24px; }
+            .hero { padding: 120px 1.5rem 30px; }
+            section { padding: 30px 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">CID-AI</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="demo/01-cognitive-dashboard.html">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: January 9, 2026</p>
+    </div>
+
+    <section>
+        <div class="notice-box">
+            <p><strong>Important Notice:</strong> CID-AI is currently a working interactive prototype for evaluation purposes. This privacy policy describes our intended data handling practices for future production deployment.</p>
+        </div>
+
+        <h2>1. Overview</h2>
+        <p>
+            CID-AI is committed to protecting your privacy and handling data with transparency. This policy outlines how we collect, use, and protect information in the context of decision intelligence services.
+        </p>
+
+        <h2>2. Information Collection</h2>
+
+        <h3>Prototype Phase (Current)</h3>
+        <p>During prototype evaluation, we collect:</p>
+        <ul>
+            <li><strong>Contact Information:</strong> Name, email, organization (if voluntarily provided via forms)</li>
+            <li><strong>Usage Data:</strong> Pages viewed, demo interactions (anonymized analytics)</li>
+            <li><strong>Feedback:</strong> Comments and evaluation notes you choose to share</li>
+        </ul>
+
+        <h3>Production Phase (Planned)</h3>
+        <p>In production deployment, we would collect:</p>
+        <ul>
+            <li><strong>Account Information:</strong> Name, email, organization, role</li>
+            <li><strong>Decision Data:</strong> Information you input for decision analysis</li>
+            <li><strong>Personal Decision Model (PDM):</strong> Preferences, objectives, constraints, and decision history you choose to store</li>
+            <li><strong>Usage Analytics:</strong> How you interact with the system (for improvement purposes)</li>
+        </ul>
+
+        <h2>3. How We Use Information</h2>
+        <p>Information would be used exclusively for:</p>
+        <ul>
+            <li>Providing decision intelligence services to you</li>
+            <li>Building and maintaining your Personal Decision Model (if enabled)</li>
+            <li>Improving system accuracy and reasoning quality</li>
+            <li>Communicating about system updates and features</li>
+            <li>Ensuring security and preventing misuse</li>
+        </ul>
+
+        <p><strong>We do NOT:</strong></p>
+        <ul>
+            <li>Sell your data to third parties</li>
+            <li>Use your decision data for marketing purposes</li>
+            <li>Share your Personal Decision Model with others</li>
+            <li>Train AI models on your private decision data without explicit consent</li>
+        </ul>
+
+        <h2>4. Data Security</h2>
+        <p>Production deployment would include:</p>
+        <ul>
+            <li><strong>Encryption:</strong> Data encrypted in transit (TLS) and at rest</li>
+            <li><strong>Access Control:</strong> Role-based access with multi-factor authentication</li>
+            <li><strong>Audit Logs:</strong> Complete record of data access and modifications</li>
+            <li><strong>Infrastructure:</strong> Enterprise-grade cloud hosting with security certifications</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        <ul>
+            <li><strong>Decision Data:</strong> Retained as long as your account is active, or as required by law</li>
+            <li><strong>Personal Decision Model:</strong> Under your control; can be exported or deleted at any time</li>
+            <li><strong>Analytics:</strong> Anonymized usage data may be retained for system improvement</li>
+        </ul>
+
+        <h2>6. Your Rights</h2>
+        <p>You would have the right to:</p>
+        <ul>
+            <li><strong>Access:</strong> View all data associated with your account</li>
+            <li><strong>Export:</strong> Download your decision data and PDM in portable format</li>
+            <li><strong>Delete:</strong> Request deletion of your account and associated data</li>
+            <li><strong>Opt-Out:</strong> Disable specific features like PDM learning</li>
+            <li><strong>Correct:</strong> Update or correct inaccurate information</li>
+        </ul>
+
+        <h2>7. AI and Decision Data</h2>
+        <p>
+            CID-AI's AI components process your decision data to provide reasoning chains and recommendations. Key principles:
+        </p>
+        <ul>
+            <li>AI processing happens within your secure account context</li>
+            <li>Your decision data is not used to train models for other users</li>
+            <li>Personal Decision Model remains private to your account</li>
+            <li>You can review and challenge any AI-generated analysis</li>
+        </ul>
+
+        <h2>8. Third-Party Services</h2>
+        <p>Production deployment may integrate with:</p>
+        <ul>
+            <li><strong>Cloud Infrastructure:</strong> Hosting and data storage</li>
+            <li><strong>Analytics:</strong> Anonymized usage tracking</li>
+            <li><strong>Security:</strong> Authentication and monitoring services</li>
+        </ul>
+        <p>All third-party providers would be vetted for security and privacy compliance.</p>
+
+        <h2>9. Compliance</h2>
+        <p>CID-AI is designed to support compliance with:</p>
+        <ul>
+            <li>GDPR (General Data Protection Regulation)</li>
+            <li>CCPA (California Consumer Privacy Act)</li>
+            <li>SOC 2 security standards (planned)</li>
+            <li>Industry-specific regulations as applicable</li>
+        </ul>
+
+        <h2>10. Updates to This Policy</h2>
+        <p>
+            We may update this privacy policy as the system evolves. Material changes will be communicated via email to registered users. Continued use after notification constitutes acceptance of updates.
+        </p>
+
+        <h2>11. Contact</h2>
+        <p>Questions about privacy or data handling?</p>
+        <p style="margin-top: 1rem;">
+            <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#94e4e6fde2f5f7edd4f7fdf0f5fdbaf5fd" style="color: var(--accent); text-decoration: none;"><span class="__cf_email__" data-cfemail="bececcd7c8dfddc7feddd7dadfd790dfd7">[email&#160;protected]</span></a><br>
+            <strong>General Contact:</strong> <a href="/cdn-cgi/l/email-protection#22414d4c5643415662414b46434b0c434b" style="color: var(--accent); text-decoration: none;"><span class="__cf_email__" data-cfemail="80e3efeef4e1e3f4c0e3e9e4e1e9aee1e9">[email&#160;protected]</span></a>
+        </p>
+
+        <div class="notice-box" style="margin-top: 3rem;">
+            <p><strong>Current Status:</strong> This policy reflects our intended practices. During the prototype phase, we collect minimal data for evaluation purposes only. Production deployment with full privacy infrastructure would be implemented before general availability.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 CID-AI. Cognitive Intelligence for Decision-Making.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a>

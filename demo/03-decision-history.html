@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision History - CID-AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #8b5cf6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 32px;
+        }
+
+        .header {
+            margin-bottom: 32px;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .header-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--bg-tertiary);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-detail {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .decisions-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .decision-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .decision-card:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .decision-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+
+        .decision-title-block {
+            flex: 1;
+        }
+
+        .decision-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .decision-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .decision-badges {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-module {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent);
+        }
+
+        .badge-status {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .badge-status.active {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--warning);
+        }
+
+        .confidence-display {
+            text-align: right;
+        }
+
+        .confidence-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .confidence-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .confidence-range {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .decision-insights {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .insight-item {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .insight-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .insight-content {
+            flex: 1;
+        }
+
+        .insight-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .insight-value {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .reasoning-preview {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .reasoning-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .reasoning-steps {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    
+/* Modal System */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 28px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 20px 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="01-cognitive-dashboard.html" class="back-link">← Back to Dashboard</a>
+            <div class="header-top">
+                <div>
+                    <h1 class="header-title">Decision History</h1>
+                    <p class="header-subtitle">47 decisions analyzed • AI confidence tracking • Pattern recognition active</p>
+                </div>
+                <button class="btn btn-primary">
+                    <span>➕</span>
+                    New Analysis
+                </button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active">All Decisions</button>
+            <button class="filter-btn">💰 CFO Module</button>
+            <button class="filter-btn">⚖️ CLO Module</button>
+            <button class="filter-btn">High Confidence (>85%)</button>
+            <button class="filter-btn">Needs Review</button>
+            <button class="filter-btn">This Month</button>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item animate-in">
+                <div class="stat-label">Avg AI Confidence</div>
+                <div class="stat-value">78%</div>
+                <div class="stat-detail">+4% vs last month</div>
+            </div>
+            <div class="stat-item animate-in animate-delay-1">
+                <div class="stat-label">Decisions This Month</div>
+                <div class="stat-value">12</div>
+                <div class="stat-detail">8 completed, 4 active</div>
+            </div>
+            <div class="stat-item animate-in animate-delay-2">
+                <div class="stat-label">Patterns Identified</div>
+                <div class="stat-value">23</div>
+                <div class="stat-detail">Cross-decision insights</div>
+            </div>
+            <div class="stat-item animate-in animate-delay-3">
+                <div class="stat-label">Assumptions Validated</div>
+                <div class="stat-value">89%</div>
+                <div class="stat-detail">High validation rate</div>
+            </div>
+        </div>
+
+        <div class="decisions-list">
+            <!-- NEW: Decision - Hire Senior CTO -->
+            <div class="decision-card animate-in" onclick="window.location.href='12-decision-cto-hire.html'" style="cursor: pointer;">
+                <div class="decision-header">
+                    <div class="decision-title-block">
+                        <div class="decision-title">Should We Hire a Senior CTO at $180K/year?</div>
+                        <div class="decision-meta">
+                            <span>Created 3 days ago</span>
+                            <span>•</span>
+                            <span>People decision: Critical hire</span>
+                            <span>•</span>
+                            <span>Fractional vs Full-time</span>
+                            <span>•</span>
+                            <span>Personal Model conflicts flagged</span>
+                        </div>
+                    </div>
+                    <div class="decision-badges">
+                        <span class="badge badge-module" style="background: rgba(16, 185, 129, 0.15); color: var(--success);">💰 CFO</span>
+                        <span class="badge badge-status active">ACTIVE</span>
+                    </div>
+                    <div class="confidence-display">
+                        <div class="confidence-number" style="color: var(--warning);">64<span style="font-size: 18px;">%</span></div>
+                        <div class="confidence-label">AI Confidence</div>
+                        <div class="confidence-range">Medium-Low</div>
+                    </div>
+                </div>
+
+                <div class="decision-insights">
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <div class="insight-icon">🎯</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Personal Model</div>
+                                <div class="insight-value">3 constraints violated</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">💰</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Runway Impact</div>
+                                <div class="insight-value">-3 months buffer</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">⚖️</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Trade-offs</div>
+                                <div class="insight-value">3 options analyzed</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">✅</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Recommendation</div>
+                                <div class="insight-value">Fractional first (7.8/10)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reasoning-preview">
+                        <div class="reasoning-title">AI REASONING PREVIEW:</div>
+                        <div class="reasoning-steps">
+                            Tech leadership gap identified → Runway impact: -3mo → Revenue justification: premature → Fractional option: lower risk → Recommendation: Test-before-commit at $96K/year
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Decision - SAFE vs Priced Round -->
+            <div class="decision-card animate-in" onclick="window.location.href='13-decision-safe-vs-priced.html'" style="cursor: pointer;">
+                <div class="decision-header">
+                    <div class="decision-title-block">
+                        <div class="decision-title">SAFE ($18M Cap) vs Priced Series A ($20M Pre)?</div>
+                        <div class="decision-meta">
+                            <span>Created 5 days ago</span>
+                            <span>•</span>
+                            <span>Fundraising: $2.5M raise</span>
+                            <span>•</span>
+                            <span>3 term sheets received</span>
+                            <span>•</span>
+                            <span>Transparency value conflict</span>
+                        </div>
+                    </div>
+                    <div class="decision-badges">
+                        <span class="badge badge-module" style="background: rgba(16, 185, 129, 0.15); color: var(--success);">💰 CFO</span>
+                        <span class="badge badge-module" style="background: rgba(139, 92, 246, 0.15); color: var(--info);">⚖️ CLO</span>
+                        <span class="badge badge-status active">ACTIVE</span>
+                    </div>
+                    <div class="confidence-display">
+                        <div class="confidence-number" style="color: var(--success);">76<span style="font-size: 18px;">%</span></div>
+                        <div class="confidence-label">AI Confidence</div>
+                        <div class="confidence-range">High</div>
+                    </div>
+                </div>
+
+                <div class="decision-insights">
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <div class="insight-icon">🎯</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Personal Model</div>
+                                <div class="insight-value">Value alignment critical</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">📊</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Dilution</div>
+                                <div class="insight-value">11.1% clear vs 13.9-20.8%</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">⚖️</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Trade-offs</div>
+                                <div class="insight-value">Speed vs Transparency</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">✅</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Recommendation</div>
+                                <div class="insight-value">Priced @ $20M (8.4/10)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reasoning-preview">
+                        <div class="reasoning-title">AI REASONING PREVIEW:</div>
+                        <div class="reasoning-steps">
+                            Term sheets analyzed → Dilution scenarios calculated → Transparency value conflicts with SAFE ambiguity → Priced round: higher val, cleaner cap table → Recommendation: Priced round despite complexity
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Decision - GTM Strategy -->
+            <div class="decision-card animate-in" onclick="window.location.href='14-decision-gtm-strategy.html'" style="cursor: pointer;">
+                <div class="decision-header">
+                    <div class="decision-title-block">
+                        <div class="decision-title">PLG (Product-Led Growth) vs Enterprise Sales Motion?</div>
+                        <div class="decision-meta">
+                            <span>Created 1 week ago</span>
+                            <span>•</span>
+                            <span>GTM Strategy: Path to $2M ARR</span>
+                            <span>•</span>
+                            <span>SMB vs Mid-Market focus</span>
+                            <span>•</span>
+                            <span>12-month timeline constraint</span>
+                        </div>
+                    </div>
+                    <div class="decision-badges">
+                        <span class="badge badge-module" style="background: rgba(16, 185, 129, 0.15); color: var(--success);">💰 CFO</span>
+                        <span class="badge badge-module" style="background: rgba(245, 158, 11, 0.15); color: var(--warning);">📊 CAO</span>
+                        <span class="badge badge-status active">ACTIVE</span>
+                    </div>
+                    <div class="confidence-display">
+                        <div class="confidence-number" style="color: var(--success);">72<span style="font-size: 18px;">%</span></div>
+                        <div class="confidence-label">AI Confidence</div>
+                        <div class="confidence-range">Medium-High</div>
+                    </div>
+                </div>
+
+                <div class="decision-insights">
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <div class="insight-icon">🎯</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Goal Alignment</div>
+                                <div class="insight-value">$2M ARR in 12 months</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">💰</div>
+                            <div class="insight-content">
+                                <div class="insight-label">CAC Scenarios</div>
+                                <div class="insight-value">PLG $2K vs Sales $8K</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">⚖️</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Trade-offs</div>
+                                <div class="insight-value">Scale vs Revenue Quality</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">✅</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Recommendation</div>
+                                <div class="insight-value">Hybrid approach (7.6/10)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reasoning-preview">
+                        <div class="reasoning-title">AI REASONING PREVIEW:</div>
+                        <div class="reasoning-steps">
+                            Path to $2M ARR analyzed → PLG: faster scale, lower ACV → Enterprise: higher revenue, slower → Single product focus maintained → Recommendation: PLG for SMB + sales-assist for mid-market
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decision 1 (Original Generic Example) -->
+            <div class="decision-card animate-in" onclick="window.location.href='04-decision-detail.html'" style="cursor: pointer;">
+                <div class="decision-header">
+                    <div class="decision-title-block">
+                        <div class="decision-title">Series A Investment Analysis - TechCorp</div>
+                        <div class="decision-meta">
+                            <span>Created 2 hours ago</span>
+                            <span>•</span>
+                            <span>$2.5M decision value</span>
+                            <span>•</span>
+                            <span>4 scenarios analyzed</span>
+                            <span>•</span>
+                            <span>156 data points processed</span>
+                        </div>
+                    </div>
+                    <div class="decision-badges">
+                        <span class="badge badge-module">💰 CFO</span>
+                        <span class="badge badge-status active">ACTIVE</span>
+                    </div>
+                    <div class="confidence-display">
+                        <div class="confidence-number">82<span style="font-size: 18px;">%</span></div>
+                        <div class="confidence-label">AI Confidence</div>
+                        <div class="confidence-range">Range: 76-88%</div>
+                    </div>
+                </div>
+
+                <div class="decision-insights">
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <div class="insight-icon">🔗</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Reasoning Steps</div>
+                                <div class="insight-value">4 steps validated</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">💭</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Assumptions</div>
+                                <div class="insight-value">3 key, 2 validated</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">⚖️</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Trade-offs</div>
+                                <div class="insight-value">3 scenarios scored</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Uncertainty</div>
+                                <div class="insight-value">3 factors flagged</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reasoning-preview">
+                        <div class="reasoning-title">AI REASONING PREVIEW:</div>
+                        <div class="reasoning-steps">
+                            Market validation (92% conf) → Team assessment (85% conf) → Financial model sustainable (78% conf) → Risk medium-low (75% conf) → Recommendation: Invest now (8.2/10 score)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decision 2 -->
+            <div class="decision-card animate-in animate-delay-1">
+                <div class="decision-header">
+                    <div class="decision-title-block">
+                        <div class="decision-title">Partnership Agreement Review - Global Expansion</div>
+                        <div class="decision-meta">
+                            <span>Created 5 hours ago</span>
+                            <span>•</span>
+                            <span>Legal risk: Medium</span>
+                            <span>•</span>
+                            <span>3 contract versions analyzed</span>
+                            <span>•</span>
+                            <span>89 clauses reviewed</span>
+                        </div>
+                    </div>
+                    <div class="decision-badges">
+                        <span class="badge badge-module" style="background: rgba(139, 92, 246, 0.15); color: var(--info);">⚖️ CLO</span>
+                        <span class="badge badge-status active">ACTIVE</span>
+                    </div>
+                    <div class="confidence-display">
+                        <div class="confidence-number" style="color: var(--warning);">74<span style="font-size: 18px;">%</span></div>
+                        <div class="confidence-label">AI Confidence</div>
+                        <div class="confidence-range">Range: 68-80%</div>
+                    </div>
+                </div>
+
+                <div class="decision-insights">
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <div class="insight-icon">🔗</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Reasoning Steps</div>
+                                <div class="insight-value">5 steps completed</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">⚖️</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Risk Factors</div>
+                                <div class="insight-value">7 identified</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">📄</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Precedents</div>
+                                <div class="insight-value">4 similar cases</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Red Flags</div>
+                                <div class="insight-value">2 critical clauses</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reasoning-preview">
+                        <div class="reasoning-title">AI REASONING PREVIEW:</div>
+                        <div class="reasoning-steps">
+                            Contract structure analysis → Liability assessment (Medium risk) → IP protection gaps identified → Termination clauses favorable → Recommendation: Negotiate 2 clauses before signing
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decision 3 -->
+            <div class="decision-card animate-in animate-delay-2">
+                <div class="decision-header">
+                    <div class="decision-title-block">
+                        <div class="decision-title">Q4 Budget Reallocation Strategy</div>
+                        <div class="decision-meta">
+                            <span>Completed yesterday</span>
+                            <span>•</span>
+                            <span>$850K reallocated</span>
+                            <span>•</span>
+                            <span>Decision executed</span>
+                            <span>•</span>
+                            <span>5 departments affected</span>
+                        </div>
+                    </div>
+                    <div class="decision-badges">
+                        <span class="badge badge-module">💰 CFO</span>
+                        <span class="badge badge-status">COMPLETED</span>
+                    </div>
+                    <div class="confidence-display">
+                        <div class="confidence-number">91<span style="font-size: 18px;">%</span></div>
+                        <div class="confidence-label">AI Confidence</div>
+                        <div class="confidence-range">Range: 87-94%</div>
+                    </div>
+                </div>
+
+                <div class="decision-insights">
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <div class="insight-icon">🔗</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Reasoning Depth</div>
+                                <div class="insight-value">6 analysis steps</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">📊</div>
+                            <div class="insight-content">
+                                <div class="insight-label">ROI Projection</div>
+                                <div class="insight-value">18% improvement</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">💭</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Assumptions</div>
+                                <div class="insight-value">All validated</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">✅</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Outcome</div>
+                                <div class="insight-value">Successful</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reasoning-preview">
+                        <div class="reasoning-title">AI REASONING PREVIEW:</div>
+                        <div class="reasoning-steps">
+                            Historical spend analysis → ROI by department → Optimization opportunities → Risk-adjusted allocation → Execution plan validated → Outcome: $850K reallocated, 18% efficiency gain projected
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decision 4 -->
+            <div class="decision-card animate-in animate-delay-3">
+                <div class="decision-header">
+                    <div class="decision-title-block">
+                        <div class="decision-title">Vendor Contract Termination Analysis</div>
+                        <div class="decision-meta">
+                            <span>Completed 2 days ago</span>
+                            <span>•</span>
+                            <span>3 scenarios evaluated</span>
+                            <span>•</span>
+                            <span>$1.2M annual spend</span>
+                            <span>•</span>
+                            <span>Legal review completed</span>
+                        </div>
+                    </div>
+                    <div class="decision-badges">
+                        <span class="badge badge-module" style="background: rgba(139, 92, 246, 0.15); color: var(--info);">⚖️ CLO</span>
+                        <span class="badge badge-status">COMPLETED</span>
+                    </div>
+                    <div class="confidence-display">
+                        <div class="confidence-number">86<span style="font-size: 18px;">%</span></div>
+                        <div class="confidence-label">AI Confidence</div>
+                        <div class="confidence-range">Range: 81-90%</div>
+                    </div>
+                </div>
+
+                <div class="decision-insights">
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <div class="insight-icon">⚖️</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Risk Analysis</div>
+                                <div class="insight-value">Low legal exposure</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">💰</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Cost Impact</div>
+                                <div class="insight-value">$340K savings</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">📅</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Timeline</div>
+                                <div class="insight-value">90-day notice</div>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">✅</div>
+                            <div class="insight-content">
+                                <div class="insight-label">Execution</div>
+                                <div class="insight-value">In progress</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reasoning-preview">
+                        <div class="reasoning-title">AI REASONING PREVIEW:</div>
+                        <div class="reasoning-steps">
+                            Contract analysis → Termination clauses (90-day notice) → Alternative vendors available → Cost-benefit validated → Risk: Low → Recommendation: Terminate and migrate to alternative
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Decision cards
+        document.querySelectorAll('.decision-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Use openModal() instead: alert('Opening detailed decision view...\n\nWould show:\n• Full reasoning chain\n• All assumptions\n• Complete trade-off analysis\n• Uncertainty factors\n• Historical context');
+            });
+        });
+    </script>
+    
+
+    <!-- Modal System -->
+<div id="globalModal" class="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="modalTitle">
+                <span id="modalIcon"></span>
+                <span id="modalTitleText"></span>
+            </div>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- Dynamic content inserted here -->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+        // Set active nav item for 03-decision-history.html
+        const currentPage = '03-decision-history.html';
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === currentPage) {
+                item.classList.add('active');
+            }
+        });
+    
+// Global Modal System
+function openModal(title, icon, content) {
+    document.getElementById('modalTitleText').textContent = title;
+    document.getElementById('modalIcon').textContent = icon;
+    document.getElementById('modalBody').innerHTML = content;
+    document.getElementById('globalModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('globalModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close on overlay click
+document.getElementById('globalModal')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Close on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Data Provenance Modal
+function showDataProvenance(step) {
+    const provenanceData = {
+        1: {
+            title: 'Market Validation Data Sources',
+            content: `
+                <div class="provenance-item">
+                    <div class="provenance-source">📊 Gartner Market Analysis 2025</div>
+                    <div class="provenance-text">
+                        "Enterprise AI decision support market projected at $2.5B by 2028, with 18% CAGR driven by increasing demand for transparent AI systems."
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Published: Dec 2025</span>
+                        <span>Confidence: 92%</span>
+                        <span>Source Type: Industry Report</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">📈 IDC Technology Forecast</div>
+                    <div class="provenance-text">
+                        "Cognitive intelligence platforms growing 22% annually, with enterprise adoption accelerating post-2025 due to regulatory pressure for AI transparency."
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Published: Nov 2025</span>
+                        <span>Confidence: 88%</span>
+                        <span>Source Type: Market Research</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">🔬 McKinsey Digital Report</div>
+                    <div class="provenance-text">
+                        "Organizations using structured decision frameworks with AI assistance report 34% improvement in decision quality and 28% reduction in decision time."
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Published: Oct 2025</span>
+                        <span>Confidence: 90%</span>
+                        <span>Source Type: Consulting Research</span>
+                    </div>
+                </div>
+            `
+        },
+        2: {
+            title: 'Team Assessment Data Sources',
+            content: `
+                <div class="provenance-item">
+                    <div class="provenance-source">👥 LinkedIn Profile Analysis</div>
+                    <div class="provenance-text">
+                        Founder: 12 years enterprise SaaS experience, previous exit ($45M acquisition 2022). CTO: 8 years ML engineering at FAANG. VP Product: 6 years at unicorn startup.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Verified: Jan 2026</span>
+                        <span>Confidence: 95%</span>
+                        <span>Source Type: Professional Network</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">🎯 Reference Checks</div>
+                    <div class="provenance-text">
+                        3 references contacted: All confirmed strong execution capability, technical depth, and ability to scale teams. Previous investors cited "best founding team we've backed."
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Completed: Dec 2025</span>
+                        <span>Confidence: 85%</span>
+                        <span>Source Type: Direct Reference</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">📊 Team Composition Analysis</div>
+                    <div class="provenance-text">
+                        15-person team: 60% engineering, 20% product, 20% GTM. Balanced technical/commercial split. Low attrition (5% annually vs 18% industry average).
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Analyzed: Dec 2025</span>
+                        <span>Confidence: 90%</span>
+                        <span>Source Type: Internal Data</span>
+                    </div>
+                </div>
+            `
+        },
+        3: {
+            title: 'Financial Model Data Sources',
+            content: `
+                <div class="provenance-item">
+                    <div class="provenance-source">💰 Company Financial Statements</div>
+                    <div class="provenance-text">
+                        Q3 2025 metrics: $120K MRR, 72% gross margin, LTV/CAC 3.8x, 8-month payback period. Revenue grew 180% YoY. Burn: $95K/month.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Period: Q3 2025</span>
+                        <span>Confidence: 95%</span>
+                        <span>Source Type: Audited Financials</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">📈 SaaS Benchmark Data</div>
+                    <div class="provenance-text">
+                        Top quartile SaaS: LTV/CAC >3.0x, gross margin >70%, payback <12 months. Company exceeds all benchmarks for pre-Series A stage.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Source: SaaS Capital Index</span>
+                        <span>Confidence: 88%</span>
+                        <span>Source Type: Industry Benchmark</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">🎯 Customer Cohort Analysis</div>
+                    <div class="provenance-text">
+                        Month 6 retention: 94%, Month 12 retention: 87%, NRR: 118%. Strong cohort economics indicate product stickiness and expansion opportunity.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Analysis Date: Dec 2025</span>
+                        <span>Confidence: 92%</span>
+                        <span>Source Type: Customer Data</span>
+                    </div>
+                </div>
+            `
+        },
+        4: {
+            title: 'Risk Assessment Data Sources',
+            content: `
+                <div class="provenance-item">
+                    <div class="provenance-source">⚖️ Regulatory Landscape Analysis</div>
+                    <div class="provenance-text">
+                        Current regulatory environment: Low immediate risk. EU AI Act exempts B2B decision support tools. US regulatory framework still forming. No active enforcement in this category.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Updated: Dec 2025</span>
+                        <span>Confidence: 75%</span>
+                        <span>Source Type: Legal Analysis</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">🏆 Competitive Analysis</div>
+                    <div class="provenance-text">
+                        3 direct competitors identified, none with >$10M funding. Market fragmented. Incumbents (BI tools) not addressing AI reasoning transparency. Competitive moat: technical depth + first-mover.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Analysis: Nov 2025</span>
+                        <span>Confidence: 80%</span>
+                        <span>Source Type: Market Research</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">⚡ Execution Risk Assessment</div>
+                    <div class="provenance-text">
+                        Primary risks: Sales cycle length (6-9 months enterprise), technical complexity (AI accuracy), market education required. Mitigated by: Strong pilot program, existing customer success stories.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Assessment: Dec 2025</span>
+                        <span>Confidence: 70%</span>
+                        <span>Source Type: Risk Analysis</span>
+                    </div>
+                </div>
+            `
+        }
+    };
+
+    const data = provenanceData[step] || {
+        title: 'Data Sources',
+        content: '<div class="provenance-item"><div class="provenance-text">No additional source data available for this step.</div></div>'
+    };
+
+    openModal(data.title, '📊', data.content);
+}
+
+// Sensitivity Analysis Modal
+function showSensitivityAnalysis() {
+    const content = `
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">Market Growth Rate Below 12%</div>
+            <div class="sensitivity-description">
+                If market grows slower than 12% CAGR (vs projected 18%), TAM shrinks to $1.8B by 2028. This would change recommendation from "Invest Now" to "Wait & Monitor."
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> <12% CAGR = Recommendation changes to HOLD
+            </div>
+        </div>
+
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">Founder Team Attrition</div>
+            <div class="sensitivity-description">
+                If CEO or CTO leaves before Series B, execution risk increases dramatically. Confidence would drop from 82% to <60%. Recommendation would change to "Pass."
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> C-level departure = Recommendation changes to PASS
+            </div>
+        </div>
+
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">LTV/CAC Ratio Deterioration</div>
+            <div class="sensitivity-description">
+                Current 3.8x LTV/CAC is strong. If ratio falls below 2.5x due to rising CAC or churn, unit economics become marginal. Would require path to profitability reassessment.
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> LTV/CAC <2.5x = Recommendation changes to CONDITIONAL (must show path to >3.0x)
+            </div>
+        </div>
+
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">Competitive Funding Event</div>
+            <div class="sensitivity-description">
+                If major competitor raises $20M+ in next 6 months, competitive landscape shifts. May need to accelerate own fundraising or adjust valuation expectations downward.
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> Competitor raises >$20M = Reassess timing and valuation (may still invest but at different terms)
+            </div>
+        </div>
+
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">Regulatory Change Impact</div>
+            <div class="sensitivity-description">
+                New AI regulations requiring explainability audits could increase compliance costs by $200K+/year. However, could also be competitive advantage if company already built for transparency.
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> Heavy regulation = Double-edged sword (higher costs but stronger moat)
+            </div>
+        </div>
+    `;
+
+    openModal('Sensitivity Analysis: What Would Change This Recommendation?', '⚖️', content);
+}
+</script>
+
+
+</body>
+</html>
