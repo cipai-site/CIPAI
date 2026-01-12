@@ -1,171 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CID-AI - Cognitive Intelligence for Decision-Making</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CID-AI - Cognitive Intelligence for Decision-Making</title>
+    <meta name="description" content="AI-first decision intelligence system with transparent reasoning, confidence scoring, and longitudinal personal context. Working interactive prototype.">
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --bg-primary: #0a0e1a;
-      --bg-secondary: #111827;
-      --bg-tertiary: #1f2937;
-      --text-primary: #f9fafb;
-      --text-secondary: #d1d5db;
-      --text-muted: #9ca3af;
-      --accent: #3b82f6;
-      --accent-glow: rgba(59, 130, 246, 0.3);
-      --border: #374155;
-      --success: #10b981;
-      --warning: #f59e0b;
-    }
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --border: #374155;
+        }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(10, 14, 26, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      z-index: 1000;
-    }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+        }
 
-    .nav-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-    }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
 
-    .lang-selector {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      border-right: 1px solid var(--border);
-      padding-right: 15px;
-    }
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-    .flag-btn {
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
+        .lang {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
 
-    .flag-btn:hover {
-      transform: scale(1.2);
-    }
+        .lang img {
+            width: 20px;
+            cursor: pointer;
+        }
 
-    .nav-cta {
-      background: var(--accent);
-      color: white;
-      padding: 8px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-    }
+        .hero {
+            padding: 140px 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-    .hero {
-      padding: 140px 2rem 80px;
-      max-width: 1400px;
-      margin: 0 auto;
-      text-align: center;
-    }
+        .hero-content { max-width: 900px; }
 
-    .hero-subtitle {
-      font-size: 20px;
-      color: var(--text-secondary);
-      margin-bottom: 3rem;
-    }
-  </style>
+        .prototype-badge {
+            display: inline-block;
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.3);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 2rem;
+        }
+
+        h1 { font-size: 56px; margin-bottom: 1.5rem; }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .cta-group { display: flex; gap: 1rem; }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-secondary { background: var(--bg-tertiary); color: white; border: 1px solid var(--border); }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- GOOGLE TRANSLATE (OBRIGATÓRIO, PODE FICAR ESCONDIDO) -->
+<!-- Google Translate container (hidden, required) -->
 <div id="google_translate_element" style="display:none;"></div>
 
 <nav>
-  <div class="nav-container">
-    <div class="logo">CIPAI</div>
-    <div class="nav-links">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#use-cases">Use Cases</a>
+    <div class="nav-container">
+        <div class="logo">CID-AI</div>
+        <div class="nav-links">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#use-cases">Use Cases</a>
+            <a href="about.html">About</a>
 
-      <div class="lang-selector">
-        <img src="https://flagcdn.com/w20/us.png"
-             class="flag-btn"
-             onclick="translateTo('en')"
-             title="English">
+            <div class="lang">
+                <img src="https://flagcdn.com/w20/us.png" onclick="setLang('en')" title="English">
+                <img src="https://flagcdn.com/w20/br.png" onclick="setLang('pt')" title="Português">
+            </div>
 
-        <img src="https://flagcdn.com/w20/br.png"
-             class="flag-btn"
-             onclick="translateTo('pt')"
-             title="Português">
-      </div>
-
-      <a href="https://cipai-site.github.io/CIPAI/" target="_blank" class="nav-cta">
-        Explore Demo
-      </a>
+            <a href="demo/01-cognitive-dashboard.html" class="nav-cta">Explore Demo</a>
+        </div>
     </div>
-  </div>
 </nav>
 
 <section class="hero">
-  <div class="prototype-badge" style="display:inline-block;background:rgba(59,130,246,0.1);padding:8px 16px;border-radius:20px;color:var(--accent);margin-bottom:2rem;">
-    ⚡ This is a working interactive prototype — not a pitch deck
-  </div>
-
-  <h1 style="font-size:56px;margin-bottom:1.5rem;">
-    Cognitive Intelligence for Decision-Making
-  </h1>
-
-  <p class="hero-subtitle">
-    AI-first decision intelligence system with transparent reasoning chains,
-    confidence scoring, and longitudinal personal context.
-  </p>
-
-  <div style="display:flex;gap:1rem;justify-content:center;">
-    <a href="https://cipai-site.github.io/CIPAI/" target="_blank" class="nav-cta">
-      Explore Interactive Demo
-    </a>
-    <a href="contact.html" class="nav-cta" style="background:var(--bg-tertiary);">
-      Schedule a Conversation
-    </a>
-  </div>
+    <div class="hero-content">
+        <div class="prototype-badge">⚡ This is a working interactive prototype — not a pitch deck</div>
+        <h1>Cognitive Intelligence for Decision-Making</h1>
+        <p class="hero-subtitle">
+            AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context.
+        </p>
+        <div class="cta-group">
+            <a href="demo/01-cognitive-dashboard.html" class="btn btn-primary">Explore Interactive Demo</a>
+            <a href="contact.html" class="btn btn-secondary">Schedule a Conversation</a>
+        </div>
+    </div>
 </section>
+
+<footer>
+    <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="demo/01-cognitive-dashboard.html">Demo</a>
+    </div>
+    <p class="copyright">
+        © 2026 CID-AI · Planned incorporation as a Delaware C-Corporation.
+    </p>
+</footer>
 
 <script>
 function googleTranslateElementInit() {
@@ -176,13 +214,19 @@ function googleTranslateElementInit() {
   }, 'google_translate_element');
 }
 
-function translateTo(lang) {
+function setLang(lang) {
+  localStorage.setItem('cidai-lang', lang);
   const select = document.querySelector('.goog-te-combo');
   if (select) {
     select.value = lang;
     select.dispatchEvent(new Event('change'));
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = localStorage.getItem('cidai-lang');
+  if (lang) setLang(lang);
+});
 </script>
 
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
