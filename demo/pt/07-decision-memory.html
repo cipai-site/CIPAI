@@ -1,235 +1,340 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo Pessoal de Decisão – Aprendizado Cognitivo – CID-AI</title>
-    <style>
-        /* TODO O CSS ORIGINAL FOI PRESERVADO SEM ALTERAÇÕES */
-    </style>
+  <meta charset="UTF-8" />
+  <title>Modelo de Decisão Pessoal (PDM) | CID-AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1f2937;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --border: #374151;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --info: #8b5cf6;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .logo {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .logo span {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      padding: 24px 0;
+    }
+
+    .nav a {
+      display: block;
+      padding: 12px 24px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: var(--bg-tertiary);
+      color: var(--accent);
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 32px;
+      max-width: 1100px;
+    }
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .section {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .info-box {
+      background: var(--bg-tertiary);
+      border-left: 4px solid var(--info);
+      padding: 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg-tertiary);
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(59,130,246,0.15);
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      background: var(--bg-tertiary);
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 4px solid var(--success);
+    }
+
+    .timeline-item span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .actions button {
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>CID-AI</h1>
+        <span>INTELIGÊNCIA COGNITIVA</span>
+      </div>
 
-    <div class="header">
-        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
-    </div>
+      <nav class="nav">
+        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
+        <a href="11-personal-model.html">Modelo Pessoal</a>
+        <a href="02-new-decision.html">Nova Decisão</a>
+        <a href="03-decision-history.html">Histórico de Decisões</a>
+        <a href="05-cfo-module.html">Módulo CFO</a>
+        <a href="06-clo-module.html">Módulo CLO</a>
+        <a href="07-decision-memory.html" class="active">Modelo de Decisão (PDM)</a>
+      </nav>
+    </aside>
 
-    <div class="memory-header">
-        <div class="memory-icon">🧠</div>
-        <div class="memory-title">Modelo Pessoal de Decisão – Sistema de Aprendizado Cognitivo</div>
-        <div class="memory-subtitle">
-            A IA aprende com padrões de decisão ao longo do tempo • NÃO é um log • Identifica correlações e fatores de sucesso
+    <!-- Main -->
+    <main class="main">
+      <div class="header">
+        <h2>Modelo de Decisão Pessoal (PDM)</h2>
+        <p>Memória estratégica que garante coerência entre decisões ao longo do tempo</p>
+      </div>
+
+      <div class="section">
+        <h3>O que é o PDM?</h3>
+        <div class="info-box">
+          O PDM (Personal Decision Model) não é histórico de decisões.
+          Ele representa o <strong>contexto permanente</strong> do decisor:
+          objetivos, valores, limites, perfil de risco e prioridades.
+          <br><br>
+          Todas as análises do CID-AI utilizam este modelo como base,
+          garantindo consistência e alinhamento estratégico.
         </div>
+      </div>
 
-        <div style="font-size:13px;color:var(--text-muted);font-style:italic;margin-top:12px;padding:12px;background:rgba(139,92,246,0.05);border-radius:8px;border-left:3px solid var(--accent);">
-            💡 <strong>O que é o PDM?</strong>  
-            Um modelo longitudinal e centrado no usuário que captura objetivos, preferências, restrições e padrões decisórios ao longo do tempo — não apenas memória histórica, mas um contexto decisório pessoal em evolução contínua.
+      <div class="section">
+        <h3>Princípios e Valores Fundamentais</h3>
+        <div class="grid">
+          <div class="card">
+            <span class="tag">Valor</span>
+            <strong>Transparência</strong>
+            Comunicação clara com sócios, equipe e investidores.
+          </div>
+
+          <div class="card">
+            <span class="tag">Valor</span>
+            <strong>Sustentabilidade</strong>
+            Crescimento sem comprometer saúde, família ou governança.
+          </div>
+
+          <div class="card">
+            <span class="tag">Valor</span>
+            <strong>Aprendizado Rápido</strong>
+            Testar, medir e ajustar antes de escalar.
+          </div>
+
+          <div class="card">
+            <span class="tag">Valor</span>
+            <strong>Disciplina Financeira</strong>
+            Preservação de caixa e previsibilidade de longo prazo.
+          </div>
         </div>
+      </div>
 
-        <div class="memory-stats">
-            <div class="memory-stat">
-                <div class="stat-label">Decisões Totais</div>
-                <div class="stat-value">47</div>
-                <div class="stat-detail">Indexadas e analisadas</div>
-            </div>
-            <div class="memory-stat">
-                <div class="stat-label">Padrões Identificados</div>
-                <div class="stat-value">23</div>
-                <div class="stat-detail">Insights entre decisões</div>
-            </div>
-            <div class="memory-stat">
-                <div class="stat-label">Profundidade de Aprendizado</div>
-                <div class="stat-value">8.4<span style="font-size:18px;">/10</span></div>
-                <div class="stat-detail">Confiança da IA</div>
-            </div>
-            <div class="memory-stat">
-                <div class="stat-label">Correlações de Sucesso</div>
-                <div class="stat-value">12</div>
-                <div class="stat-detail">Preditores validados</div>
-            </div>
+      <div class="section">
+        <h3>Restrições Estruturais</h3>
+        <div class="grid">
+          <div class="card">
+            <strong>Runway Mínimo</strong>
+            Nunca operar com menos de 18 meses de caixa.
+          </div>
+
+          <div class="card">
+            <strong>Contratações</strong>
+            Não contratar executivos full-time sem validação de receita.
+          </div>
+
+          <div class="card">
+            <strong>Foco</strong>
+            Um único produto até atingir escala consistente.
+          </div>
+
+          <div class="card">
+            <strong>Governança</strong>
+            Estruturas simples, reversíveis e auditáveis.
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Filtros -->
-    <div class="filters">
-        <button class="filter-btn active">Todos os Padrões</button>
-        <button class="filter-btn">Decisões de Investimento</button>
-        <button class="filter-btn">Contratos Jurídicos</button>
-        <button class="filter-btn">Alta Confiança (&gt;80%)</button>
-        <button class="filter-btn">Aprendizados Recentes</button>
-    </div>
+      <div class="section">
+        <h3>Perfil de Risco</h3>
+        <div class="grid">
+          <div class="card">
+            <strong>Financeiro</strong>
+            Moderado-alto, com assimetria positiva clara.
+          </div>
 
-    <!-- Padrões Principais -->
-    <div class="section">
-        <div class="section-header">
-            <div class="section-header-left">
-                <span class="section-icon">🔍</span>
-                <div>
-                    <div class="section-title">Principais Padrões Identificados pela IA</div>
-                    <div class="section-subtitle">
-                        Análise longitudinal de 47 decisões • Reconhecimento de padrões • Identificação de fatores de sucesso
-                    </div>
-                </div>
-            </div>
+          <div class="card">
+            <strong>Pessoas</strong>
+            Baixo — evitar erros de contratação.
+          </div>
+
+          <div class="card">
+            <strong>Produto</strong>
+            Alto — experimentar, testar e iterar rápido.
+          </div>
+
+          <div class="card">
+            <strong>Mercado</strong>
+            Moderado — testar canais sem comprometer base.
+          </div>
         </div>
+      </div>
 
-        <div class="pattern-grid">
+      <div class="section">
+        <h3>Decisões Recentes Influenciadas pelo PDM</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Contratação de CTO</strong><br />
+            <span>Optado por modelo fracionado para reduzir risco humano.</span>
+          </div>
 
-            <!-- PADRÃO 1 -->
-            <div class="pattern-card">
-                <span class="pattern-type">Padrão de Investimento</span>
-                <div class="pattern-title">
-                    Equipe Forte + Unit Economics Saudável = 82% de Sucesso
-                </div>
-                <div class="pattern-description">
-                    Investimentos com equipes fundadoras fortes (nota ≥8.0) E unit economics saudáveis (LTV/CAC &gt;3.0x)
-                    apresentaram 82% de sucesso, contra 47% quando um dos fatores estava ausente.
-                </div>
-            </div>
+          <div class="timeline-item">
+            <strong>Estrutura de Captação</strong><br />
+            <span>Preferência por rodada precificada para clareza jurídica.</span>
+          </div>
 
-            <!-- PADRÃO 2 -->
-            <div class="pattern-card">
-                <span class="pattern-type">Padrão Jurídico</span>
-                <div class="pattern-title">
-                    Ambiguidade de PI + Indenização Desequilibrada = 67% de Risco de Litígio
-                </div>
-                <div class="pattern-description">
-                    Contratos com titularidade de PI ambígua e indenização assimétrica (&gt;60/40)
-                    apresentaram 67% de chance de disputa em até 18 meses.
-                </div>
-            </div>
-
-            <!-- PADRÃO 3 -->
-            <div class="pattern-card">
-                <span class="pattern-type">Padrão Financeiro</span>
-                <div class="pattern-title">
-                    Entrada em Estágio Inicial abaixo de 15x ARR = Retorno Médio de 4,2x
-                </div>
-                <div class="pattern-description">
-                    Entradas abaixo de 15x ARR geraram retorno médio de 4,2x,
-                    contra 2,1x em entradas acima de 20x ARR.
-                </div>
-            </div>
-
-            <!-- PADRÃO 4 -->
-            <div class="pattern-card">
-                <span class="pattern-type">Padrão de Mercado</span>
-                <div class="pattern-title">
-                    3+ Fontes Independentes de TAM = 92% de Precisão
-                </div>
-                <div class="pattern-description">
-                    Validações de mercado com múltiplas fontes independentes
-                    apresentaram precisão de 92% nas projeções de crescimento.
-                </div>
-            </div>
-
+          <div class="timeline-item">
+            <strong>Estratégia de Crescimento</strong><br />
+            <span>Evitar diversificação precoce antes de escala.</span>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- CORRELAÇÕES DE SUCESSO -->
-    <div class="section">
-        <div class="section-header">
-            <div class="section-header-left">
-                <span class="section-icon">📈</span>
-                <div>
-                    <div class="section-title">Correlações de Sucesso Validadas</div>
-                    <div class="section-subtitle">
-                        Fatores identificados pela IA com forte correlação positiva
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="correlation-grid">
-            <div class="correlation-item">
-                <div class="correlation-icon">👥</div>
-                <div class="correlation-title">Qualidade da Equipe Fundadora</div>
-            </div>
-            <div class="correlation-item">
-                <div class="correlation-icon">💰</div>
-                <div class="correlation-title">Unit Economics Sustentável</div>
-            </div>
-            <div class="correlation-item">
-                <div class="correlation-icon">📊</div>
-                <div class="correlation-title">Validação de Mercado Multifuente</div>
-            </div>
-            <div class="correlation-item">
-                <div class="correlation-icon">⚖️</div>
-                <div class="correlation-title">Contratos Equilibrados</div>
-            </div>
-            <div class="correlation-item">
-                <div class="correlation-icon">🎯</div>
-                <div class="correlation-title">Disciplina de Valuation na Entrada</div>
-            </div>
-            <div class="correlation-item">
-                <div class="correlation-icon">📅</div>
-                <div class="correlation-title">Histórico de Execução</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- TIMELINE -->
-    <div class="section">
-        <div class="section-header">
-            <div class="section-header-left">
-                <span class="section-icon">📚</span>
-                <div>
-                    <div class="section-title">Linha do Tempo de Aprendizado Cognitivo</div>
-                    <div class="section-subtitle">
-                        Evolução do conhecimento da IA ao longo do histórico decisório
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="learning-timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">Janeiro 2025 – Atual</div>
-                <div class="timeline-title">Validação de Risco de Ambiguidade de PI</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Outubro 2024</div>
-                <div class="timeline-title">Correlação entre Múltiplo de Entrada e Retorno</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Julho 2024</div>
-                <div class="timeline-title">Validação de Mercado Multifuente</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Março 2024</div>
-                <div class="timeline-title">Equipe + Unit Economics como Fator Composto</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Dezembro 2023</div>
-                <div class="timeline-title">Inicialização do Modelo de Padrões</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FOCO ATUAL -->
-    <div class="insight-box">
-        <div class="insight-header">
-            <div class="insight-icon">💡</div>
-            <div class="insight-title">Focos Atuais de Aprendizado da IA</div>
-        </div>
-        <div class="insight-content">
-            A IA está refinando ativamente o entendimento nestas áreas:
-        </div>
-        <div class="insight-list">
-            <div class="insight-list-item">Estabilidade competitiva de mercado</div>
-            <div class="insight-list-item">Evolução regulatória e impacto contratual</div>
-            <div class="insight-list-item">Eficiência de aquisição em escala</div>
-            <div class="insight-list-item">Otimização de timing de saída</div>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    /* JS ORIGINAL PRESERVADO */
-</script>
-
+      <div class="actions">
+        <button class="primary">Atualizar Modelo Pessoal</button>
+        <button class="secondary">Voltar ao Painel</button>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
