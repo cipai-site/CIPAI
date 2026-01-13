@@ -1,76 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova Análise de Decisão - CID-AI</title>
+  <meta charset="UTF-8" />
+  <title>Nova Decisão — CID-AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ⚠️ ESTILO ORIGINAL PRESERVADO INTEGRALMENTE -->
-    <!-- (não altere nada neste bloco se já estiver funcionando visualmente) -->
-    <!-- COLE AQUI O <style> COMPLETO DO ARQUIVO ORIGINAL -->
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(ellipse at top, #0f172a, #020617);
+      color: #e5e7eb;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    p.subtitle {
+      color: #9ca3af;
+      margin-bottom: 48px;
+      font-size: 16px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #cbd5f5;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .steps {
+      margin-top: 24px;
+    }
+
+    .step {
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .step span {
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .actions {
+      margin-top: 48px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 10px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #020617;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header animate-in">
-            <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
-            <h1 class="header-title">Nova Análise de Decisão</h1>
-            <p class="header-subtitle">
-                O CID-AI analisará sua decisão utilizando raciocínio em múltiplas etapas
-                e fornecerá recomendações com níveis de confiança.
-            </p>
+  <div class="container">
+    <h1>Nova Decisão</h1>
+    <p class="subtitle">
+      Inicie uma nova análise estratégica com o CID-AI.
+      Esta etapa define o contexto — a inteligência vem em seguida.
+    </p>
+
+    <div class="card">
+      <h2>O que acontece quando você cria uma decisão?</h2>
+      <p>
+        O CID-AI não responde impulsivamente.  
+        Ele constrói um modelo cognitivo temporário baseado no seu contexto,
+        objetivos, restrições e histórico.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <span>1.</span>
+          <div>Você descreve a decisão em linguagem natural.</div>
         </div>
-
-        <div class="ai-info-banner animate-in animate-delay-1">
-            <div class="ai-info-icon">🧠</div>
-            <div class="ai-info-content">
-                <h3>Como a IA Analisa Sua Decisão</h3>
-                <p>
-                    O CID-AI utiliza raciocínio avançado para analisar seus dados,
-                    identificar premissas, avaliar trade-offs e quantificar incertezas.
-                    Quanto mais contexto você fornecer, maior será a precisão das recomendações.
-                    Todo o raciocínio é transparente e auditável.
-                </p>
-            </div>
+        <div class="step">
+          <span>2.</span>
+          <div>O sistema identifica o tipo de decisão (financeira, estratégica, pessoas, risco).</div>
         </div>
-
-        <div class="form-section animate-in animate-delay-2">
-            <div class="section-header">
-                <div class="section-number">1</div>
-                <div class="section-title">Selecione o Módulo de Análise</div>
-            </div>
-
-            <div class="module-selector">
-                <div class="module-card selected">
-                    <div class="module-icon">💰</div>
-                    <div class="module-name">Módulo CFO</div>
-                    <div class="module-desc">
-                        Decisões financeiras, investimentos e alocação de capital.
-                    </div>
-                </div>
-
-                <div class="module-card">
-                    <div class="module-icon">⚖️</div>
-                    <div class="module-name">Módulo CLO</div>
-                    <div class="module-desc">
-                        Decisões jurídicas, contratos e compliance.
-                    </div>
-                </div>
-
-                <div class="module-card">
-                    <div class="module-icon">🎯</div>
-                    <div class="module-name">Módulo Estratégico</div>
-                    <div class="module-desc">
-                        Planejamento estratégico e posicionamento competitivo.
-                    </div>
-                </div>
-            </div>
+        <div class="step">
+          <span>3.</span>
+          <div>Premissas, trade-offs e conflitos são inferidos automaticamente.</div>
         </div>
-
-        <div class="form-actions">
-            <button class="btn btn-secondary">💾 Salvar rascunho</button>
-            <button class="btn btn-primary">🧠 Iniciar análise da IA</button>
+        <div class="step">
+          <span>4.</span>
+          <div>A análise completa é apresentada com rastreabilidade cognitiva.</div>
         </div>
+      </div>
     </div>
+
+    <div class="card">
+      <h2>Pronto para começar?</h2>
+      <p>
+        Na demonstração, as decisões já estão pré-configuradas
+        para que você veja como o sistema pensa.
+      </p>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary"
+        onclick="window.location.href='03-decision-history.html'">
+        Ver Decisões Existentes
+      </button>
+
+      <button class="btn btn-secondary"
+        onclick="window.location.href='01-cognitive-dashboard.html'">
+        Voltar ao Painel Cognitivo
+      </button>
+    </div>
+  </div>
 </body>
 </html>
