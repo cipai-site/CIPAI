@@ -1,208 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Usuário – Configurações do Sistema – CID-AI</title>
-
-    <style>
-        /* TODO O CSS ORIGINAL FOI PRESERVADO SEM ALTERAÇÕES */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Usuário — CID-AI</title>
 </head>
-
 <body>
-<div class="container">
 
-    <div class="header">
-        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
-    </div>
+<!-- HEADER -->
+<header class="header">
+  <div>
+    <div class="header-title">Perfil do Usuário</div>
+    <div class="header-subtitle">Configurações pessoais e preferências do sistema</div>
+  </div>
+</header>
 
-    <!-- Cabeçalho do Perfil -->
-    <div class="profile-header">
-        <div class="profile-avatar">👤</div>
-        <div class="profile-info">
-            <div class="profile-name">Paulo Silva</div>
-            <div class="profile-email">paulo@example.com</div>
-            <div class="profile-meta">
-                <span>📊 47 Decisões Analisadas</span>
-                <span>•</span>
-                <span>🧠 23 Padrões Aprendidos</span>
-                <span>•</span>
-                <span>⏱️ Membro desde dez/2023</span>
-            </div>
-        </div>
-        <div class="profile-actions">
-            <button class="btn btn-secondary">Editar Perfil</button>
-            <button class="btn btn-primary">Salvar Alterações</button>
-        </div>
-    </div>
+<!-- CONTENT -->
+<main class="content">
 
-    <!-- Informações Pessoais -->
-    <div class="section">
-        <div class="section-header">
-            <div class="section-header-left">
-                <span class="section-icon">👤</span>
-                <div>
-                    <div class="section-title">Informações Pessoais</div>
-                    <div class="section-subtitle">Dados do perfil e informações de contato</div>
-                </div>
-            </div>
-        </div>
+  <!-- PERFIL -->
+  <section class="section">
+    <div class="section-title">👤 Informações do Usuário</div>
 
-        <div class="form-grid">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-                <div class="form-group">
-                    <label class="form-label">Nome Completo</label>
-                    <input class="form-input" value="Paulo Silva">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">E-mail</label>
-                    <input class="form-input" value="paulo@example.com">
-                </div>
-            </div>
+    <p><strong>Nome:</strong> Usuário Demo</p>
+    <p><strong>Perfil:</strong> Fundador / Tomador de Decisão</p>
+    <p><strong>Nível de Acesso:</strong> Essencial (Demo)</p>
+    <p><strong>Idioma:</strong> Português (Brasil)</p>
+  </section>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-                <div class="form-group">
-                    <label class="form-label">Organização</label>
-                    <input class="form-input" placeholder="Empresa ou organização">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Cargo / Função</label>
-                    <input class="form-input" placeholder="Ex: CEO, Investidor, CFO">
-                </div>
-            </div>
+  <!-- PREFERÊNCIAS -->
+  <section class="section">
+    <div class="section-title">⚙️ Preferências do Sistema</div>
 
-            <div class="form-group">
-                <label class="form-label">Localização</label>
-                <input class="form-input" value="Santa Catarina, Brasil">
-                <span class="form-hint">Usado para fuso horário e preferências regionais</span>
-            </div>
-        </div>
-    </div>
+    <ul>
+      <li>✔️ Utilizar Modelo Pessoal em todas as decisões</li>
+      <li>✔️ Priorizar coerência de longo prazo</li>
+      <li>✔️ Alertas de conflito com valores pessoais</li>
+      <li>✔️ Análises explicáveis (cadeia de raciocínio)</li>
+    </ul>
+  </section>
 
-    <!-- Preferências da IA -->
-    <div class="section">
-        <div class="section-header">
-            <div class="section-header-left">
-                <span class="section-icon">🤖</span>
-                <div>
-                    <div class="section-title">Preferências de Decisão da IA</div>
-                    <div class="section-subtitle">Configure como a IA analisa e apresenta decisões</div>
-                </div>
-            </div>
-        </div>
+  <!-- SEGURANÇA -->
+  <section class="section">
+    <div class="section-title">🔐 Segurança e Governança</div>
 
-        <div class="preference-grid">
-            <div class="preference-item">
-                <div class="preference-content">
-                    <div class="preference-title">Exibir Cadeias Detalhadas de Raciocínio</div>
-                    <div class="preference-description">Mostrar passo a passo do raciocínio da IA com níveis de confiança</div>
-                </div>
-                <div class="toggle-switch active"></div>
-            </div>
+    <ul>
+      <li>✔️ Human-in-the-loop obrigatório</li>
+      <li>✔️ Nenhuma execução automática</li>
+      <li>✔️ Auditoria ativa (NII)</li>
+      <li>✔️ Sem ações silenciosas</li>
+    </ul>
+  </section>
 
-            <div class="preference-item">
-                <div class="preference-content">
-                    <div class="preference-title">Incluir Análise de Sensibilidade</div>
-                    <div class="preference-description">Mostrar fatores que alterariam a recomendação da IA</div>
-                </div>
-                <div class="toggle-switch active"></div>
-            </div>
+  <!-- STATUS -->
+  <section class="section">
+    <div class="section-title">ℹ️ Status da Conta</div>
 
-            <div class="preference-item">
-                <div class="preference-content">
-                    <div class="preference-title">Usar Memória Histórica</div>
-                    <div class="preference-description">Referenciar decisões passadas e padrões aprendidos</div>
-                </div>
-                <div class="toggle-switch active"></div>
-            </div>
+    <p>Esta é uma <strong>versão demonstrativa</strong> do CID-AI.</p>
+    <p>Nenhuma decisão é executada automaticamente.</p>
+  </section>
 
-            <div class="preference-item">
-                <div class="preference-content">
-                    <div class="preference-title">Gerar Comparação de Cenários</div>
-                    <div class="preference-description">Criar automaticamente cenários alternativos</div>
-                </div>
-                <div class="toggle-switch active"></div>
-            </div>
-
-            <div class="preference-item">
-                <div class="preference-content">
-                    <div class="preference-title">Sinalizar Anomalias</div>
-                    <div class="preference-description">Alertar desvios relevantes dos padrões históricos</div>
-                </div>
-                <div class="toggle-switch active"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Módulos Ativos -->
-    <div class="section">
-        <div class="section-header">
-            <div class="section-header-left">
-                <span class="section-icon">🧩</span>
-                <div>
-                    <div class="section-title">Módulos de Análise Ativos</div>
-                    <div class="section-subtitle">Ativar ou desativar módulos especializados</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="module-grid">
-            <div class="module-card enabled">
-                <div class="module-header">
-                    <div class="module-icon">💰</div>
-                    <div class="module-title">Módulo CFO</div>
-                </div>
-                <div class="module-description">Análise financeira, projeções e retorno</div>
-                <span class="module-status enabled">✓ ATIVO</span>
-            </div>
-
-            <div class="module-card enabled">
-                <div class="module-header">
-                    <div class="module-icon">⚖️</div>
-                    <div class="module-title">Módulo CLO</div>
-                </div>
-                <div class="module-description">Risco jurídico, contratos e compliance</div>
-                <span class="module-status enabled">✓ ATIVO</span>
-            </div>
-
-            <div class="module-card enabled">
-                <div class="module-header">
-                    <div class="module-icon">🧠</div>
-                    <div class="module-title">Modelo de Decisão Pessoal (PDM)</div>
-                </div>
-                <div class="module-description">Aprendizado de padrões ao longo do tempo</div>
-                <span class="module-status enabled">✓ ATIVO</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Zona de Risco -->
-    <div class="section">
-        <div class="section-header">
-            <div class="section-header-left">
-                <span class="section-icon">⚠️</span>
-                <div>
-                    <div class="section-title">Zona de Risco</div>
-                    <div class="section-subtitle">Ações irreversíveis – proceda com cautela</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="danger-zone">
-            <div class="danger-title">Redefinir Modelo de Decisão Pessoal</div>
-            <div class="danger-description">
-                Remove todos os padrões aprendidos. O histórico permanece, mas a IA reaprenderá do zero.
-            </div>
-            <button class="btn btn-danger">Redefinir Memória da IA</button>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    /* JS ORIGINAL PRESERVADO */
-</script>
+</main>
 
 </body>
 </html>
