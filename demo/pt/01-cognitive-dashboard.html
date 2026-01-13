@@ -2,161 +2,181 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <title>Painel Cognitivo — CID-AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CID-AI - Painel de Inteligência Cognitiva</title>
+
     <style>
-        /* ======= CSS ORIGINAL — NÃO ALTERADO ======= */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg-primary: #0a0e1a;
-            --bg-secondary: #111827;
-            --bg-tertiary: #1f2937;
-            --bg-elevated: #374151;
-            --text-primary: #f9fafb;
-            --text-secondary: #d1d5db;
-            --text-muted: #9ca3af;
-            --accent: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.3);
-            --border: #374155;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --info: #8b5cf6;
-            --confidence-high: #10b981;
-            --confidence-medium: #f59e0b;
-            --confidence-low: #ef4444;
-        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0a0e1a;
+            color: #f9fafb;
         }
-        .container { display: flex; }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
         .sidebar {
             width: 280px;
-            background: var(--bg-secondary);
-            border-right: 1px solid var(--border);
-            position: fixed;
-            height: 100vh;
+            background: #111827;
+            border-right: 1px solid #1f2937;
+            padding: 24px;
         }
-        .logo { padding: 28px 24px; border-bottom: 1px solid var(--border); }
+
         .logo h1 {
+            margin: 0;
             font-size: 26px;
             font-weight: 700;
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .logo .tagline {
-            font-size: 11px;
-            color: var(--text-muted);
+
+        .logo span {
+            display: block;
             margin-top: 6px;
+            font-size: 11px;
+            color: #9ca3af;
             text-transform: uppercase;
             letter-spacing: 0.08em;
         }
-        .nav { padding: 24px 0; }
-        .nav-section-title {
-            font-size: 11px;
-            color: var(--text-muted);
-            padding: 0 24px;
-            margin-bottom: 12px;
-            text-transform: uppercase;
+
+        .nav-section {
+            margin-top: 32px;
         }
-        .nav-item {
-            padding: 12px 24px;
-            color: var(--text-secondary);
+
+        .nav-title {
+            font-size: 11px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .nav a {
+            display: block;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            color: #d1d5db;
             text-decoration: none;
-            display: flex;
-            gap: 14px;
+            border-radius: 6px;
             font-size: 14px;
         }
-        .nav-item:hover { background: var(--bg-tertiary); }
-        .nav-item.active { color: var(--accent); }
-        .main { margin-left: 280px; width: 100%; }
-        .header {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 36px;
-            display: flex;
-            justify-content: space-between;
+
+        .nav a.active,
+        .nav a:hover {
+            background: #1f2937;
+            color: #3b82f6;
         }
-        .header-title { font-size: 20px; font-weight: 600; }
-        .header-subtitle { font-size: 13px; color: var(--text-muted); }
-        .content { padding: 36px; }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 36px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header p {
+            margin-top: 6px;
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        .card {
+            margin-top: 32px;
+            padding: 24px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .stats {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
     </style>
 </head>
 
 <body>
 <div class="container">
 
-    <!-- SIDEBAR -->
+    <!-- Sidebar -->
     <aside class="sidebar">
         <div class="logo">
             <h1>CID-AI</h1>
-            <div class="tagline">Inteligência Cognitiva</div>
+            <span>Inteligência Cognitiva</span>
         </div>
 
         <nav class="nav">
             <div class="nav-section">
-                <div class="nav-section-title">Essencial</div>
-                <a href="01-cognitive-dashboard.html" class="nav-item active">🧠 Painel Cognitivo</a>
-                <a href="11-personal-model.html" class="nav-item">🎯 Modelo Pessoal</a>
-                <a href="02-new-decision.html" class="nav-item">➕ Nova Decisão</a>
-                <a href="03-decision-history.html" class="nav-item">📊 Histórico de Decisões</a>
-                <a href="08-compare-scenarios.html" class="nav-item">🔄 Comparar Cenários</a>
+                <div class="nav-title">Essencial</div>
+                <a class="active" href="01-cognitive-dashboard.html">🧠 Painel Cognitivo</a>
+                <a href="11-personal-model.html">🎯 Modelo Pessoal</a>
+                <a href="02-new-decision.html">➕ Nova Decisão</a>
+                <a href="03-decision-history.html">📊 Histórico de Decisões</a>
+                <a href="08-compare-scenarios.html">🔄 Comparar Cenários</a>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">Módulos de Análise</div>
-                <a href="05-cfo-module.html" class="nav-item">💰 Módulo CFO</a>
-                <a href="06-clo-module.html" class="nav-item">⚖️ Módulo CLO</a>
+                <div class="nav-title">Módulos de Análise</div>
+                <a href="05-cfo-module.html">💰 Módulo CFO</a>
+                <a href="06-clo-module.html">⚖️ Módulo CLO</a>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">Camada de Inteligência</div>
-                <a href="07-decision-memory.html" class="nav-item">🧩 Modelo de Decisão Pessoal</a>
-                <a href="09-pattern-analysis.html" class="nav-item">📈 Análise de Padrões</a>
+                <div class="nav-title">Camada de Inteligência</div>
+                <a href="07-decision-memory.html">🧩 Modelo de Decisão Pessoal</a>
+                <a href="09-pattern-analysis.html">📈 Análise de Padrões</a>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">Sistema</div>
-                <a href="10-user-profile.html" class="nav-item">👤 Perfil</a>
-                <a href="10-user-profile.html" class="nav-item">⚙️ Configurações</a>
+                <div class="nav-title">Sistema</div>
+                <a href="10-user-profile.html">👤 Perfil</a>
+                <a href="10-user-profile.html">⚙️ Configurações</a>
             </div>
         </nav>
     </aside>
 
-    <!-- MAIN -->
+    <!-- Main Content -->
     <main class="main">
-        <header class="header">
-            <div>
-                <div class="header-title">Painel Cognitivo</div>
-                <div class="header-subtitle">Visão geral do raciocínio e da inteligência de decisão em IA</div>
-            </div>
-            <div>
-                <button onclick="window.location='03-decision-history.html'">📊 Histórico</button>
-                <button onclick="window.location='02-new-decision.html'">➕ Nova Análise</button>
-            </div>
-        </header>
+        <div class="header">
+            <h2>Painel Cognitivo</h2>
+            <p>Visão geral do raciocínio e da inteligência de decisão do CID-AI</p>
+        </div>
 
-        <div class="content">
-            <h2>Sistema de IA Ativo</h2>
-            <p>Processando 2 decisões ativas • 8 premissas validadas hoje • Memória: 47 cenários indexados</p>
+        <div class="card">
+            <h3>Sistema de IA Ativo</h3>
+            <p>
+                O CID-AI está processando decisões estratégicas em tempo real,
+                avaliando premissas, restrições pessoais e impactos de longo prazo.
+            </p>
+
+            <div class="stats">
+                • 2 decisões ativas<br>
+                • 8 premissas validadas hoje<br>
+                • Memória cognitiva: 47 cenários indexados
+            </div>
         </div>
     </main>
 
 </div>
-
-<script>
-    const currentPage = '01-cognitive-dashboard.html';
-    document.querySelectorAll('.nav-item').forEach(item => {
-        if (item.getAttribute('href') === currentPage) {
-            item.classList.add('active');
-        }
-    });
-</script>
-
 </body>
 </html>
