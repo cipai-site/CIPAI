@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CID-AI - Inteligência Cognitiva para Tomada de Decisões</title>
+<style>
+    /* (Mesmo CSS do site em EN para NÃO mudar layout) */
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg-primary:#0a0e1a;--bg-secondary:#111827;--bg-tertiary:#1f2937;
+      --text-primary:#f9fafb;--text-secondary:#d1d5db;--text-muted:#9ca3af;
+      --accent:#3b82f6;--accent-glow:rgba(59,130,246,.3);--border:#374155;
+      --success:#10b981;--warning:#f59e0b;
+    }
+    body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;background:rgba(10,14,26,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:1rem 2rem;z-index:1000}
+    .nav-container{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:24px;font-weight:700;background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .nav-links{display:flex;gap:1.5rem;align-items:center}
+    .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:14px;transition:color .2s}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{background:var(--accent);color:#fff!important;padding:8px 18px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;transition:all .2s}
+    .nav-cta:hover{background:#2563eb;box-shadow:0 0 15px var(--accent-glow)}
+    .lang-selector{display:flex;gap:10px;align-items:center;margin-left:8px;padding-left:12px;border-left:1px solid var(--border)}
+    .flag-btn{width:20px;height:auto;cursor:pointer;border-radius:2px;transition:transform .15s ease;display:block}
+    .flag-btn:hover{transform:scale(1.15)}
+    .lang-selector a{display:block}
+    .hero{padding:140px 2rem 80px;max-width:1400px;margin:0 auto;text-align:center}
+    .hero-subtitle{font-size:20px;color:var(--text-secondary);margin-bottom:3rem}
+    .cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn{padding:16px 32px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:#2563eb;box-shadow:0 0 20px var(--accent-glow);transform:translateY(-2px)}
+    .btn-secondary{background:var(--bg-tertiary);color:var(--text-primary);border:1px solid var(--border)}
+    .btn-secondary:hover{border-color:var(--accent);transform:translateY(-2px)}
+    section{padding:80px 2rem;max-width:1400px;margin:0 auto;text-align:center}
+    h2{font-size:40px;margin-bottom:1rem}
+    .section-subtitle{font-size:18px;color:var(--text-secondary);max-width:800px;margin:0 auto 3rem}
+    .problem-grid,.solution-features,.use-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;text-align:left}
+    .problem-card,.feature-card,.use-case{background:var(--bg-secondary);border:1px solid var(--border);padding:2rem;border-radius:12px;transition:transform .2s,border-color .2s}
+    .problem-card:hover,.feature-card:hover,.use-case:hover{transform:translateY(-5px);border-color:var(--accent)}
+    .problem-card h3,.feature-card h3,.use-case h3{font-size:20px;margin-bottom:1rem}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:3rem;text-align:left}
+    .step{background:var(--bg-secondary);border:1px solid var(--border);padding:2rem;border-radius:12px;position:relative}
+    .step-number{position:absolute;top:-15px;left:20px;background:var(--accent);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+    .final-cta{background:var(--bg-secondary);border-top:1px solid var(--border)}
+    footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center;color:var(--text-muted)}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <div class="logo">CID-AI</div>
+    <div class="nav-links">
+      <a href="#how-it-works">Como funciona</a>
+      <a href="#use-cases">Casos de uso</a>
+      <a href="#about">Sobre</a>
+
+      <div class="lang-selector">
+        <a href="../"><img class="flag-btn" src="https://flagcdn.com/w20/us.png" alt="English" title="English"></a>
+        <a href="./"><img class="flag-btn" src="https://flagcdn.com/w20/br.png" alt="Português" title="Português"></a>
+      </div>
+
+      <a class="nav-cta" href="../demo/pt/" target="_blank">Ver Demonstração</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="prototype-badge" style="display:inline-block;background:rgba(59,130,246,.1);padding:8px 16px;border-radius:20px;color:var(--accent);margin-bottom:2rem;">
+      ⚡ Este é um protótipo interativo funcional — não uma apresentação de vendas.
+    </div>
+
+    <h1 style="font-size:56px;margin-bottom:1.5rem;">Inteligência cognitiva para tomada de decisões</h1>
+
+    <p class="hero-subtitle">
+      Sistema de inteligência decisória com foco em IA, com cadeias de raciocínio transparentes, pontuação de confiança e contexto pessoal longitudinal.
+      Desenvolvido para investidores, consultores e tomadores de decisão que precisam de suporte de IA explicável.
+    </p>
+
+    <div class="cta-group">
+      <a class="btn btn-primary" href="../demo/pt/" target="_blank">Explore a demonstração interativa.</a>
+      <a class="btn btn-secondary" href="../contact.html">Agende uma conversa</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>O problema</h2>
+  <p class="section-subtitle">Inteligência artificial em que você não pode confiar não será usada.</p>
+
+  <div class="problem-grid">
+    <div class="problem-card">
+      <h3>🔮 Problema da caixa preta</h3>
+      <p>A IA fornece respostas sem apresentar o raciocínio. Os tomadores de decisão não conseguem validar a lógica nem identificar pontos cegos.</p>
+    </div>
+    <div class="problem-card">
+      <h3>🎲 Excesso de confiança</h3>
+      <p>Os sistemas apresentam conclusões como certas quando estas se baseiam em dados incompletos ou em pressupostos questionáveis.</p>
+    </div>
+    <div class="problem-card">
+      <h3>📋 Perda de contexto</h3>
+      <p>Cada consulta começa do zero. Não há uma compreensão longitudinal dos objetivos, restrições ou padrões de decisão.</p>
+    </div>
+    <div class="problem-card">
+      <h3>⚖️ Confusão de Autoridade</h3>
+      <p>Não está claro onde termina a recomendação da IA e começa a decisão humana. Não há um registro de auditoria claro.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>A solução</h2>
+  <p class="section-subtitle">Inteligência de decisão com raciocínio transparente</p>
+
+  <div class="solution-features">
+    <div class="feature-card">
+      <h3>🔗 Cadeias de raciocínio</h3>
+      <p>Veja cada etapa da lógica da IA. Compreenda quais pontos de dados, suposições e inferências levaram a cada recomendação.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📊 Pontuações de confiança</h3>
+      <p>Classificações de confiança explícitas para cada afirmação. Saiba quando a IA tem certeza e quando está extrapolando a partir de dados limitados.</p>
+    </div>
+    <div class="feature-card">
+      <h3>⚖️ Análise de compensações</h3>
+      <p>Veja vários cenários com prós e contras claros. Compare as opções sistematicamente com fatores ponderados.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🧠 Modelo de Decisão Pessoal (PDM)</h3>
+      <p>Contexto de decisão longitudinal e reconhecimento de padrões (estágio inicial). Captura objetivos, preferências, restrições e resultados históricos ao longo do tempo.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🛡️ Autoridade Humana Preservada</h3>
+      <p>Separação clara: a IA recomenda, o humano decide. Cada decisão é identificada com quem a tomou e porquê.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📝 Registro completo de auditoria</h3>
+      <p>Registro completo do raciocínio, das premissas, das fontes de dados e da justificativa da decisão. Desenvolvido para fins de governança e conformidade.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <h2>Como funciona</h2>
+  <p class="section-subtitle">Construído para a Transparência e a Confiança</p>
+
+  <div class="steps">
+    <div class="step"><div class="step-number">1</div><h3>Você define a decisão.</h3><p>Defina o tipo de decisão, o contexto, as restrições e as variáveis-chave. O sistema captura seus requisitos específicos.</p></div>
+    <div class="step"><div class="step-number">2</div><h3>A IA constrói uma cadeia de raciocínio.</h3><p>Análise multi-módulo (CFO, CLO, etc.) com etapas de raciocínio explícitas, pontuações de confiança e suposições identificadas.</p></div>
+    <div class="step"><div class="step-number">3</div><h3>Você analisa e decide.</h3><p>Analise o raciocínio, questione as premissas, compare cenários. Você toma a decisão final com o contexto completo.</p></div>
+    <div class="step"><div class="step-number">4</div><h3>O sistema aprende o contexto.</h3><p>Os resultados das decisões retroalimentam seu Modelo de Decisão Pessoal (MDP), construindo uma compreensão longitudinal ao longo do tempo.</p></div>
+  </div>
+</section>
+
+<section id="use-cases">
+  <h2>Casos de uso</h2>
+  <p class="section-subtitle">Áreas de foco iniciais (lista não exaustiva)</p>
+
+  <div class="use-case-grid">
+    <div class="use-case"><h3>💰 Decisões de Investimento</h3><ul><li>Alocação de portfólio</li><li>Suporte à due diligence</li><li>Avaliação de risco</li><li>Modelagem de cenários</li></ul></div>
+    <div class="use-case"><h3>🏢 Negócios Estratégicos</h3><ul><li>Análise de entrada no mercado</li><li>Alocação de recursos</li><li>Avaliação de parceria</li><li>Estratégia de preços</li></ul></div>
+    <div class="use-case"><h3>⚖️ Questões Legais e de Conformidade</h3><ul><li>Análise de contrato</li><li>Avaliação regulatória</li><li>Mapeamento da exposição ao risco</li><li>Conformidade com a política</li></ul></div>
+    <div class="use-case"><h3>👥 Contratação e Talentos</h3><ul><li>Contratação de executivos</li><li>Composição da equipe</li><li>Planejamento de remuneração</li><li>Projeto de estrutura organizacional</li></ul></div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>Experimente a diferença</h2>
+  <p class="section-subtitle">Explore o protótipo funcional ou agende uma conversa técnica.</p>
+  <div class="cta-group">
+    <a class="btn btn-primary" href="../demo/pt/" target="_blank">Explore a demonstração interativa.</a>
+    <a class="btn btn-secondary" href="../contact.html">Agendar conversa</a>
+  </div>
+</section>
+
+<section id="about" style="padding:80px 2rem;max-width:900px;margin:0 auto;text-align:left;">
+  <h2>Sobre</h2>
+  <p style="color:var(--text-secondary);margin-top:1rem;">
+    O CID-AI é um protótipo interativo funcional que demonstra a arquitetura central e a transparência do raciocínio.
+    Disponível para avaliação por investidores, consultores e tomadores de decisão interessados em infraestrutura de IA explicável.
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 CID-AI. Inteligência Cognitiva para Tomada de Decisões.</p>
+  <p style="margin-top:12px;color:var(--text-muted);font-size:12px;text-align:center;">
+    Empresa em estruturação como Delaware C-Corporation (EUA).
+  </p>
+</footer>
+</body>
+</html>
