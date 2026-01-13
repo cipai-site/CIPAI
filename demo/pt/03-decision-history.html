@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Histórico de Decisões — CID-AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,13 +12,16 @@
       --bg-primary: #0a0e1a;
       --bg-secondary: #111827;
       --bg-tertiary: #1f2937;
+      --bg-elevated: #374151;
       --text-primary: #f9fafb;
       --text-secondary: #d1d5db;
       --text-muted: #9ca3af;
       --accent: #3b82f6;
-      --border: #374151;
+      --border: #374155;
       --success: #10b981;
       --warning: #f59e0b;
+      --danger: #ef4444;
+      --info: #8b5cf6;
     }
 
     body {
@@ -27,218 +30,215 @@
       color: var(--text-primary);
     }
 
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
+    .container { display: flex; min-height: 100vh; }
 
     /* Sidebar */
     .sidebar {
-      width: 260px;
+      width: 280px;
       background: var(--bg-secondary);
       border-right: 1px solid var(--border);
-      padding: 24px 0;
+      position: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .logo {
-      padding: 0 24px 24px;
+      padding: 28px 24px;
       border-bottom: 1px solid var(--border);
     }
 
     .logo h1 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
-      color: var(--accent);
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .logo span {
+    .logo .tagline {
       font-size: 11px;
       color: var(--text-muted);
+      margin-top: 6px;
+      text-transform: uppercase;
       letter-spacing: 0.08em;
     }
 
-    .nav {
-      padding: 24px 0;
+    .nav { flex: 1; padding: 24px 0; }
+
+    .nav-section { margin-bottom: 28px; }
+
+    .nav-section-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      padding: 0 24px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .nav a {
-      display: block;
+    .nav-item {
       padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
       color: var(--text-secondary);
       text-decoration: none;
       font-size: 14px;
     }
 
-    .nav a.active,
-    .nav a:hover {
+    .nav-item:hover {
       background: var(--bg-tertiary);
       color: var(--text-primary);
     }
 
-    /* Main */
-    .main {
-      flex: 1;
-      padding: 32px;
+    .nav-item.active {
+      background: var(--bg-tertiary);
+      color: var(--accent);
     }
+
+    /* Main */
+    .main { flex: 1; margin-left: 280px; }
 
     .header {
-      margin-bottom: 32px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 36px;
     }
 
-    .header h2 {
-      font-size: 22px;
-      margin-bottom: 6px;
+    .header-title {
+      font-size: 20px;
+      font-weight: 600;
     }
 
-    .header p {
-      font-size: 14px;
+    .header-subtitle {
+      font-size: 13px;
       color: var(--text-muted);
+      margin-top: 4px;
     }
 
-    .decision-list {
-      display: grid;
-      gap: 16px;
-      max-width: 900px;
-    }
+    .content { padding: 36px; }
 
-    .decision-card {
+    .card {
       background: var(--bg-secondary);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
     }
 
-    .decision-info h3 {
+    .card-title {
       font-size: 16px;
+      font-weight: 600;
       margin-bottom: 6px;
     }
 
-    .decision-meta {
+    .card-meta {
       font-size: 12px;
       color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     .status {
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-top: 6px;
       display: inline-block;
-    }
-
-    .status.done {
-      background: rgba(16,185,129,0.15);
-      color: var(--success);
-    }
-
-    .status.review {
-      background: rgba(245,158,11,0.15);
-      color: var(--warning);
-    }
-
-    .actions a {
-      text-decoration: none;
-      font-size: 13px;
-      color: white;
-      background: var(--accent);
-      padding: 8px 14px;
+      margin-top: 12px;
+      padding: 4px 10px;
       border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
     }
 
-    .top-actions {
-      margin-top: 24px;
-    }
-
-    .top-actions a {
-      text-decoration: none;
-      font-size: 14px;
-      padding: 10px 16px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: white;
-    }
+    .done { background: rgba(16,185,129,.15); color: var(--success); }
+    .review { background: rgba(245,158,11,.15); color: var(--warning); }
+    .progress { background: rgba(59,130,246,.15); color: var(--accent); }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <h1>CID-AI</h1>
-        <span>INTELIGÊNCIA COGNITIVA</span>
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      <h1>CID-AI</h1>
+      <div class="tagline">Inteligência Cognitiva</div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Essencial</div>
+        <a href="01-cognitive-dashboard.html" class="nav-item">🧠 Painel Cognitivo</a>
+        <a href="02-new-decision.html" class="nav-item">➕ Nova Decisão</a>
+        <a href="03-decision-history.html" class="nav-item active">📊 Histórico de Decisões</a>
+        <a href="08-compare-scenarios.html" class="nav-item">🔄 Comparar Cenários</a>
       </div>
 
-      <nav class="nav">
-        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
-        <a href="11-personal-model.html">Modelo Pessoal</a>
-        <a href="02-new-decision.html">Nova Decisão</a>
-        <a href="03-decision-history.html" class="active">Histórico de Decisões</a>
-        <a href="08-compare-scenarios.html">Comparar Cenários</a>
-      </nav>
-    </aside>
-
-    <!-- Main -->
-    <main class="main">
-      <div class="header">
-        <h2>Histórico de Decisões</h2>
-        <p>
-          Registro das decisões analisadas pelo CID-AI.  
-          Cada decisão preserva o raciocínio, premissas e contexto utilizados.
-        </p>
+      <div class="nav-section">
+        <div class="nav-section-title">Módulos de Análise</div>
+        <a href="05-cfo-module.html" class="nav-item">💰 Módulo CFO</a>
+        <a href="06-clo-module.html" class="nav-item">⚖️ Módulo CLO</a>
       </div>
 
-      <div class="decision-list">
-        <!-- Decision 1 -->
-        <div class="decision-card">
-          <div class="decision-info">
-            <h3>Contratar CTO Sênior</h3>
-            <div class="decision-meta">
-              Decisão de Pessoas • Criada há 3 dias
-            </div>
-            <span class="status done">Concluída</span>
-          </div>
-          <div class="actions">
-            <a href="04-decision-detail.html">Ver Detalhes</a>
-          </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Camada de Inteligência</div>
+        <a href="07-decision-memory.html" class="nav-item">🧩 Modelo de Decisão Pessoal</a>
+        <a href="09-pattern-analysis.html" class="nav-item">📈 Análise de Padrões</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Sistema</div>
+        <a href="10-user-profile.html" class="nav-item">👤 Configurações</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header class="header">
+      <div class="header-title">Histórico de Decisões</div>
+      <div class="header-subtitle">
+        Registro completo de decisões analisadas pela IA
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="card">
+        <div class="card-title">Contratar CTO Fracionado</div>
+        <div class="card-meta">Decisão Estratégica • há 5 dias</div>
+        <div class="card-desc">
+          Avaliação entre contratação integral, fracionada ou postergação com base em runway, risco de pessoas e metas de ARR.
         </div>
-
-        <!-- Decision 2 -->
-        <div class="decision-card">
-          <div class="decision-info">
-            <h3>SAFE vs Rodada Precificada</h3>
-            <div class="decision-meta">
-              Decisão Financeira • Criada há 5 dias
-            </div>
-            <span class="status done">Concluída</span>
-          </div>
-          <div class="actions">
-            <a href="04-decision-detail.html">Ver Detalhes</a>
-          </div>
-        </div>
-
-        <!-- Decision 3 -->
-        <div class="decision-card">
-          <div class="decision-info">
-            <h3>Estratégia de Go-to-Market</h3>
-            <div class="decision-meta">
-              Estratégia • Criada há 7 dias
-            </div>
-            <span class="status review">Em Análise</span>
-          </div>
-          <div class="actions">
-            <a href="04-decision-detail.html">Ver Detalhes</a>
-          </div>
-        </div>
+        <span class="status done">Concluída</span>
       </div>
 
-      <div class="top-actions">
-        <a href="02-new-decision.html">➕ Criar Nova Decisão</a>
+      <div class="card">
+        <div class="card-title">Modelo de Captação SAFE vs Série A</div>
+        <div class="card-meta">Decisão Financeira • há 1 semana</div>
+        <div class="card-desc">
+          Comparação entre velocidade de captação e clareza estrutural considerando valores pessoais e governança.
+        </div>
+        <span class="status review">Em revisão</span>
       </div>
-    </main>
-  </div>
+
+      <div class="card">
+        <div class="card-title">Estratégia Go-to-Market</div>
+        <div class="card-meta">Decisão de Crescimento • há 12 dias</div>
+        <div class="card-desc">
+          Análise entre PLG e vendas enterprise com foco em velocidade, previsibilidade e eficiência comercial.
+        </div>
+        <span class="status progress">Em andamento</span>
+      </div>
+
+    </div>
+  </main>
+
+</div>
 </body>
 </html>
