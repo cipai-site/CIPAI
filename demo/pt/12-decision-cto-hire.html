@@ -3,55 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Decisão: Contratar CTO Sênior – CID-AI</title>
-
+    <title>Análise de Decisão: Contratação de CTO — CID-AI</title>
     <style>
-        /* TODO O CSS ORIGINAL FOI PRESERVADO SEM QUALQUER ALTERAÇÃO */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-elevated: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #8b5cf6;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { display: flex; min-height: 100vh; }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            height: 100vh;
+            left: 0; top: 0;
+            display: flex; flex-direction: column;
+        }
+        .logo { padding: 28px 24px; border-bottom: 1px solid var(--border); }
+        .logo h1 {
+            font-size: 26px; font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .logo .tagline {
+            font-size: 11px; color: var(--text-muted);
+            margin-top: 6px; text-transform: uppercase; letter-spacing: .08em;
+        }
+        .nav { flex: 1; padding: 24px 0; overflow-y: auto; }
+        .nav-section { margin-bottom: 28px; }
+        .nav-section-title {
+            font-size: 11px; font-weight: 600; color: var(--text-muted);
+            padding: 0 24px; margin-bottom: 12px;
+            text-transform: uppercase; letter-spacing: .08em;
+        }
+        .nav-item {
+            padding: 12px 24px; color: var(--text-secondary);
+            text-decoration: none; display: flex; align-items: center; gap: 14px;
+            font-size: 14px; font-weight: 500;
+        }
+        .nav-item:hover { background: var(--bg-tertiary); color: var(--text-primary); }
+        .nav-item.active {
+            background: var(--bg-tertiary); color: var(--accent); position: relative;
+        }
+        .nav-item.active::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+            width: 3px; background: var(--accent);
+        }
+        .nav-icon { font-size: 18px; width: 20px; text-align: center; }
+
+        /* Main */
+        .main { flex: 1; margin-left: 280px; }
+        .header {
+            background: var(--bg-secondary); border-bottom: 1px solid var(--border);
+            padding: 20px 36px; position: sticky; top: 0; z-index: 10;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .header-title { font-size: 20px; font-weight: 600; }
+        .header-subtitle { font-size: 13px; color: var(--text-muted); }
+        .content { padding: 36px; max-width: 1600px; }
+
+        .decision-header {
+            background: linear-gradient(135deg, rgba(59,130,246,.1), rgba(139,92,246,.1));
+            border: 1px solid rgba(59,130,246,.2);
+            border-radius: 12px; padding: 32px; margin-bottom: 32px;
+        }
+        .decision-title-row {
+            display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;
+        }
+        .decision-main-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .decision-meta { font-size: 13px; color: var(--text-muted); display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .confidence-score {
+            display: flex; gap: 12px; padding: 16px 24px;
+            background: var(--bg-secondary); border-radius: 12px;
+        }
+        .confidence-number { font-size: 36px; font-weight: 700; color: var(--warning); }
+
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-size: 16px; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: .08em;
+            margin-bottom: 20px; display: flex; gap: 12px; align-items: center;
+        }
+
+        .reasoning-step {
+            background: var(--bg-tertiary);
+            border-radius: 8px; padding: 20px;
+            border-left: 3px solid var(--accent);
+            margin-bottom: 12px; display: flex; gap: 16px;
+        }
+        .step-number {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--accent); display: flex; align-items: center; justify-content: center;
+            font-weight: 700;
+        }
+        .step-text { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+        .step-detail { font-size: 13px; color: var(--text-muted); }
+
+        .tradeoff-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px;
+        }
+        .tradeoff-card {
+            background: var(--bg-tertiary);
+            border-radius: 12px; padding: 24px; border: 2px solid transparent;
+        }
+        .tradeoff-card.recommended {
+            border-color: var(--warning);
+            background: rgba(245,158,11,.05);
+        }
+        .tradeoff-title { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+        .tradeoff-list { font-size: 13px; color: var(--text-secondary); }
+
+        .btn {
+            padding: 12px 24px; border-radius: 8px;
+            border: none; font-weight: 600; cursor: pointer;
+        }
+        .btn-warning { background: var(--warning); }
+        .btn-secondary {
+            background: var(--bg-tertiary); color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
     </style>
 </head>
-
 <body>
 <div class="container">
 
-<!-- SIDEBAR -->
 <aside class="sidebar">
     <div class="logo">
         <h1>CID-AI</h1>
-        <div class="tagline">Inteligência Cognitiva</div>
+        <div class="tagline">Cognitive Intelligence</div>
     </div>
-
     <nav class="nav">
         <div class="nav-section">
-            <div class="nav-section-title">Essencial</div>
-            <a href="01-cognitive-dashboard.html" class="nav-item">
-                <span class="nav-icon">🧠</span>Painel Cognitivo
-            </a>
-            <a href="11-personal-model.html" class="nav-item">
-                <span class="nav-icon">🎯</span>Modelo Pessoal
-            </a>
-            <a href="02-new-decision.html" class="nav-item">
-                <span class="nav-icon">➕</span>Nova Decisão
-            </a>
-            <a href="03-decision-history.html" class="nav-item">
-                <span class="nav-icon">📊</span>Histórico de Decisões
-            </a>
-            <a href="08-compare-scenarios.html" class="nav-item">
-                <span class="nav-icon">🔄</span>Comparar Cenários
-            </a>
+            <div class="nav-section-title">Core</div>
+            <a href="01-cognitive-dashboard.html" class="nav-item"><span class="nav-icon">🧠</span>Painel Cognitivo</a>
+            <a href="11-personal-model.html" class="nav-item"><span class="nav-icon">🎯</span>Modelo Pessoal</a>
+            <a href="02-new-decision.html" class="nav-item"><span class="nav-icon">➕</span>Nova Decisão</a>
+            <a href="03-decision-history.html" class="nav-item"><span class="nav-icon">📊</span>Histórico de Decisões</a>
+            <a href="08-compare-scenarios.html" class="nav-item"><span class="nav-icon">🔄</span>Comparar Cenários</a>
         </div>
-
         <div class="nav-section">
-            <div class="nav-section-title">Módulos de Análise</div>
+            <div class="nav-section-title">Módulos</div>
             <a href="05-cfo-module.html" class="nav-item"><span class="nav-icon">💰</span>Módulo CFO</a>
             <a href="06-clo-module.html" class="nav-item"><span class="nav-icon">⚖️</span>Módulo CLO</a>
         </div>
-
-        <div class="nav-section">
-            <div class="nav-section-title">Camada de Inteligência</div>
-            <a href="07-decision-memory.html" class="nav-item"><span class="nav-icon">🧩</span>PDM</a>
-            <a href="09-pattern-analysis.html" class="nav-item"><span class="nav-icon">📈</span>Análise de Padrões</a>
-        </div>
-
         <div class="nav-section">
             <div class="nav-section-title">Sistema</div>
             <a href="10-user-profile.html" class="nav-item"><span class="nav-icon">👤</span>Configurações</a>
@@ -59,129 +180,109 @@
     </nav>
 </aside>
 
-<!-- CONTEÚDO PRINCIPAL -->
 <main class="main">
-
 <header class="header">
     <div>
-        <div class="header-title">Análise de Decisão: Contratar CTO Sênior</div>
-        <div class="header-subtitle">Cenário realista de fundador com integração do Modelo Pessoal</div>
-    </div>
-    <div>
-        <button class="btn btn-secondary" onclick="window.location.href='03-decision-history.html'">← Voltar ao Histórico</button>
+        <div class="header-title">Decisão: Contratar um CTO agora?</div>
+        <div class="header-subtitle">Founder-realista — impacto financeiro, risco humano e velocidade técnica</div>
     </div>
 </header>
 
 <div class="content">
 
-<!-- CABEÇALHO DA DECISÃO -->
 <div class="decision-header">
     <div class="decision-title-row">
         <div>
-            <div class="decision-main-title">Devemos contratar um CTO Sênior por US$ 180K/ano?</div>
+            <div class="decision-main-title">CTO Full-time vs CTO Fracionário vs Aguardar</div>
             <div class="decision-meta">
-                <span>👥 Decisão de Pessoas</span> •
-                <span>Análise do Módulo CFO</span> •
-                <span>Criada há 3 dias</span> •
-                <span>Valor da decisão: US$ 180K/ano + equity</span>
+                <span>👥 Pessoas</span><span>•</span>
+                <span>CFO + CAO</span><span>•</span>
+                <span>Objetivo: ARR US$ 2M</span>
             </div>
         </div>
-
         <div class="confidence-score">
-            <div class="confidence-number">64%</div>
-            <div>
-                <div class="confidence-label-small">Confiança da IA</div>
-                <div style="font-size: 10px; color: var(--text-muted);">Média-Baixa</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="personal-model-flag">
-        <div class="pm-icon">🎯</div>
-        <div class="pm-content">
-            <div class="pm-title">ALERTA DO MODELO PESSOAL</div>
-            <div class="pm-text">
-                Esta decisão entra em conflito com sua restrição
-                <strong>“Não contratar antes da validação da receita”</strong>
-                e com seu perfil de <strong>baixa tolerância a risco em pessoas</strong>.
-                A análise considera seu estágio atual (Série A, US$ 400K ARR, equipe de 15 pessoas)
-                e o requisito de runway mínimo de 18 meses.
-            </div>
+            <div class="confidence-number">74%</div>
         </div>
     </div>
 </div>
 
-<!-- CADEIA DE RACIOCÍNIO -->
 <div class="section">
     <div class="section-title">🔗 Cadeia de Raciocínio da IA</div>
 
-    <div class="reasoning-chain">
-
-        <div class="reasoning-step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-                <div class="step-text">Análise da capacidade atual do time técnico</div>
-                <div class="step-detail">
-                    Equipe de 15 pessoas, sendo 9 engenheiros, sem liderança técnica em nível executivo.
-                    CTO fundador divide tempo entre produto (60%) e fundraising (40%).
-                    Velocidade de engenharia caiu 12% trimestre contra trimestre.
-                </div>
+    <div class="reasoning-step">
+        <div class="step-number">1</div>
+        <div>
+            <div class="step-text">Capacidade atual do time</div>
+            <div class="step-detail">
+                Time com 15 pessoas, 9 engenheiros, CTO fundador dividido entre produto e captação.
+                Velocidade de engenharia em queda (~12% QoQ). Dívida técnica acumulando.
             </div>
         </div>
+    </div>
 
-        <div class="reasoning-step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-                <div class="step-text">Impacto financeiro do custo de contratação</div>
-                <div class="step-detail">
-                    Salário de US$ 180K + 1,2% de equity.
-                    Burn mensal sobe de US$ 120K para US$ 135K.
-                    Runway cai de 27,7 meses para 24,7 meses.
-                </div>
+    <div class="reasoning-step">
+        <div class="step-number">2</div>
+        <div>
+            <div class="step-text">Impacto financeiro</div>
+            <div class="step-detail">
+                CTO full-time: US$ 180K/ano + equity. Burn sobe, runway reduz em ~3 meses.
+                CTO fracionário: ~US$ 8K/mês, risco financeiro significativamente menor.
             </div>
         </div>
+    </div>
 
-        <div class="reasoning-step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-                <div class="step-text">Avaliação do impacto na meta de US$ 2M ARR</div>
-                <div class="step-detail">
-                    Gargalo atual está na velocidade de produto.
-                    CTO sênior pode gerar +25% de velocidade, antecipando ARR adicional de
-                    US$ 300K–500K.
-                </div>
+    <div class="reasoning-step">
+        <div class="step-number">3</div>
+        <div>
+            <div class="step-text">Alinhamento com Modelo Pessoal</div>
+            <div class="step-detail">
+                Baixa tolerância a risco humano + regra “não contratar antes da receita validar”.
+                CTO full-time agora viola parcialmente essa diretriz.
             </div>
         </div>
-
-        <div class="reasoning-step">
-            <div class="step-number">4</div>
-            <div class="step-content">
-                <div class="step-text">Alternativa avaliada: CTO fracionado</div>
-                <div class="step-detail">
-                    Custo de US$ 8K/mês (20h/semana).
-                    Reduz risco, preserva runway e permite teste antes do compromisso integral.
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 
-<!-- RECOMENDAÇÃO -->
-<div class="section" style="background: rgba(245,158,11,0.1); border-color: var(--warning);">
-    <div class="section-title" style="color: var(--warning);">🤖 Recomendação da IA</div>
+<div class="section">
+    <div class="section-title">⚖️ Análise de Trade-offs</div>
 
-    <p><strong>Caminho recomendado:</strong> CTO Fracionado → Conversão para Full-Time em US$ 800K ARR</p>
+    <div class="tradeoff-grid">
+        <div class="tradeoff-card">
+            <div class="tradeoff-title">CTO Full-time agora</div>
+            <div class="tradeoff-list">
+                + Liderança total<br>
+                − Alto risco humano<br>
+                − Aumenta burn cedo
+            </div>
+        </div>
 
-    <p>
-        Esta abordagem respeita seu Modelo Pessoal, reduz risco de pessoas,
-        mantém runway saudável e acelera aprendizado antes de um compromisso irreversível.
-    </p>
+        <div class="tradeoff-card recommended">
+            <div class="tradeoff-title">CTO Fracionário (Recomendado)</div>
+            <div class="tradeoff-list">
+                + Teste antes de comprometer<br>
+                + Mantém runway saudável<br>
+                + Conversão futura opcional
+            </div>
+        </div>
 
-    <div class="action-buttons">
-        <button class="btn btn-warning">✅ Aceitar Recomendação</button>
-        <button class="btn btn-secondary">🔄 Solicitar Nova Análise</button>
-        <button class="btn btn-secondary">💬 Discutir com o Time</button>
+        <div class="tradeoff-card">
+            <div class="tradeoff-title">Aguardar ARR maior</div>
+            <div class="tradeoff-list">
+                + Zero risco agora<br>
+                − Dívida técnica cresce<br>
+                − Founder sobrecarregado
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section" style="border-color: var(--warning); background: rgba(245,158,11,.1);">
+    <div class="section-title">🤖 Recomendação da IA</div>
+    <p><strong>Iniciar com CTO Fracionário</strong>, com critérios claros de conversão para full-time
+       ao atingir ~US$ 800K–1M de ARR, validando fit humano e impacto técnico antes do compromisso total.</p>
+    <div style="margin-top:20px;">
+        <button class="btn btn-warning">Aceitar recomendação</button>
+        <button class="btn btn-secondary">Solicitar alternativa</button>
     </div>
 </div>
 
@@ -190,13 +291,12 @@
 </div>
 
 <script>
-const currentPage = '12-decision-cto-hire.html';
-document.querySelectorAll('.nav-item').forEach(item => {
-    if (item.getAttribute('href') === currentPage) {
-        item.classList.add('active');
-    }
-});
+(function(){
+    const currentPage = '12-decision-cto-hire.html';
+    document.querySelectorAll('.nav-item').forEach(i=>{
+        if(i.getAttribute('href')===currentPage){ i.classList.add('active'); }
+    });
+})();
 </script>
-
 </body>
 </html>
