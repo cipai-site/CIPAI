@@ -1,96 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CID-AI Demo — Português</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CID-AI Demo — Português</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0e1a;
+            color: #f9fafb;
+        }
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0a0e1a;
-      color: #f9fafb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
 
-    .container {
-      max-width: 520px;
-      text-align: center;
-      padding: 40px;
-      background: #111827;
-      border-radius: 12px;
-      border: 1px solid #374155;
-    }
+        h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
+        p {
+            font-size: 16px;
+            color: #d1d5db;
+            max-width: 520px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
 
-    p {
-      color: #9ca3af;
-      margin-bottom: 32px;
-      line-height: 1.6;
-    }
+        .links {
+            display: grid;
+            gap: 16px;
+            width: 100%;
+            max-width: 420px;
+        }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+        a {
+            display: block;
+            padding: 14px 20px;
+            background: #111827;
+            border: 1px solid #374155;
+            border-radius: 10px;
+            color: #f9fafb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
 
-    li {
-      margin-bottom: 16px;
-    }
+        a:hover {
+            background: #1f2937;
+            border-color: #3b82f6;
+        }
 
-    a {
-      display: block;
-      padding: 14px 20px;
-      background: #1f2937;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #f9fafb;
-      font-weight: 600;
-      transition: background 0.2s;
-      border: 1px solid #374155;
-    }
+        .lang-switch {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
 
-    a:hover {
-      background: #374151;
-    }
-  </style>
+        .lang-switch a {
+            color: #3b82f6;
+            border: none;
+            background: none;
+            padding: 0;
+            display: inline;
+            font-weight: 600;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>CID-AI — Demonstração</h1>
+
+<div class="container">
+    <h1>CID-AI</h1>
     <p>
-      Esta é a demonstração interativa do CID-AI em português.<br>
-      Explore como decisões estratégicas são analisadas com inteligência cognitiva.
+        Demonstração interativa do <strong>CID-AI</strong>, mostrando como
+        decisões estratégicas são analisadas com contexto pessoal,
+        módulos especializados e governança humana.
     </p>
 
-    <ul>
-      <li>
-        <a href="01-cognitive-dashboard.html">
-          🧠 Entrar no Painel Cognitivo
-        </a>
-      </li>
+    <div class="links">
+        <a href="01-cognitive-dashboard.html">🧠 Painel Cognitivo</a>
+        <a href="11-personal-model.html">🎯 Modelo de Decisão Pessoal</a>
+        <a href="03-decision-history.html">📊 Histórico de Decisões</a>
+        <a href="08-compare-scenarios.html">🔄 Comparar Cenários</a>
+        <a href="05-cfo-module.html">💰 Módulo CFO</a>
+    </div>
 
-      <li>
-        <a href="03-decision-history.html">
-          📊 Ver Histórico de Decisões
-        </a>
-      </li>
+    <div class="lang-switch">
+        Ver demo em inglês →
+        <a href="../en/index.html">English Version</a>
+    </div>
+</div>
 
-      <li>
-        <a href="02-new-decision.html">
-          ➕ Criar Nova Decisão
-        </a>
-      </li>
-    </ul>
-  </div>
 </body>
 </html>
