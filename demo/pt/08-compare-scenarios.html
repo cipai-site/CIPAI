@@ -1,172 +1,279 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparar Cenários – Análise de Decisão – CID-AI</title>
-    <style>
-        /* TODO O CSS ORIGINAL FOI PRESERVADO SEM ALTERAÇÕES */
-    </style>
+  <meta charset="UTF-8" />
+  <title>Comparar Cenários | CID-AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1f2937;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --border: #374151;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .logo {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .logo span {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      padding: 24px 0;
+    }
+
+    .nav a {
+      display: block;
+      padding: 12px 24px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: var(--bg-tertiary);
+      color: var(--accent);
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 32px;
+      max-width: 1200px;
+    }
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .section {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .scenario {
+      background: var(--bg-tertiary);
+      border-radius: 10px;
+      padding: 18px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .scenario.recommended {
+      border-left-color: var(--warning);
+      background: rgba(245,158,11,0.08);
+    }
+
+    .scenario h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .score {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .score.low { color: var(--danger); }
+    .score.medium { color: var(--warning); }
+    .score.high { color: var(--success); }
+
+    .list {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 10px;
+    }
+
+    .list li {
+      margin-bottom: 6px;
+    }
+
+    .summary {
+      background: var(--bg-tertiary);
+      border-left: 4px solid var(--success);
+      padding: 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .actions button {
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>CID-AI</h1>
+        <span>INTELIGÊNCIA COGNITIVA</span>
+      </div>
 
-    <div class="header">
-        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Detalhe da Decisão</a>
-    </div>
+      <nav class="nav">
+        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
+        <a href="11-personal-model.html">Modelo Pessoal</a>
+        <a href="02-new-decision.html">Nova Decisão</a>
+        <a href="03-decision-history.html">Histórico de Decisões</a>
+        <a href="05-cfo-module.html">Módulo CFO</a>
+        <a href="06-clo-module.html">Módulo CLO</a>
+        <a href="07-decision-memory.html">Modelo de Decisão (PDM)</a>
+        <a href="08-compare-scenarios.html" class="active">Comparar Cenários</a>
+      </nav>
+    </aside>
 
-    <div class="compare-header">
-        <div class="compare-title">Comparação de Cenários – Investimento Série A TechCorp</div>
-        <div class="compare-subtitle">
-            A IA analisa múltiplos cenários lado a lado com pontuação transparente e análise de trade-offs
+    <!-- Main -->
+    <main class="main">
+      <div class="header">
+        <h2>Comparação de Cenários</h2>
+        <p>Análise estruturada de alternativas estratégicas antes da decisão final</p>
+      </div>
+
+      <div class="section">
+        <h3>Cenários Avaliados</h3>
+
+        <div class="comparison-grid">
+          <div class="scenario">
+            <h4>Cenário A — Executar Agora</h4>
+            <div class="score medium">6.1</div>
+            <ul class="list">
+              <li>Execução imediata</li>
+              <li>Maior consumo de caixa</li>
+              <li>Risco operacional elevado</li>
+              <li>Aprendizado rápido</li>
+            </ul>
+          </div>
+
+          <div class="scenario recommended">
+            <h4>Cenário B — Execução Gradual (Recomendado)</h4>
+            <div class="score high">7.8</div>
+            <ul class="list">
+              <li>Redução de risco estrutural</li>
+              <li>Alinhado ao Modelo Pessoal</li>
+              <li>Preserva runway</li>
+              <li>Permite ajustes progressivos</li>
+            </ul>
+          </div>
+
+          <div class="scenario">
+            <h4>Cenário C — Postergar Decisão</h4>
+            <div class="score low">5.2</div>
+            <ul class="list">
+              <li>Menor risco imediato</li>
+              <li>Perda de timing estratégico</li>
+              <li>Acúmulo de ineficiências</li>
+              <li>Baixo aprendizado</li>
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="decision-context">
-            <div class="context-title">Contexto da Decisão</div>
-            <div class="context-text">
-                Avaliação de investimento Série A de US$ 2,5M na TechCorp (SaaS enterprise, tecnologia industrial).
-                MRR atual: US$ 120K com crescimento de 35% mês a mês.
-                Decisão necessária em até 2 semanas.
-                Três cenários analisados com pontuação multifatorial.
-            </div>
+      <div class="section">
+        <h3>Conclusão do Comparativo</h3>
+        <div class="summary">
+          O <strong>Cenário B</strong> apresenta o melhor equilíbrio entre
+          risco, velocidade de aprendizado e alinhamento com o Modelo de Decisão
+          Pessoal (PDM).  
+          <br><br>
+          Ele permite avanço controlado, preserva opções futuras
+          e reduz exposição a erros irreversíveis.
         </div>
-    </div>
+      </div>
 
-    <!-- Barra de Recomendação da IA -->
-    <div class="ai-recommendation-bar">
-        <div class="rec-icon">🤖</div>
-        <div class="rec-content">
-            <div class="rec-label">CENÁRIO RECOMENDADO PELA IA</div>
-            <div class="rec-text">Cenário A: Investir US$ 2,5M na Valuation Atual</div>
-            <div class="rec-detail">
-                Baseado em análise multifatorial: modelo financeiro (82%), qualidade da equipe (85%),
-                validação de mercado (92%) e relação risco/retorno favorável
-            </div>
-        </div>
-        <div class="rec-confidence">
-            <div class="rec-score">8.2<span style="font-size:24px;">/10</span></div>
-            <div class="rec-conf-label">Confiança da IA: 82%</div>
-        </div>
-    </div>
-
-    <div class="memory-note">
-        <strong>🧠 Contexto Histórico:</strong>
-        Esta comparação utiliza padrões de 23 decisões de investimento similares.
-        A IA aprendeu que cenários com equipe forte (≥8.0) e unit economics saudáveis (LTV/CAC &gt;3.0x)
-        apresentam taxa de sucesso de 82%.
-        A análise atual se encaixa nesse padrão de alta confiança.
-    </div>
-
-    <!-- GRID DE CENÁRIOS -->
-    <div class="comparison-grid">
-
-        <!-- CENÁRIO A -->
-        <div class="scenario-column recommended">
-            <div class="scenario-header">
-                <span class="scenario-badge recommended">✓ RECOMENDADO</span>
-                <div class="scenario-name">Cenário A: Investir Agora</div>
-                <div class="scenario-desc">
-                    Participar da Série A com valuation pós-money de US$ 18M,
-                    adquirindo 13,9% com direito de pró-rata e assento observador no conselho
-                </div>
-            </div>
-
-            <div class="scenario-score">
-                <div class="score-number high">8.2<span style="font-size:28px;">/10</span></div>
-                <div class="score-label">Pontuação Geral</div>
-                <div class="score-confidence">Confiança da IA: 82%</div>
-            </div>
-
-            <div class="reasoning-preview">
-                <div class="reasoning-title">RESUMO DO RACIOCÍNIO DA IA</div>
-                <div class="reasoning-text">
-                    Fundamentos sólidos: equipe 8.2/10 → LTV/CAC 3.8x → TAM validado de US$ 2,5B →
-                    valuation justo (13x ARR) → risco gerenciável.
-                    Padrão consistente com investimentos bem-sucedidos anteriores.
-                </div>
-            </div>
-        </div>
-
-        <!-- CENÁRIO B -->
-        <div class="scenario-column">
-            <div class="scenario-header">
-                <span class="scenario-badge">ALTERNATIVO</span>
-                <div class="scenario-name">Cenário B: Aguardar Série B</div>
-                <div class="scenario-desc">
-                    Não investir agora e aguardar 12–18 meses para validação completa de product-market fit
-                </div>
-            </div>
-
-            <div class="scenario-score">
-                <div class="score-number medium">6.5<span style="font-size:28px;">/10</span></div>
-                <div class="score-label">Pontuação Geral</div>
-                <div class="score-confidence">Confiança da IA: 76%</div>
-            </div>
-
-            <div class="reasoning-preview">
-                <div class="reasoning-title">RESUMO DO RACIOCÍNIO DA IA</div>
-                <div class="reasoning-text">
-                    Menor risco operacional, porém valuation significativamente maior
-                    reduz potencial de retorno.
-                    Trade-off claro entre segurança e eficiência de capital.
-                </div>
-            </div>
-        </div>
-
-        <!-- CENÁRIO C -->
-        <div class="scenario-column">
-            <div class="scenario-header">
-                <span class="scenario-badge" style="background:rgba(239,68,68,0.15);color:#ef4444;">
-                    NÃO RECOMENDADO
-                </span>
-                <div class="scenario-name">Cenário C: Recusar Investimento</div>
-                <div class="scenario-desc">
-                    Não investir e preservar capital para outras oportunidades
-                </div>
-            </div>
-
-            <div class="scenario-score">
-                <div class="score-number low">4.1<span style="font-size:28px;">/10</span></div>
-                <div class="score-label">Pontuação Geral</div>
-                <div class="score-confidence">Confiança da IA: 79%</div>
-            </div>
-
-            <div class="reasoning-preview">
-                <div class="reasoning-title">RESUMO DO RACIOCÍNIO DA IA</div>
-                <div class="reasoning-text">
-                    Preserva capital, porém gera alto custo de oportunidade.
-                    Fundamentais indicam alta probabilidade de sucesso da empresa.
-                    Relação risco/retorno torna a recusa subótima.
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- DECISÃO HUMANA -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-icon">👤</span>
-            <span class="section-title">Sua Decisão</span>
-        </div>
-
-        <div class="human-decision-box">
-            <div class="human-title">AUTORIDADE FINAL: VOCÊ</div>
-            <div class="human-text">
-                A IA recomenda o Cenário A (8.2/10 – 82% de confiança).
-                Ainda assim, a decisão final é sua.
-                Considere fatores não quantificáveis (intuição, estratégia pessoal, portfólio).
-            </div>
-            <span class="pending-badge">⏳ DECISÃO PENDENTE</span>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    /* JS ORIGINAL PRESERVADO */
-</script>
-
+      <div class="actions">
+        <button class="primary">Selecionar Cenário</button>
+        <button class="secondary">Voltar</button>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
