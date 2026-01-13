@@ -1,279 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Comparar Cenários | CID-AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Cenários – Análise de Decisão – CID-AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #8b5cf6;
+        }
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
 
-    :root {
-      --bg-primary: #0a0e1a;
-      --bg-secondary: #111827;
-      --bg-tertiary: #1f2937;
-      --text-primary: #f9fafb;
-      --text-secondary: #d1d5db;
-      --text-muted: #9ca3af;
-      --accent: #3b82f6;
-      --border: #374151;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-    }
+        .container { max-width: 1600px; margin: 0 auto; padding: 40px 32px; }
+        .header { margin-bottom: 32px; }
+        .back-link { color: var(--text-muted); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
+        .compare-header { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        .compare-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .compare-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
 
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
+        .decision-context { background: linear-gradient(135deg, rgba(59,130,246,.1), rgba(139,92,246,.1)); border: 1px solid rgba(59,130,246,.2); border-radius: 10px; padding: 20px; }
+        .context-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+        .context-text { font-size: 13px; color: var(--text-secondary); }
 
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: var(--bg-secondary);
-      border-right: 1px solid var(--border);
-      padding: 24px 0;
-    }
+        .ai-recommendation-bar { background: linear-gradient(135deg, rgba(16,185,129,.1), rgba(59,130,246,.1)); border: 1px solid rgba(16,185,129,.3); border-radius: 12px; padding: 24px; margin-bottom: 24px; display: flex; align-items: center; gap: 24px; }
+        .rec-icon { width: 56px; height: 56px; background: linear-gradient(135deg, var(--success), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+        .rec-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
+        .rec-text { font-size: 16px; font-weight: 600; }
+        .rec-detail { font-size: 13px; color: var(--text-secondary); }
+        .rec-score { font-size: 48px; font-weight: 700; color: var(--success); }
 
-    .logo {
-      padding: 0 24px 24px;
-      border-bottom: 1px solid var(--border);
-    }
+        .comparison-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 32px; }
+        .scenario-column { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: 12px; padding: 28px; }
+        .scenario-column.recommended { border-color: var(--success); }
 
-    .logo h1 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--accent);
-    }
+        .scenario-header { text-align: center; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .scenario-badge { padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+        .scenario-name { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+        .scenario-desc { font-size: 13px; color: var(--text-secondary); }
 
-    .logo span {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-    }
+        .section { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        .section-title { font-size: 18px; font-weight: 600; }
 
-    .nav {
-      padding: 24px 0;
-    }
+        .human-decision-box { background: var(--bg-tertiary); border: 2px dashed var(--border); border-radius: 12px; padding: 28px; text-align: center; }
+        .pending-badge { display: inline-block; padding: 6px 14px; background: rgba(251,191,36,.15); color: var(--warning); border-radius: 6px; font-size: 12px; font-weight: 700; }
 
-    .nav a {
-      display: block;
-      padding: 12px 24px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      background: var(--bg-tertiary);
-      color: var(--accent);
-    }
-
-    /* Main */
-    .main {
-      flex: 1;
-      padding: 32px;
-      max-width: 1200px;
-    }
-
-    .header {
-      margin-bottom: 28px;
-    }
-
-    .header h2 {
-      font-size: 24px;
-      margin-bottom: 6px;
-    }
-
-    .header p {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .section {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    .section h3 {
-      font-size: 16px;
-      margin-bottom: 14px;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .scenario {
-      background: var(--bg-tertiary);
-      border-radius: 10px;
-      padding: 18px;
-      border-left: 4px solid var(--accent);
-    }
-
-    .scenario.recommended {
-      border-left-color: var(--warning);
-      background: rgba(245,158,11,0.08);
-    }
-
-    .scenario h4 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .score {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .score.low { color: var(--danger); }
-    .score.medium { color: var(--warning); }
-    .score.high { color: var(--success); }
-
-    .list {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-top: 10px;
-    }
-
-    .list li {
-      margin-bottom: 6px;
-    }
-
-    .summary {
-      background: var(--bg-tertiary);
-      border-left: 4px solid var(--success);
-      padding: 18px;
-      border-radius: 10px;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .actions button {
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .secondary {
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
-  </style>
+        .btn { padding: 12px 24px; border-radius: 8px; border: none; font-size: 14px; font-weight: 600; cursor: pointer; }
+        .btn-success { background: var(--success); color: #fff; }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-secondary { background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border); }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <h1>CID-AI</h1>
-        <span>INTELIGÊNCIA COGNITIVA</span>
-      </div>
+<div class="container">
+    <div class="header">
+        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar para Detalhe da Decisão</a>
+    </div>
 
-      <nav class="nav">
-        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
-        <a href="11-personal-model.html">Modelo Pessoal</a>
-        <a href="02-new-decision.html">Nova Decisão</a>
-        <a href="03-decision-history.html">Histórico de Decisões</a>
-        <a href="05-cfo-module.html">Módulo CFO</a>
-        <a href="06-clo-module.html">Módulo CLO</a>
-        <a href="07-decision-memory.html">Modelo de Decisão (PDM)</a>
-        <a href="08-compare-scenarios.html" class="active">Comparar Cenários</a>
-      </nav>
-    </aside>
+    <div class="compare-header">
+        <div class="compare-title">Comparação de Cenários – Investimento Série A TechCorp</div>
+        <div class="compare-subtitle">A IA analisa múltiplos cenários lado a lado com pontuação transparente e análise de trade-offs</div>
 
-    <!-- Main -->
-    <main class="main">
-      <div class="header">
-        <h2>Comparação de Cenários</h2>
-        <p>Análise estruturada de alternativas estratégicas antes da decisão final</p>
-      </div>
-
-      <div class="section">
-        <h3>Cenários Avaliados</h3>
-
-        <div class="comparison-grid">
-          <div class="scenario">
-            <h4>Cenário A — Executar Agora</h4>
-            <div class="score medium">6.1</div>
-            <ul class="list">
-              <li>Execução imediata</li>
-              <li>Maior consumo de caixa</li>
-              <li>Risco operacional elevado</li>
-              <li>Aprendizado rápido</li>
-            </ul>
-          </div>
-
-          <div class="scenario recommended">
-            <h4>Cenário B — Execução Gradual (Recomendado)</h4>
-            <div class="score high">7.8</div>
-            <ul class="list">
-              <li>Redução de risco estrutural</li>
-              <li>Alinhado ao Modelo Pessoal</li>
-              <li>Preserva runway</li>
-              <li>Permite ajustes progressivos</li>
-            </ul>
-          </div>
-
-          <div class="scenario">
-            <h4>Cenário C — Postergar Decisão</h4>
-            <div class="score low">5.2</div>
-            <ul class="list">
-              <li>Menor risco imediato</li>
-              <li>Perda de timing estratégico</li>
-              <li>Acúmulo de ineficiências</li>
-              <li>Baixo aprendizado</li>
-            </ul>
-          </div>
+        <div class="decision-context">
+            <div class="context-title">Contexto da Decisão</div>
+            <div class="context-text">
+                Avaliação de investimento Série A de US$ 2,5M na TechCorp (SaaS corporativo, tecnologia industrial).
+                MRR atual: US$ 120k com crescimento mensal de 35%. Decisão necessária em até 2 semanas.
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="section">
-        <h3>Conclusão do Comparativo</h3>
-        <div class="summary">
-          O <strong>Cenário B</strong> apresenta o melhor equilíbrio entre
-          risco, velocidade de aprendizado e alinhamento com o Modelo de Decisão
-          Pessoal (PDM).  
-          <br><br>
-          Ele permite avanço controlado, preserva opções futuras
-          e reduz exposição a erros irreversíveis.
+    <div class="ai-recommendation-bar">
+        <div class="rec-icon">🤖</div>
+        <div>
+            <div class="rec-label">CENÁRIO RECOMENDADO PELA IA</div>
+            <div class="rec-text">Cenário A: Investir US$ 2,5M na Valuation Atual</div>
+            <div class="rec-detail">
+                Baseado em análise multifatorial: força financeira, qualidade do time, validação de mercado e relação risco/retorno favorável
+            </div>
         </div>
-      </div>
+        <div class="rec-score">8.2/10</div>
+    </div>
 
-      <div class="actions">
-        <button class="primary">Selecionar Cenário</button>
-        <button class="secondary">Voltar</button>
-      </div>
-    </main>
-  </div>
+    <div class="comparison-grid">
+        <div class="scenario-column recommended">
+            <div class="scenario-header">
+                <span class="scenario-badge">RECOMENDADO</span>
+                <div class="scenario-name">Cenário A: Investir Agora</div>
+                <div class="scenario-desc">Participar da Série A com valuation pós-money de US$ 18M</div>
+            </div>
+            <p><strong>Pontos fortes:</strong> valuation atrativo, direitos pro-rata, posição estratégica</p>
+        </div>
+
+        <div class="scenario-column">
+            <div class="scenario-header">
+                <span class="scenario-badge">ALTERNATIVO</span>
+                <div class="scenario-name">Cenário B: Aguardar Série B</div>
+                <div class="scenario-desc">Esperar validação adicional e rodada futura</div>
+            </div>
+            <p>Menor risco, porém valuation significativamente maior</p>
+        </div>
+
+        <div class="scenario-column">
+            <div class="scenario-header">
+                <span class="scenario-badge">NÃO RECOMENDADO</span>
+                <div class="scenario-name">Cenário C: Não Investir</div>
+                <div class="scenario-desc">Preservar capital e buscar outras oportunidades</div>
+            </div>
+            <p>Risco de alto custo de oportunidade</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Decisão Final</div>
+        <div class="human-decision-box">
+            <p>
+                A IA recomenda o Cenário A (Pontuação 8.2/10).  
+                A decisão final é exclusivamente sua.
+            </p>
+            <span class="pending-badge">AGUARDANDO SUA DECISÃO</span>
+            <div style="margin-top:20px;">
+                <button class="btn btn-success">✓ Aprovar Cenário A</button>
+                <button class="btn btn-primary">Selecionar Cenário B</button>
+                <button class="btn btn-secondary">Selecionar Cenário C</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
