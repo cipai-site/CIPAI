@@ -1,185 +1,320 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo CLO – Análise Jurídica – CID-AI</title>
+  <meta charset="UTF-8" />
+  <title>Módulo CLO — Análise Jurídica | CID-AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        /* TODO O CSS ORIGINAL FOI PRESERVADO SEM ALTERAÇÕES */
-    </style>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1f2937;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --border: #374151;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .logo {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .logo span {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      padding: 24px 0;
+    }
+
+    .nav a {
+      display: block;
+      padding: 12px 24px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: var(--bg-tertiary);
+      color: var(--accent);
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 32px;
+      max-width: 1100px;
+    }
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .section {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .risk-card {
+      background: var(--bg-tertiary);
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 4px solid var(--warning);
+    }
+
+    .risk-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .risk-low { border-left-color: var(--success); }
+    .risk-medium { border-left-color: var(--warning); }
+    .risk-high { border-left-color: var(--danger); }
+
+    .analysis-box {
+      background: var(--bg-tertiary);
+      border-left: 4px solid var(--accent);
+      padding: 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .table th,
+    .table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .table th {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .actions button {
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>CID-AI</h1>
+        <span>INTELIGÊNCIA COGNITIVA</span>
+      </div>
 
-    <div class="header">
-        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel Cognitivo</a>
-    </div>
+      <nav class="nav">
+        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
+        <a href="11-personal-model.html">Modelo Pessoal</a>
+        <a href="02-new-decision.html">Nova Decisão</a>
+        <a href="03-decision-history.html">Histórico de Decisões</a>
+        <a href="05-cfo-module.html">Módulo CFO</a>
+        <a href="06-clo-module.html" class="active">Módulo CLO</a>
+      </nav>
+    </aside>
 
-    <div class="module-header">
-        <div class="module-icon">⚖️</div>
-        <div class="module-title">Módulo CLO – Inteligência Jurídica</div>
-        <div class="module-subtitle">
-            Análise jurídica com IA, revisão contratual, avaliação de riscos e comparação com precedentes
+    <!-- Main -->
+    <main class="main">
+      <div class="header">
+        <h2>Módulo CLO — Análise Jurídica</h2>
+        <p>Avaliação de riscos legais, contratos e implicações de governança</p>
+      </div>
+
+      <div class="section">
+        <h3>Escopo da Análise Jurídica</h3>
+        <div class="analysis-box">
+          Esta análise considera a estrutura contratual,
+          riscos de governança, clareza de direitos e obrigações,
+          bem como impactos futuros em rodadas de investimento,
+          contratação executiva e diligência legal.
         </div>
+      </div>
 
-        <div class="confidence-display">
-            <div class="confidence-big">74%</div>
-            <div class="confidence-details">
-                <div class="confidence-label">Confiança Geral da Análise Jurídica</div>
-                <div class="confidence-text">
-                    Baseado em 89 cláusulas contratuais • 5 etapas de raciocínio • 7 fatores de risco identificados
-                </div>
-                <div class="memory-indicator">
-                    🧠 Comparado com 18 acordos de parceria semelhantes (confiança média: 71%)
-                </div>
-            </div>
+      <div class="section">
+        <h3>Principais Riscos Jurídicos Identificados</h3>
+        <div class="risk-grid">
+          <div class="risk-card risk-medium">
+            <strong>Ambiguidade Contratual</strong>
+            Uso de instrumentos não precificados pode gerar interpretações divergentes
+            sobre participação societária futura.
+          </div>
+
+          <div class="risk-card risk-high">
+            <strong>Complexidade em Rodadas Futuras</strong>
+            Estruturas mal definidas aumentam risco de conflitos em Series B
+            e elevam custo de due diligence.
+          </div>
+
+          <div class="risk-card risk-medium">
+            <strong>Governança Tardia</strong>
+            Ausência de regras claras de controle e decisão
+            pode gerar desalinhamento entre sócios e investidores.
+          </div>
+
+          <div class="risk-card risk-low">
+            <strong>Risco Regulatório</strong>
+            Não foram identificados riscos regulatórios relevantes
+            no estágio atual da empresa.
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- AVALIAÇÃO DE RISCOS LEGAIS -->
-    <div class="risk-grid">
+      <div class="section">
+        <h3>Comparação de Estruturas Jurídicas</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Estrutura</th>
+              <th>Clareza Legal</th>
+              <th>Custo Jurídico</th>
+              <th>Risco Futuro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SAFE / Instrumentos Conversíveis</td>
+              <td>Média</td>
+              <td>Baixo (inicial)</td>
+              <td>Alto</td>
+            </tr>
+            <tr>
+              <td>Rodada Precificada</td>
+              <td>Alta</td>
+              <td>Médio</td>
+              <td>Baixo</td>
+            </tr>
+            <tr>
+              <td>Contratação Fracionada</td>
+              <td>Alta</td>
+              <td>Baixo</td>
+              <td>Baixo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="risk-card">
-            <span class="risk-level risk-medium">RISCO MÉDIO</span>
-            <div class="risk-title">Exposição a Responsabilidade</div>
-            <div class="risk-desc">
-                Cláusulas de indenização exigem negociação para equilibrar a proteção entre as partes
-            </div>
-            <div class="risk-confidence">📊 Confiança: 78% | 3 cláusulas críticas identificadas</div>
+      <div class="section">
+        <h3>Análise do CLO</h3>
+        <div class="analysis-box">
+          Do ponto de vista jurídico, estruturas claras e precificadas
+          reduzem significativamente riscos futuros,
+          facilitam governança e diminuem fricções em eventos de liquidez,
+          auditorias e novas rodadas.<br><br>
+
+          A contratação fracionada apresenta menor risco legal,
+          pois evita obrigações societárias prematuras
+          e preserva flexibilidade contratual.
         </div>
+      </div>
 
-        <div class="risk-card">
-            <span class="risk-level risk-high">RISCO ALTO</span>
-            <div class="risk-title">Lacunas de Proteção de Propriedade Intelectual</div>
-            <div class="risk-desc">
-                Cláusulas de titularidade de PI em desenvolvimentos conjuntos são ambíguas
-            </div>
-            <div class="risk-confidence">📊 Confiança: 82% | 2 cláusulas ambíguas encontradas</div>
+      <div class="section">
+        <h3>Recomendação do CLO</h3>
+        <div class="analysis-box">
+          Recomenda-se evitar complexidade jurídica antecipada.
+          Priorizar contratos claros, reversíveis e bem delimitados,
+          mantendo o cap table limpo e a governança simples
+          até que a empresa atinja maior maturidade financeira.
         </div>
+      </div>
 
-        <div class="risk-card">
-            <span class="risk-level risk-low">RISCO BAIXO</span>
-            <div class="risk-title">Termos de Rescisão</div>
-            <div class="risk-desc">
-                Cláusulas de saída favoráveis, com aviso prévio de 90 dias e direitos de transição claros
-            </div>
-            <div class="risk-confidence">📊 Confiança: 88% | Padrão de mercado</div>
-        </div>
-
-        <div class="risk-card">
-            <span class="risk-level risk-medium">RISCO MÉDIO</span>
-            <div class="risk-title">Conformidade Regulatória</div>
-            <div class="risk-desc">
-                Obrigações de privacidade atendem às normas atuais, mas exigem monitoramento futuro
-            </div>
-            <div class="risk-confidence">📊 Confiança: 72% | Monitoramento necessário</div>
-        </div>
-
-    </div>
-
-    <!-- CADEIA DE RACIOCÍNIO JURÍDICO -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-icon">🔗</span>
-            <span class="section-title">Cadeia de Raciocínio Jurídico</span>
-        </div>
-
-        <div class="memory-note">
-            <strong>🧠 Contexto de Aprendizado:</strong>
-            Esta análise se baseia em padrões de 18 contratos internacionais semelhantes.
-            Indicadores críticos: ambiguidade de PI (67% de correlação com litígios),
-            indenização desequilibrada (42%) e cláusulas de rescisão fracas (38%).
-        </div>
-
-        <div class="reasoning-chain">
-
-            <div class="reasoning-step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <div class="step-text"><strong>Análise Estrutural:</strong> 89 cláusulas analisadas em 12 seções</div>
-                    <div class="step-confidence">Confiança: 86%</div>
-                </div>
-            </div>
-
-            <div class="reasoning-step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <div class="step-text"><strong>Responsabilidade Civil:</strong> Indenização desequilibrada (70/30)</div>
-                    <div class="step-confidence">Confiança: 78%</div>
-                </div>
-            </div>
-
-            <div class="reasoning-step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <div class="step-text"><strong>Propriedade Intelectual:</strong> Lacunas críticas em desenvolvimento conjunto</div>
-                    <div class="step-confidence">Confiança: 82%</div>
-                </div>
-            </div>
-
-            <div class="reasoning-step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <div class="step-text"><strong>Rescisão:</strong> Termos favoráveis e alinhados ao mercado</div>
-                    <div class="step-confidence">Confiança: 88%</div>
-                </div>
-            </div>
-
-            <div class="reasoning-step">
-                <div class="step-number">5</div>
-                <div class="step-content">
-                    <div class="step-text"><strong>Conformidade:</strong> GDPR/LGPD atendidos, com risco regulatório futuro</div>
-                    <div class="step-confidence">Confiança: 72%</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- RECOMENDAÇÃO -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-icon">🤖</span>
-            <span class="section-title">Recomendação Jurídica</span>
-        </div>
-
-        <div class="ai-recommendation">
-            <div class="rec-header">
-                <span>🤖</span>
-                <span class="rec-title">RECOMENDAÇÃO JURÍDICA DA IA</span>
-            </div>
-            <div class="rec-content">
-                <strong>Prosseguir com o contrato APÓS renegociar 2 cláusulas críticas.</strong>
-                <p style="margin-top:12px;">
-                    Os principais pontos são a definição clara de titularidade de PI em desenvolvimentos conjuntos
-                    e o equilíbrio das cláusulas de indenização.
-                </p>
-            </div>
-            <span class="rec-score">Nota: 7,1 / 10</span>
-        </div>
-
-        <div class="human-decision">
-            <div class="rec-header">
-                <span>👤</span>
-                <span class="rec-title">SUA DECISÃO JURÍDICA</span>
-            </div>
-            <div class="rec-content">
-                <strong>Aguardando sua revisão</strong>
-                <p style="margin-top:8px;font-size:13px;">
-                    A IA recomenda, mas a decisão final é exclusivamente sua.
-                </p>
-                <span class="pending-badge">⏳ REVISÃO JURÍDICA NECESSÁRIA</span>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    /* JS ORIGINAL PRESERVADO */
-</script>
-
+      <div class="actions">
+        <button class="primary">Aplicar Análise Jurídica</button>
+        <button class="secondary">Voltar às Decisões</button>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
