@@ -1,319 +1,318 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Módulo CFO — Análise Financeira | CID-AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo CFO — Análise Financeira — CID-AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #8b5cf6;
+        }
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
 
-    :root {
-      --bg-primary: #0a0e1a;
-      --bg-secondary: #111827;
-      --bg-tertiary: #1f2937;
-      --text-primary: #f9fafb;
-      --text-secondary: #d1d5db;
-      --text-muted: #9ca3af;
-      --accent: #3b82f6;
-      --border: #374151;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-    }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 32px; }
+        .header { margin-bottom: 32px; }
+        .back-link { color: var(--text-muted); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
+        .module-header {
+            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(16,185,129,0.1));
+            border: 1px solid rgba(59,130,246,0.3);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
 
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
+        .module-icon { font-size: 48px; margin-bottom: 16px; }
+        .module-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .module-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
 
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: var(--bg-secondary);
-      border-right: 1px solid var(--border);
-      padding: 24px 0;
-    }
+        .confidence-display {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+        }
 
-    .logo {
-      padding: 0 24px 24px;
-      border-bottom: 1px solid var(--border);
-    }
+        .confidence-big { font-size: 42px; font-weight: 700; color: var(--success); }
+        .confidence-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
+        .confidence-text { font-size: 13px; color: var(--text-secondary); }
+        .memory-indicator { font-size: 12px; color: var(--info); }
 
-    .logo h1 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--accent);
-    }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
 
-    .logo span {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-    }
+        .metric-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
 
-    .nav {
-      padding: 24px 0;
-    }
+        .metric-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; }
+        .metric-value { font-size: 32px; font-weight: 700; }
+        .metric-detail { font-size: 13px; color: var(--text-secondary); }
+        .metric-confidence { font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 8px; padding-top: 8px; }
 
-    .nav a {
-      display: block;
-      padding: 12px 24px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-    }
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
 
-    .nav a:hover,
-    .nav a.active {
-      background: var(--bg-tertiary);
-      color: var(--accent);
-    }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+        }
 
-    /* Main */
-    .main {
-      flex: 1;
-      padding: 32px;
-      max-width: 1100px;
-    }
+        .section-title { font-size: 18px; font-weight: 600; }
 
-    .header {
-      margin-bottom: 28px;
-    }
+        .memory-note {
+            background: rgba(139,92,246,0.1);
+            border-left: 3px solid var(--info);
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
 
-    .header h2 {
-      font-size: 24px;
-      margin-bottom: 6px;
-    }
+        .reasoning-step {
+            background: var(--bg-tertiary);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 16px;
+        }
 
-    .header p {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 50%;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .section {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
+        .ai-recommendation {
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.05));
+        }
 
-    .section h3 {
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
+        .rec-score {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            margin-top: 12px;
+        }
 
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-    .kpi {
-      background: var(--bg-tertiary);
-      border-radius: 10px;
-      padding: 16px;
-    }
+        .financial-table th,
+        .financial-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
 
-    .kpi span {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+        .financial-table th {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
 
-    .kpi strong {
-      display: block;
-      font-size: 22px;
-      margin-top: 6px;
-    }
-
-    .warning {
-      color: var(--warning);
-    }
-
-    .success {
-      color: var(--success);
-    }
-
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-
-    .table th,
-    .table td {
-      padding: 10px;
-      border-bottom: 1px solid var(--border);
-      text-align: left;
-    }
-
-    .table th {
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .analysis-box {
-      background: var(--bg-tertiary);
-      border-left: 4px solid var(--accent);
-      padding: 18px;
-      border-radius: 8px;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .actions button {
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .secondary {
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
-  </style>
+        .table-highlight { font-weight: 700; color: var(--text-primary); }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <h1>CID-AI</h1>
-        <span>INTELIGÊNCIA COGNITIVA</span>
-      </div>
+<div class="container">
 
-      <nav class="nav">
-        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
-        <a href="11-personal-model.html">Modelo Pessoal</a>
-        <a href="02-new-decision.html">Nova Decisão</a>
-        <a href="03-decision-history.html">Histórico de Decisões</a>
-        <a href="05-cfo-module.html" class="active">Módulo CFO</a>
-      </nav>
-    </aside>
+    <div class="header">
+        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
+    </div>
 
-    <!-- Main -->
-    <main class="main">
-      <div class="header">
-        <h2>Módulo CFO — Análise Financeira</h2>
-        <p>Visão estruturada de caixa, risco e sustentabilidade financeira</p>
-      </div>
-
-      <div class="section">
-        <h3>Indicadores-Chave (KPIs)</h3>
-        <div class="kpi-grid">
-          <div class="kpi">
-            <span>Burn mensal</span>
-            <strong>US$ 120.000</strong>
-          </div>
-          <div class="kpi">
-            <span>Runway atual</span>
-            <strong class="success">27,7 meses</strong>
-          </div>
-          <div class="kpi">
-            <span>Receita anual (ARR)</span>
-            <strong>US$ 400.000</strong>
-          </div>
-          <div class="kpi">
-            <span>Ponto de alerta</span>
-            <strong class="warning">18 meses</strong>
-          </div>
+    <div class="module-header">
+        <div class="module-icon">💰</div>
+        <div class="module-title">Módulo CFO — Inteligência Financeira</div>
+        <div class="module-subtitle">
+            Análise financeira com IA, cadeia de raciocínio, pontuação de confiança e análise de incerteza
         </div>
-      </div>
 
-      <div class="section">
-        <h3>Simulação de Impacto Financeiro</h3>
-        <table class="table">
-          <thead>
+        <div class="confidence-display">
+            <div class="confidence-big">84%</div>
+            <div>
+                <div class="confidence-label">Confiança Geral da Análise</div>
+                <div class="confidence-text">
+                    Baseado em 8 métricas financeiras • 6 etapas de raciocínio • 4 pressupostos validados
+                </div>
+                <div class="memory-indicator">
+                    🧠 Comparado com 23 análises financeiras similares (confiança média: 81%)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-label">Projeção de Receita</div>
+            <div class="metric-value">US$ 4,2M</div>
+            <div class="metric-detail">ARR estimado no Ano 1</div>
+            <div class="metric-confidence">Confiança: 82% • Faixa: US$ 3,8M – 4,6M</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-label">LTV / CAC</div>
+            <div class="metric-value">3,8x</div>
+            <div class="metric-detail">Economia unitária saudável</div>
+            <div class="metric-confidence">Confiança: 88% • Benchmark: ≥ 3,0x</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-label">Payback</div>
+            <div class="metric-value">8 meses</div>
+            <div class="metric-detail">Retorno do custo de aquisição</div>
+            <div class="metric-confidence">Confiança: 79% • Meta: &lt; 12 meses</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-label">Burn Mensal</div>
+            <div class="metric-value">US$ 185k</div>
+            <div class="metric-detail">Consumo mensal de caixa</div>
+            <div class="metric-confidence">Confiança: 91% • Runway: 14 meses</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-label">Margem Bruta</div>
+            <div class="metric-value">72%</div>
+            <div class="metric-detail">Margem SaaS forte</div>
+            <div class="metric-confidence">Confiança: 86% • Setor: 70–80%</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-label">ROI Projetado (5 anos)</div>
+            <div class="metric-value">4,2x</div>
+            <div class="metric-detail">Múltiplo de retorno esperado</div>
+            <div class="metric-confidence">Confiança: 68% • Alta incerteza</div>
+        </div>
+    </div>
+
+    <!-- Recommendation -->
+    <div class="section">
+        <div class="section-header">
+            <span>🤖</span>
+            <span class="section-title">Recomendação Financeira da IA</span>
+        </div>
+
+        <div class="ai-recommendation">
+            <strong>Prosseguir com o investimento no valuation atual.</strong>
+            <p style="margin-top:12px;">
+                A análise indica economia unitária sólida (LTV/CAC 3,8x),
+                margens sustentáveis (72%), caixa adequado (14 meses de runway)
+                e valuation justo (~13x ARR).
+            </p>
+            <p style="margin-top:8px; font-size:13px; color:var(--text-muted);">
+                Principal risco: timing de mercado e dinâmica competitiva.
+            </p>
+            <span class="rec-score">Nota: 8,4 / 10</span>
+        </div>
+    </div>
+
+    <!-- Projections -->
+    <div class="section">
+        <div class="section-header">
+            <span>📊</span>
+            <span class="section-title">Projeções Financeiras (5 anos)</span>
+        </div>
+
+        <table class="financial-table">
+            <thead>
             <tr>
-              <th>Cenário</th>
-              <th>Burn Mensal</th>
-              <th>Runway</th>
-              <th>Risco</th>
+                <th>Métrica</th>
+                <th>Ano 1</th>
+                <th>Ano 2</th>
+                <th>Ano 3</th>
+                <th>Ano 4</th>
+                <th>Ano 5</th>
+                <th>Confiança</th>
             </tr>
-          </thead>
-          <tbody>
+            </thead>
+            <tbody>
             <tr>
-              <td>Status atual</td>
-              <td>US$ 120k</td>
-              <td>27,7 meses</td>
-              <td>Baixo</td>
+                <td class="table-highlight">ARR</td>
+                <td>US$ 4,2M</td>
+                <td>US$ 9,8M</td>
+                <td>US$ 18,5M</td>
+                <td>US$ 28,2M</td>
+                <td>US$ 35,4M</td>
+                <td>76%</td>
             </tr>
             <tr>
-              <td>CTO fracionado</td>
-              <td>US$ 128k</td>
-              <td>25,9 meses</td>
-              <td>Médio-baixo</td>
+                <td class="table-highlight">Margem Bruta</td>
+                <td>72%</td>
+                <td>74%</td>
+                <td>76%</td>
+                <td>77%</td>
+                <td>78%</td>
+                <td>82%</td>
             </tr>
             <tr>
-              <td>CTO full-time</td>
-              <td>US$ 135k</td>
-              <td>24,7 meses</td>
-              <td>Médio</td>
+                <td class="table-highlight">Burn Líquido</td>
+                <td>-US$ 2,2M</td>
+                <td>-US$ 3,1M</td>
+                <td>-US$ 1,2M</td>
+                <td>US$ 2,4M</td>
+                <td>US$ 6,8M</td>
+                <td>68%</td>
             </tr>
-          </tbody>
+            </tbody>
         </table>
-      </div>
+    </div>
 
-      <div class="section">
-        <h3>Análise do CFO</h3>
-        <div class="analysis-box">
-          A contratação imediata de um CTO full-time reduz o runway em aproximadamente
-          <strong>3 meses</strong>. Embora ainda acima do limite mínimo definido,
-          a margem de segurança financeira diminui.<br><br>
-
-          A alternativa de CTO fracionado preserva capital,
-          reduz risco de contratação precoce e mantém flexibilidade
-          para reavaliação conforme a evolução da receita.
-        </div>
-      </div>
-
-      <div class="section">
-        <h3>Riscos Financeiros Identificados</h3>
-        <ul>
-          <li>Pressão antecipada sobre o caixa antes da validação de receita</li>
-          <li>Custos fixos elevados em fase de incerteza de crescimento</li>
-          <li>Menor capacidade de absorver choques externos</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h3>Recomendação do CFO</h3>
-        <div class="analysis-box">
-          Do ponto de vista financeiro, a recomendação é
-          <strong>postergar a contratação full-time</strong>
-          até que a receita atinja um patamar mais previsível
-          ou que o impacto técnico seja validado via modelo fracionado.
-        </div>
-      </div>
-
-      <div class="actions">
-        <button class="primary">Aplicar Análise CFO</button>
-        <button class="secondary">Voltar às Decisões</button>
-      </div>
-    </main>
-  </div>
+</div>
 </body>
 </html>
