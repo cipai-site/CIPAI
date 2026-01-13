@@ -3,45 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Decisão: Estratégia de Go-to-Market – CID-AI</title>
-
+    <title>Análise de Decisão: Estratégia Go-to-Market — CID-AI</title>
     <style>
-        /* TODO O CSS ORIGINAL FOI PRESERVADO SEM QUALQUER ALTERAÇÃO */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg-primary:#0a0e1a;
+            --bg-secondary:#111827;
+            --bg-tertiary:#1f2937;
+            --bg-elevated:#374151;
+            --text-primary:#f9fafb;
+            --text-secondary:#d1d5db;
+            --text-muted:#9ca3af;
+            --accent:#3b82f6;
+            --border:#374155;
+            --warning:#f59e0b;
+            --danger:#ef4444;
+            --info:#8b5cf6;
+        }
+        body {
+            font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+        }
+        .container{display:flex;min-height:100vh;}
+
+        /* Sidebar */
+        .sidebar{
+            width:280px;background:var(--bg-secondary);
+            border-right:1px solid var(--border);
+            position:fixed;left:0;top:0;height:100vh;
+            display:flex;flex-direction:column;
+        }
+        .logo{padding:28px 24px;border-bottom:1px solid var(--border);}
+        .logo h1{
+            font-size:26px;font-weight:700;
+            background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+        }
+        .logo .tagline{
+            font-size:11px;color:var(--text-muted);
+            margin-top:6px;text-transform:uppercase;letter-spacing:.08em;
+        }
+        .nav{flex:1;padding:24px 0;overflow-y:auto;}
+        .nav-section{margin-bottom:28px;}
+        .nav-section-title{
+            font-size:11px;font-weight:600;color:var(--text-muted);
+            padding:0 24px;margin-bottom:12px;
+            text-transform:uppercase;letter-spacing:.08em;
+        }
+        .nav-item{
+            padding:12px 24px;display:flex;align-items:center;gap:14px;
+            font-size:14px;font-weight:500;text-decoration:none;
+            color:var(--text-secondary);
+        }
+        .nav-item:hover{background:var(--bg-tertiary);color:var(--text-primary);}
+        .nav-item.active{
+            background:var(--bg-tertiary);color:var(--accent);position:relative;
+        }
+        .nav-item.active::before{
+            content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+            background:var(--accent);
+        }
+        .nav-icon{font-size:18px;width:20px;text-align:center;}
+
+        /* Main */
+        .main{flex:1;margin-left:280px;}
+        .header{
+            background:var(--bg-secondary);
+            border-bottom:1px solid var(--border);
+            padding:20px 36px;
+            display:flex;justify-content:space-between;align-items:center;
+            position:sticky;top:0;z-index:10;
+        }
+        .header-title{font-size:20px;font-weight:600;}
+        .header-subtitle{font-size:13px;color:var(--text-muted);}
+        .content{padding:36px;max-width:1600px;}
+
+        .decision-header{
+            background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(139,92,246,.1));
+            border:1px solid rgba(59,130,246,.2);
+            border-radius:12px;padding:32px;margin-bottom:32px;
+        }
+        .decision-title-row{
+            display:flex;justify-content:space-between;align-items:flex-start;
+            margin-bottom:20px;
+        }
+        .decision-main-title{font-size:28px;font-weight:700;margin-bottom:8px;}
+        .decision-meta{
+            font-size:13px;color:var(--text-muted);
+            display:flex;gap:16px;flex-wrap:wrap;
+        }
+        .confidence-score{
+            display:flex;gap:12px;
+            background:var(--bg-secondary);
+            padding:16px 24px;border-radius:12px;
+        }
+        .confidence-number{font-size:36px;font-weight:700;color:var(--warning);}
+
+        .section{
+            background:var(--bg-secondary);
+            border:1px solid var(--border);
+            border-radius:12px;padding:32px;margin-bottom:24px;
+        }
+        .section-title{
+            font-size:16px;font-weight:600;color:var(--text-muted);
+            text-transform:uppercase;letter-spacing:.08em;
+            margin-bottom:20px;display:flex;gap:12px;align-items:center;
+        }
+
+        .reasoning-step{
+            background:var(--bg-tertiary);
+            border-left:3px solid var(--accent);
+            border-radius:8px;padding:20px;margin-bottom:12px;
+            display:flex;gap:16px;
+        }
+        .step-number{
+            width:32px;height:32px;border-radius:50%;
+            background:var(--accent);
+            display:flex;align-items:center;justify-content:center;
+            font-weight:700;
+        }
+        .step-text{font-size:15px;font-weight:600;margin-bottom:6px;}
+        .step-detail{font-size:13px;color:var(--text-muted);}
+
+        .tradeoff-grid{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:20px;
+        }
+        .tradeoff-card{
+            background:var(--bg-tertiary);
+            border-radius:12px;padding:24px;border:2px solid transparent;
+        }
+        .tradeoff-card.recommended{
+            border-color:var(--warning);
+            background:rgba(245,158,11,.05);
+        }
+        .tradeoff-title{font-size:16px;font-weight:600;margin-bottom:12px;}
+        .tradeoff-list{font-size:13px;color:var(--text-secondary);}
+
+        .btn{
+            padding:12px 24px;border-radius:8px;
+            border:none;font-weight:600;cursor:pointer;
+        }
+        .btn-warning{background:var(--warning);}
+        .btn-secondary{
+            background:var(--bg-tertiary);
+            color:var(--text-primary);
+            border:1px solid var(--border);
+        }
     </style>
 </head>
-
 <body>
 <div class="container">
 
-<!-- SIDEBAR -->
 <aside class="sidebar">
     <div class="logo">
         <h1>CID-AI</h1>
-        <div class="tagline">Inteligência Cognitiva</div>
+        <div class="tagline">Cognitive Intelligence</div>
     </div>
-
     <nav class="nav">
         <div class="nav-section">
-            <div class="nav-section-title">Essencial</div>
+            <div class="nav-section-title">Core</div>
             <a href="01-cognitive-dashboard.html" class="nav-item"><span class="nav-icon">🧠</span>Painel Cognitivo</a>
             <a href="11-personal-model.html" class="nav-item"><span class="nav-icon">🎯</span>Modelo Pessoal</a>
             <a href="02-new-decision.html" class="nav-item"><span class="nav-icon">➕</span>Nova Decisão</a>
             <a href="03-decision-history.html" class="nav-item"><span class="nav-icon">📊</span>Histórico de Decisões</a>
             <a href="08-compare-scenarios.html" class="nav-item"><span class="nav-icon">🔄</span>Comparar Cenários</a>
         </div>
-
         <div class="nav-section">
-            <div class="nav-section-title">Módulos de Análise</div>
+            <div class="nav-section-title">Módulos</div>
             <a href="05-cfo-module.html" class="nav-item"><span class="nav-icon">💰</span>Módulo CFO</a>
             <a href="06-clo-module.html" class="nav-item"><span class="nav-icon">⚖️</span>Módulo CLO</a>
         </div>
-
-        <div class="nav-section">
-            <div class="nav-section-title">Camada de Inteligência</div>
-            <a href="07-decision-memory.html" class="nav-item"><span class="nav-icon">🧩</span>Modelo de Decisão Pessoal (PDM)</a>
-            <a href="09-pattern-analysis.html" class="nav-item"><span class="nav-icon">📈</span>Análise de Padrões</a>
-        </div>
-
         <div class="nav-section">
             <div class="nav-section-title">Sistema</div>
             <a href="10-user-profile.html" class="nav-item"><span class="nav-icon">👤</span>Configurações</a>
@@ -49,127 +183,103 @@
     </nav>
 </aside>
 
-<!-- CONTEÚDO PRINCIPAL -->
 <main class="main">
-
 <header class="header">
     <div>
-        <div class="header-title">Análise de Decisão: Estratégia de Go-to-Market</div>
-        <div class="header-subtitle">Cenário realista de fundador: PLG vs Vendas Enterprise</div>
-    </div>
-    <div>
-        <button class="btn btn-secondary" onclick="window.location.href='03-decision-history.html'">← Voltar ao Histórico</button>
+        <div class="header-title">Decisão: Estratégia Go-to-Market</div>
+        <div class="header-subtitle">PLG vs Vendas Enterprise</div>
     </div>
 </header>
 
 <div class="content">
 
-<!-- CABEÇALHO DA DECISÃO -->
 <div class="decision-header">
     <div class="decision-title-row">
         <div>
-            <div class="decision-main-title">PLG (Product-Led Growth) vs Vendas Enterprise?</div>
+            <div class="decision-main-title">PLG (Product-Led Growth) ou Vendas Enterprise?</div>
             <div class="decision-meta">
-                <span>🚀 Decisão de Estratégia GTM</span> •
-                <span>Módulos CFO + CAO</span> •
-                <span>Criada há 1 semana</span> •
+                <span>🚀 Estratégia GTM</span><span>•</span>
+                <span>CFO + CAO</span><span>•</span>
                 <span>Meta: US$ 2M ARR em 12 meses</span>
             </div>
         </div>
-
         <div class="confidence-score">
             <div class="confidence-number">72%</div>
-            <div>
-                <div class="confidence-label-small">Confiança da IA</div>
-                <div style="font-size: 10px; color: var(--text-muted);">Média-Alta</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="personal-model-flag">
-        <div class="pm-icon">🎯</div>
-        <div class="pm-content">
-            <div class="pm-title">ALERTA DO MODELO PESSOAL</div>
-            <div class="pm-text">
-                Seu objetivo de “US$ 2M ARR em 12 meses” e a restrição
-                “Foco em um único produto até US$ 5M ARR” orientam esta decisão.
-                A IA equilibra velocidade de mercado (PLG) com qualidade de receita
-                (Enterprise), considerando sua tolerância moderada a risco em GTM.
-            </div>
         </div>
     </div>
 </div>
 
-<!-- CADEIA DE RACIOCÍNIO -->
 <div class="section">
     <div class="section-title">🔗 Cadeia de Raciocínio da IA</div>
 
-    <div class="reasoning-chain">
-
-        <div class="reasoning-step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-                <div class="step-text">Capacidade atual do time analisada</div>
-                <div class="step-detail">
-                    Time de 15 pessoas (9 engenheiros), sem liderança técnica sênior.
-                    CTO fundador divide tempo entre produto e fundraising.
-                    Velocidade de engenharia caiu 12% QoQ.
-                </div>
+    <div class="reasoning-step">
+        <div class="step-number">1</div>
+        <div>
+            <div class="step-text">Análise do estágio atual</div>
+            <div class="step-detail">
+                Produto único, equipe enxuta e ARR inicial favorecem rapidez
+                de aprendizado e iteração.
             </div>
         </div>
+    </div>
 
-        <div class="reasoning-step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-                <div class="step-text">Impacto financeiro calculado</div>
-                <div class="step-detail">
-                    Contratação de CTO full-time: US$ 180K/ano + 1,2% equity.
-                    Runway reduz de 27,7 meses para 24,7 meses.
-                </div>
+    <div class="reasoning-step">
+        <div class="step-number">2</div>
+        <div>
+            <div class="step-text">Comparação de velocidade vs ticket médio</div>
+            <div class="step-detail">
+                PLG acelera aquisição e feedback.
+                Enterprise gera contratos maiores, porém com ciclos longos.
             </div>
         </div>
+    </div>
 
-        <div class="reasoning-step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-                <div class="step-text">Aceleração de receita avaliada</div>
-                <div class="step-detail">
-                    Gargalo atual é velocidade de produto.
-                    Liderança técnica sênior pode acelerar PMF
-                    e gerar US$ 300K–500K ARR adicional.
-                </div>
+    <div class="reasoning-step">
+        <div class="step-number">3</div>
+        <div>
+            <div class="step-text">Alinhamento com metas pessoais</div>
+            <div class="step-detail">
+                Restrição ativa: foco em um produto até US$ 5M ARR.
+                PLG reduz dispersão operacional.
             </div>
         </div>
-
-        <div class="reasoning-step">
-            <div class="step-number">4</div>
-            <div class="step-content">
-                <div class="step-text">Alternativa analisada: CTO fracionário</div>
-                <div class="step-detail">
-                    Opção fracionária reduz risco, preserva runway
-                    e permite teste antes de compromisso total.
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 
-<!-- RECOMENDAÇÃO -->
-<div class="section" style="background: rgba(245,158,11,0.1); border-color: var(--warning);">
-    <div class="section-title" style="color: var(--warning);">🤖 Recomendação da IA</div>
+<div class="section">
+    <div class="section-title">⚖️ Trade-offs</div>
 
-    <p><strong>Caminho Recomendado:</strong> CTO Fracionário → Conversão para Full-Time em US$ 800K ARR</p>
+    <div class="tradeoff-grid">
+        <div class="tradeoff-card recommended">
+            <div class="tradeoff-title">PLG (Recomendado)</div>
+            <div class="tradeoff-list">
+                + Ciclo rápido de aprendizado<br>
+                + Menor custo comercial inicial<br>
+                + Escala orgânica
+            </div>
+        </div>
 
+        <div class="tradeoff-card">
+            <div class="tradeoff-title">Vendas Enterprise</div>
+            <div class="tradeoff-list">
+                + Ticket médio alto<br>
+                − Ciclo longo<br>
+                − Exige estrutura comercial antecipada
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section" style="border-color:var(--warning);background:rgba(245,158,11,.1);">
+    <div class="section-title">🤖 Recomendação da IA</div>
     <p>
-        Esta abordagem equilibra liderança técnica imediata com prudência financeira,
-        respeitando suas restrições de runway e tolerância a risco humano.
+        Priorizar <strong>PLG</strong> neste estágio maximiza aprendizado,
+        velocidade e eficiência de capital,
+        mantendo coerência com as restrições estratégicas atuais.
     </p>
-
-    <div class="action-buttons">
-        <button class="btn btn-warning">✅ Aceitar Recomendação</button>
-        <button class="btn btn-secondary">🔄 Solicitar Nova Análise</button>
-        <button class="btn btn-secondary">💬 Discutir com o Time</button>
+    <div style="margin-top:20px;">
+        <button class="btn btn-warning">Aceitar recomendação</button>
+        <button class="btn btn-secondary">Solicitar alternativa</button>
     </div>
 </div>
 
@@ -178,13 +288,12 @@
 </div>
 
 <script>
-const currentPage = '14-decision-gtm-strategy.html';
-document.querySelectorAll('.nav-item').forEach(item => {
-    if (item.getAttribute('href') === currentPage) {
-        item.classList.add('active');
-    }
-});
+(function(){
+    const currentPage='14-decision-gtm-strategy.html';
+    document.querySelectorAll('.nav-item').forEach(i=>{
+        if(i.getAttribute('href')===currentPage){i.classList.add('active');}
+    });
+})();
 </script>
-
 </body>
 </html>
