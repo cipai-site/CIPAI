@@ -1,173 +1,746 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CID-AI - Cognitive Intelligence for Decision-Making</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CID-AI - Cognitive Intelligence for Decision-Making</title>
+    <meta name="description" content="AI-first decision intelligence system with transparent reasoning, confidence scoring, and longitudinal personal context. Working interactive prototype.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
 
-    :root {
-      --bg-primary:#0a0e1a; --bg-secondary:#111827; --bg-tertiary:#1f2937;
-      --text-primary:#f9fafb; --text-secondary:#d1d5db; --text-muted:#9ca3af;
-      --accent:#3b82f6; --border:#374155;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    body {
-      font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
-      background:var(--bg-primary); color:var(--text-primary); line-height:1.6;
-    }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+        }
 
-    nav {
-      position:fixed; top:0; left:0; right:0;
-      background:rgba(10,14,26,.95); border-bottom:1px solid var(--border);
-      padding:1.5rem 2rem; z-index:1000;
-    }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .nav-container {
-      max-width:1400px; margin:0 auto;
-      display:flex; justify-content:space-between; align-items:center;
-    }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .logo {
-      font-size:24px; font-weight:700;
-      background:linear-gradient(135deg,#3b82f6,#8b5cf6);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .nav-links { display:flex; gap:2rem; align-items:center; }
-    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
 
-    .lang { display:flex; gap:10px; }
-    .lang img { width:20px; cursor:pointer; }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
 
-    .nav-cta {
-      background:var(--accent); color:#fff;
-      padding:10px 20px; border-radius:8px;
-      text-decoration:none; font-weight:600;
-    }
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
 
-    .hero {
-      padding:140px 2rem 80px; max-width:1400px; margin:0 auto;
-    }
+        .nav-cta:hover {
+            background: #2563eb;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
 
-    .prototype-badge {
-      display:inline-block; background:rgba(59,130,246,.1);
-      border:1px solid rgba(59,130,246,.3); color:var(--accent);
-      padding:8px 16px; border-radius:20px; margin-bottom:2rem;
-    }
+        /* Hero Section */
+        .hero {
+            padding: 140px 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-    h1 { font-size:56px; margin-bottom:1.5rem; }
-    .hero-subtitle { font-size:20px; color:var(--text-secondary); margin-bottom:3rem; }
+        .hero-content {
+            max-width: 900px;
+        }
 
-    .cta-group { display:flex; gap:1rem; }
+        .prototype-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
 
-    .btn {
-      padding:16px 32px; border-radius:10px;
-      text-decoration:none; font-weight:600;
-    }
+        h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
 
-    .btn-primary { background:var(--accent); color:#fff; }
-    .btn-secondary { background:var(--bg-tertiary); color:#fff; border:1px solid var(--border); }
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
 
-    footer {
-      border-top:1px solid var(--border);
-      padding:3rem 2rem; text-align:center;
-    }
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-    footer a { color:var(--text-muted); margin:0 1rem; text-decoration:none; }
-    footer p { color:var(--text-muted); font-size:13px; margin-top:1.5rem; }
-  </style>
+        .btn {
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            box-shadow: 0 0 30px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .problem-icon {
+            font-size: 32px;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Solution Section */
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .feature-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        /* Visual Demo */
+        .demo-visual {
+            margin-top: 4rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .demo-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* How It Works */
+        .how-steps {
+            display: grid;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 22px;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .architecture-note {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+        }
+
+        .architecture-note h4 {
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .architecture-note p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Use Cases */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .use-case {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .use-case h3 {
+            font-size: 18px;
+            margin-bottom: 1rem;
+        }
+
+        .use-case ul {
+            list-style: none;
+        }
+
+        .use-case li {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .use-case li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            padding: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .hero {
+                padding: 120px 1.5rem 60px;
+            }
+
+            section {
+                padding: 60px 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">CID-AI</div>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="demo/01-cognitive-dashboard.html" class="nav-cta">Explore Demo</a>
+            </div>
+        </div>
+    </nav>
 
-<nav>
-  <div class="nav-container">
-    <div class="logo">CID-AI</div>
-    <div class="nav-links">
-      <a href="#how" data-i18n="how">How It Works</a>
-      <a href="#use" data-i18n="use">Use Cases</a>
-      <a href="about.html" data-i18n="about">About</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="prototype-badge">
+                ⚡ This is a working interactive prototype — not a pitch deck
+            </div>
+            <h1>Cognitive Intelligence for Decision-Making</h1>
+            <p class="hero-subtitle">
+                AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context. Built for investors, advisors, and decision-makers who need explainable AI support.
+            </p>
+            <div class="cta-group">
+                <a href="demo/01-cognitive-dashboard.html" class="btn btn-primary">Explore Interactive Demo</a>
+                <a href="contact.html" class="btn btn-secondary">Schedule a Conversation</a>
+            </div>
+        </div>
+    </section>
 
-      <div class="lang">
-        <img src="https://flagcdn.com/w20/us.png" onclick="setLang('en')" />
-        <img src="https://flagcdn.com/w20/br.png" onclick="setLang('pt')" />
-      </div>
+    <!-- Problem Section -->
+    <section>
+        <div class="section-header">
+            <div class="section-label">The Problem</div>
+            <h2>AI That You Can't Trust Won't Get Used</h2>
+            <p class="section-subtitle">
+                Most AI systems are black boxes. Decision-makers need transparency, confidence scores, and auditable reasoning — not just outputs.
+            </p>
+        </div>
 
-      <a href="demo/01-cognitive-dashboard.html" target="_blank"
-         class="nav-cta" data-i18n="demo">Explore Demo</a>
-    </div>
-  </div>
-</nav>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">🔮</div>
+                <h3>Black Box Problem</h3>
+                <p>AI provides answers without showing reasoning. Decision-makers can't validate logic or identify blind spots.</p>
+            </div>
 
-<section class="hero">
-  <div class="prototype-badge" data-i18n="badge">
-    ⚡ This is a working interactive prototype — not a pitch deck
-  </div>
+            <div class="problem-card">
+                <div class="problem-icon">🎲</div>
+                <h3>Overconfidence</h3>
+                <p>Systems present conclusions as certain when they're based on incomplete data or questionable assumptions.</p>
+            </div>
 
-  <h1 data-i18n="title">Cognitive Intelligence for Decision-Making</h1>
+            <div class="problem-card">
+                <div class="problem-icon">📋</div>
+                <h3>Context Loss</h3>
+                <p>Each query starts from zero. No longitudinal understanding of objectives, constraints, or decision patterns.</p>
+            </div>
 
-  <p class="hero-subtitle" data-i18n="subtitle">
-    AI-first decision intelligence system with transparent reasoning chains,
-    confidence scoring, and longitudinal personal context.
-  </p>
+            <div class="problem-card">
+                <div class="problem-icon">⚖️</div>
+                <h3>Authority Confusion</h3>
+                <p>Unclear where AI recommendation ends and human decision begins. No clean audit trail.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="cta-group">
-    <a href="demo/01-cognitive-dashboard.html" target="_blank"
-       class="btn btn-primary" data-i18n="cta1">
-       Explore Interactive Demo
-    </a>
-    <a href="contact.html" class="btn btn-secondary" data-i18n="cta2">
-       Schedule a Conversation
-    </a>
-  </div>
-</section>
+    <!-- Solution Section -->
+    <section>
+        <div class="section-header">
+            <div class="section-label">The Solution</div>
+            <h2>Decision Intelligence with Transparent Reasoning</h2>
+            <p class="section-subtitle">
+                CID-AI provides AI-powered decision support with full transparency, confidence scoring, and preserved human authority.
+            </p>
+        </div>
 
-<footer>
-  <a href="about.html" data-i18n="about">About</a>
-  <a href="contact.html" data-i18n="contact">Contact</a>
-  <a href="privacy.html" data-i18n="privacy">Privacy Policy</a>
+        <div class="solution-features">
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3>Reasoning Chains</h3>
+                <p>See every step of AI logic. Understand which data points, assumptions, and inferences led to each recommendation.</p>
+            </div>
 
-  <p data-i18n="legal">
-    Planned incorporation as a Delaware C-Corporation (USA).
-  </p>
-</footer>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Confidence Scores</h3>
+                <p>Explicit confidence ratings for every claim. Know when AI is certain vs. when it's extrapolating from limited data.</p>
+            </div>
 
-<script>
-const i18n = {
-  en:{
-    how:"How It Works", use:"Use Cases", about:"About", demo:"Explore Demo",
-    badge:"⚡ This is a working interactive prototype — not a pitch deck",
-    title:"Cognitive Intelligence for Decision-Making",
-    subtitle:"AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context.",
-    cta1:"Explore Interactive Demo", cta2:"Schedule a Conversation",
-    contact:"Contact", privacy:"Privacy Policy",
-    legal:"Planned incorporation as a Delaware C-Corporation (USA)."
-  },
-  pt:{
-    how:"Como funciona", use:"Casos de uso", about:"Sobre", demo:"Explore a demonstração",
-    badge:"⚡ Este é um protótipo interativo funcional — não uma apresentação de vendas.",
-    title:"Inteligência cognitiva para tomada de decisões",
-    subtitle:"Sistema de inteligência decisória baseado em IA, com cadeias de raciocínio transparentes, pontuação de confiança e contexto pessoal longitudinal.",
-    cta1:"Explore a demonstração interativa", cta2:"Agende uma conversa",
-    contact:"Contato", privacy:"Política de Privacidade",
-    legal:"Planejamento de incorporação como uma C-Corporation em Delaware (EUA)."
-  }
-};
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3>Trade-offs Analysis</h3>
+                <p>See multiple scenarios with clear pros/cons. Compare options systematically with weighted factors.</p>
+            </div>
 
-function setLang(lang){
-  localStorage.setItem("lang",lang);
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    el.textContent=i18n[lang][el.dataset.i18n];
-  });
-}
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Personal Decision Model (PDM)</h3>
+                <p>Longitudinal decision context and pattern recognition (early-stage). Captures objectives, preferences, constraints, and historical outcomes over time.</p>
+                <p class="feature-note">This is not just decision history — it's an evolving personal decision context.</p>
+            </div>
 
-document.addEventListener("DOMContentLoaded",()=>{
-  setLang(localStorage.getItem("lang")||"en");
-});
-</script>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Human Authority Preserved</h3>
+                <p>Clear separation: AI recommends, human decides. Every decision is tagged with who made it and why.</p>
+            </div>
 
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Full Audit Trail</h3>
+                <p>Complete record of reasoning, assumptions, data sources, and decision rationale. Built for governance and compliance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Demo -->
+    <section>
+        <div class="section-header">
+            <div class="section-label">See It In Action</div>
+            <h2>Working Prototype, Not Mockups</h2>
+        </div>
+        <div class="demo-visual">
+            <!-- Placeholder for screenshot of decision-detail screen -->
+            <div style="background: var(--bg-tertiary); padding: 4rem; text-align: center; color: var(--text-muted);">
+                <p style="font-size: 18px; margin-bottom: 1rem;">📸 Screenshot: Decision Detail View</p>
+                <p>Showing reasoning chain, confidence scores, assumptions, and trade-offs</p>
+                <br>
+                <a href="demo/04-decision-detail.html" class="btn btn-primary">View Live Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="section-header">
+            <div class="section-label">How It Works</div>
+            <h2>Built for Transparency and Trust</h2>
+        </div>
+
+        <div class="how-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>You Frame the Decision</h3>
+                    <p>Define decision type, context, constraints, and key variables. System captures your specific requirements.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>AI Builds Reasoning Chain</h3>
+                    <p>Multi-module analysis (CFO, CLO, etc.) with explicit reasoning steps, confidence scores, and identified assumptions.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>You Review & Decide</h3>
+                    <p>Examine reasoning, challenge assumptions, compare scenarios. You make the final decision with full context.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>System Learns Context</h3>
+                    <p>Decision outcomes feed back into your Personal Decision Model (PDM), building longitudinal understanding over time.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="architecture-note">
+            <h4>🏗️ Architectural Intent</h4>
+            <p>Designed to evolve into a decision intelligence system with persistent personal models, auditable reasoning, and pattern recognition. Early-stage implementation with production-grade architecture.</p>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section id="use-cases">
+        <div class="section-header">
+            <div class="section-label">Use Cases</div>
+            <h2>Initial Focus Areas (Not Exhaustive)</h2>
+            <p class="section-subtitle">
+                Built for high-stakes decisions where transparency and accountability matter.
+            </p>
+        </div>
+
+        <div class="use-cases-grid">
+            <div class="use-case">
+                <h3>💰 Investment Decisions</h3>
+                <ul>
+                    <li>Portfolio allocation</li>
+                    <li>Due diligence support</li>
+                    <li>Risk assessment</li>
+                    <li>Scenario modeling</li>
+                </ul>
+            </div>
+
+            <div class="use-case">
+                <h3>🏢 Strategic Business</h3>
+                <ul>
+                    <li>Market entry analysis</li>
+                    <li>Resource allocation</li>
+                    <li>Partnership evaluation</li>
+                    <li>Pricing strategy</li>
+                </ul>
+            </div>
+
+            <div class="use-case">
+                <h3>⚖️ Legal & Compliance</h3>
+                <ul>
+                    <li>Contract analysis</li>
+                    <li>Regulatory assessment</li>
+                    <li>Risk exposure mapping</li>
+                    <li>Policy compliance</li>
+                </ul>
+            </div>
+
+            <div class="use-case">
+                <h3>👥 Hiring & Talent</h3>
+                <ul>
+                    <li>Executive hiring</li>
+                    <li>Team composition</li>
+                    <li>Compensation planning</li>
+                    <li>Org structure design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section>
+        <div class="cta-section">
+            <h2>Experience the Difference</h2>
+            <p>Explore the working prototype or schedule a technical conversation.</p>
+            <div class="cta-group" style="justify-content: center;">
+                <a href="demo/01-cognitive-dashboard.html" class="btn btn-primary">Explore Interactive Demo</a>
+                <a href="contact.html" class="btn btn-secondary">Schedule Conversation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="demo/01-cognitive-dashboard.html">Demo</a>
+                <a href="pt/demo/dashboard.html" style="color: var(--text-muted); font-size: 13px;">Demo PT-BR</a>
+            </div>
+            <p class="copyright">© 2026 CID-AI. Cognitive Intelligence for Decision-Making.</p>
+        </div>
+    </footer>
 </body>
 </html>
