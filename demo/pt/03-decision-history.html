@@ -1,161 +1,244 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histórico de Decisões - CID-AI</title>
+  <meta charset="UTF-8" />
+  <title>Histórico de Decisões — CID-AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ⚠️ ESTILO ORIGINAL — NÃO ALTERADO -->
-    <style>
-        /* [CSS ORIGINAL MANTIDO INTEGRALMENTE] */
-    </style>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1f2937;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --border: #374151;
+      --success: #10b981;
+      --warning: #f59e0b;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .logo {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .logo span {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      padding: 24px 0;
+    }
+
+    .nav a {
+      display: block;
+      padding: 12px 24px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav a.active,
+    .nav a:hover {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 32px;
+    }
+
+    .header {
+      margin-bottom: 32px;
+    }
+
+    .header h2 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .decision-list {
+      display: grid;
+      gap: 16px;
+      max-width: 900px;
+    }
+
+    .decision-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .decision-info h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .decision-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .status {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    .status.done {
+      background: rgba(16,185,129,0.15);
+      color: var(--success);
+    }
+
+    .status.review {
+      background: rgba(245,158,11,0.15);
+      color: var(--warning);
+    }
+
+    .actions a {
+      text-decoration: none;
+      font-size: 13px;
+      color: white;
+      background: var(--accent);
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+
+    .top-actions {
+      margin-top: 24px;
+    }
+
+    .top-actions a {
+      text-decoration: none;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>CID-AI</h1>
+        <span>INTELIGÊNCIA COGNITIVA</span>
+      </div>
 
-    <div class="header">
-        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel Cognitivo</a>
+      <nav class="nav">
+        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
+        <a href="11-personal-model.html">Modelo Pessoal</a>
+        <a href="02-new-decision.html">Nova Decisão</a>
+        <a href="03-decision-history.html" class="active">Histórico de Decisões</a>
+        <a href="08-compare-scenarios.html">Comparar Cenários</a>
+      </nav>
+    </aside>
 
-        <div class="header-top">
-            <div>
-                <h1 class="header-title">Histórico de Decisões</h1>
-                <p class="header-subtitle">
-                    47 decisões analisadas • Confiança da IA • Reconhecimento de padrões ativo
-                </p>
-            </div>
+    <!-- Main -->
+    <main class="main">
+      <div class="header">
+        <h2>Histórico de Decisões</h2>
+        <p>
+          Registro das decisões analisadas pelo CID-AI.  
+          Cada decisão preserva o raciocínio, premissas e contexto utilizados.
+        </p>
+      </div>
 
-            <button class="btn btn-primary">
-                <span>➕</span>
-                Nova Análise
-            </button>
-        </div>
-    </div>
-
-    <!-- FILTROS -->
-    <div class="filters">
-        <button class="filter-btn active">Todas as decisões</button>
-        <button class="filter-btn">💰 Módulo CFO</button>
-        <button class="filter-btn">⚖️ Módulo CLO</button>
-        <button class="filter-btn">Alta confiança (&gt;85%)</button>
-        <button class="filter-btn">Requer revisão</button>
-        <button class="filter-btn">Este mês</button>
-    </div>
-
-    <!-- BARRA DE ESTATÍSTICAS -->
-    <div class="stats-bar">
-        <div class="stat-item">
-            <div class="stat-label">Confiança média da IA</div>
-            <div class="stat-value">78%</div>
-            <div class="stat-detail">+4% vs mês anterior</div>
-        </div>
-
-        <div class="stat-item">
-            <div class="stat-label">Decisões neste mês</div>
-            <div class="stat-value">12</div>
-            <div class="stat-detail">8 concluídas, 4 ativas</div>
-        </div>
-
-        <div class="stat-item">
-            <div class="stat-label">Padrões identificados</div>
-            <div class="stat-value">23</div>
-            <div class="stat-detail">Insights entre decisões</div>
-        </div>
-
-        <div class="stat-item">
-            <div class="stat-label">Suposições validadas</div>
-            <div class="stat-value">89%</div>
-            <div class="stat-detail">Alta taxa de validação</div>
-        </div>
-    </div>
-
-    <!-- LISTA DE DECISÕES -->
-    <div class="decisions-list">
-
-        <!-- DECISÃO: CTO -->
+      <div class="decision-list">
+        <!-- Decision 1 -->
         <div class="decision-card">
-            <div class="decision-header">
-
-                <div class="decision-title-block">
-                    <div class="decision-title">
-                        Devemos contratar um CTO sênior por US$ 180 mil/ano?
-                    </div>
-
-                    <div class="decision-meta">
-                        <span>Criado há 3 dias</span> •
-                        <span>Decisão de pessoas</span> •
-                        <span>Integral vs fracionado</span> •
-                        <span>Conflitos com modelo pessoal detectados</span>
-                    </div>
-                </div>
-
-                <div class="decision-badges">
-                    <span class="badge badge-module">💰 CFO</span>
-                    <span class="badge badge-status active">ATIVO</span>
-                </div>
-
-                <div class="confidence-display">
-                    <div class="confidence-number">64%</div>
-                    <div class="confidence-label">Confiança da IA</div>
-                    <div class="confidence-range">Média–Baixa</div>
-                </div>
+          <div class="decision-info">
+            <h3>Contratar CTO Sênior</h3>
+            <div class="decision-meta">
+              Decisão de Pessoas • Criada há 3 dias
             </div>
-
-            <div class="decision-insights">
-                <div class="insights-grid">
-                    <div class="insight-item">
-                        <div class="insight-icon">🎯</div>
-                        <div>
-                            <div class="insight-label">Modelo Pessoal</div>
-                            <div class="insight-value">3 restrições violadas</div>
-                        </div>
-                    </div>
-
-                    <div class="insight-item">
-                        <div class="insight-icon">💰</div>
-                        <div>
-                            <div class="insight-label">Impacto no runway</div>
-                            <div class="insight-value">-3 meses</div>
-                        </div>
-                    </div>
-
-                    <div class="insight-item">
-                        <div class="insight-icon">⚖️</div>
-                        <div>
-                            <div class="insight-label">Trade-offs</div>
-                            <div class="insight-value">3 opções analisadas</div>
-                        </div>
-                    </div>
-
-                    <div class="insight-item">
-                        <div class="insight-icon">✅</div>
-                        <div>
-                            <div class="insight-label">Recomendação</div>
-                            <div class="insight-value">CTO fracionado (7,8/10)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reasoning-preview">
-                    <div class="reasoning-title">PRÉVIA DO RACIOCÍNIO DA IA:</div>
-                    <div class="reasoning-steps">
-                        Lacuna técnica → impacto no caixa → risco de execução →
-                        alternativa fracionada → recomendação: testar antes de comprometer
-                    </div>
-                </div>
-            </div>
+            <span class="status done">Concluída</span>
+          </div>
+          <div class="actions">
+            <a href="04-decision-detail.html">Ver Detalhes</a>
+          </div>
         </div>
 
-        <!-- OUTRAS DECISÕES SEGUEM O MESMO PADRÃO -->
-        <!-- (mantidas conforme você já enviou nos textos anteriores) -->
+        <!-- Decision 2 -->
+        <div class="decision-card">
+          <div class="decision-info">
+            <h3>SAFE vs Rodada Precificada</h3>
+            <div class="decision-meta">
+              Decisão Financeira • Criada há 5 dias
+            </div>
+            <span class="status done">Concluída</span>
+          </div>
+          <div class="actions">
+            <a href="04-decision-detail.html">Ver Detalhes</a>
+          </div>
+        </div>
 
-    </div>
-</div>
+        <!-- Decision 3 -->
+        <div class="decision-card">
+          <div class="decision-info">
+            <h3>Estratégia de Go-to-Market</h3>
+            <div class="decision-meta">
+              Estratégia • Criada há 7 dias
+            </div>
+            <span class="status review">Em Análise</span>
+          </div>
+          <div class="actions">
+            <a href="04-decision-detail.html">Ver Detalhes</a>
+          </div>
+        </div>
+      </div>
 
-<!-- ⚠️ SCRIPTS ORIGINAIS — NÃO ALTERADOS -->
-<script>
-    /* JS ORIGINAL MANTIDO */
-</script>
-
+      <div class="top-actions">
+        <a href="02-new-decision.html">➕ Criar Nova Decisão</a>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
