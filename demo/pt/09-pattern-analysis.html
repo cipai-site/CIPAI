@@ -1,159 +1,277 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Padrões – Insights Cognitivos – CID-AI</title>
-    <style>
-        /* TODO O CSS ORIGINAL FOI PRESERVADO SEM ALTERAÇÕES */
-    </style>
+  <meta charset="UTF-8" />
+  <title>Análise de Padrões | CID-AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1f2937;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --border: #374151;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --info: #8b5cf6;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .logo {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .logo span {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      padding: 24px 0;
+    }
+
+    .nav a {
+      display: block;
+      padding: 12px 24px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: var(--bg-tertiary);
+      color: var(--accent);
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 32px;
+      max-width: 1200px;
+    }
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .section {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .pattern {
+      background: var(--bg-tertiary);
+      border-radius: 10px;
+      padding: 18px;
+      border-left: 4px solid var(--info);
+    }
+
+    .pattern.strong {
+      border-left-color: var(--success);
+    }
+
+    .pattern.weak {
+      border-left-color: var(--warning);
+    }
+
+    .pattern h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .confidence {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .pattern p {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .summary {
+      background: var(--bg-tertiary);
+      border-left: 4px solid var(--accent);
+      padding: 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .actions button {
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>CID-AI</h1>
+        <span>INTELIGÊNCIA COGNITIVA</span>
+      </div>
 
-    <div class="header">
-        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
-    </div>
+      <nav class="nav">
+        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
+        <a href="11-personal-model.html">Modelo Pessoal</a>
+        <a href="02-new-decision.html">Nova Decisão</a>
+        <a href="03-decision-history.html">Histórico de Decisões</a>
+        <a href="05-cfo-module.html">Módulo CFO</a>
+        <a href="06-clo-module.html">Módulo CLO</a>
+        <a href="07-decision-memory.html">Modelo de Decisão (PDM)</a>
+        <a href="08-compare-scenarios.html">Comparar Cenários</a>
+        <a href="09-pattern-analysis.html" class="active">Análise de Padrões</a>
+      </nav>
+    </aside>
 
-    <div class="analysis-header">
-        <div class="analysis-icon">📈</div>
-        <div class="analysis-title">Análise de Padrões – Aprendizados da IA</div>
-        <div class="analysis-subtitle">
-            Reconhecimento de padrões entre decisões • Identificação de tendências • Detecção de anomalias • Evolução da confiança
+    <!-- Main -->
+    <main class="main">
+      <div class="header">
+        <h2>Análise de Padrões de Decisão</h2>
+        <p>Identificação de comportamentos recorrentes e vieses estratégicos</p>
+      </div>
+
+      <div class="section">
+        <h3>Padrões Identificados</h3>
+
+        <div class="pattern-grid">
+          <div class="pattern strong">
+            <h4>Aversão a Risco Prematuro</h4>
+            <div class="confidence">Confiança: Alta</div>
+            <p>
+              Decisões recorrentes mostram preferência por validação antes de
+              compromissos financeiros ou contratações críticas.
+            </p>
+          </div>
+
+          <div class="pattern strong">
+            <h4>Priorização de Runway</h4>
+            <div class="confidence">Confiança: Alta</div>
+            <p>
+              O usuário consistentemente evita decisões que reduzam runway
+              abaixo do limite psicológico de segurança.
+            </p>
+          </div>
+
+          <div class="pattern weak">
+            <h4>Postergamento Estratégico</h4>
+            <div class="confidence">Confiança: Média</div>
+            <p>
+              Tendência ocasional de adiar decisões estruturais mesmo quando
+              indicadores já são favoráveis.
+            </p>
+          </div>
+
+          <div class="pattern">
+            <h4>Busca por Alinhamento de Valores</h4>
+            <div class="confidence">Confiança: Média</div>
+            <p>
+              Decisões estratégicas são frequentemente avaliadas sob a ótica de
+              coerência com valores pessoais, não apenas métricas.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-label">Padrões Monitorados</div>
-                <div class="stat-value">47</div>
-                <div class="stat-detail">Em todas as decisões</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Insights de Alta Confiança</div>
-                <div class="stat-value">23</div>
-                <div class="stat-detail">Padrões validados (&gt;80%)</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Padrões Emergentes</div>
-                <div class="stat-value">8</div>
-                <div class="stat-detail">Em validação</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Anomalias Detectadas</div>
-                <div class="stat-value">5</div>
-                <div class="stat-detail">Requerem atenção</div>
-            </div>
+      <div class="section">
+        <h3>Insight Consolidado</h3>
+        <div class="summary">
+          O padrão dominante indica um perfil decisório <strong>conservador,
+          orientado à sustentabilidade e aprendizado incremental</strong>.
+          <br><br>
+          Esse comportamento reduz riscos catastróficos, mas pode atrasar
+          movimentos oportunistas em cenários altamente competitivos.
         </div>
-    </div>
+      </div>
 
-    <!-- Filtros -->
-    <div class="filters">
-        <button class="filter-btn active">Todos os Padrões</button>
-        <button class="filter-btn">Decisões de Investimento</button>
-        <button class="filter-btn">Decisões Jurídicas</button>
-        <button class="filter-btn">Alto Impacto</button>
-        <button class="filter-btn">Tendências Emergentes</button>
-        <button class="filter-btn">Últimos 30 Dias</button>
-    </div>
-
-    <!-- Insights Principais -->
-    <div class="section">
-        <div class="section-header">
-            <div class="section-header-left">
-                <span class="section-icon">🔍</span>
-                <div>
-                    <div class="section-title">Principais Insights de Padrões</div>
-                    <div class="section-subtitle">
-                        Padrões identificados pela IA com inteligência acionável ao longo do histórico de decisões
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="memory-note">
-            <strong>🧠 Aprendizado de Padrões:</strong>
-            Estes insights emergem da análise de 47 decisões ao longo de 18 meses.
-            A IA identifica correlações, tendências e anomalias difíceis de perceber manualmente.
-            Os níveis de confiança refletem validação estatística e tamanho da amostra.
-        </div>
-
-        <div class="insight-grid">
-
-            <div class="insight-card">
-                <div class="insight-header">
-                    <span class="insight-badge high-impact">ALTO IMPACTO</span>
-                </div>
-                <div class="insight-title">Confiança da IA aumentou 18% em 18 meses</div>
-                <div class="insight-description">
-                    A confiança geral da IA nas recomendações evoluiu de 64% (dez/2023) para 82% (jan/2025),
-                    à medida que o sistema aprende com mais decisões e valida suposições.
-                    Os maiores ganhos ocorreram na análise financeira (+24%) e validação de mercado (+21%).
-                </div>
-            </div>
-
-            <div class="insight-card">
-                <div class="insight-header">
-                    <span class="insight-badge high-impact">ALTO IMPACTO</span>
-                </div>
-                <div class="insight-title">Qualidade da equipe é o maior preditor isolado de sucesso (89%)</div>
-                <div class="insight-description">
-                    Em 23 decisões de investimento, a qualidade da equipe fundadora
-                    apresentou correlação de 89% com resultados positivos —
-                    superior a unit economics, tamanho de mercado ou valuation.
-                </div>
-            </div>
-
-            <div class="insight-card">
-                <div class="insight-header">
-                    <span class="insight-badge emerging">PADRÃO EMERGENTE</span>
-                </div>
-                <div class="insight-title">Riscos regulatórios estão aumentando em decisões jurídicas</div>
-                <div class="insight-description">
-                    Nos últimos 6 meses, a IA sinalizou riscos regulatórios em 62% das análises jurídicas
-                    (contra 38% no período anterior), impulsionados por incertezas regulatórias
-                    relacionadas a dados e IA.
-                </div>
-            </div>
-
-            <div class="insight-card">
-                <div class="insight-header">
-                    <span class="insight-badge high-impact">ALTO IMPACTO</span>
-                </div>
-                <div class="insight-title">Disciplina de valuation dobra retornos de saída</div>
-                <div class="insight-description">
-                    Investimentos realizados abaixo de 15x ARR apresentaram retorno médio de 4,2x,
-                    contra 2,1x para entradas acima de 20x ARR.
-                    O padrão se mantém consistente em 16 saídas analisadas.
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Recomendações -->
-    <div class="recommendation-box">
-        <div class="recommendation-header">
-            <div class="recommendation-icon">💡</div>
-            <div class="recommendation-title">Recomendações da IA com base nos padrões</div>
-        </div>
-        <div class="recommendation-content">
-            Com base nos padrões identificados, a IA recomenda:
-        </div>
-        <div class="recommendation-list">
-            <div class="recommendation-item">Priorizar qualidade da equipe como principal fator decisório (89% de correlação).</div>
-            <div class="recommendation-item">Aplicar disciplina rígida de valuation para entradas acima de 18x ARR.</div>
-            <div class="recommendation-item">Exigir múltiplas fontes independentes para validação de mercado.</div>
-            <div class="recommendation-item">Incluir cláusulas de revisão regulatória anual em contratos.</div>
-            <div class="recommendation-item">Investigar anomalias positivas para refinar o modelo de decisão.</div>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    /* JS ORIGINAL PRESERVADO */
-</script>
-
+      <div class="actions">
+        <button class="primary">Aplicar Insights ao Modelo Pessoal</button>
+        <button class="secondary">Voltar</button>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
