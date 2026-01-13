@@ -1,340 +1,323 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Modelo de Decisão Pessoal (PDM) | CID-AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Pessoal de Decisão — Aprendizado Cognitivo — CID-AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #8b5cf6;
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #8b5cf6;
+        }
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
 
-    :root {
-      --bg-primary: #0a0e1a;
-      --bg-secondary: #111827;
-      --bg-tertiary: #1f2937;
-      --text-primary: #f9fafb;
-      --text-secondary: #d1d5db;
-      --text-muted: #9ca3af;
-      --accent: #3b82f6;
-      --border: #374151;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --info: #8b5cf6;
-    }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 32px; }
+        .header { margin-bottom: 32px; }
+        .back-link { color: var(--text-muted); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
+        .memory-header {
+            background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(59,130,246,0.1));
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
 
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
+        .memory-icon { font-size: 48px; margin-bottom: 16px; }
+        .memory-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .memory-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
 
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: var(--bg-secondary);
-      border-right: 1px solid var(--border);
-      padding: 24px 0;
-    }
+        .memory-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
 
-    .logo {
-      padding: 0 24px 24px;
-      border-bottom: 1px solid var(--border);
-    }
+        .memory-stat {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 20px;
+        }
 
-    .logo h1 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--accent);
-    }
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
 
-    .logo span {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-    }
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
 
-    .nav {
-      padding: 24px 0;
-    }
+        .stat-detail {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
 
-    .nav a {
-      display: block;
-      padding: 12px 24px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-    }
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
 
-    .nav a:hover,
-    .nav a.active {
-      background: var(--bg-tertiary);
-      color: var(--accent);
-    }
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
 
-    /* Main */
-    .main {
-      flex: 1;
-      padding: 32px;
-      max-width: 1100px;
-    }
+        .section-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .header {
-      margin-bottom: 28px;
-    }
+        .section-icon { font-size: 24px; }
+        .section-title { font-size: 18px; font-weight: 600; }
+        .section-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
-    .header h2 {
-      font-size: 24px;
-      margin-bottom: 6px;
-    }
+        .filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
 
-    .header p {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
+        .filter-btn {
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            cursor: pointer;
+        }
 
-    .section {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--bg-tertiary);
+        }
 
-    .section h3 {
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
+        .pattern-grid { display: grid; gap: 20px; }
 
-    .info-box {
-      background: var(--bg-tertiary);
-      border-left: 4px solid var(--info);
-      padding: 18px;
-      border-radius: 8px;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
+        .pattern-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
+        .pattern-type {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(139,92,246,0.15);
+            color: var(--info);
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
 
-    .card {
-      background: var(--bg-tertiary);
-      border-radius: 10px;
-      padding: 16px;
-      border-left: 4px solid var(--accent);
-    }
+        .pattern-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
 
-    .card strong {
-      display: block;
-      margin-bottom: 6px;
-    }
+        .pattern-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
 
-    .tag {
-      display: inline-block;
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 6px;
-      background: rgba(59,130,246,0.15);
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
+        .pattern-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            background: var(--bg-primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
 
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
+        .pattern-metric-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
 
-    .timeline-item {
-      background: var(--bg-tertiary);
-      border-radius: 10px;
-      padding: 16px;
-      border-left: 4px solid var(--success);
-    }
+        .pattern-metric-value {
+            font-size: 18px;
+            font-weight: 700;
+        }
 
-    .timeline-item span {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+        .pattern-confidence {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg-primary);
+            border-radius: 8px;
+            font-size: 13px;
+        }
 
-    .actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-    }
+        .confidence-badge {
+            padding: 4px 10px;
+            background: rgba(16,185,129,0.15);
+            color: var(--success);
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+        }
 
-    .actions button {
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-    }
+        .insight-box {
+            background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(59,130,246,0.05));
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+        }
 
-    .primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .secondary {
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
-  </style>
+        .insight-title { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+        .insight-content { font-size: 14px; color: var(--text-secondary); }
+        .insight-list { margin-top: 12px; }
+        .insight-list-item { font-size: 13px; margin-bottom: 8px; }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <h1>CID-AI</h1>
-        <span>INTELIGÊNCIA COGNITIVA</span>
-      </div>
+<div class="container">
 
-      <nav class="nav">
-        <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
-        <a href="11-personal-model.html">Modelo Pessoal</a>
-        <a href="02-new-decision.html">Nova Decisão</a>
-        <a href="03-decision-history.html">Histórico de Decisões</a>
-        <a href="05-cfo-module.html">Módulo CFO</a>
-        <a href="06-clo-module.html">Módulo CLO</a>
-        <a href="07-decision-memory.html" class="active">Modelo de Decisão (PDM)</a>
-      </nav>
-    </aside>
+    <div class="header">
+        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
+    </div>
 
-    <!-- Main -->
-    <main class="main">
-      <div class="header">
-        <h2>Modelo de Decisão Pessoal (PDM)</h2>
-        <p>Memória estratégica que garante coerência entre decisões ao longo do tempo</p>
-      </div>
-
-      <div class="section">
-        <h3>O que é o PDM?</h3>
-        <div class="info-box">
-          O PDM (Personal Decision Model) não é histórico de decisões.
-          Ele representa o <strong>contexto permanente</strong> do decisor:
-          objetivos, valores, limites, perfil de risco e prioridades.
-          <br><br>
-          Todas as análises do CID-AI utilizam este modelo como base,
-          garantindo consistência e alinhamento estratégico.
+    <div class="memory-header">
+        <div class="memory-icon">🧠</div>
+        <div class="memory-title">Modelo Pessoal de Decisão — Sistema de Aprendizado Cognitivo</div>
+        <div class="memory-subtitle">
+            A IA aprende com padrões de decisão ao longo do tempo • NÃO é um log • Identifica correlações e fatores de sucesso
         </div>
-      </div>
 
-      <div class="section">
-        <h3>Princípios e Valores Fundamentais</h3>
-        <div class="grid">
-          <div class="card">
-            <span class="tag">Valor</span>
-            <strong>Transparência</strong>
-            Comunicação clara com sócios, equipe e investidores.
-          </div>
-
-          <div class="card">
-            <span class="tag">Valor</span>
-            <strong>Sustentabilidade</strong>
-            Crescimento sem comprometer saúde, família ou governança.
-          </div>
-
-          <div class="card">
-            <span class="tag">Valor</span>
-            <strong>Aprendizado Rápido</strong>
-            Testar, medir e ajustar antes de escalar.
-          </div>
-
-          <div class="card">
-            <span class="tag">Valor</span>
-            <strong>Disciplina Financeira</strong>
-            Preservação de caixa e previsibilidade de longo prazo.
-          </div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:12px;">
+            💡 <strong>O que é o PDM?</strong>
+            Um modelo longitudinal centrado no usuário que captura objetivos, preferências, restrições e padrões de decisão ao longo do tempo.
         </div>
-      </div>
 
-      <div class="section">
-        <h3>Restrições Estruturais</h3>
-        <div class="grid">
-          <div class="card">
-            <strong>Runway Mínimo</strong>
-            Nunca operar com menos de 18 meses de caixa.
-          </div>
-
-          <div class="card">
-            <strong>Contratações</strong>
-            Não contratar executivos full-time sem validação de receita.
-          </div>
-
-          <div class="card">
-            <strong>Foco</strong>
-            Um único produto até atingir escala consistente.
-          </div>
-
-          <div class="card">
-            <strong>Governança</strong>
-            Estruturas simples, reversíveis e auditáveis.
-          </div>
+        <div class="memory-stats">
+            <div class="memory-stat">
+                <div class="stat-label">Total de Decisões</div>
+                <div class="stat-value">47</div>
+                <div class="stat-detail">Indexadas e analisadas</div>
+            </div>
+            <div class="memory-stat">
+                <div class="stat-label">Padrões Identificados</div>
+                <div class="stat-value">23</div>
+                <div class="stat-detail">Insights transversais</div>
+            </div>
+            <div class="memory-stat">
+                <div class="stat-label">Profundidade de Aprendizado</div>
+                <div class="stat-value">8.4/10</div>
+                <div class="stat-detail">Confiança da IA</div>
+            </div>
+            <div class="memory-stat">
+                <div class="stat-label">Correlações Validadas</div>
+                <div class="stat-value">12</div>
+                <div class="stat-detail">Preditores confirmados</div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="section">
-        <h3>Perfil de Risco</h3>
-        <div class="grid">
-          <div class="card">
-            <strong>Financeiro</strong>
-            Moderado-alto, com assimetria positiva clara.
-          </div>
+    <div class="filters">
+        <button class="filter-btn active">Todos os Padrões</button>
+        <button class="filter-btn">Decisões de Investimento</button>
+        <button class="filter-btn">Contratos Jurídicos</button>
+        <button class="filter-btn">Alta Confiança (&gt;80%)</button>
+        <button class="filter-btn">Aprendizados Recentes</button>
+    </div>
 
-          <div class="card">
-            <strong>Pessoas</strong>
-            Baixo — evitar erros de contratação.
-          </div>
-
-          <div class="card">
-            <strong>Produto</strong>
-            Alto — experimentar, testar e iterar rápido.
-          </div>
-
-          <div class="card">
-            <strong>Mercado</strong>
-            Moderado — testar canais sem comprometer base.
-          </div>
+    <div class="section">
+        <div class="section-header">
+            <div class="section-header-left">
+                <span class="section-icon">🔍</span>
+                <div>
+                    <div class="section-title">Principais Padrões Aprendidos pela IA</div>
+                    <div class="section-subtitle">Análise longitudinal de decisões e fatores de sucesso</div>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="section">
-        <h3>Decisões Recentes Influenciadas pelo PDM</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>Contratação de CTO</strong><br />
-            <span>Optado por modelo fracionado para reduzir risco humano.</span>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Estrutura de Captação</strong><br />
-            <span>Preferência por rodada precificada para clareza jurídica.</span>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Estratégia de Crescimento</strong><br />
-            <span>Evitar diversificação precoce antes de escala.</span>
-          </div>
+        <div class="pattern-grid">
+            <div class="pattern-card">
+                <span class="pattern-type">Padrão de Investimento</span>
+                <div class="pattern-title">Equipe Forte + Unit Economics Saudáveis = 82% de Sucesso</div>
+                <div class="pattern-description">
+                    Decisões com equipes fortes (nota ≥ 8.0) e LTV/CAC &gt; 3.0x apresentam taxa de sucesso significativamente maior.
+                </div>
+                <div class="pattern-metrics">
+                    <div>
+                        <div class="pattern-metric-label">Decisões Analisadas</div>
+                        <div class="pattern-metric-value">23</div>
+                    </div>
+                    <div>
+                        <div class="pattern-metric-label">Correlação</div>
+                        <div class="pattern-metric-value">82%</div>
+                    </div>
+                    <div>
+                        <div class="pattern-metric-label">Confiança</div>
+                        <div class="pattern-metric-value">89%</div>
+                    </div>
+                </div>
+                <div class="pattern-confidence">
+                    <span>🎯</span>
+                    <span>Insight: quando ambos os fatores estão presentes, a confiança da recomendação aumenta</span>
+                    <span class="confidence-badge">VALIDADO</span>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="actions">
-        <button class="primary">Atualizar Modelo Pessoal</button>
-        <button class="secondary">Voltar ao Painel</button>
-      </div>
-    </main>
-  </div>
+    <div class="insight-box">
+        <div class="insight-title">Focos Atuais de Aprendizado da IA</div>
+        <div class="insight-content">
+            A IA está refinando continuamente seu entendimento sobre:
+        </div>
+        <div class="insight-list">
+            <div class="insight-list-item">Estabilidade competitiva de mercado</div>
+            <div class="insight-list-item">Evolução regulatória e impacto contratual</div>
+            <div class="insight-list-item">Eficiência de aquisição de clientes em escala</div>
+            <div class="insight-list-item">Otimização de timing de saída</div>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
