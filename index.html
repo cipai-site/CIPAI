@@ -1,235 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CID-AI - Cognitive Intelligence for Decision-Making</title>
-    <meta name="description" content="AI-first decision intelligence system with transparent reasoning, confidence scoring, and longitudinal personal context. Working interactive prototype.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CID-AI - Cognitive Intelligence for Decision-Making</title>
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --bg-primary: #0a0e1a;
-            --bg-secondary: #111827;
-            --bg-tertiary: #1f2937;
-            --text-primary: #f9fafb;
-            --text-secondary: #d1d5db;
-            --text-muted: #9ca3af;
-            --accent: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.3);
-            --border: #374155;
-        }
+    :root {
+      --bg-primary:#0a0e1a; --bg-secondary:#111827; --bg-tertiary:#1f2937;
+      --text-primary:#f9fafb; --text-secondary:#d1d5db; --text-muted:#9ca3af;
+      --accent:#3b82f6; --border:#374155;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+      background:var(--bg-primary); color:var(--text-primary); line-height:1.6;
+    }
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 14, 26, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem 2rem;
-            z-index: 1000;
-        }
+    nav {
+      position:fixed; top:0; left:0; right:0;
+      background:rgba(10,14,26,.95); border-bottom:1px solid var(--border);
+      padding:1.5rem 2rem; z-index:1000;
+    }
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .nav-container {
+      max-width:1400px; margin:0 auto;
+      display:flex; justify-content:space-between; align-items:center;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .logo {
+      font-size:24px; font-weight:700;
+      background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+    .nav-links { display:flex; gap:2rem; align-items:center; }
+    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; }
 
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-        }
+    .lang { display:flex; gap:10px; }
+    .lang img { width:20px; cursor:pointer; }
 
-        .nav-cta {
-            background: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-        }
+    .nav-cta {
+      background:var(--accent); color:#fff;
+      padding:10px 20px; border-radius:8px;
+      text-decoration:none; font-weight:600;
+    }
 
-        .lang {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
+    .hero {
+      padding:140px 2rem 80px; max-width:1400px; margin:0 auto;
+    }
 
-        .lang img {
-            width: 20px;
-            cursor: pointer;
-        }
+    .prototype-badge {
+      display:inline-block; background:rgba(59,130,246,.1);
+      border:1px solid rgba(59,130,246,.3); color:var(--accent);
+      padding:8px 16px; border-radius:20px; margin-bottom:2rem;
+    }
 
-        .hero {
-            padding: 140px 2rem 80px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+    h1 { font-size:56px; margin-bottom:1.5rem; }
+    .hero-subtitle { font-size:20px; color:var(--text-secondary); margin-bottom:3rem; }
 
-        .hero-content { max-width: 900px; }
+    .cta-group { display:flex; gap:1rem; }
 
-        .prototype-badge {
-            display: inline-block;
-            background: rgba(59,130,246,0.1);
-            border: 1px solid rgba(59,130,246,0.3);
-            color: var(--accent);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-bottom: 2rem;
-        }
+    .btn {
+      padding:16px 32px; border-radius:10px;
+      text-decoration:none; font-weight:600;
+    }
 
-        h1 { font-size: 56px; margin-bottom: 1.5rem; }
+    .btn-primary { background:var(--accent); color:#fff; }
+    .btn-secondary { background:var(--bg-tertiary); color:#fff; border:1px solid var(--border); }
 
-        .hero-subtitle {
-            font-size: 20px;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-        }
+    footer {
+      border-top:1px solid var(--border);
+      padding:3rem 2rem; text-align:center;
+    }
 
-        .cta-group { display: flex; gap: 1rem; }
-
-        .btn {
-            padding: 16px 32px;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .btn-primary { background: var(--accent); color: white; }
-        .btn-secondary { background: var(--bg-tertiary); color: white; border: 1px solid var(--border); }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .copyright {
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-    </style>
+    footer a { color:var(--text-muted); margin:0 1rem; text-decoration:none; }
+    footer p { color:var(--text-muted); font-size:13px; margin-top:1.5rem; }
+  </style>
 </head>
 
 <body>
 
-<!-- Google Translate container (hidden, required) -->
-<div id="google_translate_element" style="display:none;"></div>
-
 <nav>
-    <div class="nav-container">
-        <div class="logo">CID-AI</div>
-        <div class="nav-links">
-            <a href="#how-it-works">How It Works</a>
-            <a href="#use-cases">Use Cases</a>
-            <a href="about.html">About</a>
+  <div class="nav-container">
+    <div class="logo">CID-AI</div>
+    <div class="nav-links">
+      <a href="#how" data-i18n="how">How It Works</a>
+      <a href="#use" data-i18n="use">Use Cases</a>
+      <a href="about.html" data-i18n="about">About</a>
 
-            <div class="lang">
-                <img src="https://flagcdn.com/w20/us.png" onclick="setLang('en')" title="English">
-                <img src="https://flagcdn.com/w20/br.png" onclick="setLang('pt')" title="Português">
-            </div>
+      <div class="lang">
+        <img src="https://flagcdn.com/w20/us.png" onclick="setLang('en')" />
+        <img src="https://flagcdn.com/w20/br.png" onclick="setLang('pt')" />
+      </div>
 
-            <a href="demo/01-cognitive-dashboard.html" class="nav-cta">Explore Demo</a>
-        </div>
+      <a href="demo/01-cognitive-dashboard.html" target="_blank"
+         class="nav-cta" data-i18n="demo">Explore Demo</a>
     </div>
+  </div>
 </nav>
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="prototype-badge">⚡ This is a working interactive prototype — not a pitch deck</div>
-        <h1>Cognitive Intelligence for Decision-Making</h1>
-        <p class="hero-subtitle">
-            AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context.
-        </p>
-        <div class="cta-group">
-            <a href="demo/01-cognitive-dashboard.html" class="btn btn-primary">Explore Interactive Demo</a>
-            <a href="contact.html" class="btn btn-secondary">Schedule a Conversation</a>
-        </div>
-    </div>
+  <div class="prototype-badge" data-i18n="badge">
+    ⚡ This is a working interactive prototype — not a pitch deck
+  </div>
+
+  <h1 data-i18n="title">Cognitive Intelligence for Decision-Making</h1>
+
+  <p class="hero-subtitle" data-i18n="subtitle">
+    AI-first decision intelligence system with transparent reasoning chains,
+    confidence scoring, and longitudinal personal context.
+  </p>
+
+  <div class="cta-group">
+    <a href="demo/01-cognitive-dashboard.html" target="_blank"
+       class="btn btn-primary" data-i18n="cta1">
+       Explore Interactive Demo
+    </a>
+    <a href="contact.html" class="btn btn-secondary" data-i18n="cta2">
+       Schedule a Conversation
+    </a>
+  </div>
 </section>
 
 <footer>
-    <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="demo/01-cognitive-dashboard.html">Demo</a>
-    </div>
-    <p class="copyright">
-        © 2026 CID-AI · Planned incorporation as a Delaware C-Corporation.
-    </p>
+  <a href="about.html" data-i18n="about">About</a>
+  <a href="contact.html" data-i18n="contact">Contact</a>
+  <a href="privacy.html" data-i18n="privacy">Privacy Policy</a>
+
+  <p data-i18n="legal">
+    Planned incorporation as a Delaware C-Corporation (USA).
+  </p>
 </footer>
 
 <script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'en,pt',
-    autoDisplay: false
-  }, 'google_translate_element');
-}
-
-function setLang(lang) {
-  localStorage.setItem('cidai-lang', lang);
-  const select = document.querySelector('.goog-te-combo');
-  if (select) {
-    select.value = lang;
-    select.dispatchEvent(new Event('change'));
+const i18n = {
+  en:{
+    how:"How It Works", use:"Use Cases", about:"About", demo:"Explore Demo",
+    badge:"⚡ This is a working interactive prototype — not a pitch deck",
+    title:"Cognitive Intelligence for Decision-Making",
+    subtitle:"AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context.",
+    cta1:"Explore Interactive Demo", cta2:"Schedule a Conversation",
+    contact:"Contact", privacy:"Privacy Policy",
+    legal:"Planned incorporation as a Delaware C-Corporation (USA)."
+  },
+  pt:{
+    how:"Como funciona", use:"Casos de uso", about:"Sobre", demo:"Explore a demonstração",
+    badge:"⚡ Este é um protótipo interativo funcional — não uma apresentação de vendas.",
+    title:"Inteligência cognitiva para tomada de decisões",
+    subtitle:"Sistema de inteligência decisória baseado em IA, com cadeias de raciocínio transparentes, pontuação de confiança e contexto pessoal longitudinal.",
+    cta1:"Explore a demonstração interativa", cta2:"Agende uma conversa",
+    contact:"Contato", privacy:"Política de Privacidade",
+    legal:"Planejamento de incorporação como uma C-Corporation em Delaware (EUA)."
   }
+};
+
+function setLang(lang){
+  localStorage.setItem("lang",lang);
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    el.textContent=i18n[lang][el.dataset.i18n];
+  });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const lang = localStorage.getItem('cidai-lang');
-  if (lang) setLang(lang);
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang(localStorage.getItem("lang")||"en");
 });
 </script>
-
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
