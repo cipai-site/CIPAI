@@ -2,26 +2,109 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>CID-AI Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CID-AI Demo (PT)</title>
 
-  <!-- CSS OBRIGATÓRIO (espelhado do EN) -->
-  <link rel="stylesheet" href="css/demo.css" />
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg-primary:#0a0e1a;--bg-secondary:#111827;--bg-tertiary:#1f2937;--bg-elevated:#374151;
+      --text-primary:#f9fafb;--text-secondary:#d1d5db;--text-muted:#9ca3af;
+      --accent:#3b82f6;--accent-glow:rgba(59,130,246,.3);--border:#374155;--info:#8b5cf6;
+    }
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+      background:radial-gradient(1200px 700px at 30% 10%, rgba(59,130,246,.18), transparent 60%),
+                 radial-gradient(900px 600px at 70% 30%, rgba(139,92,246,.14), transparent 55%),
+                 var(--bg-primary);
+      color:var(--text-primary);
+      min-height:100vh;
+      padding:48px 28px;
+    }
+    .wrap{max-width:980px;margin:0 auto}
+    .title{
+      font-size:44px;font-weight:800;letter-spacing:-.03em;
+      background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      margin-bottom:10px;
+    }
+    .sub{color:var(--text-muted);font-size:14px;max-width:720px;line-height:1.7;margin-bottom:28px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .card{
+      background:rgba(17,24,39,.82);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px 18px 16px;
+      text-decoration:none;color:var(--text-primary);
+      transition:.2s;
+      box-shadow:0 18px 60px rgba(0,0,0,.35);
+    }
+    .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .kicker{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:8px}
+    .h{font-size:18px;font-weight:700;margin-bottom:6px}
+    .p{font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:10px}
+    .go{font-size:13px;color:var(--accent);font-weight:600}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(59,130,246,.08);
+      border:1px solid rgba(59,130,246,.18);
+      color:var(--text-secondary);
+      padding:10px 12px;border-radius:10px;font-size:12px
+    }
+    .pill b{color:var(--text-primary)}
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
+    <div class="title">CID-AI — Demonstração de Inteligência Cognitiva</div>
+    <div class="sub">
+      Selecione um módulo para iniciar. (PT-BR) — Layout e experiência espelhados da demo em inglês.
+    </div>
 
-  <div class="demo-home">
-    <h1>CID-AI – Demonstração de Inteligência Cognitiva</h1>
-    <p>Selecione um módulo para iniciar.</p>
+    <div class="grid">
+      <a class="card" href="01-cognitive-dashboard.html">
+        <div class="kicker">Core</div>
+        <div class="h">🧠 Painel Cognitivo</div>
+        <div class="p">Centro de controle: visão geral da inteligência decisória e do raciocínio.</div>
+        <div class="go">Abrir →</div>
+      </a>
 
-    <div class="demo-links">
-      <a href="01-cognitive-dashboard.html">Painel Cognitivo</a>
-      <a href="02-new-decision.html">Nova Decisão</a>
-      <a href="03-decision-history.html">Histórico de Decisões</a>
-      <a href="05-cfo-module.html">Módulo CFO</a>
-      <a href="09-pattern-analysis.html">Análise de Padrões</a>
+      <a class="card" href="02-new-decision.html">
+        <div class="kicker">Core</div>
+        <div class="h">➕ Nova Decisão</div>
+        <div class="p">Criar e analisar uma nova decisão com cenários e níveis de confiança.</div>
+        <div class="go">Abrir →</div>
+      </a>
+
+      <a class="card" href="03-decision-history.html">
+        <div class="kicker">Core</div>
+        <div class="h">📊 Histórico de Decisões</div>
+        <div class="p">Revisar decisões anteriores, resultados e rastreamento de confiança.</div>
+        <div class="go">Abrir →</div>
+      </a>
+
+      <a class="card" href="05-cfo-module.html">
+        <div class="kicker">Análise</div>
+        <div class="h">💰 Módulo CFO</div>
+        <div class="p">Modelagem financeira, cenários, ROI, risco-retorno e recomendações.</div>
+        <div class="go">Abrir →</div>
+      </a>
+
+      <a class="card" href="09-pattern-analysis.html">
+        <div class="kicker">Inteligência</div>
+        <div class="h">📈 Análise de Padrões</div>
+        <div class="p">Detecção de padrões recorrentes e sinais de risco/oportunidade.</div>
+        <div class="go">Abrir →</div>
+      </a>
+    </div>
+
+    <div class="row">
+      <span class="pill"><b>URL:</b> /pt/demo/</span>
+      <span class="pill"><b>Arquivos PT:</b> /pt/demo/*.html</span>
+      <span class="pill"><b>Sem 404:</b> CFO + Padrões incluídos</span>
     </div>
   </div>
-
 </body>
 </html>
