@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Padrões — Inteligência Cognitiva — CID-AI</title>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg-primary:#0a0e1a;
+            --bg-secondary:#111827;
+            --bg-tertiary:#1f2937;
+            --text-primary:#f9fafb;
+            --text-secondary:#d1d5db;
+            --text-muted:#9ca3af;
+            --accent:#3b82f6;
+            --border:#374155;
+            --success:#10b981;
+            --warning:#f59e0b;
+            --danger:#ef4444;
+            --info:#8b5cf6;
+        }
+        body{
+            font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+        }
+        .container{max-width:1400px;margin:0 auto;padding:40px 32px}
+        .header{margin-bottom:32px}
+        .back-link{
+            color:var(--text-muted);
+            text-decoration:none;
+            font-size:14px;
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+        }
+
+        .analysis-header{
+            background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(139,92,246,.1));
+            border:1px solid rgba(59,130,246,.3);
+            border-radius:12px;
+            padding:32px;
+            margin-bottom:24px;
+        }
+        .analysis-icon{font-size:48px;margin-bottom:16px}
+        .analysis-title{font-size:28px;font-weight:700;margin-bottom:8px}
+        .analysis-subtitle{font-size:14px;color:var(--text-muted);margin-bottom:20px}
+
+        .stats-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:16px;
+        }
+        .stat-card{
+            background:var(--bg-secondary);
+            border-radius:10px;
+            padding:20px;
+        }
+        .stat-label{
+            font-size:11px;
+            color:var(--text-muted);
+            text-transform:uppercase;
+            margin-bottom:8px;
+        }
+        .stat-value{font-size:32px;font-weight:700}
+        .stat-detail{font-size:12px;color:var(--text-secondary)}
+
+        .section{
+            background:var(--bg-secondary);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:32px;
+            margin-bottom:24px;
+        }
+        .section-header{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin-bottom:24px;
+            padding-bottom:16px;
+            border-bottom:1px solid var(--border);
+        }
+        .section-title{font-size:18px;font-weight:600}
+
+        .memory-note{
+            background:rgba(139,92,246,.1);
+            border-left:3px solid var(--info);
+            padding:12px 16px;
+            border-radius:6px;
+            font-size:13px;
+            color:var(--text-secondary);
+            margin-bottom:20px;
+        }
+        .memory-note strong{color:var(--info)}
+
+        .insight-grid{display:grid;gap:20px}
+        .insight-card{
+            background:var(--bg-tertiary);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:24px;
+        }
+        .insight-badge{
+            display:inline-block;
+            padding:6px 12px;
+            background:rgba(59,130,246,.15);
+            color:var(--accent);
+            border-radius:6px;
+            font-size:11px;
+            font-weight:700;
+        }
+        .insight-badge.high{background:rgba(16,185,129,.15);color:var(--success)}
+        .insight-badge.emerging{background:rgba(251,191,36,.15);color:var(--warning)}
+
+        .insight-title{font-size:16px;font-weight:600;margin:12px 0}
+        .insight-description{font-size:14px;color:var(--text-secondary)}
+
+        .recommendation-box{
+            background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(59,130,246,.05));
+            border:1px solid rgba(139,92,246,.3);
+            border-radius:12px;
+            padding:24px;
+        }
+        .recommendation-title{font-size:16px;font-weight:600;margin-bottom:12px}
+        .recommendation-item{
+            font-size:13px;
+            margin-bottom:8px;
+            padding-left:16px;
+            position:relative;
+        }
+        .recommendation-item::before{
+            content:"→";
+            position:absolute;
+            left:0;
+            color:var(--accent);
+            font-weight:700;
+        }
+
+        /* Modal */
+        .modal-overlay{
+            display:none;
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,.75);
+            backdrop-filter:blur(4px);
+            z-index:1000;
+            align-items:center;
+            justify-content:center;
+        }
+        .modal-overlay.active{display:flex}
+        .modal{
+            background:var(--bg-secondary);
+            border:1px solid var(--border);
+            border-radius:16px;
+            max-width:600px;
+            width:90%;
+        }
+        .modal-header{
+            padding:20px;
+            border-bottom:1px solid var(--border);
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .modal-title{font-size:16px;font-weight:600}
+        .modal-body{padding:20px;font-size:13px;color:var(--text-secondary)}
+        .modal-close{
+            background:var(--bg-tertiary);
+            border:none;
+            color:var(--text-secondary);
+            font-size:18px;
+            cursor:pointer;
+            border-radius:6px;
+            width:32px;
+            height:32px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="header">
+        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
+    </div>
+
+    <div class="analysis-header">
+        <div class="analysis-icon">📈</div>
+        <div class="analysis-title">Análise de Padrões</div>
+        <div class="analysis-subtitle">
+            Aprendizado transversal • Identificação de tendências • Detecção de anomalias • Evolução de confiança
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Padrões Analisados</div>
+                <div class="stat-value">47</div>
+                <div class="stat-detail">Total histórico</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Insights Validados</div>
+                <div class="stat-value">23</div>
+                <div class="stat-detail">Confiança &gt; 80%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Padrões Emergentes</div>
+                <div class="stat-value">8</div>
+                <div class="stat-detail">Em validação</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Anomalias</div>
+                <div class="stat-value">5</div>
+                <div class="stat-detail">Exigem atenção</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <span class="section-title">Principais Insights Detectados</span>
+        </div>
+
+        <div class="memory-note">
+            <strong>🧠 Aprendizado do Sistema:</strong>
+            Estes padrões são derivados da análise de 47 decisões ao longo de 18 meses, cruzando resultados, premissas e níveis de confiança.
+        </div>
+
+        <div class="insight-grid">
+            <div class="insight-card">
+                <span class="insight-badge high">ALTO IMPACTO</span>
+                <div class="insight-title">Confiança da IA aumentou 18% em 18 meses</div>
+                <div class="insight-description">
+                    A confiança média evoluiu de 64% para 82% conforme o sistema validou premissas e acumulou histórico decisório.
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <span class="insight-badge high">ALTO IMPACTO</span>
+                <div class="insight-title">Qualidade do Time é o maior preditor de sucesso</div>
+                <div class="insight-description">
+                    Correlação de 89% entre qualidade do time fundador e sucesso da decisão, superando métricas financeiras isoladas.
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <span class="insight-badge emerging">PADRÃO EMERGENTE</span>
+                <div class="insight-title">Risco regulatório crescente</div>
+                <div class="insight-description">
+                    Aumento significativo de alertas regulatórios nos últimos 6 meses, reduzindo a confiança preditiva jurídica.
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <span class="insight-badge high">ALTO IMPACTO</span>
+                <div class="insight-title">Disciplina de valuation dobra retorno médio</div>
+                <div class="insight-description">
+                    Entradas abaixo de 15x ARR apresentaram retorno médio de 4,2x versus 2,1x acima de 20x ARR.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommendation-box">
+        <div class="recommendation-title">Recomendações da IA</div>
+        <div class="recommendation-item">Aumentar peso da qualidade do time no score decisório.</div>
+        <div class="recommendation-item">Impor gatilho automático para valuations acima de 18x ARR.</div>
+        <div class="recommendation-item">Inserir cláusulas de revisão regulatória anual.</div>
+        <div class="recommendation-item">Exigir múltiplas fontes independentes para validação de mercado.</div>
+        <div class="recommendation-item">Monitorar anomalias positivas para refinamento do modelo.</div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div id="globalModal" class="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="modalTitleText"></div>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+    </div>
+</div>
+
+<script>
+function openModal(title, content){
+    document.getElementById("modalTitleText").textContent = title;
+    document.getElementById("modalBody").innerHTML = content;
+    document.getElementById("globalModal").classList.add("active");
+}
+function closeModal(){
+    document.getElementById("globalModal").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
