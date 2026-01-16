@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Decision Model - Cognitive Learning - CID-AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #8b5cf6;
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #8b5cf6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 32px; }
+        
+        .header { margin-bottom: 32px; }
+        .back-link { color: var(--text-muted); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        
+        .memory-header { background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        .memory-icon { font-size: 48px; margin-bottom: 16px; }
+        .memory-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .memory-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+        
+        .memory-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .memory-stat { background: var(--bg-secondary); border-radius: 10px; padding: 20px; }
+        .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; }
+        .stat-value { font-size: 32px; font-weight: 700; margin-bottom: 4px; }
+        .stat-detail { font-size: 12px; color: var(--text-secondary); }
+
+        .section { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .section-header-left { display: flex; align-items: center; gap: 12px; }
+        .section-icon { font-size: 24px; }
+        .section-title { font-size: 18px; font-weight: 600; }
+        .section-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        .pattern-grid { display: grid; gap: 20px; }
+        .pattern-card { background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: all 0.3s; cursor: pointer; }
+        .pattern-card:hover { border-color: var(--accent); transform: translateX(4px); }
+        
+        .pattern-header { display: flex; align-items: start; justify-content: space-between; margin-bottom: 16px; }
+        .pattern-type { display: inline-block; padding: 6px 12px; background: rgba(139, 92, 246, 0.15); color: var(--info); border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+        .pattern-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .pattern-description { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
+        
+        .pattern-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; padding: 16px; background: var(--bg-primary); border-radius: 8px; margin-bottom: 16px; }
+        .pattern-metric { }
+        .pattern-metric-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+        .pattern-metric-value { font-size: 18px; font-weight: 700; }
+
+        .pattern-confidence { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-primary); border-radius: 8px; font-size: 13px; }
+        .confidence-badge { padding: 4px 10px; background: rgba(16, 185, 129, 0.15); color: var(--success); border-radius: 4px; font-size: 11px; font-weight: 700; }
+
+        .pattern-examples { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+        .pattern-examples-title { font-size: 12px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+        .example-list { display: flex; flex-direction: column; gap: 8px; }
+        .example-item { font-size: 13px; color: var(--text-secondary); padding-left: 20px; position: relative; }
+        .example-item::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+        .learning-timeline { position: relative; padding-left: 40px; }
+        .timeline-item { position: relative; padding-bottom: 32px; }
+        .timeline-item::before { content: ''; position: absolute; left: -28px; top: 8px; width: 12px; height: 12px; background: var(--accent); border-radius: 50%; border: 3px solid var(--bg-primary); }
+        .timeline-item::after { content: ''; position: absolute; left: -23px; top: 20px; width: 2px; bottom: 0; background: var(--border); }
+        .timeline-item:last-child::after { display: none; }
+        
+        .timeline-date { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
+        .timeline-content { background: var(--bg-tertiary); border-radius: 8px; padding: 20px; }
+        .timeline-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+        .timeline-insight { font-size: 12px; color: var(--info); padding: 12px; background: rgba(139, 92, 246, 0.1); border-radius: 6px; border-left: 3px solid var(--info); }
+
+        .correlation-grid { display: grid; gap: 16px; }
+        .correlation-item { background: var(--bg-tertiary); border-radius: 8px; padding: 20px; display: flex; gap: 20px; align-items: center; }
+        .correlation-icon { width: 56px; height: 56px; background: rgba(139, 92, 246, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+        .correlation-content { flex: 1; }
+        .correlation-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+        .correlation-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+        .correlation-strength { display: flex; align-items: center; gap: 12px; }
+        .correlation-label { font-size: 11px; color: var(--text-muted); }
+        .correlation-bar { flex: 1; height: 6px; background: var(--bg-primary); border-radius: 3px; overflow: hidden; max-width: 200px; }
+        .correlation-fill { height: 100%; background: var(--success); border-radius: 3px; }
+        .correlation-percentage { font-size: 13px; font-weight: 700; color: var(--success); }
+
+        .insight-box { background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.05)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 24px; margin-top: 24px; }
+        .insight-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .insight-icon { width: 40px; height: 40px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .insight-title { font-size: 16px; font-weight: 600; }
+        .insight-content { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .insight-list { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+        .insight-list-item { font-size: 13px; padding-left: 20px; position: relative; }
+        .insight-list-item::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+        .filters { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+        .filter-btn { padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: var(--bg-tertiary); border-color: var(--accent); color: var(--accent); }
+
+        .source-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--accent); cursor: pointer; margin-top: 12px; }
+        .source-tag:hover { text-decoration: underline; }
+    
+/* Modal System */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 28px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 20px 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="01-cognitive-dashboard.html" class="back-link">← Back to Dashboard</a>
+        </div>
+
+        <div class="memory-header">
+            <div class="memory-icon">🧠</div>
+            <div class="memory-title">Personal Decision Model - Cognitive Learning System</div>
+            <div class="memory-subtitle">AI learns from decision patterns over time • NOT a log system • Identifies correlations and success factors</div>
+            <div style="font-size: 13px; color: var(--text-muted); font-style: italic; margin-top: 12px; padding: 12px; background: rgba(139, 92, 246, 0.05); border-radius: 8px; border-left: 3px solid var(--accent);">
+                💡 <strong>What is PDM?</strong> A longitudinal, user-centric decision model that captures your objectives, preferences, constraints, and patterns over time — not just historical memory, but an evolving personal decision context.
+            </div>
+            
+            <div class="memory-stats">
+                <div class="memory-stat">
+                    <div class="stat-label">Total Decisions</div>
+                    <div class="stat-value">47</div>
+                    <div class="stat-detail">Indexed and analyzed</div>
+                </div>
+                <div class="memory-stat">
+                    <div class="stat-label">Patterns Identified</div>
+                    <div class="stat-value">23</div>
+                    <div class="stat-detail">Cross-decision insights</div>
+                </div>
+                <div class="memory-stat">
+                    <div class="stat-label">Learning Depth</div>
+                    <div class="stat-value">8.4<span style="font-size: 18px;">/10</span></div>
+                    <div class="stat-detail">AI confidence in patterns</div>
+                </div>
+                <div class="memory-stat">
+                    <div class="stat-label">Success Correlations</div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-detail">Validated predictors</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn active">All Patterns</button>
+            <button class="filter-btn">Investment Decisions</button>
+            <button class="filter-btn">Legal Agreements</button>
+            <button class="filter-btn">High Confidence (>80%)</button>
+            <button class="filter-btn">Recent Learnings</button>
+        </div>
+
+        <!-- Key Patterns Learned -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">🔍</span>
+                    <div>
+                        <div class="section-title">Key Patterns Learned by AI</div>
+                        <div class="section-subtitle">Longitudinal analysis across 47 decisions • Pattern recognition • Success factor identification</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-grid">
+                <!-- Pattern 1: Investment Success Factors -->
+                <div class="pattern-card">
+                    <span class="pattern-type">Investment Pattern</span>
+                    <div class="pattern-header">
+                        <div>
+                            <div class="pattern-title">Strong Team + Unit Economics = 82% Success Rate</div>
+                            <div class="pattern-description">AI has identified that investment decisions with both strong founding teams (8.0+ rating) AND healthy unit economics (LTV/CAC >3.0x) show 82% success rate vs 47% for decisions missing either factor.</div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-metrics">
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Decisions Analyzed</div>
+                            <div class="pattern-metric-value">23</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Success Correlation</div>
+                            <div class="pattern-metric-value">82%</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Confidence</div>
+                            <div class="pattern-metric-value">89%</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Learning Period</div>
+                            <div class="pattern-metric-value">18mo</div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-confidence">
+                        <span>🎯</span>
+                        <span>AI Insight: When both factors present together, recommendation confidence increases by avg 12 percentage points</span>
+                        <span class="confidence-badge">VALIDATED</span>
+                    </div>
+
+                    <div class="pattern-examples">
+                        <div class="pattern-examples-title">Recent Examples (Successful)</div>
+                        <div class="example-list">
+                            <div class="example-item">TechCorp Series A (Team: 8.2, LTV/CAC: 3.8x) → Outcome: Positive</div>
+                            <div class="example-item">DataSystems Seed (Team: 8.5, LTV/CAC: 4.1x) → Outcome: Positive</div>
+                            <div class="example-item">CloudCo Series B (Team: 8.0, LTV/CAC: 3.2x) → Outcome: Positive</div>
+                        </div>
+                    </div>
+
+                    <div class="source-tag" onclick="// Use openModal() instead: alert('Pattern Data Sources:\n• 23 investment decisions (2023-2025)\n• Success defined as: achieving milestones or positive exit\n• Team rating: Based on previous exits, experience, domain expertise\n• Unit economics: LTV/CAC ratio validated through actual data\n• Control group: 24 decisions without both factors (47% success)\n\nStatistical significance: p < 0.05')">
+                        📄 View pattern methodology & data sources
+                    </div>
+                </div>
+
+                <!-- Pattern 2: Contract Risk Indicators -->
+                <div class="pattern-card">
+                    <span class="pattern-type">Legal Pattern</span>
+                    <div class="pattern-header">
+                        <div>
+                            <div class="pattern-title">IP Ambiguity + Unbalanced Indemnification = 67% Dispute Risk</div>
+                            <div class="pattern-description">Contracts with both ambiguous IP ownership clauses AND asymmetric indemnification (>60/40 split) show 67% probability of disputes within 18 months, compared to 12% baseline.</div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-metrics">
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Contracts Analyzed</div>
+                            <div class="pattern-metric-value">18</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Dispute Correlation</div>
+                            <div class="pattern-metric-value">67%</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Confidence</div>
+                            <div class="pattern-metric-value">84%</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Avg Dispute Cost</div>
+                            <div class="pattern-metric-value">$1.2M</div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-confidence">
+                        <span>⚠️</span>
+                        <span>AI Insight: Either factor alone shows 28% dispute risk. Combined: 67% risk. Negotiating both clauses reduces risk to 15%</span>
+                        <span class="confidence-badge">VALIDATED</span>
+                    </div>
+
+                    <div class="pattern-examples">
+                        <div class="pattern-examples-title">Historical Cases</div>
+                        <div class="example-list">
+                            <div class="example-item">GlobalPartners 2022 (Both factors) → Litigation: $1.8M cost, 18 months</div>
+                            <div class="example-item">TechAlliance 2023 (Both factors) → Dispute: Settled $950K</div>
+                            <div class="example-item">InnovateCo 2024 (IP only) → Minor dispute: Resolved $120K</div>
+                        </div>
+                    </div>
+
+                    <div class="source-tag" onclick="// Use openModal() instead: alert('Pattern Data Sources:\n• 18 partnership agreements (2022-2024)\n• Dispute tracking: Legal team records + case outcomes\n• IP ambiguity: Clauses lacking specific ownership framework\n• Indemnification imbalance: >60/40 liability split\n• Control: 31 contracts without both factors (12% dispute rate)\n\nValidation: Reviewed by external legal counsel')">
+                        📄 View legal pattern analysis
+                    </div>
+                </div>
+
+                <!-- Pattern 3: Valuation Timing -->
+                <div class="pattern-card">
+                    <span class="pattern-type">Financial Pattern</span>
+                    <div class="pattern-header">
+                        <div>
+                            <div class="pattern-title">Early-Stage Entry at <15x ARR Multiple = 4.2x Avg Return</div>
+                            <div class="pattern-description">Investment entries at valuations below 15x ARR in early-stage companies (Series A/B) achieve average 4.2x return over 5 years, vs 2.1x for entries at >20x ARR multiple.</div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-metrics">
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Investments Tracked</div>
+                            <div class="pattern-metric-value">16</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Avg Return (<15x)</div>
+                            <div class="pattern-metric-value">4.2x</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Avg Return (>20x)</div>
+                            <div class="pattern-metric-value">2.1x</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Confidence</div>
+                            <div class="pattern-metric-value">76%</div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-confidence">
+                        <span>💰</span>
+                        <span>AI Insight: Valuation discipline at entry strongly correlates with exit multiples. Sweet spot: 12-15x ARR for early-stage</span>
+                        <span class="confidence-badge">MODERATE CONFIDENCE</span>
+                    </div>
+
+                    <div class="pattern-examples">
+                        <div class="pattern-examples-title">Portfolio Performance</div>
+                        <div class="example-list">
+                            <div class="example-item">Entry 13x ARR → Exit 8.2x return (CloudTech, 2020-2025)</div>
+                            <div class="example-item">Entry 14x ARR → Exit 5.1x return (DataCo, 2019-2024)</div>
+                            <div class="example-item">Entry 22x ARR → Exit 1.8x return (FastGrow, 2021-2025)</div>
+                        </div>
+                    </div>
+
+                    <div class="source-tag" onclick="// Use openModal() instead: alert('Pattern Data Sources:\n• 16 portfolio investments with exits (2019-2025)\n• ARR multiple: Entry valuation ÷ ARR at investment\n• Returns: Exit value ÷ Entry valuation\n• Stage: Series A and B only (Seed excluded)\n• Control factors: Team quality, market size adjusted\n\nNote: Moderate confidence due to limited sample size')">
+                        📄 View return analysis methodology
+                    </div>
+                </div>
+
+                <!-- Pattern 4: Market Validation -->
+                <div class="pattern-card">
+                    <span class="pattern-type">Market Pattern</span>
+                    <div class="pattern-header">
+                        <div>
+                            <div class="pattern-title">3+ Independent TAM Sources = 92% Accuracy in Growth Projections</div>
+                            <div class="pattern-description">Market size estimates validated by 3+ independent industry sources (Gartner, IDC, McKinsey, etc.) show 92% accuracy in predicting actual market growth over 2-year period, vs 54% for single-source estimates.</div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-metrics">
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Markets Tracked</div>
+                            <div class="pattern-metric-value">12</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Prediction Accuracy</div>
+                            <div class="pattern-metric-value">92%</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Confidence</div>
+                            <div class="pattern-metric-value">88%</div>
+                        </div>
+                        <div class="pattern-metric">
+                            <div class="pattern-metric-label">Variance Range</div>
+                            <div class="pattern-metric-value">±8%</div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-confidence">
+                        <span>📊</span>
+                        <span>AI Insight: Cross-validation from multiple independent sources dramatically improves market assessment reliability</span>
+                        <span class="confidence-badge">HIGH CONFIDENCE</span>
+                    </div>
+
+                    <div class="pattern-examples">
+                        <div class="pattern-examples-title">Validated Markets</div>
+                        <div class="example-list">
+                            <div class="example-item">Manufacturing Tech TAM (3 sources: Gartner, IDC, McKinsey) → Actual growth: 17.2% vs predicted 16.8%</div>
+                            <div class="example-item">Healthcare AI TAM (4 sources) → Actual growth: 22.1% vs predicted 21.5%</div>
+                            <div class="example-item">FinTech TAM (1 source only) → Actual growth: 12.3% vs predicted 24.1% ❌</div>
+                        </div>
+                    </div>
+
+                    <div class="source-tag" onclick="// Use openModal() instead: alert('Pattern Data Sources:\n• 12 market segments tracked (2022-2024)\n• Independent sources: Gartner, IDC, Forrester, McKinsey, BCG\n• Validation: Actual market data after 2 years\n• Accuracy: Within ±10% of prediction\n• Single-source baseline: 54% accuracy (control group: 8 markets)\n\nMethodology: Comparison of predicted vs actual CAGR')">
+                        📄 View market validation data
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Correlations -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">📈</span>
+                    <div>
+                        <div class="section-title">Validated Success Correlations</div>
+                        <div class="section-subtitle">AI-identified factors with proven correlation to positive outcomes</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="correlation-grid">
+                <div class="correlation-item">
+                    <div class="correlation-icon">👥</div>
+                    <div class="correlation-content">
+                        <div class="correlation-title">Founding Team Quality</div>
+                        <div class="correlation-desc">Previous successful exits + domain expertise correlates with investment success</div>
+                        <div class="correlation-strength">
+                            <span class="correlation-label">Correlation strength:</span>
+                            <div class="correlation-bar"><div class="correlation-fill" style="width: 89%;"></div></div>
+                            <span class="correlation-percentage">89%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="correlation-item">
+                    <div class="correlation-icon">💰</div>
+                    <div class="correlation-content">
+                        <div class="correlation-title">Sustainable Unit Economics</div>
+                        <div class="correlation-desc">LTV/CAC ratio >3.0x and payback period <12 months predicts long-term viability</div>
+                        <div class="correlation-strength">
+                            <span class="correlation-label">Correlation strength:</span>
+                            <div class="correlation-bar"><div class="correlation-fill" style="width: 82%;"></div></div>
+                            <span class="correlation-percentage">82%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="correlation-item">
+                    <div class="correlation-icon">📊</div>
+                    <div class="correlation-content">
+                        <div class="correlation-title">Market Validation Quality</div>
+                        <div class="correlation-desc">Multi-source TAM validation (3+ sources) predicts accurate growth projections</div>
+                        <div class="correlation-strength">
+                            <span class="correlation-label">Correlation strength:</span>
+                            <div class="correlation-bar"><div class="correlation-fill" style="width: 92%;"></div></div>
+                            <span class="correlation-percentage">92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="correlation-item">
+                    <div class="correlation-icon">⚖️</div>
+                    <div class="correlation-content">
+                        <div class="correlation-title">Balanced Contract Terms</div>
+                        <div class="correlation-desc">Mutual indemnification and clear IP clauses reduce dispute probability</div>
+                        <div class="correlation-strength">
+                            <span class="correlation-label">Correlation strength:</span>
+                            <div class="correlation-bar"><div class="correlation-fill" style="width: 76%;"></div></div>
+                            <span class="correlation-percentage">76%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="correlation-item">
+                    <div class="correlation-icon">🎯</div>
+                    <div class="correlation-content">
+                        <div class="correlation-title">Entry Valuation Discipline</div>
+                        <div class="correlation-desc">Valuations <15x ARR at entry correlate with higher exit returns</div>
+                        <div class="correlation-strength">
+                            <span class="correlation-label">Correlation strength:</span>
+                            <div class="correlation-bar"><div class="correlation-fill" style="width: 71%;"></div></div>
+                            <span class="correlation-percentage">71%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="correlation-item">
+                    <div class="correlation-icon">📅</div>
+                    <div class="correlation-content">
+                        <div class="correlation-title">Execution Track Record</div>
+                        <div class="correlation-desc">Teams with history of meeting milestones on time show 83% execution success rate</div>
+                        <div class="correlation-strength">
+                            <span class="correlation-label">Correlation strength:</span>
+                            <div class="correlation-bar"><div class="correlation-fill" style="width: 83%;"></div></div>
+                            <span class="correlation-percentage">83%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Timeline -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">📚</span>
+                    <div>
+                        <div class="section-title">Cognitive Learning Timeline</div>
+                        <div class="section-subtitle">How AI knowledge evolved through decision history</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">January 2025 - Recent</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">IP Ambiguity Risk Pattern Validated</div>
+                        <div class="timeline-desc">After analyzing 18 contracts over 24 months, AI confirmed that ambiguous IP clauses combined with unbalanced indemnification create 67% dispute probability.</div>
+                        <div class="timeline-insight">
+                            🧠 <strong>Learning Impact:</strong> AI now automatically flags IP ambiguity + indemnification imbalance as critical risk combination. Confidence in legal risk assessment increased from 68% to 84%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">October 2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Valuation Entry Point Correlation Discovered</div>
+                        <div class="timeline-desc">Portfolio analysis revealed that early-stage investments at <15x ARR multiples achieved 4.2x average returns vs 2.1x for >20x entries across 16 exits.</div>
+                        <div class="timeline-insight">
+                            🧠 <strong>Learning Impact:</strong> AI now includes valuation multiple as key sensitivity variable in financial recommendations. Entry valuation influences confidence scoring by up to 15 points.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">July 2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Market Validation Multi-Source Pattern Identified</div>
+                        <div class="timeline-desc">Cross-referencing 12 market assessments showed that 3+ independent TAM sources achieved 92% prediction accuracy vs 54% for single sources.</div>
+                        <div class="timeline-insight">
+                            🧠 <strong>Learning Impact:</strong> AI now requires minimum 3 independent market sources for high-confidence recommendations. Single-source TAMs trigger medium confidence cap at 75%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">March 2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Team + Unit Economics Success Factor Confirmed</div>
+                        <div class="timeline-desc">Analysis of 23 investment decisions revealed that strong teams (8.0+ rating) combined with healthy unit economics (LTV/CAC >3.0x) showed 82% success rate.</div>
+                        <div class="timeline-insight">
+                            🧠 <strong>Learning Impact:</strong> AI now treats team quality and unit economics as interdependent success factors. When both present, recommendation confidence increases by avg 12 percentage points.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">December 2023</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Initial Pattern Recognition Framework Established</div>
+                        <div class="timeline-desc">CID-AI Personal Decision Model system initialized with first 15 decisions. Baseline pattern recognition capabilities activated.</div>
+                        <div class="timeline-insight">
+                            🧠 <strong>Learning Impact:</strong> Foundation established for longitudinal learning. AI began tracking decision outcomes and identifying early correlations.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Insights -->
+        <div class="insight-box">
+            <div class="insight-header">
+                <div class="insight-icon">💡</div>
+                <div class="insight-title">Current AI Learning Focus Areas</div>
+            </div>
+            <div class="insight-content">
+                Based on recent decision patterns, AI is actively learning and refining understanding in these areas:
+            </div>
+            <div class="insight-list">
+                <div class="insight-list-item">Competitive landscape stability: Tracking how market entry timing affects long-term positioning (18 decisions, learning confidence: 68%)</div>
+                <div class="insight-list-item">Regulatory compliance evolution: Monitoring how regulatory changes impact contract terms and risk (14 contracts, learning confidence: 72%)</div>
+                <div class="insight-list-item">Customer acquisition efficiency at scale: Analyzing CAC stability as companies grow (12 investments, learning confidence: 74%)</div>
+                <div class="insight-list-item">Exit timing optimization: Identifying optimal hold periods based on market conditions (8 exits tracked, learning confidence: 61% - needs more data)</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Pattern cards
+        document.querySelectorAll('.pattern-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('source-tag')) {
+                    // Use openModal() instead: alert('Pattern Detail View\n\nWould show:\n• Complete statistical analysis\n• All supporting decisions\n• Confidence evolution over time\n• Validation methodology\n• Current learning status');
+                }
+            });
+        });
+    </script>
+    
+
+    <!-- Modal System -->
+<div id="globalModal" class="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="modalTitle">
+                <span id="modalIcon"></span>
+                <span id="modalTitleText"></span>
+            </div>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- Dynamic content inserted here -->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+        // Set active nav item for 07-decision-memory.html
+        const currentPage = '07-decision-memory.html';
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === currentPage) {
+                item.classList.add('active');
+            }
+        });
+    
+// Global Modal System
+function openModal(title, icon, content) {
+    document.getElementById('modalTitleText').textContent = title;
+    document.getElementById('modalIcon').textContent = icon;
+    document.getElementById('modalBody').innerHTML = content;
+    document.getElementById('globalModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('globalModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close on overlay click
+document.getElementById('globalModal')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Close on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Data Provenance Modal
+function showDataProvenance(step) {
+    const provenanceData = {
+        1: {
+            title: 'Market Validation Data Sources',
+            content: `
+                <div class="provenance-item">
+                    <div class="provenance-source">📊 Gartner Market Analysis 2025</div>
+                    <div class="provenance-text">
+                        "Enterprise AI decision support market projected at $2.5B by 2028, with 18% CAGR driven by increasing demand for transparent AI systems."
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Published: Dec 2025</span>
+                        <span>Confidence: 92%</span>
+                        <span>Source Type: Industry Report</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">📈 IDC Technology Forecast</div>
+                    <div class="provenance-text">
+                        "Cognitive intelligence platforms growing 22% annually, with enterprise adoption accelerating post-2025 due to regulatory pressure for AI transparency."
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Published: Nov 2025</span>
+                        <span>Confidence: 88%</span>
+                        <span>Source Type: Market Research</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">🔬 McKinsey Digital Report</div>
+                    <div class="provenance-text">
+                        "Organizations using structured decision frameworks with AI assistance report 34% improvement in decision quality and 28% reduction in decision time."
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Published: Oct 2025</span>
+                        <span>Confidence: 90%</span>
+                        <span>Source Type: Consulting Research</span>
+                    </div>
+                </div>
+            `
+        },
+        2: {
+            title: 'Team Assessment Data Sources',
+            content: `
+                <div class="provenance-item">
+                    <div class="provenance-source">👥 LinkedIn Profile Analysis</div>
+                    <div class="provenance-text">
+                        Founder: 12 years enterprise SaaS experience, previous exit ($45M acquisition 2022). CTO: 8 years ML engineering at FAANG. VP Product: 6 years at unicorn startup.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Verified: Jan 2026</span>
+                        <span>Confidence: 95%</span>
+                        <span>Source Type: Professional Network</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">🎯 Reference Checks</div>
+                    <div class="provenance-text">
+                        3 references contacted: All confirmed strong execution capability, technical depth, and ability to scale teams. Previous investors cited "best founding team we've backed."
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Completed: Dec 2025</span>
+                        <span>Confidence: 85%</span>
+                        <span>Source Type: Direct Reference</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">📊 Team Composition Analysis</div>
+                    <div class="provenance-text">
+                        15-person team: 60% engineering, 20% product, 20% GTM. Balanced technical/commercial split. Low attrition (5% annually vs 18% industry average).
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Analyzed: Dec 2025</span>
+                        <span>Confidence: 90%</span>
+                        <span>Source Type: Internal Data</span>
+                    </div>
+                </div>
+            `
+        },
+        3: {
+            title: 'Financial Model Data Sources',
+            content: `
+                <div class="provenance-item">
+                    <div class="provenance-source">💰 Company Financial Statements</div>
+                    <div class="provenance-text">
+                        Q3 2025 metrics: $120K MRR, 72% gross margin, LTV/CAC 3.8x, 8-month payback period. Revenue grew 180% YoY. Burn: $95K/month.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Period: Q3 2025</span>
+                        <span>Confidence: 95%</span>
+                        <span>Source Type: Audited Financials</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">📈 SaaS Benchmark Data</div>
+                    <div class="provenance-text">
+                        Top quartile SaaS: LTV/CAC >3.0x, gross margin >70%, payback <12 months. Company exceeds all benchmarks for pre-Series A stage.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Source: SaaS Capital Index</span>
+                        <span>Confidence: 88%</span>
+                        <span>Source Type: Industry Benchmark</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">🎯 Customer Cohort Analysis</div>
+                    <div class="provenance-text">
+                        Month 6 retention: 94%, Month 12 retention: 87%, NRR: 118%. Strong cohort economics indicate product stickiness and expansion opportunity.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Analysis Date: Dec 2025</span>
+                        <span>Confidence: 92%</span>
+                        <span>Source Type: Customer Data</span>
+                    </div>
+                </div>
+            `
+        },
+        4: {
+            title: 'Risk Assessment Data Sources',
+            content: `
+                <div class="provenance-item">
+                    <div class="provenance-source">⚖️ Regulatory Landscape Analysis</div>
+                    <div class="provenance-text">
+                        Current regulatory environment: Low immediate risk. EU AI Act exempts B2B decision support tools. US regulatory framework still forming. No active enforcement in this category.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Updated: Dec 2025</span>
+                        <span>Confidence: 75%</span>
+                        <span>Source Type: Legal Analysis</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">🏆 Competitive Analysis</div>
+                    <div class="provenance-text">
+                        3 direct competitors identified, none with >$10M funding. Market fragmented. Incumbents (BI tools) not addressing AI reasoning transparency. Competitive moat: technical depth + first-mover.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Analysis: Nov 2025</span>
+                        <span>Confidence: 80%</span>
+                        <span>Source Type: Market Research</span>
+                    </div>
+                </div>
+                <div class="provenance-item">
+                    <div class="provenance-source">⚡ Execution Risk Assessment</div>
+                    <div class="provenance-text">
+                        Primary risks: Sales cycle length (6-9 months enterprise), technical complexity (AI accuracy), market education required. Mitigated by: Strong pilot program, existing customer success stories.
+                    </div>
+                    <div class="provenance-meta">
+                        <span>Assessment: Dec 2025</span>
+                        <span>Confidence: 70%</span>
+                        <span>Source Type: Risk Analysis</span>
+                    </div>
+                </div>
+            `
+        }
+    };
+
+    const data = provenanceData[step] || {
+        title: 'Data Sources',
+        content: '<div class="provenance-item"><div class="provenance-text">No additional source data available for this step.</div></div>'
+    };
+
+    openModal(data.title, '📊', data.content);
+}
+
+// Sensitivity Analysis Modal
+function showSensitivityAnalysis() {
+    const content = `
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">Market Growth Rate Below 12%</div>
+            <div class="sensitivity-description">
+                If market grows slower than 12% CAGR (vs projected 18%), TAM shrinks to $1.8B by 2028. This would change recommendation from "Invest Now" to "Wait & Monitor."
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> <12% CAGR = Recommendation changes to HOLD
+            </div>
+        </div>
+
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">Founder Team Attrition</div>
+            <div class="sensitivity-description">
+                If CEO or CTO leaves before Series B, execution risk increases dramatically. Confidence would drop from 82% to <60%. Recommendation would change to "Pass."
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> C-level departure = Recommendation changes to PASS
+            </div>
+        </div>
+
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">LTV/CAC Ratio Deterioration</div>
+            <div class="sensitivity-description">
+                Current 3.8x LTV/CAC is strong. If ratio falls below 2.5x due to rising CAC or churn, unit economics become marginal. Would require path to profitability reassessment.
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> LTV/CAC <2.5x = Recommendation changes to CONDITIONAL (must show path to >3.0x)
+            </div>
+        </div>
+
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">Competitive Funding Event</div>
+            <div class="sensitivity-description">
+                If major competitor raises $20M+ in next 6 months, competitive landscape shifts. May need to accelerate own fundraising or adjust valuation expectations downward.
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> Competitor raises >$20M = Reassess timing and valuation (may still invest but at different terms)
+            </div>
+        </div>
+
+        <div class="sensitivity-factor">
+            <div class="sensitivity-title">Regulatory Change Impact</div>
+            <div class="sensitivity-description">
+                New AI regulations requiring explainability audits could increase compliance costs by $200K+/year. However, could also be competitive advantage if company already built for transparency.
+            </div>
+            <div class="sensitivity-threshold">
+                <strong>Threshold:</strong> Heavy regulation = Double-edged sword (higher costs but stronger moat)
+            </div>
+        </div>
+    `;
+
+    openModal('Sensitivity Analysis: What Would Change This Recommendation?', '⚖️', content);
+}
+</script>
+
+
+</body>
+</html>
