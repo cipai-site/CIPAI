@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Model - Personal Decision Model (PDM) - CID-AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-elevated: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #8b5cf6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container { display: flex; min-height: 100vh; }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+        }
+
+        .logo {
+            padding: 28px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo .tagline {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        .nav {
+            flex: 1;
+            padding: 24px 0;
+            overflow-y: auto;
+        }
+
+        .nav-section {
+            margin-bottom: 28px;
+        }
+
+        .nav-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            padding: 0 24px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-item {
+            padding: 12px 24px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav-item:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background: var(--bg-tertiary);
+            color: var(--accent);
+        }
+
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent);
+        }
+
+        .nav-icon {
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            margin-left: 280px;
+        }
+
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .content {
+            padding: 36px;
+            max-width: 1600px;
+        }
+
+        .info-banner {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--info));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .info-content p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .model-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .model-item {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 24px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .model-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .model-value {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .model-description {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .value-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .value-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .value-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .value-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .constraints-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .constraint-item {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: start;
+            gap: 16px;
+        }
+
+        .constraint-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(239, 68, 68, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            color: var(--danger);
+        }
+
+        .constraint-content {
+            flex: 1;
+        }
+
+        .constraint-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .constraint-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-elevated);
+        }
+
+        .timeline {
+            display: grid;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .timeline-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    
+/* Modal System */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 28px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 20px 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>CID-AI</h1>
+                <div class="tagline">Cognitive Intelligence</div>
+            </div>
+            
+            <nav class="nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Core</div>
+                    <a href="01-cognitive-dashboard.html" class="nav-item">
+                        <span class="nav-icon">🧠</span>
+                        Cognitive Dashboard
+                    </a>
+                    <a href="11-personal-model.html" class="nav-item active">
+                        <span class="nav-icon">🎯</span>
+                        Personal Model
+                    </a>
+                    <a href="02-new-decision.html" class="nav-item">
+                        <span class="nav-icon">➕</span>
+                        New Decision
+                    </a>
+                    <a href="03-decision-history.html" class="nav-item">
+                        <span class="nav-icon">📊</span>
+                        Decision History
+                    </a>
+                    <a href="08-compare-scenarios.html" class="nav-item">
+                        <span class="nav-icon">🔄</span>
+                        Compare Scenarios
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Analysis Modules</div>
+                    <a href="05-cfo-module.html" class="nav-item">
+                        <span class="nav-icon">💰</span>
+                        CFO Module
+                    </a>
+                    <a href="06-clo-module.html" class="nav-item">
+                        <span class="nav-icon">⚖️</span>
+                        CLO Module
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Intelligence Layer</div>
+                    <a href="07-decision-memory.html" class="nav-item">
+                        <span class="nav-icon">🧩</span>
+                        Personal Decision Model (PDM)
+                    </a>
+                    <a href="09-pattern-analysis.html" class="nav-item">
+                        <span class="nav-icon">📈</span>
+                        Pattern Analysis
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">System</div>
+                    <a href="10-user-profile.html" class="nav-item">
+                        <span class="nav-icon">👤</span>
+                        Settings
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <header class="header">
+                <div>
+                    <div class="header-title">Personal Model (Personal Decision Model (PDM))</div>
+                    <div class="header-subtitle">Your longitudinal context for coherent decision-making</div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">📝 Edit Model</button>
+                    <button class="btn btn-primary">💾 Save Changes</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Info Banner -->
+                <div class="info-banner">
+                    <div class="info-icon">🎯</div>
+                    <div class="info-content">
+                        <h3>What is Personal Model?</h3>
+                        <p>Your Personal Model is NOT decision history—it's your enduring context: goals, constraints, values, life stage, risk tolerance. AI uses this to keep decisions coherent over time, ensuring recommendations align with who you are and what you're trying to achieve.</p>
+                    </div>
+                </div>
+
+                <!-- Life Stage & Current Focus -->
+                <div class="section">
+                    <div class="section-header">
+                        <div>
+                            <div class="section-title">
+                                <span class="section-icon">🎯</span>
+                                Life Stage & Current Focus
+                            </div>
+                            <div class="section-subtitle">Your current life context and primary objectives</div>
+                        </div>
+                    </div>
+
+                    <div class="model-grid">
+                        <div class="model-item">
+                            <div class="model-label">Life Stage</div>
+                            <div class="model-value">Growth-Stage Founder (Series A)</div>
+                            <div class="model-description">
+                                Building first venture-backed startup. Recently closed Series A. Team of 15. Product-market fit validated. Now scaling go-to-market and operations.
+                            </div>
+                        </div>
+
+                        <div class="model-item">
+                            <div class="model-label">Primary Goal (Next 12 Months)</div>
+                            <div class="model-value">Achieve $2M ARR & Prepare Series B</div>
+                            <div class="model-description">
+                                Scale from $400K to $2M ARR. Build repeatable sales motion. Hire VP Sales and 3 AEs. Demonstrate unit economics for Series B fundraise in Q4 2026.
+                            </div>
+                        </div>
+
+                        <div class="model-item">
+                            <div class="model-label">Secondary Goals</div>
+                            <div class="model-value">Build High-Performing Team Culture</div>
+                            <div class="model-description">
+                                Transition from founder-led to process-driven organization. Implement OKRs. Hire senior operators. Preserve startup agility while adding structure.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Values -->
+                <div class="section">
+                    <div class="section-header">
+                        <div>
+                            <div class="section-title">
+                                <span class="section-icon">💎</span>
+                                Core Values (Decision Principles)
+                            </div>
+                            <div class="section-subtitle">Your non-negotiable principles that guide all decisions</div>
+                        </div>
+                    </div>
+
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-number">1</div>
+                            <div class="value-name">Transparent Communication</div>
+                            <div class="value-desc">
+                                Radical honesty with team, investors, customers. No hiding bad news. Default to over-communication.
+                            </div>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-number">2</div>
+                            <div class="value-name">Customer-First Always</div>
+                            <div class="value-desc">
+                                Every decision considers customer impact. Long-term customer success over short-term revenue.
+                            </div>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-number">3</div>
+                            <div class="value-name">Sustainable Pace</div>
+                            <div class="value-desc">
+                                Build for marathon, not sprint. Protect team wellbeing. No burnout culture. Work-life integration matters.
+                            </div>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-number">4</div>
+                            <div class="value-name">Data-Informed, Not Data-Driven</div>
+                            <div class="value-desc">
+                                Use data to inform, but trust intuition and qualitative signals. Numbers don't tell the whole story.
+                            </div>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-number">5</div>
+                            <div class="value-name">Speed to Learning</div>
+                            <div class="value-desc">
+                                Bias toward action and fast iteration. Fail fast, learn faster. Avoid analysis paralysis.
+                            </div>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-number">6</div>
+                            <div class="value-name">Equity & Fairness</div>
+                            <div class="value-desc">
+                                Fair compensation, transparent equity splits, inclusive culture. No bro culture or favoritism.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Constraints & Boundaries -->
+                <div class="section">
+                    <div class="section-header">
+                        <div>
+                            <div class="section-title">
+                                <span class="section-icon">⚠️</span>
+                                Constraints & Boundaries
+                            </div>
+                            <div class="section-subtitle">Hard limits and non-negotiable boundaries</div>
+                        </div>
+                    </div>
+
+                    <div class="constraints-list">
+                        <div class="constraint-item">
+                            <div class="constraint-icon">💰</div>
+                            <div class="constraint-content">
+                                <div class="constraint-title">Cash Runway: Minimum 18 Months</div>
+                                <div class="constraint-desc">
+                                    Never let runway drop below 18 months. Current burn: $120K/month. Series A: $4.5M raised. Must maintain buffer for unexpected market changes.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="constraint-item">
+                            <div class="constraint-icon">👥</div>
+                            <div class="constraint-content">
+                                <div class="constraint-title">No Hiring Before Revenue Validates</div>
+                                <div class="constraint-desc">
+                                    Each new hire must be justified by revenue or clear path to revenue within 6 months. No speculative team building.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="constraint-item">
+                            <div class="constraint-icon">🏢</div>
+                            <div class="constraint-content">
+                                <div class="constraint-title">No Geographic Relocation Before Series B</div>
+                                <div class="constraint-desc">
+                                    Stay in current market (Santa Catarina) until Series B. Remote-first team. No expensive SF office until proven scale.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="constraint-item">
+                            <div class="constraint-icon">⏰</div>
+                            <div class="constraint-content">
+                                <div class="constraint-title">Family Time: Non-Negotiable</div>
+                                <div class="constraint-desc">
+                                    Evenings 6-9pm and weekends are protected for family. No meetings, no emails. Sustainable founder pace is non-negotiable.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="constraint-item">
+                            <div class="constraint-icon">🎯</div>
+                            <div class="constraint-content">
+                                <div class="constraint-title">Single Product Focus Until $5M ARR</div>
+                                <div class="constraint-desc">
+                                    No product diversification, new verticals, or shiny objects until core product hits $5M ARR. Stay focused.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Profile -->
+                <div class="section">
+                    <div class="section-header">
+                        <div>
+                            <div class="section-title">
+                                <span class="section-icon">📊</span>
+                                Risk Tolerance Profile
+                            </div>
+                            <div class="section-subtitle">How you approach uncertainty and risk across domains</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">💰</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Financial Risk: Moderate-High</div>
+                                <div class="timeline-desc">
+                                    Comfortable taking financial risks if upside is asymmetric (10x+). Will bet company capital on high-conviction bets. Personal financial risk: moderate (have runway/savings).
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">👥</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">People/Hiring Risk: Low</div>
+                                <div class="timeline-desc">
+                                    Conservative on hiring. Prefer proven talent over high-potential unknowns. Would rather move slower with right people than fast with wrong people.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">🚀</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Product Risk: High</div>
+                                <div class="timeline-desc">
+                                    Willing to ship fast and break things. Embrace technical debt if it accelerates learning. Product experiments are cheap; learning is expensive.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">📢</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Market/GTM Risk: Moderate</div>
+                                <div class="timeline-desc">
+                                    Will test new channels aggressively but maintain proven baseline. 70% budget to proven channels, 30% to experiments.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How AI Uses This -->
+                <div class="section">
+                    <div class="section-header">
+                        <div>
+                            <div class="section-title">
+                                <span class="section-icon">🤖</span>
+                                How AI Uses Your Personal Model
+                            </div>
+                            <div class="section-subtitle">Real examples of context application</div>
+                        </div>
+                    </div>
+
+                    <div class="model-grid">
+                        <div class="model-item" style="border-left-color: var(--success);">
+                            <div class="model-label">Example: Hiring Decision</div>
+                            <div class="model-value">VP Sales Candidate</div>
+                            <div class="model-description">
+                                <strong>Without Personal Model:</strong> AI recommends hiring based on credentials and market benchmarks.<br><br>
+                                <strong>With Personal Model:</strong> AI flags that hire violates "No Hiring Before Revenue Validates" constraint. Notes current $400K ARR doesn't justify VP-level sales hire yet. Suggests fractional VP or SDR first to prove model. Aligns with conservative people risk tolerance.
+                            </div>
+                        </div>
+
+                        <div class="model-item" style="border-left-color: var(--success);">
+                            <div class="model-label">Example: Fundraising Decision</div>
+                            <div class="model-value">SAFE vs Priced Round</div>
+                            <div class="model-description">
+                                <strong>Without Personal Model:</strong> AI compares SAFE vs priced round mechanics neutrally.<br><br>
+                                <strong>With Personal Model:</strong> AI considers "Transparent Communication" value and "18-month runway" constraint. Notes SAFE's valuation ambiguity conflicts with transparency value. Calculates runway impact of different structures. Recommends priced round despite complexity because it aligns with your values.
+                            </div>
+                        </div>
+
+                        <div class="model-item" style="border-left-color: var(--success);">
+                            <div class="model-label">Example: Product Decision</div>
+                            <div class="model-value">New Feature vs New Product</div>
+                            <div class="model-description">
+                                <strong>Without Personal Model:</strong> AI evaluates market opportunity and technical feasibility.<br><br>
+                                <strong>With Personal Model:</strong> AI immediately flags "Single Product Focus Until $5M ARR" constraint. Recommends doubling down on core product features over shiny new product ideas. Suggests quarterly review when approaching $5M threshold.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    // Personal Model Navigation
+    (function() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else { init(); }
+        
+        function init() {
+            const currentPage = '11-personal-model.html';
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === currentPage) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    })();
+    </script>
+
+    <!-- Modal System -->
+    <div id="globalModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">
+                    <span id="modalIcon"></span>
+                    <span id="modalTitleText"></span>
+                </div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function openModal(title, icon, content) {
+        document.getElementById('modalTitleText').textContent = title;
+        document.getElementById('modalIcon').textContent = icon;
+        document.getElementById('modalBody').innerHTML = content;
+        document.getElementById('globalModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('globalModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('globalModal')?.addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
+    </script>
+
+</body>
+</html>
