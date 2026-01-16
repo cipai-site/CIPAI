@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Histórico de Decisões — CID-AI</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1f2937;
+      --bg-elevated: #374151;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --border: #374155;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --info: #8b5cf6;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .container { display: flex; min-height: 100vh; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      position: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      padding: 28px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo h1 {
+      font-size: 26px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo .tagline {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav { flex: 1; padding: 24px 0; }
+
+    .nav-section { margin-bottom: 28px; }
+
+    .nav-section-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      padding: 0 24px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-item {
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-item:hover {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    .nav-item.active {
+      background: var(--bg-tertiary);
+      color: var(--accent);
+    }
+
+    /* Main */
+    .main { flex: 1; margin-left: 280px; }
+
+    .header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 36px;
+    }
+
+    .header-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .content { padding: 36px; }
+
+    .card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .done { background: rgba(16,185,129,.15); color: var(--success); }
+    .review { background: rgba(245,158,11,.15); color: var(--warning); }
+    .progress { background: rgba(59,130,246,.15); color: var(--accent); }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      <h1>CID-AI</h1>
+      <div class="tagline">Inteligência Cognitiva</div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Essencial</div>
+        <a href="01-cognitive-dashboard.html" class="nav-item">🧠 Painel Cognitivo</a>
+        <a href="02-new-decision.html" class="nav-item">➕ Nova Decisão</a>
+        <a href="03-decision-history.html" class="nav-item active">📊 Histórico de Decisões</a>
+        <a href="08-compare-scenarios.html" class="nav-item">🔄 Comparar Cenários</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Módulos de Análise</div>
+        <a href="05-cfo-module.html" class="nav-item">💰 Módulo CFO</a>
+        <a href="06-clo-module.html" class="nav-item">⚖️ Módulo CLO</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Camada de Inteligência</div>
+        <a href="07-decision-memory.html" class="nav-item">🧩 Modelo de Decisão Pessoal</a>
+        <a href="09-pattern-analysis.html" class="nav-item">📈 Análise de Padrões</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Sistema</div>
+        <a href="10-user-profile.html" class="nav-item">👤 Configurações</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header class="header">
+      <div class="header-title">Histórico de Decisões</div>
+      <div class="header-subtitle">
+        Registro completo de decisões analisadas pela IA
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="card">
+        <div class="card-title">Contratar CTO Fracionado</div>
+        <div class="card-meta">Decisão Estratégica • há 5 dias</div>
+        <div class="card-desc">
+          Avaliação entre contratação integral, fracionada ou postergação com base em runway, risco de pessoas e metas de ARR.
+        </div>
+        <span class="status done">Concluída</span>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Modelo de Captação SAFE vs Série A</div>
+        <div class="card-meta">Decisão Financeira • há 1 semana</div>
+        <div class="card-desc">
+          Comparação entre velocidade de captação e clareza estrutural considerando valores pessoais e governança.
+        </div>
+        <span class="status review">Em revisão</span>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Estratégia Go-to-Market</div>
+        <div class="card-meta">Decisão de Crescimento • há 12 dias</div>
+        <div class="card-desc">
+          Análise entre PLG e vendas enterprise com foco em velocidade, previsibilidade e eficiência comercial.
+        </div>
+        <span class="status progress">Em andamento</span>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
