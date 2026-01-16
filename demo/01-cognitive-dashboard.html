@@ -2,81 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CID-AI – Cognitive Dashboard</title>
+  <title>Cognitive Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      margin: 0;
-      padding: 40px;
-    }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 16px;
-      max-width: 720px;
-      line-height: 1.6;
-    }
-    .modules {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #020617;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      padding: 20px;
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="css/demo.css" />
 </head>
 <body>
 
-  <h1>Cognitive Dashboard</h1>
-  <p>
-    This dashboard represents the cognitive control center of CID-AI.
-    From here, strategic decisions, financial analysis, legal reasoning,
-    and memory modules are orchestrated.
-  </p>
+  <header class="demo-header">
+    <h1>Cognitive Dashboard</h1>
+  </header>
 
-  <div class="modules">
-    <div class="card">
-      <h3>New Decision</h3>
-      <p>Create and analyze a new strategic decision.</p>
-      <a href="02-new-decision.html">Open →</a>
-    </div>
-
-    <div class="card">
-      <h3>Decision History</h3>
-      <p>Review past decisions and outcomes.</p>
-      <a href="03-decision-history.html">Open →</a>
-    </div>
-
-    <div class="card">
-      <h3>CFO Module</h3>
-      <p>Financial modeling and scenario analysis.</p>
-      <a href="05-cfo-module.html">Open →</a>
-    </div>
-
-    <div class="card">
-      <h3>Pattern Analysis</h3>
-      <p>Identify recurring decision patterns.</p>
-      <a href="09-pattern-analysis.html">Open →</a>
-    </div>
-  </div>
+  <section class="demo-grid">
+    <a href="02-new-decision.html" class="demo-card">New Decision</a>
+    <a href="03-decision-history.html" class="demo-card">Decision History</a>
+    <a href="05-cfo-module.html" class="demo-card">CFO Module</a>
+    <a href="09-pattern-analysis.html" class="demo-card">Pattern Analysis</a>
+  </section>
 
 </body>
 </html>
