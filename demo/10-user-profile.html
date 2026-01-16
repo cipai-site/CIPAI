@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - System Configuration - CID-AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #8b5cf6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 32px; }
+        
+        .header { margin-bottom: 32px; }
+        .back-link { color: var(--text-muted); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        
+        .profile-header { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; display: flex; align-items: start; gap: 32px; }
+        .profile-avatar { width: 96px; height: 96px; background: linear-gradient(135deg, var(--accent), var(--info)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 42px; flex-shrink: 0; }
+        .profile-info { flex: 1; }
+        .profile-name { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .profile-email { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+        .profile-meta { display: flex; gap: 24px; font-size: 13px; color: var(--text-secondary); }
+        .profile-actions { display: flex; gap: 12px; }
+
+        .section { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .section-header-left { display: flex; align-items: center; gap: 12px; }
+        .section-icon { font-size: 24px; }
+        .section-title { font-size: 18px; font-weight: 600; }
+        .section-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        .form-grid { display: grid; gap: 24px; }
+        .form-group { display: grid; gap: 8px; }
+        .form-label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .form-input { padding: 12px 16px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 14px; transition: all 0.2s; }
+        .form-input:focus { outline: none; border-color: var(--accent); background: var(--bg-primary); }
+        .form-hint { font-size: 12px; color: var(--text-muted); }
+
+        .preference-grid { display: grid; gap: 20px; }
+        .preference-item { background: var(--bg-tertiary); border-radius: 8px; padding: 20px; display: flex; align-items: start; justify-content: space-between; }
+        .preference-content { flex: 1; }
+        .preference-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+        .preference-description { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+        .toggle-switch { width: 52px; height: 28px; background: var(--border); border-radius: 14px; position: relative; cursor: pointer; transition: all 0.3s; flex-shrink: 0; }
+        .toggle-switch.active { background: var(--accent); }
+        .toggle-switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; background: white; border-radius: 50%; transition: all 0.3s; }
+        .toggle-switch.active::after { left: 27px; }
+
+        .module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+        .module-card { background: var(--bg-tertiary); border: 2px solid var(--border); border-radius: 12px; padding: 20px; transition: all 0.3s; cursor: pointer; }
+        .module-card:hover { border-color: var(--accent); }
+        .module-card.enabled { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .module-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .module-icon { width: 40px; height: 40px; background: var(--bg-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .module-title { font-size: 15px; font-weight: 600; }
+        .module-description { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5; }
+        .module-status { font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; display: inline-block; }
+        .module-status.enabled { background: rgba(16, 185, 129, 0.15); color: var(--success); }
+        .module-status.disabled { background: rgba(107, 114, 128, 0.15); color: var(--text-muted); }
+
+        .confidence-thresholds { display: grid; gap: 20px; }
+        .threshold-item { background: var(--bg-tertiary); border-radius: 8px; padding: 20px; }
+        .threshold-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+        .threshold-title { font-size: 14px; font-weight: 600; }
+        .threshold-value { font-size: 24px; font-weight: 700; color: var(--accent); }
+        .threshold-slider { width: 100%; height: 8px; background: var(--bg-primary); border-radius: 4px; margin-bottom: 12px; position: relative; cursor: pointer; }
+        .threshold-slider::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 75%; background: linear-gradient(90deg, var(--danger), var(--warning), var(--success)); border-radius: 4px; }
+        .threshold-description { font-size: 12px; color: var(--text-muted); }
+
+        .alert-box { background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(239, 68, 68, 0.05)); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 12px; padding: 20px; display: flex; gap: 16px; margin-bottom: 20px; }
+        .alert-icon { width: 40px; height: 40px; background: var(--warning); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .alert-content { flex: 1; }
+        .alert-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+        .alert-text { font-size: 13px; color: var(--text-secondary); }
+
+        .data-section { background: var(--bg-tertiary); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+        .data-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .data-row:last-child { border-bottom: none; }
+        .data-label { font-size: 13px; color: var(--text-secondary); }
+        .data-value { font-size: 14px; font-weight: 600; }
+
+        .btn { padding: 12px 24px; border-radius: 8px; border: none; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #2563eb; }
+        .btn-secondary { background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border); }
+        .btn-secondary:hover { background: var(--bg-primary); }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-success { background: var(--success); color: white; }
+
+        .danger-zone { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 24px; }
+        .danger-title { font-size: 16px; font-weight: 600; color: var(--danger); margin-bottom: 12px; }
+        .danger-description { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+        .danger-actions { display: flex; gap: 12px; }
+    
+/* Modal System */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 28px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 20px 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="01-cognitive-dashboard.html" class="back-link">← Back to Dashboard</a>
+        </div>
+
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-avatar">👤</div>
+            <div class="profile-info">
+                <div class="profile-name">Paulo Silva</div>
+                <div class="profile-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd8d9c889192bd98859c908d9198d39e9290">[email&#160;protected]</a></div>
+                <div class="profile-meta">
+                    <span>📊 47 Decisions Analyzed</span>
+                    <span>•</span>
+                    <span>🧠 23 Patterns Learned</span>
+                    <span>•</span>
+                    <span>⏱️ Member since Dec 2023</span>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="btn btn-secondary">Edit Profile</button>
+                <button class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">👤</span>
+                    <div>
+                        <div class="section-title">Personal Information</div>
+                        <div class="section-subtitle">Your profile details and contact information</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" value="Paulo Silva" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" value="paulo@example.com" placeholder="your@email.com">
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                    <div class="form-group">
+                        <label class="form-label">Organization</label>
+                        <input type="text" class="form-input" value="" placeholder="Your company or organization">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Role / Position</label>
+                        <input type="text" class="form-input" value="" placeholder="e.g., Investor, CEO, CFO">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-input" value="Santa Catarina, Brazil" placeholder="City, Country">
+                    <span class="form-hint">Used for timezone and regional preferences</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Preferences -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">🤖</span>
+                    <div>
+                        <div class="section-title">AI Decision Preferences</div>
+                        <div class="section-subtitle">Configure how AI analyzes and presents decisions</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preference-grid">
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Show Detailed Reasoning Chains</div>
+                        <div class="preference-description">Display step-by-step AI reasoning process with confidence scores and data sources for each step</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Include Sensitivity Analysis</div>
+                        <div class="preference-description">Show what factors would change AI recommendations and critical thresholds for each decision</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Display Historical Memory Context</div>
+                        <div class="preference-description">Reference similar past decisions and learned patterns when analyzing new decisions</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Auto-Generate Scenario Comparisons</div>
+                        <div class="preference-description">Automatically create and compare 2-3 alternative scenarios for each decision</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Flag Anomalies and Outliers</div>
+                        <div class="preference-description">Notify when decisions deviate significantly from historical patterns or learned norms</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Include Data Provenance Links</div>
+                        <div class="preference-description">Provide clickable links to view sources and methodology for each AI reasoning step</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enabled Modules -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">🧩</span>
+                    <div>
+                        <div class="section-title">Active Analysis Modules</div>
+                        <div class="section-subtitle">Enable or disable specialized AI modules for your decisions</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-grid">
+                <div class="module-card enabled">
+                    <div class="module-header">
+                        <div class="module-icon">💰</div>
+                        <div class="module-title">CFO Module</div>
+                    </div>
+                    <div class="module-description">Financial analysis with unit economics, cash flow projections, and return modeling</div>
+                    <span class="module-status enabled">✓ ENABLED</span>
+                </div>
+
+                <div class="module-card enabled">
+                    <div class="module-header">
+                        <div class="module-icon">⚖️</div>
+                        <div class="module-title">CLO Module</div>
+                    </div>
+                    <div class="module-description">Legal risk assessment with contract analysis and compliance checking</div>
+                    <span class="module-status enabled">✓ ENABLED</span>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">🏢</div>
+                        <div class="module-title">CAO Module</div>
+                    </div>
+                    <div class="module-description">Operations analysis with process optimization and KPI tracking</div>
+                    <span class="module-status disabled">DISABLED</span>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">💻</div>
+                        <div class="module-title">CTO Module</div>
+                    </div>
+                    <div class="module-description">Technology assessment with architecture review and scalability analysis</div>
+                    <span class="module-status disabled">DISABLED</span>
+                </div>
+
+                <div class="module-card enabled">
+                    <div class="module-header">
+                        <div class="module-icon">🌍</div>
+                        <div class="module-title">GIM - Global Intelligence</div>
+                    </div>
+                    <div class="module-description">Market intelligence monitoring with competitive analysis and trend tracking</div>
+                    <span class="module-status enabled">✓ ENABLED</span>
+                </div>
+
+                <div class="module-card enabled">
+                    <div class="module-header">
+                        <div class="module-icon">🧠</div>
+                        <div class="module-title">Personal Decision Model (PDM)</div>
+                    </div>
+                    <div class="module-description">Pattern learning across decisions with longitudinal analysis and insights</div>
+                    <span class="module-status enabled">✓ ENABLED</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confidence Thresholds -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">🎯</span>
+                    <div>
+                        <div class="section-title">AI Confidence Thresholds</div>
+                        <div class="section-subtitle">Set minimum confidence levels for AI recommendations</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert-box">
+                <div class="alert-icon">ℹ️</div>
+                <div class="alert-content">
+                    <div class="alert-title">About Confidence Thresholds</div>
+                    <div class="alert-text">These settings control when AI will make strong recommendations vs flagging decisions for additional review. Lower thresholds = more AI recommendations, higher thresholds = more human review required.</div>
+                </div>
+            </div>
+
+            <div class="confidence-thresholds">
+                <div class="threshold-item">
+                    <div class="threshold-header">
+                        <div class="threshold-title">Minimum Confidence for Strong Recommendations</div>
+                        <div class="threshold-value">75%</div>
+                    </div>
+                    <div class="threshold-slider"></div>
+                    <div class="threshold-description">AI will only make strong recommendations when confidence exceeds this threshold. Below this level, decisions are flagged for human review.</div>
+                </div>
+
+                <div class="threshold-item">
+                    <div class="threshold-header">
+                        <div class="threshold-title">Assumption Validation Requirement</div>
+                        <div class="threshold-value">80%</div>
+                    </div>
+                    <div class="threshold-slider"></div>
+                    <div class="threshold-description">Percentage of key assumptions that must be validated before proceeding with high-confidence recommendations.</div>
+                </div>
+
+                <div class="threshold-item">
+                    <div class="threshold-header">
+                        <div class="threshold-title">Pattern Match Threshold</div>
+                        <div class="threshold-value">70%</div>
+                    </div>
+                    <div class="threshold-slider"></div>
+                    <div class="threshold-description">Minimum similarity to historical patterns required for AI to apply learned insights to new decisions.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data & Privacy -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">🔒</span>
+                    <div>
+                        <div class="section-title">Data & Privacy</div>
+                        <div class="section-subtitle">Control your data and privacy settings</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-section">
+                <div class="data-row">
+                    <span class="data-label">Total Decisions Stored</span>
+                    <span class="data-value">47 decisions</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Storage Used</span>
+                    <span class="data-value">156 MB</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Decision History Retention</span>
+                    <span class="data-value">Unlimited</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Data Encryption</span>
+                    <span class="data-value" style="color: var(--success);">✓ AES-256 Enabled</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Two-Factor Authentication</span>
+                    <span class="data-value" style="color: var(--success);">✓ Active</span>
+                </div>
+            </div>
+
+            <div class="preference-grid">
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Allow Anonymous Usage Analytics</div>
+                        <div class="preference-description">Help improve CID-AI by sharing anonymized usage patterns (no decision content shared)</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Enable Personal Decision Model (PDM) Learning</div>
+                        <div class="preference-description">Allow AI to learn from your decisions to improve future recommendations (data stays private)</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px; display: flex; gap: 12px;">
+                <button class="btn btn-secondary">📥 Export All Data</button>
+                <button class="btn btn-secondary">📄 Download Privacy Report</button>
+            </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">🔔</span>
+                    <div>
+                        <div class="section-title">Notifications & Alerts</div>
+                        <div class="section-subtitle">Configure when and how you receive updates</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preference-grid">
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Decision Analysis Complete</div>
+                        <div class="preference-description">Notify when AI finishes analyzing a new decision and recommendations are ready</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">New Pattern Learned</div>
+                        <div class="preference-description">Alert when AI identifies a new validated pattern from your decision history</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Anomaly Detected</div>
+                        <div class="preference-description">Immediate notification when a decision significantly deviates from expected patterns</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Weekly Pattern Summary</div>
+                        <div class="preference-description">Receive weekly digest of new insights and patterns learned from your decisions</div>
+                    </div>
+                    <div class="toggle-switch" onclick="this.classList.toggle('active')"></div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-content">
+                        <div class="preference-title">Low Confidence Warnings</div>
+                        <div class="preference-description">Alert when AI confidence falls below your threshold on important decisions</div>
+                    </div>
+                    <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon">⚠️</span>
+                    <div>
+                        <div class="section-title">Danger Zone</div>
+                        <div class="section-subtitle">Irreversible actions - proceed with caution</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="danger-zone">
+                <div class="danger-title">Reset Personal Decision Model (PDM)</div>
+                <div class="danger-description">Clear all learned patterns and start AI learning from scratch. This will not delete your decision history but AI will need to relearn patterns.</div>
+                <div class="danger-actions">
+                    <button class="btn btn-danger">Reset AI Memory</button>
+                </div>
+            </div>
+
+            <div class="danger-zone" style="margin-top: 16px;">
+                <div class="danger-title">Delete All Decision History</div>
+                <div class="danger-description">Permanently delete all 47 decisions and associated data. This action cannot be undone. All patterns, insights, and analysis will be lost.</div>
+                <div class="danger-actions">
+                    <button class="btn btn-danger">Delete All Data</button>
+                </div>
+            </div>
+
+            <div class="danger-zone" style="margin-top: 16px;">
+                <div class="danger-title">Close Account</div>
+                <div class="danger-description">Permanently close your CID-AI account and delete all associated data. This action is irreversible.</div>
+                <div class="danger-actions">
+                    <button class="btn btn-danger">Close Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Set active nav item for 10-user-profile.html
+        const currentPage = '10-user-profile.html';
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === currentPage) {
+                item.classList.add('active');
+            }
+        });
+    
+        // Module cards toggle
+        document.querySelectorAll('.module-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('enabled');
+                const status = this.querySelector('.module-status');
+                if (this.classList.contains('enabled')) {
+                    status.textContent = '✓ ENABLED';
+                    status.classList.remove('disabled');
+                    status.classList.add('enabled');
+                } else {
+                    status.textContent = 'DISABLED';
+                    status.classList.remove('enabled');
+                    status.classList.add('disabled');
+                }
+            });
+        });
+
+        // Danger zone confirmations
+        document.querySelectorAll('.btn-danger').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Navigation enabled - preventDefault removed
+                const action = this.textContent.trim();
+                if (confirm(`⚠️ WARNING: ${action}\n\nThis action cannot be undone. Are you absolutely sure?\n\nType 'DELETE' to confirm.`)) {
+                    alert(`Action cancelled for demo purposes.\n\nIn production, this would: ${action}`);
+                }
+            });
+        });
+
+        // Save changes
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            if (btn.textContent.includes('Save')) {
+             
