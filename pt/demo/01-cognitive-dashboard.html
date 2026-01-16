@@ -2,81 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>CID-AI – Painel Cognitivo</title>
+  <title>Painel Cognitivo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      margin: 0;
-      padding: 40px;
-    }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 16px;
-      max-width: 720px;
-      line-height: 1.6;
-    }
-    .modules {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #020617;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      padding: 20px;
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/demo.css" />
 </head>
 <body>
 
-  <h1>Painel Cognitivo</h1>
-  <p>
-    Este painel representa o centro de controle cognitivo do CID-AI.
-    A partir daqui, decisões estratégicas, análises financeiras,
-    raciocínio jurídico e módulos de memória são orquestrados.
-  </p>
+  <header class="demo-header">
+    <h1>Painel Cognitivo</h1>
+  </header>
 
-  <div class="modules">
-    <div class="card">
-      <h3>Nova Decisão</h3>
-      <p>Criar e analisar uma nova decisão estratégica.</p>
-      <a href="02-new-decision.html">Abrir →</a>
-    </div>
-
-    <div class="card">
-      <h3>Histórico de Decisões</h3>
-      <p>Revisar decisões passadas e seus resultados.</p>
-      <a href="03-decision-history.html">Abrir →</a>
-    </div>
-
-    <div class="card">
-      <h3>Módulo CFO</h3>
-      <p>Modelagem financeira e análise de cenários.</p>
-      <a href="05-cfo-module.html">Abrir →</a>
-    </div>
-
-    <div class="card">
-      <h3>Análise de Padrões</h3>
-      <p>Identificar padrões recorrentes de decisão.</p>
-      <a href="09-pattern-analysis.html">Abrir →</a>
-    </div>
-  </div>
+  <section class="demo-grid">
+    <a href="02-new-decision.html" class="demo-card">Nova Decisão</a>
+    <a href="03-decision-history.html" class="demo-card">Histórico de Decisões</a>
+    <a href="05-cfo-module.html" class="demo-card">Módulo CFO</a>
+    <a href="09-pattern-analysis.html" class="demo-card">Análise de Padrões</a>
+  </section>
 
 </body>
 </html>
