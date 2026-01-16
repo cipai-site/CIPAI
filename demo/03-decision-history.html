@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Decisões — CID-AI</title>
+
+    <!--
+    REGRA APLICADA:
+    - Página do tipo FLOW (sem sidebar), espelho exato do EN
+    - HTML / CSS / JS idênticos estruturalmente
+    - Apenas strings traduzidas para PT-BR
+    - Nenhum link para páginas fora do escopo da demo PT
+    -->
+
+    <style>
+        /* ===== CSS 100% IDÊNTICO AO EN ===== */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg-primary:#0a0e1a;--bg-secondary:#111827;--bg-tertiary:#1f2937;
+            --text-primary:#f9fafb;--text-secondary:#d1d5db;--text-muted:#9ca3af;
+            --accent:#3b82f6;--border:#374155;--success:#10b981;
+            --warning:#f59e0b;--danger:#ef4444;--info:#8b5cf6;
+        }
+        body{
+            font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+            background:var(--bg-primary);color:var(--text-primary);line-height:1.6
+        }
+        .container{max-width:1400px;margin:0 auto;padding:40px 32px}
+        .header{margin-bottom:32px}
+        .back-link{
+            color:var(--text-muted);text-decoration:none;font-size:14px;
+            display:inline-flex;align-items:center;gap:8px;margin-bottom:16px
+        }
+        .header-top{
+            display:flex;align-items:center;justify-content:space-between;margin-bottom:12px
+        }
+        .header-title{font-size:28px;font-weight:700}
+        .header-subtitle{font-size:14px;color:var(--text-muted)}
+        .filters{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+        .filter-btn{
+            padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border);
+            border-radius:8px;color:var(--text-secondary);font-size:13px;font-weight:500;
+            cursor:pointer;transition:.2s
+        }
+        .filter-btn:hover,.filter-btn.active{
+            background:var(--bg-tertiary);border-color:var(--accent);color:var(--accent)
+        }
+        .stats-bar{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:16px;margin-bottom:32px
+        }
+        .stat-item{
+            background:var(--bg-secondary);border:1px solid var(--border);
+            border-radius:10px;padding:20px
+        }
+        .stat-label{
+            font-size:11px;color:var(--text-muted);text-transform:uppercase;
+            letter-spacing:.05em;margin-bottom:8px
+        }
+        .stat-value{font-size:24px;font-weight:700;margin-bottom:4px}
+        .stat-detail{font-size:12px;color:var(--text-muted)}
+        .decisions-list{display:grid;gap:16px}
+        .decision-card{
+            background:var(--bg-secondary);border:1px solid var(--border);
+            border-radius:12px;padding:24px;transition:.3s;cursor:pointer
+        }
+        .decision-card:hover{border-color:var(--accent);transform:translateX(4px)}
+        .decision-header{
+            display:flex;justify-content:space-between;align-items:start;margin-bottom:16px
+        }
+        .decision-title{font-size:16px;font-weight:600;margin-bottom:8px}
+        .decision-meta{
+            font-size:12px;color:var(--text-muted);display:flex;gap:12px;flex-wrap:wrap
+        }
+        .badge{
+            padding:6px 12px;border-radius:6px;font-size:11px;font-weight:600;
+            text-transform:uppercase;letter-spacing:.05em
+        }
+        .badge-module{background:rgba(59,130,246,.15);color:var(--accent)}
+        .badge-status{background:rgba(16,185,129,.15);color:var(--success)}
+        .badge-status.active{background:rgba(251,191,36,.15);color:var(--warning)}
+        .confidence-display{text-align:right}
+        .confidence-number{font-size:32px;font-weight:700;color:var(--success)}
+        .confidence-label{font-size:10px;color:var(--text-muted);text-transform:uppercase}
+        .confidence-range{font-size:11px;color:var(--text-muted);margin-top:4px}
+        .decision-insights{
+            background:var(--bg-tertiary);border-radius:8px;
+            padding:16px;margin-top:16px
+        }
+        .insights-grid{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px
+        }
+        .insight-item{display:flex;align-items:start;gap:10px}
+        .insight-icon{
+            width:32px;height:32px;background:var(--bg-primary);
+            border-radius:6px;display:flex;align-items:center;justify-content:center
+        }
+        .insight-label{
+            font-size:11px;color:var(--text-muted);text-transform:uppercase;margin-bottom:4px
+        }
+        .insight-value{font-size:13px;font-weight:600}
+        .reasoning-preview{
+            margin-top:12px;padding-top:12px;border-top:1px solid var(--border)
+        }
+        .reasoning-title{
+            font-size:12px;color:var(--text-muted);margin-bottom:8px;font-weight:600
+        }
+        .reasoning-steps{font-size:12px;color:var(--text-secondary);line-height:1.6}
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="header">
+        <a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
+        <div class="header-top">
+            <div>
+                <h1 class="header-title">Histórico de Decisões</h1>
+                <p class="header-subtitle">
+                    47 decisões analisadas • rastreamento de confiança da IA • reconhecimento de padrões ativo
+                </p>
+            </div>
+            <button class="btn btn-primary" onclick="window.location='02-new-decision.html'">
+                ➕ Nova Análise
+            </button>
+        </div>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active">Todas</button>
+        <button class="filter-btn">💰 Módulo CFO</button>
+        <button class="filter-btn">⚖️ Módulo CLO</button>
+        <button class="filter-btn">Alta Confiança (&gt;85%)</button>
+        <button class="filter-btn">Revisão Necessária</button>
+        <button class="filter-btn">Este Mês</button>
+    </div>
+
+    <!-- TODO: cards permanecem idênticos ao EN, apenas com textos traduzidos,
+         mantendo links e estrutura exatamente iguais -->
+</div>
+
+<script>
+    document.querySelectorAll('.filter-btn').forEach(btn=>{
+        btn.addEventListener('click',function(){
+            document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
