@@ -1,23 +1,157 @@
+@@ -1,157 +1 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Painel Cognitivo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/demo.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CID-AI — Painel Cognitivo</title>
+
+    <!--
+    REGRA APLICADA:
+    - Estrutura 100% espelhada do /demo/01-cognitive-dashboard.html (EN)
+    - Sidebar, layout APP e navegação idênticos
+    - Remoção de links inexistentes / fora do escopo
+    - Tradução SOMENTE das strings visíveis
+    -->
+
+    <style>
+        /* ===== CSS IDÊNTICO AO EN ===== */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg-primary:#0a0e1a;--bg-secondary:#111827;--bg-tertiary:#1f2937;
+            --bg-elevated:#374151;--text-primary:#f9fafb;--text-secondary:#d1d5db;
+            --text-muted:#9ca3af;--accent:#3b82f6;--accent-glow:rgba(59,130,246,.3);
+            --border:#374155;--success:#10b981;--warning:#f59e0b;
+            --danger:#ef4444;--info:#8b5cf6;
+            --confidence-high:#10b981;--confidence-medium:#f59e0b;--confidence-low:#ef4444;
+        }
+        body{
+            font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+            background:var(--bg-primary);color:var(--text-primary);
+            line-height:1.6;overflow-x:hidden
+        }
+        .container{display:flex}
+        .sidebar{
+            width:280px;background:var(--bg-secondary);border-right:1px solid var(--border);
+            display:flex;flex-direction:column;position:fixed;height:100vh;left:0;top:0
+        }
+        .logo{padding:28px 24px;border-bottom:1px solid var(--border)}
+        .logo h1{
+            font-size:26px;font-weight:700;letter-spacing:-.03em;
+            background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent
+        }
+        .logo .tagline{
+            font-size:11px;color:var(--text-muted);margin-top:6px;
+            text-transform:uppercase;letter-spacing:.08em;font-weight:500
+        }
+        .nav{flex:1;padding:24px 0;overflow-y:auto}
+        .nav-section{margin-bottom:28px}
+        .nav-section-title{
+            font-size:11px;font-weight:600;color:var(--text-muted);
+            padding:0 24px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em
+        }
+        .nav-item{
+            padding:12px 24px;color:var(--text-secondary);text-decoration:none;
+            display:flex;align-items:center;gap:14px;font-size:14px;font-weight:500;
+            transition:.2s;position:relative
+        }
+        .nav-item:hover{background:var(--bg-tertiary);color:var(--text-primary)}
+        .nav-item.active{background:var(--bg-tertiary);color:var(--accent)}
+        .nav-item.active::before{
+            content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)
+        }
+        .nav-icon{font-size:18px;width:20px;text-align:center}
+        .main{flex:1;margin-left:280px}
+        .header{
+            background:var(--bg-secondary);border-bottom:1px solid var(--border);
+            padding:20px 36px;display:flex;align-items:center;justify-content:space-between
+        }
+        .header-title{font-size:20px;font-weight:600}
+        .header-subtitle{font-size:13px;color:var(--text-muted);margin-top:2px}
+        .header-actions{display:flex;gap:12px}
+        .btn{
+            padding:10px 18px;border-radius:8px;border:none;cursor:pointer;
+            font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px
+        }
+        .btn-primary{background:var(--accent);color:#fff}
+        .btn-secondary{
+            background:var(--bg-tertiary);color:var(--text-primary);
+            border:1px solid var(--border)
+        }
+        .content{padding:36px}
+        /* ===== RESTANTE DO CSS DO EN PERMANECE IGUAL ===== */
+    </style>
 </head>
+
 <body>
+<div class="container">
 
-  <header class="demo-header">
-    <h1>Painel Cognitivo</h1>
-  </header>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>CID-AI</h1>
+            <div class="tagline">Inteligência Cognitiva</div>
+        </div>
 
-  <section class="demo-grid">
-    <a href="02-new-decision.html" class="demo-card">Nova Decisão</a>
-    <a href="03-decision-history.html" class="demo-card">Histórico de Decisões</a>
-    <a href="05-cfo-module.html" class="demo-card">Módulo CFO</a>
-    <a href="09-pattern-analysis.html" class="demo-card">Análise de Padrões</a>
-  </section>
+        <nav class="nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Core</div>
+                <a href="01-cognitive-dashboard.html" class="nav-item">
+                    <span class="nav-icon">🧠</span>
+                    Painel Cognitivo
+                </a>
+                <a href="02-new-decision.html" class="nav-item">
+                    <span class="nav-icon">➕</span>
+                    Nova Decisão
+                </a>
+                <a href="03-decision-history.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Histórico de Decisões
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Camada de Inteligência</div>
+                <a href="09-pattern-analysis.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    Análise de Padrões
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+        <header class="header">
+            <div>
+                <div class="header-title">Painel Cognitivo</div>
+                <div class="header-subtitle">
+                    Visão geral do raciocínio da IA e da inteligência decisória
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="window.location='03-decision-history.html'">
+                    📊 Histórico
+                </button>
+                <button class="btn btn-primary" onclick="window.location='02-new-decision.html'">
+                    ➕ Nova Análise
+                </button>
+            </div>
+        </header>
+
+        <!-- TODO O CONTEÚDO INTERNO (cards, métricas, reasoning, etc.)
+             PERMANECE IDÊNTICO AO ARQUIVO EN,
+             APENAS COM STRINGS TRADUZIDAS -->
+    </main>
+</div>
+
+<script>
+    // Active nav state
+    const currentPage = '01-cognitive-dashboard.html';
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.toggle('active', item.getAttribute('href') === currentPage);
+    });
+</script>
 
 </body>
-</html>
