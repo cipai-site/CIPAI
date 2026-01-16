@@ -1,244 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Histórico de Decisões — CID-AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histórico de Decisões — CID-AI</title>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg-primary:#0a0e1a;--bg-secondary:#111827;--bg-tertiary:#1f2937;
+--text-primary:#f9fafb;--text-secondary:#d1d5db;--text-muted:#9ca3af;
+--accent:#3b82f6;--border:#374155;--success:#10b981;
+--warning:#f59e0b;--danger:#ef4444;--info:#8b5cf6;
+}
 
-    :root {
-      --bg-primary: #0a0e1a;
-      --bg-secondary: #111827;
-      --bg-tertiary: #1f2937;
-      --bg-elevated: #374151;
-      --text-primary: #f9fafb;
-      --text-secondary: #d1d5db;
-      --text-muted: #9ca3af;
-      --accent: #3b82f6;
-      --border: #374155;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --info: #8b5cf6;
-    }
+body{
+font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+background:var(--bg-primary);color:var(--text-primary);line-height:1.6
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-    }
+.container{max-width:1400px;margin:0 auto;padding:40px 32px}
 
-    .container { display: flex; min-height: 100vh; }
+.header{margin-bottom:32px}
 
-    /* Sidebar */
-    .sidebar {
-      width: 280px;
-      background: var(--bg-secondary);
-      border-right: 1px solid var(--border);
-      position: fixed;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+.back-link{
+color:var(--text-muted);text-decoration:none;font-size:14px;
+display:inline-flex;align-items:center;gap:8px;margin-bottom:16px
+}
 
-    .logo {
-      padding: 28px 24px;
-      border-bottom: 1px solid var(--border);
-    }
+.header-top{
+display:flex;align-items:center;justify-content:space-between;margin-bottom:12px
+}
 
-    .logo h1 {
-      font-size: 26px;
-      font-weight: 700;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.header-title{font-size:28px;font-weight:700}
 
-    .logo .tagline {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+.header-subtitle{font-size:14px;color:var(--text-muted)}
 
-    .nav { flex: 1; padding: 24px 0; }
+.filters{
+display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap
+}
 
-    .nav-section { margin-bottom: 28px; }
+.filter-btn{
+padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border);
+border-radius:8px;color:var(--text-secondary);font-size:13px;font-weight:500;
+cursor:pointer;transition:.2s
+}
 
-    .nav-section-title {
-      font-size: 11px;
-      color: var(--text-muted);
-      padding: 0 24px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+.filter-btn:hover,.filter-btn.active{
+background:var(--bg-tertiary);border-color:var(--accent);color:var(--accent)
+}
 
-    .nav-item {
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-    }
+.stats-bar{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:16px;margin-bottom:32px
+}
 
-    .nav-item:hover {
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
-    }
+.stat-item{
+background:var(--bg-secondary);border:1px solid var(--border);
+border-radius:10px;padding:20px
+}
 
-    .nav-item.active {
-      background: var(--bg-tertiary);
-      color: var(--accent);
-    }
+.stat-label{
+font-size:11px;color:var(--text-muted);text-transform:uppercase;
+letter-spacing:.05em;margin-bottom:8px
+}
 
-    /* Main */
-    .main { flex: 1; margin-left: 280px; }
+.stat-value{font-size:24px;font-weight:700;margin-bottom:4px}
 
-    .header {
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 36px;
-    }
+.stat-detail{font-size:12px;color:var(--text-muted)}
 
-    .header-title {
-      font-size: 20px;
-      font-weight: 600;
-    }
+.decisions-list{display:grid;gap:16px}
 
-    .header-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
+.decision-card{
+background:var(--bg-secondary);border:1px solid var(--border);
+border-radius:12px;padding:24px;transition:.3s;cursor:pointer
+}
 
-    .content { padding: 36px; }
+.decision-card:hover{border-color:var(--accent);transform:translateX(4px)}
 
-    .card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
+.decision-header{
+display:flex;justify-content:space-between;align-items:start;margin-bottom:16px
+}
 
-    .card-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
+.decision-title{font-size:16px;font-weight:600;margin-bottom:8px}
 
-    .card-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
+.decision-meta{
+font-size:12px;color:var(--text-muted);display:flex;gap:12px;flex-wrap:wrap
+}
 
-    .card-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+.badge{
+padding:6px 12px;border-radius:6px;font-size:11px;font-weight:600;
+text-transform:uppercase;letter-spacing:.05em
+}
 
-    .status {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-    }
+.badge-module{background:rgba(59,130,246,.15);color:var(--accent)}
 
-    .done { background: rgba(16,185,129,.15); color: var(--success); }
-    .review { background: rgba(245,158,11,.15); color: var(--warning); }
-    .progress { background: rgba(59,130,246,.15); color: var(--accent); }
-  </style>
+.badge-status{background:rgba(16,185,129,.15);color:var(--success)}
+
+.badge-status.active{background:rgba(251,191,36,.15);color:var(--warning)}
+
+.confidence-display{text-align:right}
+
+.confidence-number{font-size:32px;font-weight:700;color:var(--success)}
+
+.confidence-label{font-size:10px;color:var(--text-muted);text-transform:uppercase}
+
+.confidence-range{font-size:11px;color:var(--text-muted);margin-top:4px}
+
+.decision-insights{
+background:var(--bg-tertiary);border-radius:8px;
+padding:16px;margin-top:16px
+}
+
+.insights-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px
+}
+
+.insight-item{display:flex;align-items:start;gap:10px}
+
+.insight-icon{
+width:32px;height:32px;background:var(--bg-primary);
+border-radius:6px;display:flex;align-items:center;justify-content:center
+}
+
+.insight-label{
+font-size:11px;color:var(--text-muted);text-transform:uppercase;margin-bottom:4px
+}
+
+.insight-value{font-size:13px;font-weight:600}
+
+.reasoning-preview{
+margin-top:12px;padding-top:12px;border-top:1px solid var(--border)
+}
+
+.reasoning-title{
+font-size:12px;color:var(--text-muted);margin-bottom:8px;font-weight:600
+}
+
+.reasoning-steps{font-size:12px;color:var(--text-secondary);line-height:1.6}
+
+.btn{
+padding:10px 18px;border-radius:8px;border:none;cursor:pointer;
+font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px
+}
+
+.btn-primary{background:var(--accent);color:#fff}
+</style>
 </head>
 
 <body>
 <div class="container">
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="logo">
-      <h1>CID-AI</h1>
-      <div class="tagline">Inteligência Cognitiva</div>
-    </div>
+<div class="header">
+<a href="01-cognitive-dashboard.html" class="back-link">← Voltar ao Painel</a>
 
-    <nav class="nav">
-      <div class="nav-section">
-        <div class="nav-section-title">Essencial</div>
-        <a href="01-cognitive-dashboard.html" class="nav-item">🧠 Painel Cognitivo</a>
-        <a href="02-new-decision.html" class="nav-item">➕ Nova Decisão</a>
-        <a href="03-decision-history.html" class="nav-item active">📊 Histórico de Decisões</a>
-        <a href="08-compare-scenarios.html" class="nav-item">🔄 Comparar Cenários</a>
-      </div>
+<div class="header-top">
+<div>
+<h1 class="header-title">Histórico de Decisões</h1>
+<p class="header-subtitle">
+47 decisões analisadas • rastreamento de confiança da IA • reconhecimento de padrões ativo
+</p>
+</div>
 
-      <div class="nav-section">
-        <div class="nav-section-title">Módulos de Análise</div>
-        <a href="05-cfo-module.html" class="nav-item">💰 Módulo CFO</a>
-        <a href="06-clo-module.html" class="nav-item">⚖️ Módulo CLO</a>
-      </div>
+<button class="btn btn-primary" onclick="window.location='02-new-decision.html'">
+➕ Nova Análise
+</button>
+</div>
+</div>
 
-      <div class="nav-section">
-        <div class="nav-section-title">Camada de Inteligência</div>
-        <a href="07-decision-memory.html" class="nav-item">🧩 Modelo de Decisão Pessoal</a>
-        <a href="09-pattern-analysis.html" class="nav-item">📈 Análise de Padrões</a>
-      </div>
-
-      <div class="nav-section">
-        <div class="nav-section-title">Sistema</div>
-        <a href="10-user-profile.html" class="nav-item">👤 Configurações</a>
-      </div>
-    </nav>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main">
-    <header class="header">
-      <div class="header-title">Histórico de Decisões</div>
-      <div class="header-subtitle">
-        Registro completo de decisões analisadas pela IA
-      </div>
-    </header>
-
-    <div class="content">
-
-      <div class="card">
-        <div class="card-title">Contratar CTO Fracionado</div>
-        <div class="card-meta">Decisão Estratégica • há 5 dias</div>
-        <div class="card-desc">
-          Avaliação entre contratação integral, fracionada ou postergação com base em runway, risco de pessoas e metas de ARR.
-        </div>
-        <span class="status done">Concluída</span>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Modelo de Captação SAFE vs Série A</div>
-        <div class="card-meta">Decisão Financeira • há 1 semana</div>
-        <div class="card-desc">
-          Comparação entre velocidade de captação e clareza estrutural considerando valores pessoais e governança.
-        </div>
-        <span class="status review">Em revisão</span>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Estratégia Go-to-Market</div>
-        <div class="card-meta">Decisão de Crescimento • há 12 dias</div>
-        <div class="card-desc">
-          Análise entre PLG e vendas enterprise com foco em velocidade, previsibilidade e eficiência comercial.
-        </div>
-        <span class="status progress">Em andamento</span>
-      </div>
-
-    </div>
-  </main>
+<div class="filters">
+<button class="filter-btn active">Todas</button>
+<button class="filter-btn">💰 Módulo CFO</button>
+<button class="filter-btn">⚖️ Módulo CLO</button>
+<button class="filter-btn">Alta Confiança (&gt;85%)</button>
+<button class="filter-btn">Revisão Necessária</button>
+<button class="filter-btn">Este Mês</button>
+</div>
 
 </div>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+btn.addEventListener('click',function(){
+document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+this.classList.add('active');
+});
+});
+</script>
+
 </body>
 </html>
