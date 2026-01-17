@@ -5,197 +5,270 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decision History — CID-AI</title>
 
-    <!--
-    RULES:
-    - FLOW page (no sidebar)
-    - Canonical EN version
-    - Complete demo content (cards restored)
-    -->
-
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
+
         :root{
-            --bg-primary:#0a0e1a;--bg-secondary:#111827;--bg-tertiary:#1f2937;
-            --text-primary:#f9fafb;--text-secondary:#d1d5db;--text-muted:#9ca3af;
-            --accent:#3b82f6;--border:#374155;--success:#10b981;
-            --warning:#f59e0b;--danger:#ef4444;--info:#8b5cf6;
+            --bg-primary:#0a0e1a;
+            --bg-secondary:#111827;
+            --bg-tertiary:#1f2937;
+            --text-primary:#f9fafb;
+            --text-secondary:#d1d5db;
+            --text-muted:#9ca3af;
+            --accent:#3b82f6;
+            --border:#374155;
+            --success:#10b981;
+            --warning:#f59e0b;
+            --danger:#ef4444;
         }
+
         body{
             font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
-            background:var(--bg-primary);color:var(--text-primary);line-height:1.6
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
         }
-        .container{max-width:1400px;margin:0 auto;padding:40px 32px}
-        .header{margin-bottom:32px}
+
+        .container{
+            max-width:1400px;
+            margin:0 auto;
+            padding:40px 32px;
+        }
+
         .back-link{
-            color:var(--text-muted);text-decoration:none;font-size:14px;
-            display:inline-flex;align-items:center;gap:8px;margin-bottom:16px
+            color:var(--text-muted);
+            text-decoration:none;
+            font-size:14px;
+            display:inline-flex;
+            gap:8px;
+            margin-bottom:16px;
         }
+
         .header-top{
-            display:flex;align-items:center;justify-content:space-between;margin-bottom:12px
+            display:flex;
+            justify-content:space-between;
+            align-items:flex-start;
+            margin-bottom:28px;
         }
-        .header-title{font-size:28px;font-weight:700}
-        .header-subtitle{font-size:14px;color:var(--text-muted)}
-        .filters{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+
+        .header-title{
+            font-size:28px;
+            font-weight:700;
+            margin-bottom:6px;
+        }
+
+        .header-subtitle{
+            font-size:14px;
+            color:var(--text-muted);
+        }
+
+        .filters{
+            display:flex;
+            gap:12px;
+            margin-bottom:32px;
+            flex-wrap:wrap;
+        }
+
         .filter-btn{
-            padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border);
-            border-radius:8px;color:var(--text-secondary);font-size:13px;font-weight:500;
-            cursor:pointer;transition:.2s
+            padding:8px 16px;
+            background:var(--bg-secondary);
+            border:1px solid var(--border);
+            border-radius:8px;
+            color:var(--text-secondary);
+            font-size:13px;
+            cursor:pointer;
         }
-        .filter-btn:hover,.filter-btn.active{
-            background:var(--bg-tertiary);border-color:var(--accent);color:var(--accent)
+
+        .filter-btn.active,
+        .filter-btn:hover{
+            border-color:var(--accent);
+            color:var(--accent);
+            background:var(--bg-tertiary);
         }
-        .decisions-list{display:grid;gap:16px}
+
         .decision-card{
-            background:var(--bg-secondary);border:1px solid var(--border);
-            border-radius:12px;padding:24px;transition:.3s;cursor:pointer
+            background:var(--bg-secondary);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:28px;
+            margin-bottom:20px;
+            transition:.3s;
         }
-        .decision-card:hover{border-color:var(--accent);transform:translateX(4px)}
+
+        .decision-card:hover{
+            border-color:var(--accent);
+        }
+
         .decision-header{
-            display:flex;justify-content:space-between;align-items:start;margin-bottom:16px
+            display:flex;
+            justify-content:space-between;
+            align-items:flex-start;
+            margin-bottom:20px;
         }
-        .decision-title{font-size:16px;font-weight:600;margin-bottom:8px}
+
+        .decision-title{
+            font-size:18px;
+            font-weight:600;
+            margin-bottom:8px;
+        }
+
         .decision-meta{
-            font-size:12px;color:var(--text-muted);display:flex;gap:12px;flex-wrap:wrap
+            font-size:12px;
+            color:var(--text-muted);
+            display:flex;
+            gap:12px;
         }
+
         .badge{
-            padding:6px 12px;border-radius:6px;font-size:11px;font-weight:600;
-            text-transform:uppercase;letter-spacing:.05em
+            padding:6px 12px;
+            border-radius:6px;
+            font-size:11px;
+            font-weight:600;
+            text-transform:uppercase;
         }
-        .badge-module{background:rgba(59,130,246,.15);color:var(--accent)}
-        .badge-status{background:rgba(16,185,129,.15);color:var(--success)}
-        .badge-status.active{background:rgba(251,191,36,.15);color:var(--warning)}
-        .confidence-display{text-align:right}
-        .confidence-number{font-size:32px;font-weight:700;color:var(--success)}
-        .confidence-label{font-size:10px;color:var(--text-muted);text-transform:uppercase}
-        .confidence-range{font-size:11px;color:var(--text-muted);margin-top:4px}
-        .decision-insights{
-            background:var(--bg-tertiary);border-radius:8px;
-            padding:16px;margin-top:16px
+
+        .badge-module{
+            background:rgba(59,130,246,.15);
+            color:var(--accent);
         }
-        .insights-grid{
-            display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px
+
+        .badge-status.approved{
+            background:rgba(16,185,129,.15);
+            color:var(--success);
         }
-        .insight-item{display:flex;align-items:start;gap:10px}
-        .insight-icon{
-            width:32px;height:32px;background:var(--bg-primary);
-            border-radius:6px;display:flex;align-items:center;justify-content:center
+
+        .badge-status.conditional{
+            background:rgba(251,191,36,.15);
+            color:var(--warning);
         }
-        .insight-label{
-            font-size:11px;color:var(--text-muted);text-transform:uppercase;margin-bottom:4px
+
+        .confidence{
+            font-size:32px;
+            font-weight:700;
+            color:var(--success);
+            text-align:right;
         }
-        .insight-value{font-size:13px;font-weight:600}
+
+        .metrics{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:16px;
+            margin-top:20px;
+            padding-top:20px;
+            border-top:1px solid var(--border);
+        }
+
+        .metric{
+            background:var(--bg-tertiary);
+            border-radius:10px;
+            padding:16px;
+        }
+
+        .metric-label{
+            font-size:11px;
+            color:var(--text-muted);
+            margin-bottom:6px;
+            text-transform:uppercase;
+        }
+
+        .metric-value{
+            font-size:14px;
+            font-weight:600;
+        }
     </style>
 </head>
 
 <body>
 <div class="container">
 
-    <div class="header">
-        <a href="01-cognitive-dashboard.html" class="back-link">← Back to Dashboard</a>
-        <div class="header-top">
-            <div>
-                <h1 class="header-title">Decision History</h1>
-                <p class="header-subtitle">
-                    47 decisions analyzed • AI confidence tracking • active pattern recognition
-                </p>
-            </div>
-            <button onclick="window.location='02-new-decision.html'">
-                ➕ New Analysis
-            </button>
+    <a href="01-cognitive-dashboard.html" class="back-link">← Back to Dashboard</a>
+
+    <div class="header-top">
+        <div>
+            <h1 class="header-title">Decision History</h1>
+            <p class="header-subtitle">
+                47 decisions analyzed • AI confidence tracking • active pattern recognition
+            </p>
         </div>
+        <button onclick="window.location='02-new-decision.html'" class="filter-btn">
+            ➕ New Analysis
+        </button>
     </div>
 
     <div class="filters">
         <button class="filter-btn active">All</button>
-        <button class="filter-btn">💰 CFO Module</button>
-        <button class="filter-btn">⚖️ CLO Module</button>
+        <button class="filter-btn">CFO Module</button>
+        <button class="filter-btn">CLO Module</button>
         <button class="filter-btn">High Confidence (&gt;85%)</button>
         <button class="filter-btn">Review Required</button>
         <button class="filter-btn">This Month</button>
     </div>
 
-    <div class="decisions-list">
-
-        <div class="decision-card">
-            <div class="decision-header">
-                <div>
-                    <div class="decision-title">Series A Investment — Fintech Platform</div>
-                    <div class="decision-meta">
-                        <span class="badge badge-module">CFO</span>
-                        <span class="badge badge-status">Approved</span>
-                        <span>Jan 2026</span>
-                    </div>
-                </div>
-                <div class="confidence-display">
-                    <div class="confidence-number">88%</div>
-                    <div class="confidence-label">AI Confidence</div>
+    <!-- Decision Card 1 -->
+    <div class="decision-card">
+        <div class="decision-header">
+            <div>
+                <div class="decision-title">Series A Investment — Fintech Platform</div>
+                <div class="decision-meta">
+                    <span class="badge badge-module">CFO</span>
+                    <span class="badge badge-status approved">Approved</span>
+                    <span>Jan 2026</span>
                 </div>
             </div>
-            <div class="decision-insights">
-                <div class="insights-grid">
-                    <div class="insight-item">
-                        <div class="insight-icon">💰</div>
-                        <div>
-                            <div class="insight-label">Return Projection</div>
-                            <div class="insight-value">3.4x in 5 years</div>
-                        </div>
-                    </div>
-                    <div class="insight-item">
-                        <div class="insight-icon">📊</div>
-                        <div>
-                            <div class="insight-label">Risk Level</div>
-                            <div class="insight-value">Moderate</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="confidence">88%</div>
         </div>
 
-        <div class="decision-card">
-            <div class="decision-header">
-                <div>
-                    <div class="decision-title">Shareholder Agreement Review</div>
-                    <div class="decision-meta">
-                        <span class="badge badge-module">CLO</span>
-                        <span class="badge badge-status active">Conditional</span>
-                        <span>Dec 2025</span>
-                    </div>
-                </div>
-                <div class="confidence-display">
-                    <div class="confidence-number">74%</div>
-                    <div class="confidence-label">AI Confidence</div>
-                </div>
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-label">Return Projection</div>
+                <div class="metric-value">3.4x in 5 years</div>
             </div>
-            <div class="decision-insights">
-                <div class="insights-grid">
-                    <div class="insight-item">
-                        <div class="insight-icon">⚖️</div>
-                        <div>
-                            <div class="insight-label">Key Risk</div>
-                            <div class="insight-value">IP ownership clause</div>
-                        </div>
-                    </div>
-                    <div class="insight-item">
-                        <div class="insight-icon">📝</div>
-                        <div>
-                            <div class="insight-label">Recommendation</div>
-                            <div class="insight-value">Revise clause 4.2</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="metric">
+                <div class="metric-label">Risk Level</div>
+                <div class="metric-value">Moderate</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">AI Recommendation</div>
+                <div class="metric-value">Proceed with Investment</div>
             </div>
         </div>
-
     </div>
+
+    <!-- Decision Card 2 -->
+    <div class="decision-card">
+        <div class="decision-header">
+            <div>
+                <div class="decision-title">Shareholder Agreement Review</div>
+                <div class="decision-meta">
+                    <span class="badge badge-module">CLO</span>
+                    <span class="badge badge-status conditional">Conditional</span>
+                    <span>Dec 2025</span>
+                </div>
+            </div>
+            <div class="confidence" style="color:var(--warning)">74%</div>
+        </div>
+
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-label">Key Risk</div>
+                <div class="metric-value">IP ownership clause</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">AI Recommendation</div>
+                <div class="metric-value">Revise clause 4.2</div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <script>
-    document.querySelectorAll('.filter-btn').forEach(btn=>{
-        btn.addEventListener('click',function(){
-            document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-            this.classList.add('active');
-        });
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
     });
+});
 </script>
 
 </body>
