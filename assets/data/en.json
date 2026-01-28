@@ -1,0 +1,257 @@
+{
+  "app": {
+    "name": "CIPAI",
+    "tagline": "Cognitive Intelligence",
+    "description": "Cognitive Intelligence Platform for AI-Assisted Decisions"
+  },
+  
+  "nav": {
+    "core": {
+      "title": "Core",
+      "items": {
+        "context": "Decision Context",
+        "dashboard": "Cognitive Dashboard",
+        "newDecision": "New Decision",
+        "history": "Decision History",
+        "compare": "Compare Scenarios",
+        "personalModel": "Personal Model"
+      }
+    },
+    "modules": {
+      "title": "Analysis Modules",
+      "items": {
+        "cfo": "CFO Module",
+        "clo": "CLO Module"
+      }
+    },
+    "intelligence": {
+      "title": "Intelligence Layer",
+      "items": {
+        "memory": "Decision Memory",
+        "patterns": "Pattern Analysis"
+      }
+    },
+    "system": {
+      "title": "System",
+      "items": {
+        "settings": "Settings"
+      }
+    }
+  },
+  
+  "dashboard": {
+    "title": "Cognitive Dashboard",
+    "subtitle": "AI reasoning and decision intelligence overview",
+    "aiStatus": {
+      "active": "AI System Active",
+      "operational": "OPERATIONAL",
+      "processing": "Processing {{count}} active decisions",
+      "validated": "{{count}} assumptions validated today",
+      "indexed": "Decision memory: {{count}} scenarios indexed"
+    },
+    "metrics": {
+      "confidence": {
+        "label": "AI Confidence (Avg)",
+        "high": "HIGH",
+        "medium": "MEDIUM",
+        "low": "LOW",
+        "basedOn": "Based on {{count}} analyzed scenarios",
+        "highConfidence": "{{count}} high-confidence decisions (>85%)"
+      },
+      "uncertainty": {
+        "label": "Uncertainty Flagged",
+        "monitor": "MONITOR",
+        "requiresValidation": "{{count}} require validation",
+        "missingData": "{{count}} assumptions with missing data"
+      },
+      "reasoning": {
+        "label": "Reasoning Depth",
+        "deep": "DEEP",
+        "layers": "{{count}} analysis layers",
+        "factorsEvaluated": "{{count}} factors evaluated per decision"
+      },
+      "assumptions": {
+        "label": "Assumptions Validated",
+        "verified": "VERIFIED",
+        "validated": "{{count}} validated this month",
+        "accuracy": "{{percent}}% accuracy rate"
+      }
+    }
+  },
+  
+  "newDecision": {
+    "title": "New Decision",
+    "subtitle": "Set up a new decision analysis",
+    "form": {
+      "decisionName": "Decision Name",
+      "decisionNamePlaceholder": "e.g., Expand to international market",
+      "category": "Category",
+      "categories": {
+        "strategic": "Strategic",
+        "financial": "Financial",
+        "operational": "Operational",
+        "hr": "Human Resources",
+        "legal": "Legal",
+        "technical": "Technical"
+      },
+      "context": "Context",
+      "contextPlaceholder": "Describe the decision context...",
+      "urgency": "Urgency",
+      "urgencyLevels": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "timeline": "Timeline",
+      "timelineOptions": {
+        "immediate": "Immediate",
+        "oneWeek": "1 week",
+        "oneMonth": "1 month",
+        "threeMonths": "3 months",
+        "sixMonths": "6 months",
+        "oneYear": "1 year"
+      }
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "analyze": "Start Analysis"
+    }
+  },
+  
+  "history": {
+    "title": "Decision History",
+    "subtitle": "All previous analyses and decisions",
+    "filters": {
+      "all": "All",
+      "pending": "Pending",
+      "completed": "Completed",
+      "archived": "Archived"
+    },
+    "table": {
+      "decision": "Decision",
+      "category": "Category",
+      "date": "Date",
+      "confidence": "Confidence",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "analyzing": "Analyzing",
+      "completed": "Completed",
+      "pending": "Pending",
+      "archived": "Archived"
+    }
+  },
+  
+  "compare": {
+    "title": "Compare Scenarios",
+    "subtitle": "Side-by-side analysis of alternatives",
+    "selectScenarios": "Select up to 3 scenarios to compare"
+  },
+  
+  "modules": {
+    "cfo": {
+      "title": "CFO Module",
+      "subtitle": "Financial analysis and performance metrics",
+      "metrics": {
+        "revenue": "Revenue",
+        "profit": "Profit",
+        "cashFlow": "Cash Flow",
+        "roi": "ROI",
+        "runway": "Runway",
+        "burn": "Burn Rate"
+      }
+    },
+    "clo": {
+      "title": "CLO Module",
+      "subtitle": "Legal risk assessment and compliance",
+      "areas": {
+        "compliance": "Compliance",
+        "contracts": "Contracts",
+        "liability": "Liability",
+        "ip": "Intellectual Property",
+        "regulatory": "Regulatory"
+      }
+    }
+  },
+  
+  "memory": {
+    "title": "Decision Memory",
+    "subtitle": "Personal decision-making model",
+    "patterns": "Identified patterns",
+    "preferences": "Preferences",
+    "biases": "Cognitive biases"
+  },
+  
+  "patterns": {
+    "title": "Pattern Analysis",
+    "subtitle": "Trends and insights from past decisions",
+    "trends": "Trends",
+    "insights": "Insights",
+    "recommendations": "Recommendations"
+  },
+  
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Preferences and system configuration",
+    "language": "Language",
+    "theme": "Theme",
+    "notifications": "Notifications",
+    "privacy": "Privacy",
+    "account": "Account"
+  },
+  
+  "scenarios": {
+    "advantages": "Advantages",
+    "risks": "Risks",
+    "confidence": "Confidence",
+    "recommendation": "Recommendation",
+    "assumptions": "Assumptions",
+    "constraints": "Constraints",
+    "tradeoffs": "Trade-offs"
+  },
+  
+  "common": {
+    "history": "History",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "confirm": "Confirm",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "yes": "Yes",
+    "no": "No",
+    "all": "All",
+    "none": "None",
+    "other": "Other"
+  },
+  
+  "messages": {
+    "success": {
+      "saved": "Successfully saved",
+      "deleted": "Successfully deleted",
+      "updated": "Successfully updated",
+      "created": "Successfully created"
+    },
+    "error": {
+      "generic": "An error occurred",
+      "notFound": "Not found",
+      "unauthorized": "Unauthorized",
+      "validation": "Validation error"
+    },
+    "confirm": {
+      "delete": "Are you sure you want to delete?",
+      "cancel": "Are you sure you want to cancel?",
+      "discard": "Are you sure you want to discard changes?"
+    }
+  }
+}

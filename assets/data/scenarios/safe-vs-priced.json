@@ -1,0 +1,66 @@
+{
+  "id": "safe-vs-priced",
+  "title": "SAFE ($18M Cap) vs Priced Series A ($20M Pre)?",
+  "titlePt": "SAFE ($18M Cap) vs Rodada SÃ©rie A Precificada ($20M PrÃ©)?",
+  "category": "financial",
+  "categoryLabel": "Financial Decision",
+  "categoryLabelPt": "DecisÃ£o Financeira",
+  "createdDays": 5,
+  "value": "Capital raise: $2.5M",
+  "valuePt": "CaptaÃ§Ã£o de capital: $2.5M",
+  "aiConfidence": 76,
+  "confidenceLevel": "high",
+  "personalModelAlert": {
+    "en": "Your 'Transparent Communication' core value strongly favors priced round despite SAFE's speed/simplicity advantages. AI analysis weighs structural transparency against founder convenience.",
+    "pt": "Seu valor fundamental de 'ComunicaÃ§Ã£o Transparente' favorece fortemente a rodada precificada, apesar das vantagens de velocidade/simplicidade do SAFE. A anÃ¡lise da IA pondera transparÃªncia estrutural contra conveniÃªncia do fundador."
+  },
+  "alternatives": [
+    {
+      "id": "safe-18m",
+      "name": "SAFE at $18M Cap",
+      "namePt": "SAFE com Cap de $18M",
+      "score": 6.8,
+      "recommended": false,
+      "advantages": [
+        {"en": "Fast close (2-3 weeks)", "pt": "Fechamento rÃ¡pido (2-3 semanas)"},
+        {"en": "Lower legal costs ($15K)", "pt": "Custos legais menores ($15K)"},
+        {"en": "Flexibility on valuation", "pt": "Flexibilidade na avaliaÃ§Ã£o"},
+        {"en": "No board seat until conversion", "pt": "Sem cadeira no conselho atÃ© conversÃ£o"}
+      ],
+      "risks": [
+        {"en": "Valuation uncertainty (13.9%-20.8%)", "pt": "Incerteza de avaliaÃ§Ã£o (13.9%-20.8%)"},
+        {"en": "Conflicts with 'Transparent Communication' value", "pt": "Conflita com valor 'ComunicaÃ§Ã£o Transparente'"},
+        {"en": "Cannot communicate clear ownership to team", "pt": "NÃ£o pode comunicar ownership claro para equipe"},
+        {"en": "Defers governance discussion", "pt": "Adia discussÃ£o de governanÃ§a"}
+      ]
+    },
+    {
+      "id": "priced-20m",
+      "name": "Priced Round at $20M Pre",
+      "namePt": "Rodada Precificada a $20M PrÃ©",
+      "score": 8.2,
+      "recommended": true,
+      "advantages": [
+        {"en": "Clear cap table (11.1% dilution)", "pt": "Cap table claro (11.1% diluiÃ§Ã£o)"},
+        {"en": "Aligns with 'Transparent Communication'", "pt": "Alinha com 'ComunicaÃ§Ã£o Transparente'"},
+        {"en": "Market validation signal", "pt": "Sinal de validaÃ§Ã£o de mercado"},
+        {"en": "Cleaner Series B setup", "pt": "Setup mais limpo para SÃ©rie B"},
+        {"en": "Board experience now", "pt": "ExperiÃªncia de conselho agora"}
+      ],
+      "risks": [
+        {"en": "Slower close (6-8 weeks)", "pt": "Fechamento mais lento (6-8 semanas)"},
+        {"en": "Higher legal costs ($40-50K)", "pt": "Custos legais maiores ($40-50K)"},
+        {"en": "Valuation becomes public anchor", "pt": "AvaliaÃ§Ã£o se torna Ã¢ncora pÃºblica"},
+        {"en": "More extensive governance", "pt": "GovernanÃ§a mais extensa"}
+      ]
+    }
+  ],
+  "recommendation": {
+    "title": "Priced Round at $20M Pre",
+    "titlePt": "Rodada Precificada a $20M PrÃ©",
+    "summary": {
+      "en": "Given your 'Transparent Communication' core value and moderate-high financial risk tolerance, AI recommends priced Series A. The $20M pre valuation is fair (3.3x ARR at $600K current), and structural transparency enables clearer team communication and Series B preparation.",
+      "pt": "Dado seu valor fundamental de 'ComunicaÃ§Ã£o Transparente' e tolerÃ¢ncia a risco financeiro moderada-alta, a IA recomenda SÃ©rie A precificada. A avaliaÃ§Ã£o prÃ© de $20M Ã© justa (3.3x ARR a $600K atual), e transparÃªncia estrutural permite comunicaÃ§Ã£o mais clara com equipe e preparaÃ§Ã£o para SÃ©rie B."
+    }
+  }
+}

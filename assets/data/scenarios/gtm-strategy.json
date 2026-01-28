@@ -1,0 +1,83 @@
+{
+  "id": "gtm-strategy",
+  "title": "GTM Strategy: PLG vs Sales-Led to $2M ARR?",
+  "titlePt": "EstratÃ©gia GTM: PLG vs Sales-Led para $2M ARR?",
+  "category": "strategic",
+  "categoryLabel": "Strategic Decision",
+  "categoryLabelPt": "DecisÃ£o EstratÃ©gica",
+  "createdDays": 7,
+  "value": "Path to $2M ARR",
+  "valuePt": "Caminho para $2M ARR",
+  "aiConfidence": 79,
+  "confidenceLevel": "medium-high",
+  "personalModelAlert": {
+    "en": "Your 'Speed to Learning' and 'Data-Informed' values favor PLG's faster feedback loops. However, 'Sustainable Pace' cautions against pure self-serve at $400K ARR stageâ€”hybrid recommended.",
+    "pt": "Seus valores 'Velocidade para Aprendizado' e 'Informado por Dados' favorecem loops de feedback mais rÃ¡pidos do PLG. No entanto, 'Ritmo SustentÃ¡vel' adverte contra auto-serviÃ§o puro no estÃ¡gio de $400K ARRâ€”hÃ­brido recomendado."
+  },
+  "alternatives": [
+    {
+      "id": "pure-plg",
+      "name": "Pure PLG (Product-Led Growth)",
+      "namePt": "PLG Puro (Crescimento Liderado por Produto)",
+      "score": 6.4,
+      "recommended": false,
+      "advantages": [
+        {"en": "Fastest user acquisition", "pt": "AquisiÃ§Ã£o de usuÃ¡rios mais rÃ¡pida"},
+        {"en": "Lower CAC ($120 vs $1200)", "pt": "CAC mais baixo ($120 vs $1200)"},
+        {"en": "Fast feedback loops", "pt": "Loops de feedback rÃ¡pidos"},
+        {"en": "Scalable without hiring", "pt": "EscalÃ¡vel sem contrataÃ§Ãµes"}
+      ],
+      "risks": [
+        {"en": "Low ACV ($3K vs $25K)", "pt": "ACV baixo ($3K vs $25K)"},
+        {"en": "High churn risk (SMB segment)", "pt": "Alto risco de churn (segmento SMB)"},
+        {"en": "May miss enterprise opportunity", "pt": "Pode perder oportunidade enterprise"},
+        {"en": "Difficult to upsell later", "pt": "DifÃ­cil fazer upsell depois"}
+      ]
+    },
+    {
+      "id": "hybrid-plg-sales",
+      "name": "Hybrid: PLG + Sales-Assist",
+      "namePt": "HÃ­brido: PLG + AssistÃªncia de Vendas",
+      "score": 7.6,
+      "recommended": true,
+      "advantages": [
+        {"en": "PLG for SMB velocity", "pt": "PLG para velocidade SMB"},
+        {"en": "Sales-assist for mid-market", "pt": "AssistÃªncia de vendas para mid-market"},
+        {"en": "Balanced CAC and ACV", "pt": "CAC e ACV balanceados"},
+        {"en": "Learn both motions", "pt": "Aprende ambos os movimentos"},
+        {"en": "Lower hiring risk (2 AEs vs full team)", "pt": "Menor risco de contrataÃ§Ã£o (2 AEs vs equipe completa)"}
+      ],
+      "risks": [
+        {"en": "Split focus initially", "pt": "Foco dividido inicialmente"},
+        {"en": "Need to build both playbooks", "pt": "Precisa construir ambos os playbooks"},
+        {"en": "More complex metrics", "pt": "MÃ©tricas mais complexas"}
+      ]
+    },
+    {
+      "id": "pure-sales",
+      "name": "Pure Sales-Led (Enterprise)",
+      "namePt": "Vendas Puro (Enterprise)",
+      "score": 5.8,
+      "recommended": false,
+      "advantages": [
+        {"en": "High ACV ($25K+)", "pt": "ACV alto ($25K+)"},
+        {"en": "Lower churn", "pt": "Menor churn"},
+        {"en": "Deeper customer relationships", "pt": "Relacionamentos mais profundos com clientes"}
+      ],
+      "risks": [
+        {"en": "Slow: 6-9 month sales cycles", "pt": "Lento: ciclos de venda de 6-9 meses"},
+        {"en": "High CAC ($1200+)", "pt": "CAC alto ($1200+)"},
+        {"en": "Need to hire 4-5 AEs ($400K+)", "pt": "Precisa contratar 4-5 AEs ($400K+)"},
+        {"en": "Long time to revenue", "pt": "Longo tempo atÃ© receita"}
+      ]
+    }
+  ],
+  "recommendation": {
+    "title": "Hybrid PLG + Sales-Assist",
+    "titlePt": "HÃ­brido PLG + AssistÃªncia de Vendas",
+    "summary": {
+      "en": "Start with PLG for SMB (<$1M revenue), add 2 AEs for sales-assist on mid-market ($1-10M revenue). This balances 'Speed to Learning' (fast PLG feedback) with 'Sustainable Pace' (avoid premature sales team scaling).",
+      "pt": "Comece com PLG para SMB (<$1M receita), adicione 2 AEs para assistÃªncia de vendas no mid-market ($1-10M receita). Isso equilibra 'Velocidade para Aprendizado' (feedback rÃ¡pido PLG) com 'Ritmo SustentÃ¡vel' (evitar escala prematura de equipe de vendas)."
+    }
+  }
+}

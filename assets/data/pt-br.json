@@ -1,0 +1,257 @@
+{
+  "app": {
+    "name": "CIPAI",
+    "tagline": "InteligÃªncia Cognitiva",
+    "description": "Plataforma Cognitiva de Apoio Ã  DecisÃ£o"
+  },
+  
+  "nav": {
+    "core": {
+      "title": "Principal",
+      "items": {
+        "context": "Contexto da DecisÃ£o",
+        "dashboard": "Painel Cognitivo",
+        "newDecision": "Nova DecisÃ£o",
+        "history": "HistÃ³rico de DecisÃµes",
+        "compare": "Comparar CenÃ¡rios",
+        "personalModel": "Modelo Pessoal"
+      }
+    },
+    "modules": {
+      "title": "MÃ³dulos de AnÃ¡lise",
+      "items": {
+        "cfo": "MÃ³dulo CFO",
+        "clo": "MÃ³dulo JurÃ­dico"
+      }
+    },
+    "intelligence": {
+      "title": "Camada de InteligÃªncia",
+      "items": {
+        "memory": "MemÃ³ria de DecisÃµes",
+        "patterns": "AnÃ¡lise de PadrÃµes"
+      }
+    },
+    "system": {
+      "title": "Sistema",
+      "items": {
+        "settings": "ConfiguraÃ§Ãµes"
+      }
+    }
+  },
+  
+  "dashboard": {
+    "title": "Painel Cognitivo",
+    "subtitle": "VisÃ£o geral do raciocÃ­nio da IA e inteligÃªncia de decisÃ£o",
+    "aiStatus": {
+      "active": "Sistema IA Ativo",
+      "operational": "OPERACIONAL",
+      "processing": "Processando {{count}} decisÃµes ativas",
+      "validated": "{{count}} premissas validadas hoje",
+      "indexed": "MemÃ³ria de decisÃ£o: {{count}} cenÃ¡rios indexados"
+    },
+    "metrics": {
+      "confidence": {
+        "label": "ConfianÃ§a da IA (MÃ©dia)",
+        "high": "ALTA",
+        "medium": "MÃ‰DIA",
+        "low": "BAIXA",
+        "basedOn": "Baseado em {{count}} cenÃ¡rios analisados",
+        "highConfidence": "{{count}} decisÃµes de alta confianÃ§a (>85%)"
+      },
+      "uncertainty": {
+        "label": "Incertezas Sinalizadas",
+        "monitor": "MONITORAR",
+        "requiresValidation": "{{count}} exigem validaÃ§Ã£o",
+        "missingData": "{{count}} premissas com dados faltantes"
+      },
+      "reasoning": {
+        "label": "Profundidade do RaciocÃ­nio",
+        "deep": "PROFUNDO",
+        "layers": "{{count}} camadas de anÃ¡lise",
+        "factorsEvaluated": "{{count}} fatores avaliados por decisÃ£o"
+      },
+      "assumptions": {
+        "label": "Premissas Validadas",
+        "verified": "VERIFICADO",
+        "validated": "{{count}} validadas este mÃªs",
+        "accuracy": "{{percent}}% de taxa de precisÃ£o"
+      }
+    }
+  },
+  
+  "newDecision": {
+    "title": "Nova DecisÃ£o",
+    "subtitle": "Configure uma nova anÃ¡lise de decisÃ£o",
+    "form": {
+      "decisionName": "Nome da DecisÃ£o",
+      "decisionNamePlaceholder": "Ex: Expandir para mercado internacional",
+      "category": "Categoria",
+      "categories": {
+        "strategic": "EstratÃ©gica",
+        "financial": "Financeira",
+        "operational": "Operacional",
+        "hr": "Recursos Humanos",
+        "legal": "JurÃ­dica",
+        "technical": "TÃ©cnica"
+      },
+      "context": "Contexto",
+      "contextPlaceholder": "Descreva o contexto da decisÃ£o...",
+      "urgency": "UrgÃªncia",
+      "urgencyLevels": {
+        "low": "Baixa",
+        "medium": "MÃ©dia",
+        "high": "Alta"
+      },
+      "timeline": "Prazo",
+      "timelineOptions": {
+        "immediate": "Imediato",
+        "oneWeek": "1 semana",
+        "oneMonth": "1 mÃªs",
+        "threeMonths": "3 meses",
+        "sixMonths": "6 meses",
+        "oneYear": "1 ano"
+      }
+    },
+    "buttons": {
+      "cancel": "Cancelar",
+      "analyze": "Iniciar AnÃ¡lise"
+    }
+  },
+  
+  "history": {
+    "title": "HistÃ³rico de DecisÃµes",
+    "subtitle": "Todas as anÃ¡lises e decisÃµes anteriores",
+    "filters": {
+      "all": "Todas",
+      "pending": "Pendentes",
+      "completed": "ConcluÃ­das",
+      "archived": "Arquivadas"
+    },
+    "table": {
+      "decision": "DecisÃ£o",
+      "category": "Categoria",
+      "date": "Data",
+      "confidence": "ConfianÃ§a",
+      "status": "Status",
+      "actions": "AÃ§Ãµes"
+    },
+    "status": {
+      "analyzing": "Analisando",
+      "completed": "ConcluÃ­da",
+      "pending": "Pendente",
+      "archived": "Arquivada"
+    }
+  },
+  
+  "compare": {
+    "title": "Comparar CenÃ¡rios",
+    "subtitle": "AnÃ¡lise lado a lado de alternativas",
+    "selectScenarios": "Selecione atÃ© 3 cenÃ¡rios para comparar"
+  },
+  
+  "modules": {
+    "cfo": {
+      "title": "MÃ³dulo CFO",
+      "subtitle": "AnÃ¡lise financeira e mÃ©tricas de performance",
+      "metrics": {
+        "revenue": "Receita",
+        "profit": "Lucro",
+        "cashFlow": "Fluxo de Caixa",
+        "roi": "ROI",
+        "runway": "Runway",
+        "burn": "Burn Rate"
+      }
+    },
+    "clo": {
+      "title": "MÃ³dulo JurÃ­dico",
+      "subtitle": "AvaliaÃ§Ã£o de riscos legais e conformidade",
+      "areas": {
+        "compliance": "Conformidade",
+        "contracts": "Contratos",
+        "liability": "Responsabilidade",
+        "ip": "Propriedade Intelectual",
+        "regulatory": "RegulatÃ³rio"
+      }
+    }
+  },
+  
+  "memory": {
+    "title": "MemÃ³ria de DecisÃµes",
+    "subtitle": "Modelo pessoal de tomada de decisÃ£o",
+    "patterns": "PadrÃµes identificados",
+    "preferences": "PreferÃªncias",
+    "biases": "Vieses cognitivos"
+  },
+  
+  "patterns": {
+    "title": "AnÃ¡lise de PadrÃµes",
+    "subtitle": "TendÃªncias e insights das decisÃµes anteriores",
+    "trends": "TendÃªncias",
+    "insights": "Insights",
+    "recommendations": "RecomendaÃ§Ãµes"
+  },
+  
+  "settings": {
+    "title": "ConfiguraÃ§Ãµes",
+    "subtitle": "PreferÃªncias e configuraÃ§Ã£o do sistema",
+    "language": "Idioma",
+    "theme": "Tema",
+    "notifications": "NotificaÃ§Ãµes",
+    "privacy": "Privacidade",
+    "account": "Conta"
+  },
+  
+  "scenarios": {
+    "advantages": "Vantagens",
+    "risks": "Riscos",
+    "confidence": "ConfianÃ§a",
+    "recommendation": "RecomendaÃ§Ã£o",
+    "assumptions": "Premissas",
+    "constraints": "RestriÃ§Ãµes",
+    "tradeoffs": "Trade-offs"
+  },
+  
+  "common": {
+    "history": "HistÃ³rico",
+    "loading": "Carregando...",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "view": "Visualizar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "PrÃ³ximo",
+    "previous": "Anterior",
+    "confirm": "Confirmar",
+    "search": "Pesquisar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "import": "Importar",
+    "yes": "Sim",
+    "no": "NÃ£o",
+    "all": "Todos",
+    "none": "Nenhum",
+    "other": "Outro"
+  },
+  
+  "messages": {
+    "success": {
+      "saved": "Salvo com sucesso",
+      "deleted": "ExcluÃ­do com sucesso",
+      "updated": "Atualizado com sucesso",
+      "created": "Criado com sucesso"
+    },
+    "error": {
+      "generic": "Ocorreu um erro",
+      "notFound": "NÃ£o encontrado",
+      "unauthorized": "NÃ£o autorizado",
+      "validation": "Erro de validaÃ§Ã£o"
+    },
+    "confirm": {
+      "delete": "Tem certeza que deseja excluir?",
+      "cancel": "Tem certeza que deseja cancelar?",
+      "discard": "Tem certeza que deseja descartar as alteraÃ§Ãµes?"
+    }
+  }
+}

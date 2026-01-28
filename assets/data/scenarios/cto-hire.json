@@ -1,0 +1,255 @@
+{
+  "id": "cto-hire",
+  "title": "Should We Hire a Senior CTO at $180K/year?",
+  "titlePt": "Devemos Contratar um CTO SÃªnior por $180K/ano?",
+  "category": "people",
+  "categoryLabel": "People Decision",
+  "categoryLabelPt": "DecisÃ£o de Pessoas",
+  "createdDays": 3,
+  "value": "$180K/year + equity",
+  "valuePt": "$180K/ano + equity",
+  
+  "aiConfidence": 64,
+  "confidenceLevel": "medium-low",
+  
+  "context": {
+    "stage": "Series A",
+    "arr": "$400K",
+    "teamSize": 15,
+    "engineers": 9,
+    "runway": "9.7 months",
+    "issue": "Technical leadership gap identified"
+  },
+  
+  "personalModelAlert": {
+    "en": "This decision conflicts with your 'No Hiring Before Revenue Validates' constraint and 'Low People Risk Tolerance' profile. AI analysis considers your current stage (Series A, $400K ARR, 15-person team) and 18-month runway requirement.",
+    "pt": "Esta decisÃ£o conflita com sua restriÃ§Ã£o 'NÃ£o Contratar Antes da Receita Validar' e perfil de 'Baixa TolerÃ¢ncia a Risco de Pessoas'. A anÃ¡lise da IA considera seu estÃ¡gio atual (SÃ©rie A, $400K ARR, equipe de 15 pessoas) e requisito de runway de 18 meses."
+  },
+  
+  "reasoningChain": [
+    {
+      "step": 1,
+      "text": "Current team capacity analyzed: Technical leadership gap identified",
+      "textPt": "Capacidade da equipe atual analisada: Gap de lideranÃ§a tÃ©cnica identificado",
+      "detail": "15-person team, 9 engineers, no VP/C-level tech leader. Current CTO (co-founder) splitting time 60% product/40% fundraising. Engineering velocity declining 12% QoQ. Technical debt accumulating faster than resolution rate.",
+      "detailPt": "Equipe de 15 pessoas, 9 engenheiros, sem lÃ­der tÃ©cnico VP/C-level. CTO atual (co-fundador) dividindo tempo 60% produto/40% captaÃ§Ã£o. Velocidade de engenharia caindo 12% QoQ. DÃ­vida tÃ©cnica acumulando mais rÃ¡pido que taxa de resoluÃ§Ã£o."
+    },
+    {
+      "step": 2,
+      "text": "Financial impact calculated against Personal Model",
+      "textPt": "Impacto financeiro calculado contra Modelo Pessoal",
+      "detail": "Full-time CTO: $180K/year + 0.5% equity = $15K/mo burn increase. Current burn: $65K/mo, runway: 9.7mo. New burn: $80K/mo, runway shrinks to 6.7mo. CONFLICTS with 18-month runway minimum constraint. High financial stress risk.",
+      "detailPt": "CTO em tempo integral: $180K/ano + 0,5% equity = $15K/mÃªs aumento de burn. Burn atual: $65K/mÃªs, runway: 9,7 meses. Novo burn: $80K/mÃªs, runway reduz para 6,7 meses. CONFLITA com restriÃ§Ã£o de runway mÃ­nimo de 18 meses. Alto risco de estresse financeiro."
+    },
+    {
+      "step": 3,
+      "text": "People risk evaluated against risk tolerance profile",
+      "textPt": "Risco de pessoas avaliado contra perfil de tolerÃ¢ncia a risco",
+      "detail": "Wrong senior hire costs: 6-9 months to identify + 3-6 months to replace = 12-15 month setback. Your risk profile: 'Low People Risk Tolerance' + 'No Hiring Before Revenue Validates'. Current ARR ($400K) < recommended threshold ($800K) for C-level hire at seed stage.",
+      "detailPt": "Custo de contrataÃ§Ã£o sÃªnior errada: 6-9 meses para identificar + 3-6 meses para substituir = atraso de 12-15 meses. Seu perfil de risco: 'Baixa TolerÃ¢ncia a Risco de Pessoas' + 'NÃ£o Contratar Antes da Receita Validar'. ARR atual ($400K) < limite recomendado ($800K) para contrataÃ§Ã£o C-level em estÃ¡gio inicial."
+    },
+    {
+      "step": 4,
+      "text": "Alternative explored: Fractional CTO as risk-reduction strategy",
+      "textPt": "Alternativa explorada: CTO FracionÃ¡rio como estratÃ©gia de reduÃ§Ã£o de risco",
+      "detail": "Fractional option: $96K/year savings vs full-time. Provides 50% of senior leadership capacity. Test-before-commit reduces people risk. Can convert to full-time at $800K-1M ARR when revenue justifies. Lower financial risk, maintains runway buffer.",
+      "detailPt": "OpÃ§Ã£o fracionÃ¡ria: economia de $96K/ano vs tempo integral. Fornece 50% da capacidade de lideranÃ§a sÃªnior. Testar antes de comprometer reduz risco de pessoas. Pode converter para tempo integral em $800K-1M ARR quando receita justificar. Menor risco financeiro, mantÃ©m buffer de runway."
+    }
+  ],
+  
+  "assumptions": [
+    {
+      "title": "Engineering Velocity Improvement",
+      "titlePt": "Melhoria de Velocidade de Engenharia",
+      "text": "Assumes senior CTO increases engineering velocity by 25% within 6 months through better architecture, reduced tech debt, and team mentorship.",
+      "textPt": "Assume que CTO sÃªnior aumenta velocidade de engenharia em 25% em 6 meses atravÃ©s de melhor arquitetura, reduÃ§Ã£o de dÃ­vida tÃ©cnica e mentoria da equipe.",
+      "confidence": "medium",
+      "status": "âš ï¸",
+      "statusText": "Medium confidence - based on industry benchmarks, not guaranteed",
+      "statusTextPt": "ConfianÃ§a mÃ©dia - baseado em benchmarks da indÃºstria, nÃ£o garantido"
+    },
+    {
+      "title": "Revenue Acceleration Timeline",
+      "titlePt": "Cronograma de AceleraÃ§Ã£o de Receita",
+      "text": "Assumes product velocity improvements translate to ARR growth within 6-9 months. Actual impact may take 12+ months to materialize.",
+      "textPt": "Assume que melhorias de velocidade de produto se traduzem em crescimento de ARR em 6-9 meses. Impacto real pode levar 12+ meses para materializar.",
+      "confidence": "medium",
+      "status": "âš ï¸",
+      "statusText": "Delayed feedback loop - difficult to validate quickly",
+      "statusTextPt": "Loop de feedback atrasado - difÃ­cil de validar rapidamente"
+    },
+    {
+      "title": "Candidate Retention",
+      "titlePt": "RetenÃ§Ã£o do Candidato",
+      "text": "Assumes candidate stays minimum 2 years. Early-stage CTO departures create major risk. Candidate has strong credentials but joining seed/Series A is different risk profile than growth stage.",
+      "textPt": "Assume que candidato permanece mÃ­nimo 2 anos. SaÃ­das de CTO em estÃ¡gio inicial criam risco maior. Candidato tem credenciais fortes, mas ingressar em seed/SÃ©rie A Ã© perfil de risco diferente de estÃ¡gio de crescimento.",
+      "confidence": "high",
+      "status": "âœ…",
+      "statusText": "Mitigated by vesting schedule and reference checks",
+      "statusTextPt": "Mitigado por cronograma de vesting e verificaÃ§Ãµes de referÃªncia"
+    }
+  ],
+  
+  "alternatives": [
+    {
+      "id": "hire-fulltime",
+      "name": "Hire Full-Time CTO Now",
+      "namePt": "Contratar CTO em Tempo Integral Agora",
+      "score": 6.2,
+      "recommended": false,
+      "advantages": [
+        {
+          "en": "Full commitment and ownership",
+          "pt": "Comprometimento e propriedade total"
+        },
+        {
+          "en": "Immediate technical leadership",
+          "pt": "LideranÃ§a tÃ©cnica imediata"
+        },
+        {
+          "en": "Can build long-term architecture",
+          "pt": "Pode construir arquitetura de longo prazo"
+        },
+        {
+          "en": "Signal to investors (senior team)",
+          "pt": "Sinal para investidores (equipe sÃªnior)"
+        }
+      ],
+      "risks": [
+        {
+          "en": "Violates 'No Hiring Before Revenue Validates' constraint",
+          "pt": "Viola restriÃ§Ã£o 'NÃ£o Contratar Antes da Receita Validar'"
+        },
+        {
+          "en": "High burn increase ($180K + equity)",
+          "pt": "Alto aumento de burn ($180K + equity)"
+        },
+        {
+          "en": "People risk if wrong fit (low tolerance)",
+          "pt": "Risco de pessoas se nÃ£o for a pessoa certa (baixa tolerÃ¢ncia)"
+        },
+        {
+          "en": "Runway buffer shrinks from 9.7mo to 6.7mo",
+          "pt": "Buffer de runway reduz de 9,7 meses para 6,7 meses"
+        }
+      ]
+    },
+    {
+      "id": "fractional-first",
+      "name": "Fractional CTO First (Recommended)",
+      "namePt": "CTO FracionÃ¡rio Primeiro (Recomendado)",
+      "score": 7.8,
+      "recommended": true,
+      "advantages": [
+        {
+          "en": "Test-before-commit reduces people risk",
+          "pt": "Testar antes de comprometer reduz risco de pessoas"
+        },
+        {
+          "en": "$96K/year savings vs full-time",
+          "pt": "Economia de $96K/ano vs tempo integral"
+        },
+        {
+          "en": "Maintains runway buffer (18mo minimum)",
+          "pt": "MantÃ©m buffer de runway (18 meses mÃ­nimo)"
+        },
+        {
+          "en": "Aligns with conservative hiring approach",
+          "pt": "Alinha com abordagem conservadora de contrataÃ§Ã£o"
+        },
+        {
+          "en": "Convert to full-time at $800K ARR milestone",
+          "pt": "Converter para tempo integral no marco de $800K ARR"
+        }
+      ],
+      "risks": [
+        {
+          "en": "Part-time attention (20 hrs/week)",
+          "pt": "AtenÃ§Ã£o parcial (20 horas/semana)"
+        },
+        {
+          "en": "May not fully solve leadership gap",
+          "pt": "Pode nÃ£o resolver completamente gap de lideranÃ§a"
+        },
+        {
+          "en": "Risk of losing to full-time opportunity",
+          "pt": "Risco de perder para oportunidade de tempo integral"
+        }
+      ]
+    },
+    {
+      "id": "wait-800k",
+      "name": "Wait Until $800K ARR",
+      "namePt": "Aguardar AtÃ© $800K ARR",
+      "score": 5.1,
+      "recommended": false,
+      "advantages": [
+        {
+          "en": "Revenue clearly justifies hire",
+          "pt": "Receita claramente justifica contrataÃ§Ã£o"
+        },
+        {
+          "en": "Preserves maximum runway",
+          "pt": "Preserva runway mÃ¡ximo"
+        },
+        {
+          "en": "Fully compliant with hiring constraint",
+          "pt": "Totalmente compatÃ­vel com restriÃ§Ã£o de contrataÃ§Ã£o"
+        }
+      ],
+      "risks": [
+        {
+          "en": "Engineering velocity continues to decline",
+          "pt": "Velocidade de engenharia continua a cair"
+        },
+        {
+          "en": "Tech debt compounds, harder to fix later",
+          "pt": "DÃ­vida tÃ©cnica se acumula, mais difÃ­cil de corrigir depois"
+        },
+        {
+          "en": "May delay path to $2M ARR by 3-6 months",
+          "pt": "Pode atrasar caminho para $2M ARR em 3-6 meses"
+        },
+        {
+          "en": "Founder CTO burnout risk increases",
+          "pt": "Risco de burnout do CTO fundador aumenta"
+        }
+      ]
+    }
+  ],
+  
+  "recommendation": {
+    "title": "Fractional CTO â†’ Convert to Full-Time at $800K ARR",
+    "titlePt": "CTO FracionÃ¡rio â†’ Converter para Tempo Integral em $800K ARR",
+    "summary": {
+      "en": "Based on your Personal Model (low people risk tolerance, 18-month runway constraint, 'No Hiring Before Revenue Validates'), AI recommends starting with fractional CTO engagement. This balances immediate technical leadership need with financial prudence.",
+      "pt": "Baseado em seu Modelo Pessoal (baixa tolerÃ¢ncia a risco de pessoas, restriÃ§Ã£o de runway de 18 meses, 'NÃ£o Contratar Antes da Receita Validar'), a IA recomenda comeÃ§ar com engajamento de CTO fracionÃ¡rio. Isso equilibra necessidade imediata de lideranÃ§a tÃ©cnica com prudÃªncia financeira."
+    },
+    "conversionCriteria": [
+      {
+        "en": "Hit $800K ARR (2x current)",
+        "pt": "Atingir $800K ARR (2x atual)"
+      },
+      {
+        "en": "Fractional CTO proves effective (6-month evaluation)",
+        "pt": "CTO fracionÃ¡rio prova efetividade (avaliaÃ§Ã£o de 6 meses)"
+      },
+      {
+        "en": "Engineering velocity improves measurably (+20% minimum)",
+        "pt": "Velocidade de engenharia melhora mensuravelmente (+20% mÃ­nimo)"
+      },
+      {
+        "en": "Runway remains >18 months after conversion",
+        "pt": "Runway permanece >18 meses apÃ³s conversÃ£o"
+      },
+      {
+        "en": "Candidate wants to convert (mutual fit validated)",
+        "pt": "Candidato quer converter (fit mÃºtuo validado)"
+      }
+    ],
+    "alignment": {
+      "en": "'Data-Informed, Not Data-Driven' (test assumptions), 'Speed to Learning' (fail fast), 'Sustainable Pace' (avoid overcommitment), 'No Hiring Before Revenue Validates' (staged approach reduces premature scaling risk).",
+      "pt": "'Informado por Dados, NÃ£o Dirigido por Dados' (testar premissas), 'Velocidade para Aprendizado' (falhar rÃ¡pido), 'Ritmo SustentÃ¡vel' (evitar excesso de comprometimento), 'NÃ£o Contratar Antes da Receita Validar' (abordagem em estÃ¡gios reduz risco de escala prematura)."
+    }
+  }
+}

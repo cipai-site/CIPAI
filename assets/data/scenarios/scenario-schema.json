@@ -1,0 +1,286 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CIPAI Decision Scenario Schema",
+  "description": "Template para criaÃ§Ã£o de novos cenÃ¡rios de decisÃ£o no CIPAI",
+  "type": "object",
+  "required": ["id", "title", "titlePt", "category", "aiConfidence", "alternatives", "recommendation"],
+  
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identificador Ãºnico do cenÃ¡rio (slug format)",
+      "pattern": "^[a-z0-9-]+$",
+      "examples": ["cto-hire", "safe-vs-priced", "international-expansion"]
+    },
+    
+    "title": {
+      "type": "string",
+      "description": "TÃ­tulo principal da decisÃ£o em inglÃªs",
+      "minLength": 10,
+      "maxLength": 150,
+      "examples": ["Should We Hire a Senior CTO at $180K/year?"]
+    },
+    
+    "titlePt": {
+      "type": "string",
+      "description": "TÃ­tulo principal da decisÃ£o em portuguÃªs",
+      "minLength": 10,
+      "maxLength": 150,
+      "examples": ["Devemos Contratar um CTO SÃªnior por $180K/ano?"]
+    },
+    
+    "category": {
+      "type": "string",
+      "description": "Categoria da decisÃ£o",
+      "enum": ["strategic", "financial", "operational", "people", "legal", "technical"],
+      "examples": ["people"]
+    },
+    
+    "categoryLabel": {
+      "type": "string",
+      "description": "Label da categoria em inglÃªs",
+      "examples": ["People Decision"]
+    },
+    
+    "categoryLabelPt": {
+      "type": "string",
+      "description": "Label da categoria em portuguÃªs",
+      "examples": ["DecisÃ£o de Pessoas"]
+    },
+    
+    "createdDays": {
+      "type": "integer",
+      "description": "Dias desde a criaÃ§Ã£o (para simulaÃ§Ã£o)",
+      "minimum": 0,
+      "examples": [3]
+    },
+    
+    "value": {
+      "type": "string",
+      "description": "Valor monetÃ¡rio ou impacto da decisÃ£o",
+      "examples": ["$180K/year + equity"]
+    },
+    
+    "valuePt": {
+      "type": "string",
+      "description": "Valor monetÃ¡rio ou impacto da decisÃ£o em portuguÃªs",
+      "examples": ["$180K/ano + equity"]
+    },
+    
+    "aiConfidence": {
+      "type": "integer",
+      "description": "NÃ­vel de confianÃ§a da IA (0-100)",
+      "minimum": 0,
+      "maximum": 100,
+      "examples": [64]
+    },
+    
+    "confidenceLevel": {
+      "type": "string",
+      "description": "ClassificaÃ§Ã£o do nÃ­vel de confianÃ§a",
+      "enum": ["high", "medium-high", "medium", "medium-low", "low"],
+      "examples": ["medium-low"]
+    },
+    
+    "context": {
+      "type": "object",
+      "description": "Contexto da decisÃ£o (dados especÃ­ficos do cenÃ¡rio)",
+      "examples": [{
+        "stage": "Series A",
+        "arr": "$400K",
+        "teamSize": 15,
+        "runway": "9.7 months"
+      }]
+    },
+    
+    "personalModelAlert": {
+      "type": "object",
+      "description": "Alerta do modelo pessoal do usuÃ¡rio",
+      "properties": {
+        "en": {"type": "string"},
+        "pt": {"type": "string"}
+      }
+    },
+    
+    "reasoningChain": {
+      "type": "array",
+      "description": "Cadeia de raciocÃ­nio da IA",
+      "items": {
+        "type": "object",
+        "required": ["step", "text", "textPt", "detail", "detailPt"],
+        "properties": {
+          "step": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "text": {
+            "type": "string",
+            "description": "Resumo do passo em inglÃªs"
+          },
+          "textPt": {
+            "type": "string",
+            "description": "Resumo do passo em portuguÃªs"
+          },
+          "detail": {
+            "type": "string",
+            "description": "Detalhamento do passo em inglÃªs"
+          },
+          "detailPt": {
+            "type": "string",
+            "description": "Detalhamento do passo em portuguÃªs"
+          }
+        }
+      }
+    },
+    
+    "assumptions": {
+      "type": "array",
+      "description": "Premissas principais da anÃ¡lise",
+      "items": {
+        "type": "object",
+        "required": ["title", "titlePt", "text", "textPt", "confidence"],
+        "properties": {
+          "title": {"type": "string"},
+          "titlePt": {"type": "string"},
+          "text": {"type": "string"},
+          "textPt": {"type": "string"},
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "status": {"type": "string"},
+          "statusText": {"type": "string"},
+          "statusTextPt": {"type": "string"}
+        }
+      }
+    },
+    
+    "alternatives": {
+      "type": "array",
+      "description": "Alternativas de decisÃ£o",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "namePt", "score", "advantages", "risks"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID da alternativa"
+          },
+          "name": {
+            "type": "string",
+            "description": "Nome da alternativa em inglÃªs"
+          },
+          "namePt": {
+            "type": "string",
+            "description": "Nome da alternativa em portuguÃªs"
+          },
+          "score": {
+            "type": "number",
+            "description": "PontuaÃ§Ã£o (0-10)",
+            "minimum": 0,
+            "maximum": 10
+          },
+          "recommended": {
+            "type": "boolean",
+            "description": "Se Ã© a opÃ§Ã£o recomendada"
+          },
+          "advantages": {
+            "type": "array",
+            "description": "Lista de vantagens",
+            "items": {
+              "type": "object",
+              "properties": {
+                "en": {"type": "string"},
+                "pt": {"type": "string"}
+              }
+            }
+          },
+          "risks": {
+            "type": "array",
+            "description": "Lista de riscos",
+            "items": {
+              "type": "object",
+              "properties": {
+                "en": {"type": "string"},
+                "pt": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    
+    "recommendation": {
+      "type": "object",
+      "description": "RecomendaÃ§Ã£o final da IA",
+      "required": ["title", "titlePt", "summary"],
+      "properties": {
+        "title": {"type": "string"},
+        "titlePt": {"type": "string"},
+        "summary": {
+          "type": "object",
+          "properties": {
+            "en": {"type": "string"},
+            "pt": {"type": "string"}
+          }
+        },
+        "conversionCriteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "en": {"type": "string"},
+              "pt": {"type": "string"}
+            }
+          }
+        },
+        "alignment": {
+          "type": "object",
+          "properties": {
+            "en": {"type": "string"},
+            "pt": {"type": "string"}
+          }
+        }
+      }
+    }
+  },
+  
+  "examples": [{
+    "id": "novo-cenario",
+    "title": "New Decision Title",
+    "titlePt": "TÃ­tulo da Nova DecisÃ£o",
+    "category": "strategic",
+    "categoryLabel": "Strategic Decision",
+    "categoryLabelPt": "DecisÃ£o EstratÃ©gica",
+    "aiConfidence": 75,
+    "confidenceLevel": "medium-high",
+    "context": {
+      "customField1": "value1",
+      "customField2": "value2"
+    },
+    "alternatives": [
+      {
+        "id": "option-1",
+        "name": "Option 1",
+        "namePt": "OpÃ§Ã£o 1",
+        "score": 7.5,
+        "recommended": true,
+        "advantages": [
+          {"en": "Advantage 1", "pt": "Vantagem 1"}
+        ],
+        "risks": [
+          {"en": "Risk 1", "pt": "Risco 1"}
+        ]
+      }
+    ],
+    "recommendation": {
+      "title": "Recommended Approach",
+      "titlePt": "Abordagem Recomendada",
+      "summary": {
+        "en": "Summary in English",
+        "pt": "Resumo em PortuguÃªs"
+      }
+    }
+  }]
+}
