@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPAI - Inteligência Cognitiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">
+                    <h1>CIPAI</h1>
+                    <p>INTELIGÊNCIA COGNITIVA</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" id="btnHistorico">📊 Histórico</button>
+                <button class="btn-primary" id="btnNovaAnalise">➕ Nova Análise</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">PRINCIPAL</h3>
+                    <a href="#contexto" class="nav-item" data-section="contexto">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text">Contexto da Decisão</span>
+                    </a>
+                    <a href="#painel" class="nav-item active" data-section="painel">
+                        <span class="nav-icon">🧠</span>
+                        <span class="nav-text">Painel Cognitivo</span>
+                    </a>
+                    <a href="#demonstracoes" class="nav-item" data-section="demonstracoes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Demonstrações</span>
+                    </a>
+                    <a href="#modelo-pessoal" class="nav-item" data-section="modelo-pessoal">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Modelo Pessoal</span>
+                    </a>
+                    <a href="#nova-decisao" class="nav-item" data-section="nova-decisao">
+                        <span class="nav-icon">➕</span>
+                        <span class="nav-text">Nova Decisão</span>
+                    </a>
+                    <a href="#historico" class="nav-item" data-section="historico">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Histórico de Decisões</span>
+                    </a>
+                    <a href="#comparar" class="nav-item" data-section="comparar">
+                        <span class="nav-icon">🔄</span>
+                        <span class="nav-text">Comparar Cenários</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">MÓDULOS DE ANÁLISE</h3>
+                    <a href="#modulo-cfo" class="nav-item" data-section="modulo-cfo">
+                        <span class="nav-icon">💰</span>
+                        <span class="nav-text">Módulo CFO</span>
+                    </a>
+                    <a href="#modulo-juridico" class="nav-item" data-section="modulo-juridico">
+                        <span class="nav-icon">⚖️</span>
+                        <span class="nav-text">Módulo Jurídico</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">CAMADA DE INTELIGÊNCIA</h3>
+                    <a href="#memoria" class="nav-item" data-section="memoria">
+                        <span class="nav-icon">🧩</span>
+                        <span class="nav-text">Memória de Decisões</span>
+                    </a>
+                    <a href="#padroes" class="nav-item" data-section="padroes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Análise de Padrões</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">SISTEMA</h3>
+                    <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">👨‍⚕️</div>
+                    <div class="user-details">
+                        <p class="user-name">Dr. Eduardo</p>
+                        <p class="user-role">Cenário 01</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- 1. CONTEXTO DA DECISÃO -->
+            <section id="section-contexto" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🎯 Contexto da Decisão</h1>
+                    <p class="page-subtitle">Cenário 1: Dilema do Profissional Liberal</p>
+                </div>
+
+                <!-- Scenario Info -->
+                <div class="scenario-info-card">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">🏥</div>
+                        <div class="scenario-details">
+                            <h2>Dilema do Imóvel: Lazer Imediato vs. Liberdade e Educação dos Filhos</h2>
+                            <p class="scenario-subtitle">Alocação de liquidez elevada por profissional liberal totalmente dependente de renda ativa</p>
+                        </div>
+                        <div class="scenario-badges">
+                            <span class="badge badge-critical">Alta Complexidade</span>
+                            <span class="badge badge-info">10-15 min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">ID do Cenário:</span>
+                            <span class="metadata-value">medico-apartamento-praia-v2-3-master-final</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Domínios:</span>
+                            <span class="metadata-value">Financial • Legal • Strategic • Lifestyle</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de Decisão:</span>
+                            <span class="metadata-value">Estratégica</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Reversibilidade:</span>
+                            <span class="metadata-value badge-critical">BAIXA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Frame -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Enquadramento da Decisão</h3>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Tipo de Decisão</span>
+                            <span class="info-value">Estratégica</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Perfil de Risco</span>
+                            <span class="info-value">Capital + Tempo + Liberdade</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Domínio Principal</span>
+                            <span class="info-value">Financeiro</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Janela de Decisão</span>
+                            <span class="info-value">30 dias</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <h4>📝 Resumo em Linguagem Simples</h4>
+                        <p>Usar 66% das economias hoje para um imóvel de lazer pode comprometer tanto a faculdade dos filhos quanto sua liberdade profissional futura.</p>
+                    </div>
+
+                    <div class="risk-axis-box">
+                        <h4>⚠️ Eixo Principal de Risco</h4>
+                        <p><strong>Liquidez Imediata e Liberdade Profissional</strong> vs. <strong>Segurança Educacional de Longo Prazo</strong></p>
+                    </div>
+
+                    <div class="alert-box alert-warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h5>Reversibilidade: BAIXA</h5>
+                            <p>A compra envolve custos de entrada elevados, baixa liquidez imediata e perdas relevantes em uma revenda precoce.</p>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>💰 Impacto Financeiro</h4>
+                        <p>Imóvel de <strong>R$ 1.5M</strong> com impacto direto de <strong>66%</strong> sobre a liquidez total.</p>
+                    </div>
+                </div>
+
+                <!-- Background Context -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Contexto de Fundo</h3>
+                    <div class="background-text">
+                        <p>Dr. Eduardo, 46 anos, médico especialista, com renda média mensal de R$ 45 mil. Possui aproximadamente R$ 1,2 milhão em investimentos líquidos. Considera adquirir um apartamento de lazer avaliado em R$ 1,5 milhão, utilizando R$ 800 mil como entrada e financiando o saldo.</p>
+                        
+                        <p>Seu principal objetivo financeiro de longo prazo é custear integralmente a formação universitária de dois filhos, estimada em R$ 3 milhões ao longo dos próximos 8 a 14 anos.</p>
+                        
+                        <p>A decisão ocorre em um contexto de dependência integral da renda ativa, ausência de fontes relevantes de renda passiva e crescente exaustão profissional.</p>
+                    </div>
+                </div>
+
+                <!-- Stakeholders -->
+                <div class="content-card">
+                    <h3 class="card-title">👥 Principais Stakeholders</h3>
+                    <div class="stakeholders-list">
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👨‍👩‍👦</span>
+                            <span class="stakeholder-name">Cônjuge</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👨‍🎓</span>
+                            <span class="stakeholder-name">Filhos (beneficiários diretos do fundo educacional)</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">🏦</span>
+                            <span class="stakeholder-name">Instituição financeira credora</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline & Constraints -->
+                <div class="info-cards-grid">
+                    <div class="content-card">
+                        <h3 class="card-title">📅 Linha do Tempo</h3>
+                        <p>Horizonte de <strong>8 anos</strong> até o primeiro desembolso educacional relevante.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3 class="card-title">⛓️ Restrições</h3>
+                        <p>Renda totalmente dependente da capacidade física e cognitiva contínua do exercício profissional.</p>
+                    </div>
+                </div>
+
+                <!-- User Values Check -->
+                <div class="content-card">
+                    <h3 class="card-title">💭 Verificação de Valores do Usuário</h3>
+                    
+                    <div class="alert-box alert-info">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <p>Os valores abaixo são <strong>ASSUMIDOS</strong> pelo sistema com base em perfis de preservação de legado e profissionais dependentes de renda ativa. Eles podem não refletir preferências pessoais.</p>
+                        </div>
+                    </div>
+
+                    <div class="values-grid">
+                        <!-- Security vs Lifestyle -->
+                        <div class="value-axis-card">
+                            <h4>🛡️ Segurança vs Estilo de Vida</h4>
+                            <p class="value-description">Preservação de capital versus consumo e lazer</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 85%;">
+                                    <span class="value-marker">85%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 85%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Estilo de Vida</span>
+                                    <span>Segurança</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Dependência de renda ativa e presença de dependentes menores elevam a prioridade de segurança financeira.</p>
+                        </div>
+
+                        <!-- Short-term vs Long-term -->
+                        <div class="value-axis-card">
+                            <h4>⏱️ Curto Prazo vs Longo Prazo</h4>
+                            <p class="value-description">Horizonte temporal de planejamento</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 90%;">
+                                    <span class="value-marker">90%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 90%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Curto Prazo</span>
+                                    <span>Longo Prazo</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">A decisão impacta diretamente compromissos educacionais e liberdade profissional futura.</p>
+                        </div>
+
+                        <!-- Control vs Delegation -->
+                        <div class="value-axis-card">
+                            <h4>🎯 Controle vs Delegação</h4>
+                            <p class="value-description">Controle pessoal versus delegação de decisões</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 70%;">
+                                    <span class="value-marker">70%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 70%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Delegação</span>
+                                    <span>Controle</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Perfil indica preferência por decisões financeiras centralizadas no núcleo familiar.</p>
+                        </div>
+
+                        <!-- Growth vs Preservation -->
+                        <div class="value-axis-card">
+                            <h4>📈 Crescimento vs Preservação</h4>
+                            <p class="value-description">Apetite por risco versus preservação patrimonial</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 30%;">
+                                    <span class="value-marker">30%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 30%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Crescimento</span>
+                                    <span>Preservação</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Fase de vida favorece preservação de capital e redução da dependência de renda ativa.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PAINEL COGNITIVO (Default View) -->
+            <section id="section-painel" class="content-section active">
+                <div class="page-header">
+                    <h1 class="page-title">Painel Cognitivo</h1>
+                    <p class="page-subtitle">Visão geral do raciocínio de IA e inteligência de decisão</p>
+                </div>
+
+                <!-- Status Card -->
+                <div class="status-card">
+                    <div class="status-icon">🧠</div>
+                    <div class="status-info">
+                        <h3>Sistema IA Ativo</h3>
+                        <p>Processando 2 decisões ativas • 8 premissas validadas hoje • Memória: 47 cenários</p>
+                    </div>
+                    <div class="status-badge status-operational">OPERACIONAL</div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <!-- Confiança da IA -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>CONFIANÇA DA IA</h4>
+                            <span class="metric-badge badge-high">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">96%</div>
+                        <div class="metric-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 96%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-details">
+                            <p>📊 Baseado em 47 cenários</p>
+                            <p>⚡ 12 decisões >85%</p>
+                        </div>
+                    </div>
+
+                    <!-- Incertezas -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>INCERTEZAS</h4>
+                            <span class="metric-badge badge-warning">MONITORAR</span>
+                        </div>
+                        <div class="metric-value-large">8</div>
+                        <div class="metric-details">
+                            <p>⚠️ 3 exigem validação</p>
+                            <p>🔴 5 premissas críticas</p>
+                            <p>📈 3 alta variância</p>
+                        </div>
+                    </div>
+
+                    <!-- Profundidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>PROFUNDIDADE</h4>
+                            <span class="metric-badge badge-high">FORTE</span>
+                        </div>
+                        <div class="metric-value-large">6.2<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🔍 Análise multi-camadas</p>
+                            <p>📋 CFO + CLO + CEO</p>
+                            <p>⏱️ 8-14 anos horizon</p>
+                        </div>
+                    </div>
+
+                    <!-- Complexidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>COMPLEXIDADE</h4>
+                            <span class="metric-badge badge-critical">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">8.7<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🎯 4 domínios ativos</p>
+                            <p>💼 Financial + Legal</p>
+                            <p>🔗 8 stakeholders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="insights-section">
+                    <h3 class="section-title">💡 Insights da IA</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card insight-critical">
+                            <div class="insight-icon">🚨</div>
+                            <div class="insight-content">
+                                <h4>Risco Crítico Detectado</h4>
+                                <p>Freedom Lock-in de 8-10 anos identificado. Sistema requer 3 plantões extras/mês para sustentação do imóvel.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-warning">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <h4>Déficit Educacional Projetado</h4>
+                                <p>Gap de R$ 1.2M entre necessidade educacional e projeção patrimonial com a compra.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-info">
+                            <div class="insight-icon">💡</div>
+                            <div class="insight-content">
+                                <h4>Caminho da Vitória Identificado</h4>
+                                <p>Viabilização possível em 18 meses com holding + seguro de renda + R$ 600k liquidez mínima.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Preview -->
+                <div class="recommendation-preview">
+                    <div class="recommendation-header">
+                        <h3>🎯 Recomendação Final (CEO)</h3>
+                        <span class="confidence-score">Confiança: 96%</span>
+                    </div>
+                    <div class="recommendation-content">
+                        <p class="recommendation-main">O CID-AI recomenda <strong>postergar a compra do imóvel neste momento</strong>.</p>
+                        <p>Nos moldes atuais, a decisão compromete simultaneamente:</p>
+                        <ul>
+                            <li>A segurança educacional dos filhos</li>
+                            <li>A liquidez familiar</li>
+                            <li>Sua liberdade profissional futura</li>
+                        </ul>
+                        <button class="btn-primary" onclick="navigateTo('contexto')">Ver Análise Completa →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. DEMONSTRAÇÕES -->
+            <section id="section-demonstracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Demonstrações</h1>
+                    <p class="page-subtitle">Trade-offs e Análise de Decisão</p>
+                </div>
+
+                <!-- Methodology -->
+                <div class="content-card">
+                    <h3 class="card-title">📐 Metodologia de Scores de Trade-off</h3>
+                    
+                    <div class="formula-box">
+                        <h4>Fórmula de Cálculo</h4>
+                        <code>Score Final = Σ (Critério × Peso)</code>
+                        <p>Ajustado ao perfil de risco ocupacional</p>
+                    </div>
+
+                    <div class="criteria-breakdown">
+                        <h4>Critérios e Pesos</h4>
+                        <div class="criteria-list">
+                            <div class="criteria-item">
+                                <span class="criteria-name">Segurança Geracional</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 40%;"></div>
+                                </div>
+                                <span class="criteria-weight">40%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Liquidez e Liberdade</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 30%;"></div>
+                                </div>
+                                <span class="criteria-weight">30%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Proteção Patrimonial</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 20%;"></div>
+                                </div>
+                                <span class="criteria-weight">20%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Qualidade de Vida</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 10%;"></div>
+                                </div>
+                                <span class="criteria-weight">10%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-calculation">
+                        <h4>Exemplo de Cálculo</h4>
+                        <p><strong>Opção:</strong> Compra imediata em Pessoa Física</p>
+                        <p><strong>Score Total:</strong> 2.7</p>
+                        <p><strong>Margem de Confiança:</strong> ±0.4</p>
+                    </div>
+                </div>
+
+                <!-- Decision Readiness Check -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Verificação de Prontidão para Decisão</h3>
+                    
+                    <div class="readiness-dimensions">
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Emocional</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 50%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Financeira</span>
+                                <span class="readiness-level level-low">BAIXO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill low" style="width: 25%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Estrutural</span>
+                                <span class="readiness-level level-low">BAIXO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill low" style="width: 20%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blocking-factors">
+                        <h4>🚫 Fatores Bloqueantes</h4>
+                        <div class="blocking-factor critical">
+                            <span class="blocking-icon">🔴</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Déficit educacional projetado</span>
+                                <span class="blocking-severity">CRÍTICO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟠</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Ausência de seguro de renda adequado</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended-action">
+                        <h4>🎯 Ação Recomendada</h4>
+                        <div class="action-badge action-pause">PAUSAR</div>
+                        <p class="action-note">A decisão final permanece sob responsabilidade do usuário.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. MODELO PESSOAL -->
+            <section id="section-modelo-pessoal" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">👤 Modelo Pessoal</h1>
+                    <p class="page-subtitle">Perfil Completo do Decisor</p>
+                </div>
+
+                <!-- Profile Overview -->
+                <div class="profile-card">
+                    <div class="profile-header-section">
+                        <div class="profile-avatar-large">👨‍⚕️</div>
+                        <div class="profile-info">
+                            <h2>Dr. Eduardo Silva</h2>
+                            <p class="profile-title">Médico Cardiologista • 46 anos</p>
+                            <div class="profile-tags">
+                                <span class="tag">Casado</span>
+                                <span class="tag">2 Filhos</span>
+                                <span class="tag">São Paulo, SP</span>
+                                <span class="tag">20 anos carreira</span>
+                            </div>
+                        </div>
+                        <div class="profile-quick-stats">
+                            <div class="quick-stat">
+                                <span class="stat-icon">💰</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">R$ 45k</span>
+                                    <span class="stat-label">Renda Mensal</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <span class="stat-icon">💎</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">R$ 2M</span>
+                                    <span class="stat-label">Patrimônio</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">💰 Perfil Financeiro Detalhado</h3>
+                    
+                    <div class="financial-overview-grid">
+                        <div class="financial-section">
+                            <h4>📊 Composição Patrimonial</h4>
+                            <div class="patrimony-chart">
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Investimentos Líquidos</span>
+                                        <span class="patrimony-value">R$ 1.200.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 60%; background: linear-gradient(90deg, #10b981, #14b8a6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">60% do total</span>
+                                </div>
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Imóvel Residencial</span>
+                                        <span class="patrimony-value">R$ 800.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 40%; background: linear-gradient(90deg, #6366f1, #8b5cf6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">40% do total</span>
+                                </div>
+                            </div>
+                            <div class="patrimony-total">
+                                <span>Patrimônio Total:</span>
+                                <strong>R$ 2.000.000</strong>
+                            </div>
+                        </div>
+
+                        <div class="financial-section">
+                            <h4>💸 Fluxo de Caixa Mensal</h4>
+                            <div class="cashflow-items">
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">💰</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Renda Ativa (Consultório)</span>
+                                        <span class="cashflow-value">+ R$ 45.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">📈</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Renda Passiva</span>
+                                        <span class="cashflow-value">+ R$ 3.500</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🏠</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Despesas Fixas</span>
+                                        <span class="cashflow-value">- R$ 18.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🎓</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Educação</span>
+                                        <span class="cashflow-value">- R$ 6.500</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item savings">
+                                    <span class="cashflow-icon">💎</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Capacidade de Poupança</span>
+                                        <span class="cashflow-value">= R$ 24.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Structure -->
+                <div class="content-card">
+                    <h3 class="card-title">👨‍👩‍👧‍👦 Estrutura Familiar</h3>
+                    <div class="family-grid">
+                        <div class="family-card">
+                            <div class="family-avatar">👨‍⚕️</div>
+                            <h4>Dr. Eduardo</h4>
+                            <p class="family-role">Decisor Principal</p>
+                            <ul class="family-details">
+                                <li>• Cardiologista há 20 anos</li>
+                                <li>• Consultório próprio + plantões</li>
+                                <li>• 100% renda ativa</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👩</div>
+                            <h4>Cônjuge</h4>
+                            <p class="family-role">Co-decisor</p>
+                            <ul class="family-details">
+                                <li>• Professora universitária</li>
+                                <li>• Renda complementar</li>
+                                <li>• Gestão familiar</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👦</div>
+                            <h4>Filho (10 anos)</h4>
+                            <p class="family-role">Beneficiário</p>
+                            <ul class="family-details">
+                                <li>• Faculdade em 8 anos</li>
+                                <li>• Interesse: Medicina</li>
+                                <li>• Custo estimado: R$ 1.5M</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👧</div>
+                            <h4>Filha (6 anos)</h4>
+                            <p class="family-role">Beneficiária</p>
+                            <ul class="family-details">
+                                <li>• Faculdade em 12 anos</li>
+                                <li>• Objetivos indefinidos</li>
+                                <li>• Custo estimado: R$ 1.5M</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Objetivos Financeiros</h3>
+                    <div class="goals-list">
+                        <div class="goal-item priority-critical">
+                            <div class="goal-icon">🎓</div>
+                            <div class="goal-content">
+                                <h4>Fundo Educacional Completo</h4>
+                                <p>Custear 100% da formação universitária dos filhos</p>
+                                <div class="goal-meta">
+                                    <span>Meta: R$ 3.000.000</span>
+                                    <span>Horizonte: 8-14 anos</span>
+                                    <span class="goal-priority">Prioridade: MÁXIMA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-high">
+                            <div class="goal-icon">🆓</div>
+                            <div class="goal-content">
+                                <h4>Liberdade Profissional</h4>
+                                <p>Reduzir dependência de renda ativa após 55 anos</p>
+                                <div class="goal-meta">
+                                    <span>Meta: R$ 30k/mês passiva</span>
+                                    <span>Horizonte: 9-12 anos</span>
+                                    <span class="goal-priority">Prioridade: ALTA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-medium">
+                            <div class="goal-icon">🏖️</div>
+                            <div class="goal-content">
+                                <h4>Qualidade de Vida</h4>
+                                <p>Imóvel de lazer para momentos em família</p>
+                                <div class="goal-meta">
+                                    <span>Meta: R$ 1.500.000</span>
+                                    <span>Horizonte: Flexível</span>
+                                    <span class="goal-priority">Prioridade: MÉDIA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Perfil de Risco</h3>
+                    <div class="risk-profile-grid">
+                        <div class="risk-profile-item">
+                            <h4>Dependência de Renda Ativa</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill critical" style="width: 100%;"></div>
+                            </div>
+                            <span class="risk-level-label">100% - Crítico</span>
+                            <p>Toda renda depende da capacidade física e cognitiva contínua.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Exposição a Passivos Profissionais</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill high" style="width: 85%;"></div>
+                            </div>
+                            <span class="risk-level-label">85% - Alto</span>
+                            <p>Patrimônio em PF exposto a riscos da atividade médica.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Concentração Patrimonial</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill medium" style="width: 60%;"></div>
+                            </div>
+                            <span class="risk-level-label">60% - Médio</span>
+                            <p>Maior parte do patrimônio em ativos de baixa liquidez.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. NOVA DECISÃO -->
+            <section id="section-nova-decisao" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">➕ Nova Decisão</h1>
+                    <p class="page-subtitle">Iniciar uma Nova Análise de Decisão</p>
+                </div>
+
+                <div class="new-decision-container">
+                    <div class="new-decision-intro">
+                        <div class="intro-icon">🎯</div>
+                        <h2>Iniciar Nova Análise</h2>
+                        <p>O CIPAI analisará sua decisão sob múltiplas perspectivas: financeira, jurídica, estratégica e de estilo de vida.</p>
+                    </div>
+
+                    <div class="decision-form-card">
+                        <h3>📝 Informações Básicas da Decisão</h3>
+                        
+                        <div class="form-group">
+                            <label>Título da Decisão</label>
+                            <input type="text" placeholder="Ex: Compra de imóvel, Mudança de carreira, Investimento..." class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Categoria Principal</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>💰 Financeira</option>
+                                <option>🏠 Imobiliária</option>
+                                <option>💼 Profissional</option>
+                                <option>👨‍👩‍👧‍👦 Familiar</option>
+                                <option>📈 Investimentos</option>
+                                <option>🎓 Educacional</option>
+                                <option>🏥 Saúde</option>
+                                <option>⚖️ Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descrição do Contexto</label>
+                            <textarea rows="5" placeholder="Descreva sua situação atual e a decisão que precisa tomar..." class="form-textarea"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Valor Envolvido (R$)</label>
+                                <input type="text" placeholder="Ex: 1.500.000" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Prazo para Decisão</label>
+                                <select class="form-select">
+                                    <option>Selecione...</option>
+                                    <option>⚡ Urgente (até 7 dias)</option>
+                                    <option>📅 Curto (até 30 dias)</option>
+                                    <option>📆 Médio (até 90 dias)</option>
+                                    <option>⏱️ Longo (mais de 90 dias)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Stakeholders Envolvidos</label>
+                            <div class="stakeholder-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Cônjuge
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Filhos
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Pais
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Sócios
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Instituições Financeiras
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Outros
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nível de Complexidade Estimado</label>
+                            <div class="complexity-slider">
+                                <input type="range" min="1" max="10" value="5" class="slider">
+                                <div class="slider-labels">
+                                    <span>Simples</span>
+                                    <span>Moderado</span>
+                                    <span>Complexo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn-secondary">💾 Salvar Rascunho</button>
+                            <button class="btn-primary">🚀 Iniciar Análise</button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-info-card">
+                        <h3>📊 O que será analisado?</h3>
+                        <div class="analysis-modules">
+                            <div class="module-item">
+                                <span class="module-icon">💰</span>
+                                <div class="module-info">
+                                    <h4>Módulo CFO</h4>
+                                    <p>Análise financeira, métricas, riscos e oportunidades</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">⚖️</span>
+                                <div class="module-info">
+                                    <h4>Módulo Jurídico</h4>
+                                    <p>Estrutura legal, proteção patrimonial e sucessória</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🎯</span>
+                                <div class="module-info">
+                                    <h4>Análise Estratégica</h4>
+                                    <p>Alinhamento com objetivos e valores pessoais</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🧠</span>
+                                <div class="module-info">
+                                    <h4>IA Cognitiva</h4>
+                                    <p>Síntese executiva e recomendação final</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. HISTÓRICO DE DECISÕES -->
+            <section id="section-historico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📋 Histórico de Decisões</h1>
+                    <p class="page-subtitle">Todas as análises realizadas</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-card">
+                    <div class="filter-group">
+                        <label>Período:</label>
+                        <select class="filter-select">
+                            <option>Últimos 30 dias</option>
+                            <option>Últimos 90 dias</option>
+                            <option>Último ano</option>
+                            <option>Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Categoria:</label>
+                        <select class="filter-select">
+                            <option>Todas</option>
+                            <option>Financeira</option>
+                            <option>Imobiliária</option>
+                            <option>Profissional</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select class="filter-select">
+                            <option>Todos</option>
+                            <option>Aprovada</option>
+                            <option>Pausada</option>
+                            <option>Rejeitada</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-secondary">🔍 Pesquisar</button>
+                    </div>
+                </div>
+
+                <!-- Decision History List -->
+                <div class="history-list">
+                    <!-- Current Decision -->
+                    <div class="history-item active">
+                        <div class="history-icon">🏥</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Imóvel de Lazer: Dilema do Profissional Liberal</h3>
+                                <span class="history-badge badge-pause">PAUSADA</span>
+                            </div>
+                            <p class="history-description">Decisão sobre compra de apartamento de R$ 1.5M com impacto de 66% sobre liquidez</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 25 de Janeiro de 2026</span>
+                                <span class="history-category">💰 Financeira • 🏠 Imobiliária</span>
+                                <span class="history-confidence">🎯 Confiança: 96%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Valor:</span>
+                                    <span class="stat-value">R$ 1.5M</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Complexidade:</span>
+                                    <span class="stat-value">8.7/10</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Recomendação:</span>
+                                    <span class="stat-value">Postergar</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes" onclick="navigateTo('contexto')">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 1 -->
+                    <div class="history-item">
+                        <div class="history-icon">💼</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Expansão do Consultório: Abrir Segunda Unidade</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Análise de viabilidade para abertura de segunda unidade em Alphaville</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 10 de Novembro de 2025</span>
+                                <span class="history-category">💼 Profissional • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 88%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Investimento:</span>
+                                    <span class="stat-value">R$ 450k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Payback:</span>
+                                    <span class="stat-value">36 meses</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Implementada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 2 -->
+                    <div class="history-item">
+                        <div class="history-icon">🏦</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Reestruturação de Investimentos: Diversificação</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Rebalanceamento de portfólio com foco em renda passiva e proteção patrimonial</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 22 de Agosto de 2025</span>
+                                <span class="history-category">📈 Investimentos • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 91%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Patrimônio:</span>
+                                    <span class="stat-value">R$ 1.2M</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Diversificação:</span>
+                                    <span class="stat-value">+35%</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Resultado:</span>
+                                    <span class="stat-value">Positivo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 3 -->
+                    <div class="history-item">
+                        <div class="history-icon">🎓</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Fundo Educacional: Estruturação Inicial</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Criação de fundo dedicado para educação universitária dos filhos</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 05 de Março de 2025</span>
+                                <span class="history-category">👨‍👩‍👧‍👦 Familiar • 📈 Investimentos</span>
+                                <span class="history-confidence">🎯 Confiança: 94%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Aporte Inicial:</span>
+                                    <span class="stat-value">R$ 300k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Meta 2032:</span>
+                                    <span class="stat-value">R$ 3M</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Em Curso</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Summary -->
+                <div class="history-stats-card">
+                    <h3>📊 Estatísticas Gerais</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Decisões Analisadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Taxa de Confiança Média</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Aprovadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Em Análise</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">R$ 3.45M</span>
+                            <span class="stat-label">Valor Total Envolvido</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">8.2</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. COMPARAR CENÁRIOS -->
+            <section id="section-comparar" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🔄 Comparar Cenários</h1>
+                    <p class="page-subtitle">Análise comparativa de decisões e alternativas</p>
+                </div>
+
+                <!-- Scenario Selection -->
+                <div class="comparison-setup-card">
+                    <h3>📋 Selecionar Cenários para Comparação</h3>
+                    <div class="scenario-selectors">
+                        <div class="scenario-selector">
+                            <label>Cenário A:</label>
+                            <select class="form-select">
+                                <option>Cenário 01: Imóvel de Lazer (Atual)</option>
+                                <option>Cenário 02: Expansão Consultório</option>
+                                <option>Cenário 03: Reestruturação Investimentos</option>
+                                <option>Cenário 04: Fundo Educacional</option>
+                            </select>
+                        </div>
+                        <div class="comparison-vs">VS</div>
+                        <div class="scenario-selector">
+                            <label>Cenário B:</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>Cenário 01: Imóvel de Lazer (Atual)</option>
+                                <option>Cenário 02: Expansão Consultório</option>
+                                <option>Cenário 03: Reestruturação Investimentos</option>
+                                <option>Cenário 04: Fundo Educacional</option>
+                                <option>➕ Criar Cenário Alternativo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-primary">🔍 Comparar Cenários</button>
+                </div>
+
+                <!-- Comparison Results -->
+                <div class="comparison-results">
+                    <h3>📊 Análise Comparativa</h3>
+                    
+                    <!-- Overview Comparison -->
+                    <div class="comparison-overview">
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-a">
+                                <h4>Cenário A</h4>
+                                <p>Imóvel de Lazer</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">96%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">8.7/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Valor Total</span>
+                                    <span class="metric-value">R$ 1.5M</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-pause">PAUSAR</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-b">
+                                <h4>Cenário B</h4>
+                                <p>Expansão Consultório</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">88%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">6.5/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Valor Total</span>
+                                    <span class="metric-value">R$ 450k</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-approved">APROVAR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Comparison -->
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critério</th>
+                                    <th>Cenário A</th>
+                                    <th>Cenário B</th>
+                                    <th>Diferença</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>💰 Impacto em Liquidez</td>
+                                    <td class="negative">-66% (Crítico)</td>
+                                    <td class="neutral">-23% (Moderado)</td>
+                                    <td class="positive">+43% favor B</td>
+                                </tr>
+                                <tr>
+                                    <td>🎯 Alinhamento com Objetivos</td>
+                                    <td class="neutral">30%</td>
+                                    <td class="positive">85%</td>
+                                    <td class="positive">+55% favor B</td>
+                                </tr>
+                                <tr>
+                                    <td>⚠️ Nível de Risco</td>
+                                    <td class="negative">Alto</td>
+                                    <td class="neutral">Médio</td>
+                                    <td class="positive">Menor em B</td>
+                                </tr>
+                                <tr>
+                                    <td>🆓 Freedom Lock-in</td>
+                                    <td class="negative">8-10 anos</td>
+                                    <td class="neutral">3-4 anos</td>
+                                    <td class="positive">-5 anos em B</td>
+                                </tr>
+                                <tr>
+                                    <td>📈 Potencial de Retorno</td>
+                                    <td class="neutral">2-3% a.a.</td>
+                                    <td class="positive">18-22% a.a.</td>
+                                    <td class="positive">+16% favor B</td>
+                                </tr>
+                                <tr>
+                                    <td>🔒 Reversibilidade</td>
+                                    <td class="negative">Baixa</td>
+                                    <td class="positive">Alta</td>
+                                    <td class="positive">Maior em B</td>
+                                </tr>
+                                <tr>
+                                    <td>⏱️ Payback Period</td>
+                                    <td class="neutral">N/A (Lazer)</td>
+                                    <td class="positive">36 meses</td>
+                                    <td class="positive">Definido em B</td>
+                                </tr>
+                                <tr>
+                                    <td>👨‍👩‍👧‍👦 Impacto Familiar</td>
+                                    <td class="neutral">Positivo (Lazer)</td>
+                                    <td class="neutral">Neutro</td>
+                                    <td class="neutral">Equilibrado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Comparison Conclusion -->
+                    <div class="comparison-conclusion-card">
+                        <h3>🎯 Síntese Comparativa</h3>
+                        <div class="conclusion-content">
+                            <div class="conclusion-winner">
+                                <div class="winner-badge">🏆</div>
+                                <h4>Cenário B: Expansão do Consultório</h4>
+                                <p><strong>Recomendado com 88% de confiança</strong></p>
+                            </div>
+                            <div class="conclusion-reasons">
+                                <h4>Principais Razões:</h4>
+                                <ul>
+                                    <li>✅ Menor impacto em liquidez (-23% vs -66%)</li>
+                                    <li>✅ Maior alinhamento com objetivos de longo prazo (85% vs 30%)</li>
+                                    <li>✅ Potencial de retorno significativamente superior (18-22% vs 2-3%)</li>
+                                    <li>✅ Menor período de Freedom Lock-in (3-4 anos vs 8-10 anos)</li>
+                                    <li>✅ Alta reversibilidade em caso de necessidade</li>
+                                    <li>✅ Payback definido e previsível em 36 meses</li>
+                                </ul>
+                            </div>
+                            <div class="conclusion-note">
+                                <p><strong>Nota:</strong> O Cenário A (Imóvel de Lazer) pode ser reconsiderado após implementação bem-sucedida do Cenário B e cumprimento dos requisitos do "Caminho da Vitória".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. MÓDULO CFO -->
+            <section id="section-modulo-cfo" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">💰 Análise CFO</h1>
+                    <p class="page-subtitle">Análise Financeira Estratégica</p>
+                </div>
+
+                <!-- Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CFO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>O custo de oportunidade dos R$ 800 mil, investidos a uma taxa real estimada de 8% ao ano, resulta em aproximadamente R$ 1,48 milhão em 8 anos.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>O financiamento adiciona um passivo mensal de cerca de R$ 9,2 mil, reduzindo a capacidade de aporte e prolongando a dependência da renda ativa.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>A combinação de menor capital inicial e menor aporte mensal gera um déficit educacional projetado de aproximadamente R$ 1,2 milhão.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">4</span>
+                            <p>O sistema detecta dependência integral de renda ativa: cada real imobilizado exige manutenção contínua da capacidade física e cognitiva por 8 a 10 anos.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">5</span>
+                            <p>Em termos práticos, a decisão converte aproximadamente 8 anos de liberdade profissional em garantia de um imóvel de uso esporádico.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">6</span>
+                            <p><strong>Freedom Lock-in Period:</strong> Para sustentar juros, financiamento, impostos e manutenção do imóvel, o Dr. Eduardo precisará realizar o equivalente a aproximadamente 3 finais de semana adicionais de plantão por mês (ou cerca de 40–50 horas extras de consultório) ao longo de 8 a 10 anos, sem redução relevante do principal da dívida.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">7</span>
+                            <p>Em um cenário de interrupção de renda por 6 meses, a reserva remanescente seria consumida em cerca de 45 dias.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">8</span>
+                            <p>A aquisição em Pessoa Física aumenta exposição tributária e não contribui para geração de renda.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">9</span>
+                            <p><strong>Conclusão:</strong> A estrutura financeira proposta é incompatível com os objetivos educacionais e com a preservação da liberdade profissional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Metrics -->
+                <div class="content-card">
+                    <h3 class="card-title">📊 Métricas Financeiras</h3>
+                    <div class="financial-metrics-grid">
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Liquidez Pós-Aquisição</span>
+                            <span class="metric-value">R$ 400k</span>
+                            <span class="metric-status">CRÍTICA</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Dívida / Renda</span>
+                            <span class="metric-value">20.4%</span>
+                            <span class="metric-status">ATENÇÃO</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Déficit Fundo Educacional</span>
+                            <span class="metric-value">R$ 1.2M</span>
+                            <span class="metric-status">CRÍTICO</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Reserva de Emergência</span>
+                            <span class="metric-value">4 meses</span>
+                            <span class="metric-status">INSUFICIENTE</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Custo de Oportunidade (8 anos)</span>
+                            <span class="metric-value">R$ 1.48M</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Custo de Oportunidade (10 anos)</span>
+                            <span class="metric-value">R$ 1.84M</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Concentração Patrimônio</span>
+                            <span class="metric-value">>60%</span>
+                            <span class="metric-status">IMÓVEIS</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Freedom Lock-in</span>
+                            <span class="metric-value">3 plantões/mês</span>
+                            <span class="metric-status">8-10 ANOS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CFO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CFO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Liquidez</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Reserva insuficiente para sustentar novos custos fixos sem dependência contínua da renda ativa.</p>
+                            <span class="risk-metric">Métrica: 4 meses de runway</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Liberdade</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Travamento prolongado da liberdade profissional futura.</p>
+                            <span class="risk-metric">Métrica: Freedom Lock-in de 8-10 anos</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Solvência</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Alta probabilidade de não atingir o capital educacional necessário.</p>
+                            <span class="risk-metric">Métrica: R$ 1.2M de déficit</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Mercado</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Exposição simultânea a juros e inflação educacional.</p>
+                            <span class="risk-metric">Métrica: SELIC + inflação de mensalidades</span>
+                        </div>
+                    </div>
+
+                    <div class="scenario-boxes">
+                        <div class="scenario-box scenario-worst">
+                            <h4>😰 Pior Cenário</h4>
+                            <p>Interrupção de renda força venda do imóvel com deságio relevante para cobrir despesas.</p>
+                        </div>
+                        <div class="scenario-box scenario-best">
+                            <h4>😊 Melhor Cenário</h4>
+                            <p>Valorização imobiliária supera custo do financiamento sem comprometer liquidez.</p>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Recuperação:</strong> 5.5 anos para recompor a liquidez original</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. MÓDULO JURÍDICO -->
+            <section id="section-modulo-juridico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚖️ Análise Jurídica (CLO)</h1>
+                    <p class="page-subtitle">Análise de Riscos Legais e Estruturais</p>
+                </div>
+
+                <!-- CLO Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CLO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>Patrimônio em Pessoa Física está exposto a riscos cíveis inerentes à atividade médica.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>Imóvel financiado em PF gera entraves sucessórios e risco de liquidação forçada.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>Alienação fiduciária concede ao banco poder rápido de retomada em inadimplência.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">4</span>
+                            <p>Ausência de holding impede planejamento sucessório e proteção patrimonial.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">5</span>
+                            <p><strong>Conclusão:</strong> Falta de segregação entre risco profissional e patrimônio familiar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CLO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Exposição Legal</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Patrimônio pessoal exposto a passivos profissionais.</p>
+                            <span class="risk-metric">Métrica: Sem segregação de ativos</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco Sucessório</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Inventário e ITCMD podem consumir parcela relevante do ativo.</p>
+                            <span class="risk-metric">Métrica: 15-20% custo estimado</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Saída</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Venda antecipada com penalidades e baixa liquidez.</p>
+                            <span class="risk-metric">Métrica: 20% penalidade de saída</span>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Resolução:</strong> 24-48 meses</p>
+                    </div>
+                </div>
+
+                <!-- Legal Recommendations -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Recomendações Jurídicas</h3>
+                    <div class="legal-recommendations">
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">🏢</div>
+                            <div class="rec-content">
+                                <h4>1. Estruturação de Holding Familiar</h4>
+                                <p><strong>Objetivo:</strong> Segregar patrimônio pessoal dos riscos profissionais</p>
+                                <ul>
+                                    <li>Proteção patrimonial contra ações judiciais</li>
+                                    <li>Planejamento sucessório eficiente</li>
+                                    <li>Redução de carga tributária (ITCMD)</li>
+                                    <li>Facilitação de governança familiar</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 3-6 meses</span>
+                                    <span>💰 Investimento: R$ 15-25k</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-medium">
+                            <div class="rec-icon">📜</div>
+                            <div class="rec-content">
+                                <h4>2. Revisão de Contratos e Seguros</h4>
+                                <p><strong>Objetivo:</strong> Garantir cobertura adequada para riscos profissionais</p>
+                                <ul>
+                                    <li>Seguro de responsabilidade civil profissional</li>
+                                    <li>Seguro de renda (invalidez/incapacidade)</li>
+                                    <li>Revisão de apólices existentes</li>
+                                    <li>Cobertura mínima: 24 meses de despesas</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 1-2 meses</span>
+                                    <span>💰 Investimento: R$ 3-5k/mês</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-medium">
+                            <div class="rec-icon">📝</div>
+                            <div class="rec-content">
+                                <h4>3. Pacto Antenupcial ou Revisão</h4>
+                                <p><strong>Objetivo:</strong> Clarificar regime de bens e proteção patrimonial</p>
+                                <ul>
+                                    <li>Definição clara de bens particulares</li>
+                                    <li>Proteção em caso de divórcio</li>
+                                    <li>Facilitação sucessória</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 2-3 meses</span>
+                                    <span>💰 Investimento: R$ 5-10k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. MEMÓRIA DE DECISÕES -->
+            <section id="section-memoria" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🧩 Memória de Decisões</h1>
+                    <p class="page-subtitle">Base de Conhecimento e Aprendizado Contínuo</p>
+                </div>
+
+                <!-- Memory Status -->
+                <div class="memory-status-card">
+                    <div class="memory-icon">🧠</div>
+                    <div class="memory-info">
+                        <h3>Sistema de Memória Ativo</h3>
+                        <p>47 cenários processados • 156 padrões identificados • Última atualização: Hoje, 14:32</p>
+                    </div>
+                    <div class="memory-badge">OPERACIONAL</div>
+                </div>
+
+                <!-- Memory Stats -->
+                <div class="memory-stats-grid">
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <span class="stat-number">47</span>
+                            <span class="stat-label">Cenários Armazenados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Taxa de Acerto</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-content">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">Padrões Identificados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <span class="stat-number">8.5</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Categories -->
+                <div class="content-card">
+                    <h3 class="card-title">📚 Categorias de Aprendizado</h3>
+                    <div class="learning-categories">
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>💰 Decisões Financeiras</h4>
+                                <span class="category-count">23 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Decisões com impacto >50% em liquidez requerem análise de risco elevada</p>
+                                <p><strong>Taxa de Sucesso:</strong> 89%</p>
+                                <p><strong>Complexidade Média:</strong> 8.2/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>🏠 Decisões Imobiliárias</h4>
+                                <span class="category-count">12 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Aquisições de lazer apresentam menor ROI que investimentos produtivos</p>
+                                <p><strong>Taxa de Sucesso:</strong> 95%</p>
+                                <p><strong>Complexidade Média:</strong> 7.8/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>💼 Decisões Profissionais</h4>
+                                <span class="category-count">8 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Expansões com payback <36 meses têm aprovação recomendada</p>
+                                <p><strong>Taxa de Sucesso:</strong> 100%</p>
+                                <p><strong>Complexidade Média:</strong> 6.5/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>👨‍👩‍👧‍👦 Decisões Familiares</h4>
+                                <span class="category-count">4 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Educação tem prioridade absoluta sobre consumo</p>
+                                <p><strong>Taxa de Sucesso:</strong> 100%</p>
+                                <p><strong>Complexidade Média:</strong> 9.1/10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Principais Aprendizados</h3>
+                    <div class="learnings-list">
+                        <div class="learning-item">
+                            <div class="learning-icon">📈</div>
+                            <div class="learning-content">
+                                <h4>Freedom Lock-in é Fator Crítico</h4>
+                                <p>Decisões que travam renda ativa por >5 anos requerem análise especial de viabilidade</p>
+                                <span class="learning-confidence">Confiança: 98% (baseado em 31 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">🎓</div>
+                            <div class="learning-content">
+                                <h4>Educação Supera Lazer em 100% dos Casos</h4>
+                                <p>Quando há conflito entre fundo educacional e consumo, educação sempre prevalece</p>
+                                <span class="learning-confidence">Confiança: 100% (baseado em 18 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">🛡️</div>
+                            <div class="learning-content">
+                                <h4>Holding Reduz Riscos Legais em 70%</h4>
+                                <p>Profissionais liberais com patrimônio >R$ 1M devem estruturar proteção patrimonial</p>
+                                <span class="learning-confidence">Confiança: 94% (baseado em 27 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">💎</div>
+                            <div class="learning-content">
+                                <h4>Liquidez Mínima: 6 Meses de Despesas</h4>
+                                <p>Reserva inferior a 6 meses aumenta risco de decisões forçadas em 85%</p>
+                                <span class="learning-confidence">Confiança: 96% (baseado em 41 casos)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Cases -->
+                <div class="content-card">
+                    <h3 class="card-title">🔍 Casos Similares na Memória</h3>
+                    <div class="similar-cases-list">
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">94%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Dentista - Compra de Consultório em Miami</h4>
+                                <p>Profissional 43 anos, R$ 1.1M patrimônio, considerando imóvel US$ 400k</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: PAUSAR</span>
+                                    <span>Resultado: Positivo após 18 meses</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">89%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Advogado - Apartamento de Investimento</h4>
+                                <p>Profissional 48 anos, R$ 1.4M patrimônio, imóvel R$ 1.2M</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: PAUSAR</span>
+                                    <span>Resultado: Evitou déficit educacional</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">82%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Arquiteto - Casa de Campo</h4>
+                                <p>Profissional 44 anos, R$ 950k patrimônio, imóvel R$ 1.1M</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: REJEITAR</span>
+                                    <span>Resultado: Preservou liquidez crítica</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. ANÁLISE DE PADRÕES -->
+            <section id="section-padroes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Análise de Padrões</h1>
+                    <p class="page-subtitle">Identificação de Tendências e Insights Estratégicos</p>
+                </div>
+
+                <!-- Pattern Overview -->
+                <div class="patterns-overview-card">
+                    <h3>🔍 Padrões Detectados no Cenário Atual</h3>
+                    <div class="pattern-summary">
+                        <div class="pattern-stat">
+                            <span class="pattern-number">7</span>
+                            <span class="pattern-label">Padrões Principais</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">3</span>
+                            <span class="pattern-label">Alertas Críticos</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">94%</span>
+                            <span class="pattern-label">Confiança Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">🚨 Padrões Críticos Identificados</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">⚠️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 1: Desequilíbrio Liquidez vs. Comprometimento</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Uso de 66% da liquidez total para ativo de baixa produtividade</p>
+                                    <p><strong>Precedentes:</strong> Observado em 23 casos similares, 91% resultaram em problemas de caixa</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Limitar comprometimento a máximo 30% da liquidez para ativos não produtivos
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">🔒</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 2: Freedom Lock-in Prolongado</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Período de travamento de renda ativa por 8-10 anos</p>
+                                    <p><strong>Precedentes:</strong> Em 87% dos casos com lock-in >5 anos, usuários relataram arrependimento</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Evitar compromissos que exijam trabalho forçado por >3 anos
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">🎓</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 3: Conflito Educação vs. Consumo</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Decisão compromete R$ 1.2M do fundo educacional</p>
+                                    <p><strong>Precedentes:</strong> 100% dos casos que priorizaram consumo sobre educação resultaram em arrependimento posterior</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Educação dos filhos deve ter prioridade absoluta sobre consumo pessoal
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Padrões de Alerta</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">📉</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 4: Ausência de Proteção Patrimonial</h4>
+                                <p>Profissional liberal com patrimônio >R$ 1M sem segregação de riscos</p>
+                                <span class="pattern-prevalence">Presente em 68% dos casos de exposição legal</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">💸</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 5: Dependência Total de Renda Ativa</h4>
+                                <p>100% da renda depende de capacidade física e cognitiva contínua</p>
+                                <span class="pattern-prevalence">Observado em 89% dos profissionais liberais 45+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positive Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Padrões Positivos</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">💎</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 6: Alta Capacidade de Poupança</h4>
+                                <p>Capacidade mensal de R$ 24k indica disciplina financeira</p>
+                                <span class="pattern-prevalence">Presente em apenas 12% dos profissionais da faixa</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🎯</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 7: Objetivos Claros e Priorizados</h4>
+                                <p>Hierarquia de objetivos bem definida favorece decisões consistentes</p>
+                                <span class="pattern-prevalence">Correlacionado com 94% de taxa de sucesso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavioral Analysis -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Análise Comportamental</h3>
+                    <div class="behavioral-insights">
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Presente Imediato vs. Futuro Distante</h4>
+                            <p>A atratividade do imóvel de lazer (benefício imediato) está ofuscando os riscos de longo prazo (educação dos filhos e liberdade profissional).</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Visualizar concretamente os cenários futuros e seus impactos
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Ancoragem no Valor do Imóvel</h4>
+                            <p>O preço de R$ 1.5M pode estar servindo como âncora, dificultando a avaliação objetiva do impacto proporcional.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Analisar em termos percentuais e de custo de oportunidade
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Padrão Positivo: Busca por Análise Estruturada</h4>
+                            <p>A utilização do CIPAI indica reconhecimento da complexidade e disposição para decisão fundamentada.</p>
+                            <div class="behavior-reinforcement">
+                                <strong>Reforço Positivo:</strong> Continuar buscando análises objetivas para decisões importantes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Based on Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Recomendações Baseadas em Padrões</h3>
+                    <div class="pattern-recommendations-list">
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority critical">CRÍTICA</span>
+                            <div class="rec-content">
+                                <h4>Postergar Decisão e Implementar Caminho da Vitória</h4>
+                                <p>Os padrões críticos detectados indicam alta probabilidade (96%) de arrependimento futuro. Recomenda-se postergar por 18 meses e implementar os 3 requisitos do Caminho da Vitória.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority high">ALTA</span>
+                            <div class="rec-content">
+                                <h4>Estruturar Proteção Patrimonial Imediatamente</h4>
+                                <p>Padrão de exposição legal sem segregação de riscos requer ação urgente, independente da decisão sobre o imóvel.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority medium">MÉDIA</span>
+                            <div class="rec-content">
+                                <h4>Desenvolver Fontes de Renda Passiva</h4>
+                                <p>Reduzir dependência de 100% em renda ativa através de investimentos produtivos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. CONFIGURAÇÕES -->
+            <section id="section-configuracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚙️ Configurações</h1>
+                    <p class="page-subtitle">Personalize sua experiência no CIPAI</p>
+                </div>
+
+                <!-- Profile Settings -->
+                <div class="content-card">
+                    <h3 class="card-title">👤 Configurações de Perfil</h3>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" value="Dr. Eduardo Silva" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="eduardo.silva@email.com" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Profissão</label>
+                                <input type="text" value="Médico Cardiologista" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Idade</label>
+                                <input type="number" value="46" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Localização</label>
+                                <input type="text" value="São Paulo, SP" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="tel" value="(11) 99999-9999" class="form-input">
+                            </div>
+                        </div>
+                        <button class="btn-primary">💾 Salvar Alterações</button>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Preferências de Análise</h3>
+                    <div class="preferences-grid">
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Nível de Detalhe das Análises</h4>
+                                <select class="form-select">
+                                    <option>Básico</option>
+                                    <option>Intermediário</option>
+                                    <option selected>Avançado</option>
+                                    <option>Especialista</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Prioridade de Análise</h4>
+                                <select class="form-select">
+                                    <option>Velocidade (análise rápida)</option>
+                                    <option selected>Balanceado</option>
+                                    <option>Profundidade (análise completa)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Tom das Recomendações</h4>
+                                <select class="form-select">
+                                    <option>Conservador</option>
+                                    <option selected>Equilibrado</option>
+                                    <option>Agressivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Idioma da Interface</h4>
+                                <select class="form-select">
+                                    <option selected>🇧🇷 Português</option>
+                                    <option>🇺🇸 English</option>
+                                    <option>🇪🇸 Español</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="content-card">
+                    <h3 class="card-title">🔔 Notificações</h3>
+                    <div class="notifications-settings">
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Email de Análises Concluídas</h4>
+                                <p>Receber notificação quando uma análise for finalizada</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Alertas de Decisões Críticas</h4>
+                                <p>Notificar quando uma decisão requer atenção urgente</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Resumo Semanal</h4>
+                                <p>Receber relatório semanal de decisões e análises</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Sugestões de Análise</h4>
+                                <p>Receber sugestões de decisões similares para comparação</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Security -->
+                <div class="content-card">
+                    <h3 class="card-title">🔒 Privacidade e Segurança</h3>
+                    <div class="privacy-settings">
+                        <div class="privacy-item">
+                            <h4>Compartilhamento de Dados</h4>
+                            <p>Permitir uso anônimo de padrões para melhorar análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>Backup Automático</h4>
+                            <p>Fazer backup automático de todas as análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-actions">
+                            <button class="btn-secondary">📥 Exportar Todos os Dados</button>
+                            <button class="btn-secondary">🔄 Alterar Senha</button>
+                            <button class="btn-danger">🗑️ Excluir Conta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Info -->
+                <div class="content-card">
+                    <h3 class="card-title">ℹ️ Informações do Sistema</h3>
+                    <div class="system-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Versão do CIPAI</span>
+                            <span class="info-value">v2.3 Master Final</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Última Atualização</span>
+                            <span class="info-value">25 de Janeiro de 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modelo de IA</span>
+                            <span class="info-value">Claude Sonnet 4.5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status do Sistema</span>
+                            <span class="info-value badge-high">OPERACIONAL</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Cenários Processados</span>
+                            <span class="info-value">47</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Taxa de Confiança Média</span>
+                            <span class="info-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support -->
+                <div class="content-card">
+                    <h3 class="card-title">❓ Ajuda e Suporte</h3>
+                    <div class="support-links">
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📚</span>
+                            <div class="support-info">
+                                <h4>Central de Ajuda</h4>
+                                <p>Documentação completa e guias de uso</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">💬</span>
+                            <div class="support-info">
+                                <h4>Chat com Suporte</h4>
+                                <p>Fale com nossa equipe em tempo real</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📧</span>
+                            <div class="support-info">
+                                <h4>Enviar Feedback</h4>
+                                <p>Ajude-nos a melhorar o CIPAI</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">🐛</span>
+                            <div class="support-info">
+                                <h4>Reportar Problema</h4>
+                                <p>Informe bugs ou comportamentos inesperados</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

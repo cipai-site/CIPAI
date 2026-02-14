@@ -1,0 +1,267 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║         ✅ PACOTE COMPLETO PARA GITHUB - TUDO PRONTO         ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+
+📦 CONTEÚDO DESTE PACOTE:
+═══════════════════════════════════════════════════════════════
+
+PACOTE-COMPLETO-GITHUB/
+├── index.html (38 KB)
+│   └─► Página principal com botão mobile fixo
+│
+├── contact.html (4.5 KB)
+│   └─► Página de contato
+│
+├── privacy.html (6 KB)
+│   └─► Política de privacidade
+│
+└── assets/
+    └── video/
+        ├── cip-ai-intro.mp4 (14 MB)
+        │   └─► Vídeo introdutório
+        │
+        └── cip-ai-intro-pt.srt (2.5 KB)
+            └─► Legendas em português
+
+TOTAL: ~14 MB
+
+
+═══════════════════════════════════════════════════════════════
+
+
+🚀 COMO FAZER UPLOAD (OPÇÃO FÁCIL - RECOMENDADA):
+═══════════════════════════════════════════════════════════════
+
+OPÇÃO A: UPLOAD VIA INTERFACE WEB DO GITHUB
+────────────────────────────────────────────────────────────────
+
+PASSO 1: PÁGINAS HTML (NA RAIZ)
+--------------------------------
+
+1. Ir para: https://github.com/cipai-site/cipai
+
+2. Para CADA arquivo HTML (index, contact, privacy):
+
+   a) Se o arquivo JÁ EXISTE no GitHub:
+      - Clicar no arquivo
+      - Clicar em ✏️ Edit
+      - Ctrl+A → Delete (apagar tudo)
+      - Abrir arquivo correspondente desta pasta
+      - Copiar TUDO
+      - Colar no GitHub
+      - Scroll down → Commit changes
+   
+   b) Se o arquivo NÃO EXISTE:
+      - Add file → Upload files
+      - Arrastar arquivo
+      - Commit changes
+
+
+PASSO 2: VÍDEO E LEGENDAS (EM assets/video/)
+---------------------------------------------
+
+1. No GitHub, navegar para: assets/video/
+   (Clicar em "assets" → depois em "video")
+
+2. Verificar caminho no topo:
+   ┌─────────────────────────────────────┐
+   │ cipai / assets / video              │ ✅ Correto!
+   └─────────────────────────────────────┘
+
+3. Clicar em: Add file → Upload files
+
+4. ARRASTAR desta pasta assets/video/:
+   📹 cip-ai-intro.mp4
+   📄 cip-ai-intro-pt.srt
+
+5. ⏱️ AGUARDAR upload completo (2-3 minutos)
+   NÃO FECHE A JANELA!
+
+6. Quando chegar a 100%, clicar em: Commit changes
+
+
+═══════════════════════════════════════════════════════════════
+
+
+🚀 OPÇÃO B: UPLOAD VIA GIT (MAIS RÁPIDO):
+═══════════════════════════════════════════════════════════════
+
+Se você tem Git instalado:
+
+1. Abrir terminal/prompt nesta pasta
+
+2. Executar:
+```bash
+git init
+git add .
+git commit -m "Upload completo: site + vídeo"
+git branch -M main
+git remote add origin https://github.com/SEU-USUARIO/cipai.git
+git push -u origin main --force
+```
+
+⚠️ IMPORTANTE: Substitua SEU-USUARIO pelo seu usuário GitHub!
+
+
+═══════════════════════════════════════════════════════════════
+
+
+⏱️ APÓS O UPLOAD:
+═══════════════════════════════════════════════════════════════
+
+1. Aguardar 3-5 minutos (GitHub Pages precisa processar)
+
+2. Abrir navegador
+
+3. Ir para: cipai.ai
+
+4. Pressionar: Ctrl + Shift + R (limpar cache)
+
+5. VERIFICAR:
+   ✅ Vídeo carrega e toca?
+   ✅ Botão 🇺🇸 🇧🇷 visível no mobile?
+   ✅ Tradução funciona?
+   ✅ Links Contact e Privacy funcionam?
+
+
+═══════════════════════════════════════════════════════════════
+
+
+✅ CHECKLIST DE VERIFICAÇÃO NO GITHUB:
+═══════════════════════════════════════════════════════════════
+
+Após upload, seu repositório deve ter:
+
+NA RAIZ (github.com/cipai-site/cipai):
+□ index.html
+□ contact.html
+□ privacy.html
+□ CNAME (se já tinha)
+□ outros arquivos que já estavam lá
+
+EM assets/video/ (github.com/cipai-site/cipai/assets/video):
+□ cip-ai-intro.mp4 (14 MB)
+□ cip-ai-intro-pt.srt (2.5 KB)
+
+
+═══════════════════════════════════════════════════════════════
+
+
+🎯 RESULTADO ESPERADO:
+═══════════════════════════════════════════════════════════════
+
+Desktop:
+✅ Site carrega normalmente
+✅ Vídeo toca
+✅ Legendas em PT disponíveis (botão CC)
+✅ Botão EN/PT no header
+✅ Tradução funciona
+✅ Todos os links funcionam
+
+Mobile:
+✅ Site responsivo
+✅ Vídeo carrega (pode demorar, é normal)
+✅ Botão 🇺🇸 🇧🇷 FIXO no canto superior direito
+✅ SEMPRE VISÍVEL
+✅ Tradução funciona perfeitamente
+✅ Legendas disponíveis
+
+
+═══════════════════════════════════════════════════════════════
+
+
+🆘 PROBLEMAS COMUNS:
+═══════════════════════════════════════════════════════════════
+
+❌ Vídeo não carrega
+   → Verificar se está em: assets/video/cip-ai-intro.mp4
+   → Aguardar 5 minutos após upload
+   → Limpar cache (Ctrl+Shift+R)
+
+❌ Botão EN/PT não aparece no mobile
+   → Verificar se é o index.html DESTA pasta
+   → Limpar cache do celular
+   → Aguardar 5 minutos
+
+❌ Páginas 404
+   → Verificar se arquivos estão na RAIZ
+   → Aguardar 5 minutos
+   → Limpar cache
+
+❌ Upload trava em 99%
+   → Aguardar mais tempo (vídeo é pesado)
+   → Se demorar mais de 10 min, tentar novamente
+
+
+═══════════════════════════════════════════════════════════════
+
+
+📱 TESTANDO NO MOBILE:
+═══════════════════════════════════════════════════════════════
+
+1. Abrir cipai.ai no celular
+
+2. Procurar no CANTO SUPERIOR DIREITO
+
+3. Você verá:
+   ┌──────────────┐
+   │ 🇺🇸 EN  🇧🇷 PT │  ← Sempre visível!
+   └──────────────┘
+
+4. Clicar para trocar idioma
+
+5. Página traduz instantaneamente
+
+6. Rolar até o vídeo
+
+7. Clicar em play
+
+8. Vídeo deve tocar
+
+9. Clicar em CC para ativar legendas
+
+
+═══════════════════════════════════════════════════════════════
+
+
+💡 DICAS:
+═══════════════════════════════════════════════════════════════
+
+→ Upload do vídeo pode demorar se internet estiver lenta
+→ Seja paciente, não feche janelas durante upload
+→ GitHub Pages demora 3-5 min para atualizar
+→ Sempre limpe o cache após mudanças
+→ Em mobile, vídeo pode ter qualidade reduzida (normal)
+
+
+═══════════════════════════════════════════════════════════════
+
+
+✨ NOVIDADES DESTA VERSÃO:
+═══════════════════════════════════════════════════════════════
+
+✅ Botão de idioma FIXO em mobile (sempre visível)
+✅ Vídeo local (não mais Synthesia)
+✅ Legendas em português integradas
+✅ Layout 100% mantido (zero mudanças no design)
+✅ Responsivo melhorado para celular
+✅ Páginas contact e privacy incluídas
+
+
+═══════════════════════════════════════════════════════════════
+
+
+PRONTO! FAÇA O UPLOAD E SEU SITE ESTARÁ 100% FUNCIONAL! 🚀
+
+
+═══════════════════════════════════════════════════════════════
+
+
+Data: Fevereiro 2026
+CIP-AI, Inc. — Delaware C Corporation (in formation)
+
+
+═══════════════════════════════════════════════════════════════

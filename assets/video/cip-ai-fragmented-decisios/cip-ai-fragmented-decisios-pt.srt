@@ -1,0 +1,79 @@
+1
+00:00:00,919 --> 00:00:01,960
+Estamos cercados por ferramentas:
+
+2
+00:00:02,596 --> 00:00:03,623
+Planilhas.
+
+3
+00:00:03,933 --> 00:00:04,693
+Dashboards.
+
+4
+00:00:04,843 --> 00:00:05,356
+Aplicativos.
+
+5
+00:00:05,606 --> 00:00:06,426
+Assessores.
+
+6
+00:00:06,656 --> 00:00:07,483
+Consultores.
+
+7
+00:00:07,793 --> 00:00:08,566
+Opiniões.
+
+8
+00:00:08,816 --> 00:00:10,416
+Cada uma resolve uma parte.
+
+9
+00:00:10,666 --> 00:00:12,439
+O Financeiro foca nos números.
+
+10
+00:00:12,689 --> 00:00:14,449
+Operações focam na execução.
+
+11
+00:00:14,699 --> 00:00:16,539
+Especialistas focam em seu domínio.
+
+12
+00:00:16,789 --> 00:00:18,496
+Mas ninguém enxerga o todo.
+
+13
+00:00:18,906 --> 00:00:20,973
+As decisões são tomadas em fragmentos.
+
+14
+00:00:21,223 --> 00:00:24,056
+E a fragmentação cria riscos invisíveis.
+
+15
+00:00:24,306 --> 00:00:25,046
+Não hoje.
+
+16
+00:00:25,296 --> 00:00:26,269
+Nem amanhã.
+
+17
+00:00:26,519 --> 00:00:26,973
+Mas...
+
+18
+00:00:27,203 --> 00:00:27,989
+ao longo do tempo.
+
+19
+00:00:28,239 --> 00:00:30,193
+Quanto mais complexa a vida se torna,
+
+20
+00:00:30,443 --> 00:00:33,276
+mais perigosas ficam as decisões isoladas.

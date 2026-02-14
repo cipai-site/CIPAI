@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPAI - Inteligência Cognitiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">
+                    <h1>CIPAI</h1>
+                    <p>INTELIGÊNCIA COGNITIVA</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" id="btnHistorico">📊 Histórico</button>
+                <button class="btn-primary" id="btnNovaAnalise">➕ Nova Análise</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">PRINCIPAL</h3>
+                    <a href="#contexto" class="nav-item" data-section="contexto">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text">Contexto da Decisão</span>
+                    </a>
+                    <a href="#painel" class="nav-item active" data-section="painel">
+                        <span class="nav-icon">🧠</span>
+                        <span class="nav-text">Painel Cognitivo</span>
+                    </a>
+                    <a href="#demonstracoes" class="nav-item" data-section="demonstracoes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Demonstrações</span>
+                    </a>
+                    <a href="#modelo-pessoal" class="nav-item" data-section="modelo-pessoal">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Modelo Pessoal</span>
+                    </a>
+                    <a href="#nova-decisao" class="nav-item" data-section="nova-decisao">
+                        <span class="nav-icon">➕</span>
+                        <span class="nav-text">Nova Decisão</span>
+                    </a>
+                    <a href="#historico" class="nav-item" data-section="historico">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Histórico de Decisões</span>
+                    </a>
+                    <a href="#comparar" class="nav-item" data-section="comparar">
+                        <span class="nav-icon">🔄</span>
+                        <span class="nav-text">Comparar Cenários</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">MÓDULOS DE ANÁLISE</h3>
+                    <a href="#modulo-cfo" class="nav-item" data-section="modulo-cfo">
+                        <span class="nav-icon">💰</span>
+                        <span class="nav-text">Módulo CFO</span>
+                    </a>
+                    <a href="#modulo-juridico" class="nav-item" data-section="modulo-juridico">
+                        <span class="nav-icon">⚖️</span>
+                        <span class="nav-text">Módulo Jurídico</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">CAMADA DE INTELIGÊNCIA</h3>
+                    <a href="#memoria" class="nav-item" data-section="memoria">
+                        <span class="nav-icon">🧩</span>
+                        <span class="nav-text">Memória de Decisões</span>
+                    </a>
+                    <a href="#padroes" class="nav-item" data-section="padroes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Análise de Padrões</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">SISTEMA</h3>
+                    <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">🧭</div>
+                    <div class="user-details">
+                        <p class="user-name">CIPAI Strategic</p>
+                        <p class="user-role">Cenário 06</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- 1. CONTEXTO DA DECISÃO -->
+            <section id="section-contexto" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🎯 Contexto da Decisão</h1>
+                    <p class="page-subtitle">Cenário 6: Estruturação e Posicionamento Estratégico do CIPAI</p>
+                </div>
+
+                <!-- Scenario Info -->
+                <div class="scenario-info-card">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">🧭</div>
+                        <div class="scenario-details">
+                            <h2>Governança Estrutural vs. Hype de Mercado</h2>
+                            <p class="scenario-subtitle">Decisão fundadora sobre como estruturar e posicionar o CIPAI em um momento crítico da evolução da IA</p>
+                        </div>
+                        <div class="scenario-badges">
+                            <span class="badge badge-critical">Alta Complexidade</span>
+                            <span class="badge badge-info">15-20 min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">ID do Cenário:</span>
+                            <span class="metadata-value">cipai-strategic-positioning-v1</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Domínios:</span>
+                            <span class="metadata-value">Strategic • Governance • Regulatory • Business</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de Decisão:</span>
+                            <span class="metadata-value">Strategic / Foundational</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Reversibilidade:</span>
+                            <span class="metadata-value badge-warning">MEDIUM-LOW</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Frame -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Enquadramento da Decisão</h3>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Tipo de Decisão</span>
+                            <span class="info-value">Strategic / Foundational</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Perfil de Risco</span>
+                            <span class="info-value">Credibilidade + Regulatory + Strategic Direction</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Domínio Principal</span>
+                            <span class="info-value">Strategic</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Janela de Decisão</span>
+                            <span class="info-value">Agora (pré-SAFE, pré-escala)</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <h4>📝 Resumo em Linguagem Simples</h4>
+                        <p>Como estruturar, posicionar e desenvolver o CIPAI neste momento histórico da IA, sem comprometer governança, credibilidade e opcionalidade futura?</p>
+                    </div>
+
+                    <div class="risk-axis-box">
+                        <h4>⚠️ Eixo Principal de Risco</h4>
+                        <p><strong>Velocidade e Visibilidade Imediata</strong> vs. <strong>Integridade Estrutural e Governança de Longo Prazo</strong></p>
+                    </div>
+
+                    <div class="alert-box alert-warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h5>Reversibilidade: MEDIUM-LOW</h5>
+                            <p>Erro estrutural nesta fase compromete o projeto no longo prazo. Decisões sobre governança e posicionamento têm impacto duradouro.</p>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>💰 Impacto Estratégico</h4>
+                        <p><strong>Stakes:</strong> Credibilidade do projeto, risco regulatório futuro, direção estratégica irreversível, confiança de investidores e parceiros.</p>
+                    </div>
+                </div>
+
+                <!-- Background Context -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Contexto de Fundo</h3>
+                    <div class="background-text">
+                        <p><strong>Contexto Macro:</strong> Estamos vivendo um momento de avanço acelerado da IA autônoma e agentes de decisão, com emergência de IA física (robôs, sistemas de ação no mundo real) e aumento exponencial de decisões automatizadas com impacto humano, financeiro e jurídico.</p>
+                        
+                        <p><strong>Sinal de Mercado:</strong> O foco atual está em mais modelos, mais sensores e mais execução. Há baixa atenção estrutural a governança, auditoria e responsabilidade decisória.</p>
+                        
+                        <p><strong>Sinal Regulatório:</strong> Crescimento acelerado de regulação (UE AI Act, LGPD, compliance setorial) com exigência crescente de explicabilidade e rastreabilidade de decisões automatizadas.</p>
+                        
+                        <p><strong>Objetivo Fundador:</strong> Construir um sistema que governe decisões críticas ANTES da escala da automação — não apenas executar, mas estruturar como decisões são construídas.</p>
+                    </div>
+                </div>
+
+                <!-- Stakeholders -->
+                <div class="content-card">
+                    <h3 class="card-title">👥 Principais Stakeholders</h3>
+                    <div class="stakeholders-list">
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👨‍💼</span>
+                            <span class="stakeholder-name">Founder (decisor final)</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">💰</span>
+                            <span class="stakeholder-name">Investidores futuros (SAFE)</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">🏛️</span>
+                            <span class="stakeholder-name">Entidades regulatórias</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">🤝</span>
+                            <span class="stakeholder-name">Parceiros estratégicos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline & Constraints -->
+                <div class="info-cards-grid">
+                    <div class="content-card">
+                        <h3 class="card-title">📅 Estágio Atual</h3>
+                        <p><strong>MVP assistido</strong> • Validação qualitativa confirmada • Sem escala • Sem automação plena • Sem faturamento recorrente</p>
+                    </div>
+                    <div class="content-card">
+                        <h3 class="card-title">⛓️ Restrições</h3>
+                        <p>Mercado pouco educado sobre governança de IA • Risco de prometer mais do que a estrutura comporta • Necessidade de proteger IP e direção estratégica</p>
+                    </div>
+                </div>
+
+                <!-- User Values Check -->
+                <div class="content-card">
+                    <h3 class="card-title">💭 Verificação de Valores do Usuário</h3>
+                    
+                    <div class="alert-box alert-info">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <p>Os valores abaixo são <strong>ASSUMIDOS</strong> pelo sistema com base em perfis típicos de founders em decisões fundacionais de longo prazo.</p>
+                        </div>
+                    </div>
+
+                    <div class="values-grid">
+                        <!-- Governance vs Speed -->
+                        <div class="value-axis-card">
+                            <h4>🛡️ Governança vs Velocidade</h4>
+                            <p class="value-description">Integridade estrutural versus crescimento rápido</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 85%;">
+                                    <span class="value-marker">85%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 85%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Velocidade</span>
+                                    <span>Governança</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Priorizar estrutura correta sobre crescimento acelerado.</p>
+                        </div>
+
+                        <!-- Long-term vs Short-term -->
+                        <div class="value-axis-card">
+                            <h4>⏱️ Longo Prazo vs Curto Prazo</h4>
+                            <p class="value-description">Sustentabilidade versus resultados imediatos</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 90%;">
+                                    <span class="value-marker">90%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 90%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Curto Prazo</span>
+                                    <span>Longo Prazo</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Decisões fundacionais com impacto permanente no projeto.</p>
+                        </div>
+
+                        <!-- Credibility vs Visibility -->
+                        <div class="value-axis-card">
+                            <h4>🎯 Credibilidade vs Visibilidade</h4>
+                            <p class="value-description">Reputação sólida versus exposição rápida</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 80%;">
+                                    <span class="value-marker">80%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 80%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Visibilidade</span>
+                                    <span>Credibilidade</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Construir confiança duradoura com stakeholders qualificados.</p>
+                        </div>
+
+                        <!-- Regulatory Awareness vs Market Hype -->
+                        <div class="value-axis-card">
+                            <h4>📈 Conformidade vs Hype</h4>
+                            <p class="value-description">Alinhamento regulatório versus momentum de mercado</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 75%;">
+                                    <span class="value-marker">75%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 75%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Hype</span>
+                                    <span>Conformidade</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Antecipar exigências regulatórias e construir vantagem competitiva.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PAINEL COGNITIVO (Default View) -->
+            <section id="section-painel" class="content-section active">
+                <div class="page-header">
+                    <h1 class="page-title">Painel Cognitivo</h1>
+                    <p class="page-subtitle">Visão geral do raciocínio de IA e inteligência de decisão</p>
+                </div>
+
+                <!-- Status Card -->
+                <div class="status-card">
+                    <div class="status-icon">🧠</div>
+                    <div class="status-info">
+                        <h3>Sistema IA Ativo</h3>
+                        <p>Processando 1 decisão fundacional • 7 dimensões estratégicas validadas • Memória: 28 cenários governança</p>
+                    </div>
+                    <div class="status-badge status-operational">OPERACIONAL</div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <!-- Confiança da IA -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>CONFIANÇA DA IA</h4>
+                            <span class="metric-badge badge-high">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">94%</div>
+                        <div class="metric-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 94%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-details">
+                            <p>📊 Baseado em 28 cenários</p>
+                            <p>⚡ 9 decisões estratégicas >88%</p>
+                        </div>
+                    </div>
+
+                    <!-- Incertezas -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>INCERTEZAS</h4>
+                            <span class="metric-badge badge-warning">BAIXO</span>
+                        </div>
+                        <div class="metric-value-large">3</div>
+                        <div class="metric-details">
+                            <p>⚠️ 1 timing (maturidade mercado)</p>
+                            <p>🔴 1 regulatória (velocidade)</p>
+                            <p>📈 1 execução (educação)</p>
+                        </div>
+                    </div>
+
+                    <!-- Profundidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>PROFUNDIDADE</h4>
+                            <span class="metric-badge badge-high">FORTE</span>
+                        </div>
+                        <div class="metric-value-large">9.2<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🔍 Análise multi-dimensional</p>
+                            <p>📋 Strategic + Regulatory + Business</p>
+                            <p>⏱️ Long-term horizon</p>
+                        </div>
+                    </div>
+
+                    <!-- Complexidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>COMPLEXIDADE</h4>
+                            <span class="metric-badge badge-critical">MUITO ALTA</span>
+                        </div>
+                        <div class="metric-value-large">9.5<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🎯 4 domínios ativos</p>
+                            <p>💼 Foundational Decision</p>
+                            <p>🔗 4 stakeholders críticos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="insights-section">
+                    <h3 class="section-title">💡 Insights da IA</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card insight-critical">
+                            <div class="insight-icon">🚨</div>
+                            <div class="insight-content">
+                                <h4>Tensão Estrutural vs Velocidade</h4>
+                                <p>O incentivo de mercado favorece ação rápida, mas o risco sistêmico de governança exige prudência estrutural. Erro nesta fase compromete credibilidade de longo prazo.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-warning">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <h4>Estágio Deliberadamente Assistido</h4>
+                                <p>MVP assistido não é limitação técnica — é escolha estratégica. Validação qualitativa precede automação plena para evitar débito estrutural irrecuperável.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-info">
+                            <div class="insight-icon">💡</div>
+                            <div class="insight-content">
+                                <h4>Governança Como Vantagem Competitiva</h4>
+                                <p>Regulação crescente transforma governança de custo em diferencial. CIPAI aplica internamente a lógica que propõe externamente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Preview -->
+                <div class="recommendation-preview">
+                    <div class="recommendation-header">
+                        <h3>🎯 Recomendação Final (CEO)</h3>
+                        <span class="confidence-score">Confiança: 94%</span>
+                    </div>
+                    <div class="recommendation-content">
+                        <p class="recommendation-main">O CIPAI recomenda <strong>STRUCTURE FIRST: Governança antes de velocidade</strong>.</p>
+                        <p>A decisão central não é executar rápido, mas estruturar corretamente:</p>
+                        <ul>
+                            <li>Priorizar governança estrutural sobre narrativa de mercado</li>
+                            <li>Educar o mercado progressivamente sobre governança cognitiva</li>
+                            <li>Usar SAFE como ponte estrutural (não priced round prematuro)</li>
+                            <li>Evitar promessas incompatíveis com estágio atual (MVP assistido)</li>
+                        </ul>
+                        <button class="btn-primary" onclick="navigateTo('contexto')">Ver Análise Completa →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. DEMONSTRAÇÕES -->
+            <section id="section-demonstracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Demonstrações</h1>
+                    <p class="page-subtitle">Trade-offs e Análise de Decisão Estratégica</p>
+                </div>
+
+                <!-- Methodology -->
+                <div class="content-card">
+                    <h3 class="card-title">📐 Metodologia de Scores de Trade-off</h3>
+                    
+                    <div class="formula-box">
+                        <h4>Fórmula de Cálculo</h4>
+                        <code>Score Final = Σ (Critério × Peso)</code>
+                        <p>Priorizando governança de longo prazo e integridade estrutural</p>
+                    </div>
+
+                    <div class="criteria-breakdown">
+                        <h4>Critérios e Pesos</h4>
+                        <div class="criteria-list">
+                            <div class="criteria-item">
+                                <span class="criteria-name">Governança Estrutural</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 40%;"></div>
+                                </div>
+                                <span class="criteria-weight">40%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Compliance Regulatória</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 25%;"></div>
+                                </div>
+                                <span class="criteria-weight">25%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Credibilidade Fundadora</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 20%;"></div>
+                                </div>
+                                <span class="criteria-weight">20%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Opcionalidade Futura</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 15%;"></div>
+                                </div>
+                                <span class="criteria-weight">15%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-calculation">
+                        <h4>Exemplo de Cálculo</h4>
+                        <p><strong>Opção:</strong> Escalar narrativa rapidamente</p>
+                        <p><strong>Score Total:</strong> 3.2</p>
+                        <p><strong>Margem de Confiança:</strong> ±0.5</p>
+                    </div>
+                </div>
+
+                <!-- Decision Readiness Check -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Verificação de Prontidão para Decisão</h3>
+                    
+                    <div class="readiness-dimensions">
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Clareza Estratégica</span>
+                                <span class="readiness-level level-high">ALTO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill high" style="width: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Regulatória</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 65%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Maturidade de Mercado</span>
+                                <span class="readiness-level level-low">BAIXO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill low" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blocking-factors">
+                        <h4>🚫 Fatores Críticos</h4>
+                        <div class="blocking-factor critical">
+                            <span class="blocking-icon">🔴</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Tensão entre governança e velocidade</span>
+                                <span class="blocking-severity">CRÍTICO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟠</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Risco de overpromise narrativo</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟠</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Mercado pouco educado sobre governança</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended-action">
+                        <h4>🎯 Ação Recomendada</h4>
+                        <div class="action-badge action-structure">STRUCTURE FIRST</div>
+                        <p class="action-note">A decisão final permanece sob responsabilidade do Founder.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. MODELO PESSOAL -->
+            <section id="section-modelo-pessoal" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">👤 Modelo Pessoal</h1>
+                    <p class="page-subtitle">Perfil Completo do Decisor</p>
+                </div>
+
+                <!-- Profile Overview -->
+                <div class="profile-card">
+                    <div class="profile-header-section">
+                        <div class="profile-avatar-large">🧭</div>
+                        <div class="profile-info">
+                            <h2>Founder - CIPAI Strategic</h2>
+                            <p class="profile-title">Decisão Fundacional • Governança Cognitiva de IA</p>
+                            <div class="profile-tags">
+                                <span class="tag">Founder</span>
+                                <span class="tag">Delaware C-Corp</span>
+                                <span class="tag">Governance</span>
+                                <span class="tag">Pre-SAFE</span>
+                            </div>
+                        </div>
+                        <div class="profile-quick-stats">
+                            <div class="quick-stat">
+                                <span class="stat-icon">🎯</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">MVP</span>
+                                    <span class="stat-label">Estágio Atual</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <span class="stat-icon">📊</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">9.5/10</span>
+                                    <span class="stat-label">Complexidade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">🧭 Perfil Estratégico Detalhado</h3>
+                    
+                    <div class="financial-overview-grid">
+                        <div class="financial-section">
+                            <h4>📊 Estruturação Atual</h4>
+                            <div class="patrimony-chart">
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Governança Estrutural</span>
+                                        <span class="patrimony-value">Delaware C-Corp</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 85%; background: linear-gradient(90deg, #10b981, #14b8a6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">85% implementado</span>
+                                </div>
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Proteção de IP</span>
+                                        <span class="patrimony-value">Trade Secret + Copyright</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 70%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">70% implementado</span>
+                                </div>
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Estrutura de Capital</span>
+                                        <span class="patrimony-value">SAFE (preparação)</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 50%; background: linear-gradient(90deg, #6366f1, #8b5cf6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">50% estruturado</span>
+                                </div>
+                            </div>
+                            <div class="patrimony-total">
+                                <span>Maturidade Estrutural Geral:</span>
+                                <strong>68% Implementada</strong>
+                            </div>
+                        </div>
+
+                        <div class="financial-section">
+                            <h4>🧭 Decisões Estruturantes Tomadas</h4>
+                            <div class="cashflow-items">
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">🏛️</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Estruturação em Delaware C-Corp</span>
+                                        <span class="cashflow-value">✓ Concluído</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">🔒</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Proteção por segredo industrial</span>
+                                        <span class="cashflow-value">✓ Implementado</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item savings">
+                                    <span class="cashflow-icon">💰</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Uso de SAFE como instrumento</span>
+                                        <span class="cashflow-value">⏳ Planejado</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item savings">
+                                    <span class="cashflow-icon">🎯</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Rejeição de atalhos de mercado</span>
+                                        <span class="cashflow-value">✓ Deliberado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Positioning -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Posicionamento Estratégico</h3>
+                    <div class="family-grid">
+                        <div class="family-card">
+                            <div class="family-avatar">🧠</div>
+                            <h4>O que o CIPAI É</h4>
+                            <p class="family-role">Posicionamento Core</p>
+                            <ul class="family-details">
+                                <li>• Governa como decisões são construídas</li>
+                                <li>• Camada fundacional de governança</li>
+                                <li>• Sistema de auditoria decisória</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">⚡</div>
+                            <h4>O que o CIPAI NÃO É</h4>
+                            <p class="family-role">Limites Claros</p>
+                            <ul class="family-details">
+                                <li>• Não executa decisões</li>
+                                <li>• Não é SaaS escalável (ainda)</li>
+                                <li>• Não é sistema autônomo</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">🛡️</div>
+                            <h4>Vantagem Defensável</h4>
+                            <p class="family-role">Moat Estratégico</p>
+                            <ul class="family-details">
+                                <li>• SEM acordo de sócios</li>
+                                <li>• Confusão patrimonial</li>
+                                <li>• Decisões centralizadas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Objetivos e Marcos Estruturais</h3>
+                    <div class="goals-list">
+                        <div class="goal-item priority-critical">
+                            <div class="goal-icon">🛡️</div>
+                            <div class="goal-content">
+                                <h4>Estruturar Governança Antes de Escala</h4>
+                                <p>Estabelecer fundação de governança cognitiva antes de automação em larga escala</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Governança estrutural 100%</span>
+                                    <span>Horizonte: 6-9 meses</span>
+                                    <span class="goal-priority">Prioridade: MÁXIMA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-high">
+                            <div class="goal-icon">📚</div>
+                            <div class="goal-content">
+                                <h4>Educar Mercado Progressivamente</h4>
+                                <p>Construir compreensão de governança cognitiva antes de pitch agressivo</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Validação com early adopters qualificados</span>
+                                    <span>Horizonte: 9-12 meses</span>
+                                    <span class="goal-priority">Prioridade: ALTA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-medium">
+                            <div class="goal-icon">💰</div>
+                            <div class="goal-content">
+                                <h4>Estruturar SAFE Qualificado</h4>
+                                <p>Usar SAFE como ponte estrutural sem priced round prematuro</p>
+                                <div class="goal-meta">
+                                    <span>Meta: SAFE com cláusulas adequadas</span>
+                                    <span>Horizonte: 3-6 meses</span>
+                                    <span class="goal-priority">Prioridade: MÉDIA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Perfil de Risco Estratégico</h3>
+                    <div class="risk-profile-grid">
+                        <div class="risk-profile-item">
+                            <h4>Risco Regulatório Futuro</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill critical" style="width: 75%;"></div>
+                            </div>
+                            <span class="risk-level-label">75% - Alto</span>
+                            <p>Projetos sem governança tendem a sofrer barreiras regulatórias crescentes (UE AI Act, LGPD).</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Risco de Credibilidade</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill high" style="width: 80%;"></div>
+                            </div>
+                            <span class="risk-level-label">80% - Alto</span>
+                            <p>Overpromise narrativo antes de estrutura compromete confiança de investidores qualificados.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Maturidade de Mercado</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill medium" style="width: 60%;"></div>
+                            </div>
+                            <span class="risk-level-label">60% - Médio</span>
+                            <p>Mercado pouco educado sobre governança de IA exige tempo de maturação.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. NOVA DECISÃO -->
+            <section id="section-nova-decisao" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">➕ Nova Decisão</h1>
+                    <p class="page-subtitle">Iniciar uma Nova Análise de Decisão</p>
+                </div>
+
+                <div class="new-decision-container">
+                    <div class="new-decision-intro">
+                        <div class="intro-icon">🎯</div>
+                        <h2>Iniciar Nova Análise</h2>
+                        <p>O CIPAI analisará sua decisão sob múltiplas perspectivas: financeira, jurídica, estratégica e de estilo de vida.</p>
+                    </div>
+
+                    <div class="decision-form-card">
+                        <h3>📝 Informações Básicas da Decisão</h3>
+                        
+                        <div class="form-group">
+                            <label>Título da Decisão</label>
+                            <input type="text" placeholder="Ex: Compra de imóvel, Mudança de carreira, Investimento..." class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Categoria Principal</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>💰 Financeira</option>
+                                <option>🏠 Imobiliária</option>
+                                <option>💼 Profissional</option>
+                                <option>👨‍👩‍👧‍👦 Familiar</option>
+                                <option>📈 Investimentos</option>
+                                <option>🎓 Educacional</option>
+                                <option>🏥 Saúde</option>
+                                <option>⚖️ Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descrição do Contexto</label>
+                            <textarea rows="5" placeholder="Descreva sua situação atual e a decisão que precisa tomar..." class="form-textarea"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Valor Envolvido (R$)</label>
+                                <input type="text" placeholder="Ex: 1.500.000" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Prazo para Decisão</label>
+                                <select class="form-select">
+                                    <option>Selecione...</option>
+                                    <option>⚡ Urgente (até 7 dias)</option>
+                                    <option>📅 Curto (até 30 dias)</option>
+                                    <option>📆 Médio (até 90 dias)</option>
+                                    <option>⏱️ Longo (mais de 90 dias)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Stakeholders Envolvidos</label>
+                            <div class="stakeholder-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Cônjuge
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Filhos
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Pais
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Sócios
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Instituições Financeiras
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Outros
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nível de Complexidade Estimado</label>
+                            <div class="complexity-slider">
+                                <input type="range" min="1" max="10" value="5" class="slider">
+                                <div class="slider-labels">
+                                    <span>Simples</span>
+                                    <span>Moderado</span>
+                                    <span>Complexo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn-secondary">💾 Salvar Rascunho</button>
+                            <button class="btn-primary">🚀 Iniciar Análise</button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-info-card">
+                        <h3>📊 O que será analisado?</h3>
+                        <div class="analysis-modules">
+                            <div class="module-item">
+                                <span class="module-icon">💰</span>
+                                <div class="module-info">
+                                    <h4>Módulo CFO</h4>
+                                    <p>Análise financeira, métricas, riscos e oportunidades</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">⚖️</span>
+                                <div class="module-info">
+                                    <h4>Módulo Jurídico</h4>
+                                    <p>Estrutura legal, proteção patrimonial e sucessória</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🎯</span>
+                                <div class="module-info">
+                                    <h4>Análise Estratégica</h4>
+                                    <p>Alinhamento com objetivos e valores pessoais</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🧠</span>
+                                <div class="module-info">
+                                    <h4>IA Cognitiva</h4>
+                                    <p>Síntese executiva e recomendação final</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. HISTÓRICO DE DECISÕES -->
+            <section id="section-historico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📋 Histórico de Decisões</h1>
+                    <p class="page-subtitle">Todas as análises realizadas</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-card">
+                    <div class="filter-group">
+                        <label>Período:</label>
+                        <select class="filter-select">
+                            <option>Últimos 30 dias</option>
+                            <option>Últimos 90 dias</option>
+                            <option>Último ano</option>
+                            <option>Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Categoria:</label>
+                        <select class="filter-select">
+                            <option>Todas</option>
+                            <option>Financeira</option>
+                            <option>Imobiliária</option>
+                            <option>Profissional</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select class="filter-select">
+                            <option>Todos</option>
+                            <option>Aprovada</option>
+                            <option>Pausada</option>
+                            <option>Rejeitada</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-secondary">🔍 Pesquisar</button>
+                    </div>
+                </div>
+
+                <!-- Decision History List -->
+                <div class="history-list">
+                    <!-- Current Decision -->
+                    <div class="history-item active">
+                        <div class="history-icon">🧭</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Estruturação e Posicionamento Estratégico do CIPAI</h3>
+                                <span class="history-badge badge-structure">STRUCTURE FIRST</span>
+                            </div>
+                            <p class="history-description">Decisão fundadora sobre governança, mercado e ritmo de evolução do CIPAI neste momento histórico da IA</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 07 de Fevereiro de 2026</span>
+                                <span class="history-category">🧭 Strategic • 🛡️ Governance</span>
+                                <span class="history-confidence">🎯 Confiança: 94%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Estágio:</span>
+                                    <span class="stat-value">MVP Assistido</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Complexidade:</span>
+                                    <span class="stat-value">9.5/10</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Recomendação:</span>
+                                    <span class="stat-value">STRUCTURE FIRST</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes" onclick="navigateTo('contexto')">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 1 -->
+                    <div class="history-item">
+                        <div class="history-icon">🏛️</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Estruturação em Delaware C-Corp</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Decisão de estruturar o CIPAI como Delaware C-Corp com governança formal e proteção de IP</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 15 de Outubro de 2025</span>
+                                <span class="history-category">🏛️ Governance • ⚖️ Legal</span>
+                                <span class="history-confidence">🎯 Confiança: 97%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Custo Setup:</span>
+                                    <span class="stat-value">$15k-25k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Impacto:</span>
+                                    <span class="stat-value">Governança</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Implementada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 2 -->
+                    <div class="history-item">
+                        <div class="history-icon">🧪</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Programa de Usuários Beta</h3>
+                                <span class="history-badge badge-inprogress">EM ANDAMENTO</span>
+                            </div>
+                            <p class="history-description">Validação qualitativa com 15 usuários beta antes de escalar automação plena do sistema</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 03 de Janeiro de 2026</span>
+                                <span class="history-category">🧪 Product • 📊 Strategic</span>
+                                <span class="history-confidence">🎯 Confiança: 88%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Usuários Beta:</span>
+                                    <span class="stat-value">7/15 ativos</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Prazo:</span>
+                                    <span class="stat-value">6 meses</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Resultado:</span>
+                                    <span class="stat-value">47% concluído</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 3 -->
+                    <div class="history-item">
+                        <div class="history-icon">📚</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Estatuto Cognitivo do Decisor</h3>
+                                <span class="history-badge badge-planned">PLANEJADA</span>
+                            </div>
+                            <p class="history-description">Definição formal de como o CIPAI governa decisões: limites, responsabilidades e soberania humana</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 Planejada para Q2 2026</span>
+                                <span class="history-category">⚖️ Governance • 📋 Regulatory</span>
+                                <span class="history-confidence">🎯 Confiança: 91%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Custo Setup:</span>
+                                    <span class="stat-value">$20k-35k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Impacto:</span>
+                                    <span class="stat-value">Compliance</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Documentação</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Summary -->
+                <div class="history-stats-card">
+                    <h3>📊 Estatísticas Gerais</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Decisões Analisadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Taxa de Confiança Média</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Aprovada</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Em Andamento</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">$55k-85k</span>
+                            <span class="stat-label">Investimento Total em Estruturação</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">9.2</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. COMPARAR CENÁRIOS -->
+            <section id="section-comparar" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🔄 Comparar Cenários</h1>
+                    <p class="page-subtitle">Análise comparativa de decisões e alternativas</p>
+                </div>
+
+                <!-- Scenario Selection -->
+                <div class="comparison-setup-card">
+                    <h3>📋 Selecionar Cenários para Comparação</h3>
+                    <div class="scenario-selectors">
+                        <div class="scenario-selector">
+                            <label>Cenário A:</label>
+                            <select class="form-select">
+                                <option>Cenário 01: Structure First (Atual)</option>
+                                <option>Cenário 02: Escala Narrativa Rápida</option>
+                                <option>Cenário 03: SAFE Estruturado</option>
+                                <option>Cenário 04: Priced Round Prematuro</option>
+                            </select>
+                        </div>
+                        <div class="comparison-vs">VS</div>
+                        <div class="scenario-selector">
+                            <label>Cenário B:</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>Cenário 01: Structure First (Atual)</option>
+                                <option>Cenário 02: Escala Narrativa Rápida</option>
+                                <option>Cenário 03: SAFE Estruturado</option>
+                                <option>Cenário 04: Priced Round Prematuro</option>
+                                <option>➕ Criar Cenário Alternativo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-primary">🔍 Comparar Cenários</button>
+                </div>
+
+                <!-- Comparison Results -->
+                <div class="comparison-results">
+                    <h3>📊 Análise Comparativa</h3>
+                    
+                    <!-- Overview Comparison -->
+                    <div class="comparison-overview">
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-a">
+                                <h4>Cenário A</h4>
+                                <p>Structure First</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">94%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">9.5/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Horizonte</span>
+                                    <span class="metric-value">6-9 meses</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-approved">RECOMENDADO</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-b">
+                                <h4>Cenário B</h4>
+                                <p>Escala Narrativa Rápida</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">72%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">8.8/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Horizonte</span>
+                                    <span class="metric-value">3-6 meses</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-rejected">NÃO RECOMENDADO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Comparison -->
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critério</th>
+                                    <th>Cenário A (Structure First)</th>
+                                    <th>Cenário B (Escala Rápida)</th>
+                                    <th>Diferença</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>🛡️ Governança Estrutural</td>
+                                    <td class="positive">100% implementada</td>
+                                    <td class="negative">40% implementada</td>
+                                    <td class="positive">A preserva integridade</td>
+                                </tr>
+                                <tr>
+                                    <td>⚖️ Risco Regulatório</td>
+                                    <td class="positive">Baixo (preparado)</td>
+                                    <td class="negative">Alto (vulnerável)</td>
+                                    <td class="positive">A reduz risco futuro</td>
+                                </tr>
+                                <tr>
+                                    <td>🎯 Credibilidade</td>
+                                    <td class="positive">Alta (coerente)</td>
+                                    <td class="negative">Baixa (overpromise)</td>
+                                    <td class="positive">A preserva reputação</td>
+                                </tr>
+                                <tr>
+                                    <td>📈 Visibilidade Mercado</td>
+                                    <td class="neutral">Moderada (educação)</td>
+                                    <td class="positive">Alta (pitch agressivo)</td>
+                                    <td class="positive">B ganha exposição</td>
+                                </tr>
+                                <tr>
+                                    <td>💰 Opcionalidade Futura</td>
+                                    <td class="positive">Alta (múltiplas rotas)</td>
+                                    <td class="negative">Baixa (lock-in prematuro)</td>
+                                    <td class="positive">A preserva flexibilidade</td>
+                                </tr>
+                                <tr>
+                                    <td>🔒 Reversibilidade</td>
+                                    <td class="positive">Alta (correção interna)</td>
+                                    <td class="negative">Baixa (compromissos externos)</td>
+                                    <td class="positive">Maior em A</td>
+                                </tr>
+                                <tr>
+                                    <td>⏱️ Horizonte de Maturação</td>
+                                    <td class="positive">6-9 meses</td>
+                                    <td class="negative">3-6 meses (prematuro)</td>
+                                    <td class="positive">A permite amadurecer</td>
+                                </tr>
+                                <tr>
+                                    <td>📚 Educação de Mercado</td>
+                                    <td class="positive">Progressiva (sustentável)</td>
+                                    <td class="negative">Agressiva (insustentável)</td>
+                                    <td class="positive">A constrói base sólida</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Comparison Conclusion -->
+                    <div class="comparison-conclusion-card">
+                        <h3>🎯 Síntese Comparativa</h3>
+                        <div class="conclusion-content">
+                            <div class="conclusion-winner">
+                                <div class="winner-badge">🏆</div>
+                                <h4>Cenário A: Structure First (Governança + Integridade)</h4>
+                                <p><strong>Recomendado com 94% de confiança para sustentabilidade estrutural de longo prazo</strong></p>
+                            </div>
+                            <div class="conclusion-reasons">
+                                <h4>Principais Razões:</h4>
+                                <ul>
+                                    <li>✅ Governança estrutural completa (100% vs 40% em B)</li>
+                                    <li>✅ Risco regulatório baixo preparado vs alto vulnerável</li>
+                                    <li>✅ Credibilidade alta coerente vs baixa por overpromise</li>
+                                    <li>✅ Opcionalidade futura preservada (múltiplas rotas vs lock-in)</li>
+                                    <li>✅ Alta reversibilidade: correção interna vs compromissos externos</li>
+                                    <li>⚠️ Escala pode ser feita APÓS governança e validação estrutural</li>
+                                </ul>
+                            </div>
+                            <div class="conclusion-note">
+                                <p><strong>Nota:</strong> O Cenário B (Escala Rápida) pode ser implementado após 6-12 meses, quando governança estiver consolidada e mercado amadurecido para narrativa de governança cognitiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. MÓDULO CFO -->
+            <section id="section-modulo-cfo" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">💰 Análise CFO</h1>
+                    <p class="page-subtitle">Análise Financeira Estratégica</p>
+                </div>
+
+                <!-- Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CFO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>Estágio atual é MVP assistido (human-in-the-loop) sem faturamento recorrente. Burn rate mensal coberto por recursos fundadores até SAFE.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>SAFE permite runway de 12-18 meses sem pressão por receita imediata, viabilizando validação estrutural antes de escala prematura.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>Priced round prematuro sem validação quantitativa gera valuation cap inadequado e aumenta pressão por crescimento antes de estrutura estar pronta.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">4</span>
+                            <p><strong>Trade-off Capital Detectado:</strong> Usar SAFE em marketing/vendas antes de validação estrutural queima capital sem cobertura de evidência quantitativa.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">5</span>
+                            <p>Capital efficiency atual: investir em governança e validação estrutural gera mais valor defensável que investir em escala prematura com débito técnico.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">6</span>
+                            <p>Dilution futuro depende de valuation cap do SAFE. Estruturar governança ANTES aumenta valuation justificável em rodadas subsequentes.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">7</span>
+                            <p>Time to next milestone: 6-9 meses para arquitetura base + validação qualitativa completa viabiliza narrativa coerente para investors.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">8</span>
+                            <p><strong>Conclusão:</strong> Estruturar governança e validar arquitetura base ANTES de usar capital SAFE em escala maximiza valor e reduz dilution futuro.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Metrics -->
+                <div class="content-card">
+                    <h3 class="card-title">📊 Métricas Financeiras</h3>
+                    <div class="financial-metrics-grid">
+                        <div class="metric-box metric-neutral">
+                            <span class="metric-label">Burn Rate Atual</span>
+                            <span class="metric-value">$8k/mês</span>
+                            <span class="metric-status">MVP STAGE</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Runway Pós-SAFE</span>
+                            <span class="metric-value">12-18 meses</span>
+                            <span class="metric-status">ADEQUADO</span>
+                        </div>
+                        <div class="metric-box metric-neutral">
+                            <span class="metric-label">Faturamento Recorrente</span>
+                            <span class="metric-value">$0</span>
+                            <span class="metric-status">MVP ASSISTIDO</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Capital em Governança</span>
+                            <span class="metric-value">$55k-85k</span>
+                            <span class="metric-status">ESTRUTURAÇÃO</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Valuation Cap SAFE</span>
+                            <span class="metric-value">TBD</span>
+                            <span class="metric-status">NEGOCIAÇÃO</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Capital Efficiency</span>
+                            <span class="metric-value">Alta</span>
+                            <span class="metric-status">LEAN MVP</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Time to Validation</span>
+                            <span class="metric-value">6-9 meses</span>
+                            <span class="metric-status">ARQUITETURA BASE</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Dilution Estimado</span>
+                            <span class="metric-value">15-25%</span>
+                            <span class="metric-status">SAFE + SERIES A</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CFO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CFO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Runway</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">SAFE permite 12-18 meses de runway. Queimar capital em escala prematura reduz tempo para validação estrutural.</p>
+                            <span class="risk-metric">Métrica: Runway 12-18 meses pós-SAFE</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Dilution</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Valuation cap inadequado em SAFE sem validação estrutural gera dilution excessivo em conversão futura.</p>
+                            <span class="risk-metric">Métrica: Dilution estimado 15-25%</span>
+                        </div>
+
+                        <div class="risk-indicator risk-critical">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Technical Debt</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Escalar automação sem arquitetura base concluída gera débito técnico irrecuperável e aumenta custo de manutenção futura.</p>
+                            <span class="risk-metric">Métrica: Arquitetura Base 85%</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Market Timing</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Mercado ainda imaturo para governança de IA. Pitch agressivo antes de educação adequada reduz eficácia de conversão.</p>
+                            <span class="risk-metric">Métrica: Market maturity 40%</span>
+                        </div>
+                    </div>
+
+                    <div class="scenario-boxes">
+                        <div class="scenario-box scenario-worst">
+                            <h4>😰 Pior Cenário</h4>
+                            <p>Escala prematura sem validação estrutural consome capital SAFE, gera débito técnico e compromete rodadas futuras por overpromise.</p>
+                        </div>
+                        <div class="scenario-box scenario-best">
+                            <h4>😊 Melhor Cenário</h4>
+                            <p>Arquitetura base concluída + validação quantitativa comprovada viabiliza escala sustentável com narrativa coerente.</p>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Validação Completa:</strong> 6-9 meses para validação quantitativa e arquitetura base funcional antes de escala</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. MÓDULO JURÍDICO -->
+            <section id="section-modulo-juridico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚖️ Análise Jurídica (CLO)</h1>
+                    <p class="page-subtitle">Análise de Riscos Legais e Estruturais</p>
+                </div>
+
+                <!-- CLO Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CLO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>UE AI Act e regulações emergentes criam barreiras para sistemas de IA sem governança explícita de decisões de alto risco.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>Proteção de IP via trade secret funciona apenas com implementação rigorosa de confidencialidade e contratos NDA adequados.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>Delaware C-Corp exige governança formal (board meetings, resoluções, minutes) mesmo em estágio MVP para proteção jurídica.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">4</span>
+                            <p>SAFE mal estruturado sem cláusulas adequadas (pro-rata, MFN, discount cap) pode gerar dilution excessivo e disputas futuras.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">5</span>
+                            <p><strong>Conclusão:</strong> Estrutura jurídica preventiva reduz custo de compliance futuro e aumenta defensibilidade regulatória.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CLO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-critical">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco Regulatório (UE AI Act)</span>
+                                <span class="risk-level">CRÍTICO</span>
+                            </div>
+                            <p class="risk-description">Sistemas de IA para decisões de alto risco exigem governança explícita, auditabilidade e transparência algorítmica.</p>
+                            <span class="risk-metric">Métrica: Alto risco sem compliance</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de IP</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Proteção via trade secret exige implementação rigorosa de confidencialidade, NDAs e controles de acesso.</p>
+                            <span class="risk-metric">Métrica: Proteção 70% implementada</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco Contratual SAFE</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">SAFE mal estruturado sem cláusulas adequadas pode gerar dilution excessivo e disputas em conversão futura.</p>
+                            <span class="risk-metric">Métrica: Estruturação em andamento</span>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Resolução:</strong> 4–6 meses para estruturar compliance regulatório e proteção de IP completa</p>
+                    </div>
+                </div>
+
+                <!-- Legal Recommendations -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Recomendações Jurídicas</h3>
+                    <div class="legal-recommendations">
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">⚖️</div>
+                            <div class="rec-content">
+                                <h4>1. Estatuto Cognitivo do Decisor (Prioridade Crítica)</h4>
+                                <p><strong>Objetivo:</strong> Definir formalmente como CIPAI governa decisões e limites de responsabilidade</p>
+                                <ul>
+                                    <li>Documentação formal de limites e responsabilidades do sistema</li>
+                                    <li>Cláusulas de soberania humana e não-vinculação de recomendações</li>
+                                    <li>Framework de auditabilidade e transparência algorítmica</li>
+                                    <li>Compliance antecipado com UE AI Act e LGPD</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 4-6 meses para implementação completa</span>
+                                    <span>💰 Investimento: $20-35k (consultoria jurídica especializada)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">🔒</div>
+                            <div class="rec-content">
+                                <h4>2. Reforço de Proteção de IP</h4>
+                                <p><strong>Objetivo:</strong> Fortalecer proteção via trade secret e copyright</p>
+                                <ul>
+                                    <li>NDAs reforçados para todos colaboradores e usuários beta</li>
+                                    <li>Controles de acesso e confidencialidade rigorosos</li>
+                                    <li>Documentação de processos proprietários e metodologias</li>
+                                    <li>Registro de copyrights de código e documentação</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 3-5 meses (implementação + auditoria)</span>
+                                    <span>💰 Investimento: $15-25k (consultoria IP + implementação)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-medium">
+                            <div class="rec-icon">📄</div>
+                            <div class="rec-content">
+                                <h4>3. Estruturação SAFE com Cláusulas Adequadas</h4>
+                                <p><strong>Objetivo:</strong> Proteger founders e investidores com termos equilibrados</p>
+                                <ul>
+                                    <li>Valuation cap adequado ao estágio MVP</li>
+                                    <li>Discount rate balanceado (15-25%)</li>
+                                    <li>Cláusulas pro-rata e MFN (Most Favored Nation)</li>
+                                    <li>Definição clara de eventos de conversão</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 2-3 meses (negociação + formalização)</span>
+                                    <span>💰 Investimento: $8-15k (consultoria jurídica + corporate)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. MEMÓRIA DE DECISÕES -->
+            <section id="section-memoria" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🧩 Memória de Decisões</h1>
+                    <p class="page-subtitle">Base de Conhecimento e Aprendizado Contínuo</p>
+                </div>
+
+                <!-- Memory Status -->
+                <div class="memory-status-card">
+                    <div class="memory-icon">🧠</div>
+                    <div class="memory-info">
+                        <h3>Sistema de Memória Ativo</h3>
+                        <p>4 decisões estruturantes processadas • 12 padrões estratégicos identificados • Última atualização: Hoje, 14:32</p>
+                    </div>
+                    <div class="memory-badge">OPERACIONAL</div>
+                </div>
+
+                <!-- Memory Stats -->
+                <div class="memory-stats-grid">
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Decisões Estruturantes</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <span class="stat-number">94%</span>
+                            <span class="stat-label">Confiança Média</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-content">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Padrões Estratégicos</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <span class="stat-number">9.5</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Categories -->
+                <div class="content-card">
+                    <h3 class="card-title">📚 Categorias de Aprendizado</h3>
+                    <div class="learning-categories">
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>🧭 Decisões de Posicionamento Estratégico</h4>
+                                <span class="category-count">12 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Governança estrutural antes de escala gera valuation 2-3x maior em rodadas subsequentes</p>
+                                <p><strong>Taxa de Sucesso:</strong> 94%</p>
+                                <p><strong>Complexidade Média:</strong> 9.3/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>⚖️ Decisões de Compliance Regulatório</h4>
+                                <span class="category-count">8 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Projetos de IA sem governança enfrentam barreiras regulatórias 5x maiores (UE AI Act, LGPD)</p>
+                                <p><strong>Taxa de Sucesso:</strong> 88%</p>
+                                <p><strong>Complexidade Média:</strong> 8.9/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>💰 Decisões de Estruturação de Capital</h4>
+                                <span class="category-count">5 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> SAFE bem estruturado reduz dilution em 15-20% comparado a priced round prematuro</p>
+                                <p><strong>Taxa de Sucesso:</strong> 92%</p>
+                                <p><strong>Complexidade Média:</strong> 8.7/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>🛡️ Decisões de Proteção de IP</h4>
+                                <span class="category-count">4 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Trade secret com implementação rigorosa protege IP 80% mais efetivamente que patentes em IA</p>
+                                <p><strong>Taxa de Sucesso:</strong> 87%</p>
+                                <p><strong>Complexidade Média:</strong> 9.0/10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Principais Aprendizados</h3>
+                    <div class="learnings-list">
+                        <div class="learning-item">
+                            <div class="learning-icon">🛡️</div>
+                            <div class="learning-content">
+                                <h4>Governança Estrutural Antes de Escala Multiplica Valuation</h4>
+                                <p>Startups de IA com governança completa atingem valuation 2-3x maior em Series A comparado a peers sem estrutura</p>
+                                <span class="learning-confidence">Confiança: 94% (baseado em 18 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">⚖️</div>
+                            <div class="learning-content">
+                                <h4>Compliance Preventivo Reduz Custo Regulatório em >65%</h4>
+                                <p>Projetos que antecipam UE AI Act e LGPD reduzem custo de adequação posterior em 65-80%</p>
+                                <span class="learning-confidence">Confiança: 91% (baseado em 14 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">💰</div>
+                            <div class="learning-content">
+                                <h4>SAFE Bem Estruturado Reduz Dilution em 15-20%</h4>
+                                <p>Cláusulas adequadas (pro-rata, MFN, discount cap) protegem founders e reduzem dilution em conversão</p>
+                                <span class="learning-confidence">Confiança: 92% (baseado em 11 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">🔒</div>
+                            <div class="learning-content">
+                                <h4>Trade Secret Protege IP 80% Melhor que Patentes em IA</h4>
+                                <p>Proteção via segredo industrial com implementação rigorosa supera patentes para inovações de IA em rápida evolução</p>
+                                <span class="learning-confidence">Confiança: 87% (baseado em 9 casos)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Cases -->
+                <div class="content-card">
+                    <h3 class="card-title">🔍 Casos Similares na Memória</h3>
+                    <div class="similar-cases-list">
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">89%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>AI Safety Compliance Platform - Pre-Seed Decision</h4>
+                                <p>Startup governança de IA, MVP assistido, dilema SAFE vs priced round</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: SAFE ESTRUTURADO</span>
+                                    <span>Resultado: Runway 18 meses, valuation Series A 2.8x maior após validação</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">85%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Regulatory AI Platform EU - Compliance Decision</h4>
+                                <p>Plataforma decisória IA, dilema compliance preventivo vs escala rápida</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: COMPLIANCE PRIMEIRO</span>
+                                    <span>Resultado: Evitou multas UE AI Act, ganhou contratos enterprise</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">82%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Decision Intelligence Startup - IP Protection</h4>
+                                <p>Startup decisões IA, dilema patente vs trade secret para metodologia proprietária</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: TRADE SECRET</span>
+                                    <span>Resultado: Proteção 85% implementada, evitou disclosure público de metodologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. ANÁLISE DE PADRÕES -->
+            <section id="section-padroes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Análise de Padrões</h1>
+                    <p class="page-subtitle">Identificação de Tendências e Insights Estratégicos</p>
+                </div>
+
+                <!-- Pattern Overview -->
+                <div class="patterns-overview-card">
+                    <h3>🔍 Padrões Detectados no Cenário Atual</h3>
+                    <div class="pattern-summary">
+                        <div class="pattern-stat">
+                            <span class="pattern-number">5</span>
+                            <span class="pattern-label">Padrões Principais</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">2</span>
+                            <span class="pattern-label">Alertas Críticos</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">93%</span>
+                            <span class="pattern-label">Confiança Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">🚨 Padrões Críticos Identificados</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">⚖️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 1: Risco Regulatório Crescente para IA sem Governança</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> UE AI Act e LGPD exigem governança explícita para sistemas de decisão de alto risco</p>
+                                    <p><strong>Precedentes:</strong> Observado em 38 casos similares, 82% enfrentaram barreiras regulatórias sem compliance preventivo</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Implementar Estatuto Cognitivo do Decisor antes de escala
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">📊</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 2: Overpromise Narrativo Antes de Estrutura</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Pitch agressivo antes de validação quantitativa gera credibilidade negativa com investidores qualificados</p>
+                                    <p><strong>Precedentes:</strong> Em 76% dos casos, overpromise prematuro comprometeu rodadas subsequentes</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Validar arquitetura base ANTES de marketing agressivo
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">💰</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 3: Dilution Excessivo por SAFE Mal Estruturado</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> SAFE sem cláusulas adequadas (pro-rata, MFN, discount cap) gera dilution 15-25% maior em conversão</p>
+                                    <p><strong>Precedentes:</strong> 68% das startups com SAFE mal estruturado enfrentaram disputas em Series A</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Estruturar SAFE com consultoria jurídica especializada
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Padrões de Alerta</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">🔒</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 4: Proteção de IP Incompleta via Trade Secret</h4>
+                                <p>Implementação 70% de confidencialidade e NDAs deixa vulnerabilidades em proteção de metodologia proprietária</p>
+                                <span class="pattern-prevalence">Presente em 61% das startups IA em estágio MVP</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">⚡</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 5: Débito Técnico por Escala Prematura</h4>
+                                <p>Automação antes de arquitetura base completa gera custo de manutenção 3-5x maior em refatoração futura</p>
+                                <span class="pattern-prevalence">Observado em 58% das startups que escalam antes de validação estrutural</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positive Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Padrões Positivos</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🛡️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 6: Delaware C-Corp Estruturado</h4>
+                                <p>Estruturação em Delaware com governança formal permite acesso a investidores US e facilita rodadas subsequentes</p>
+                                <span class="pattern-prevalence">Presente em 92% das startups IA bem-sucedidas em Series A</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🎯</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 7: Runway Adequado via SAFE</h4>
+                                <p>SAFE permite 12-18 meses de runway sem pressão por receita, viabilizando validação estrutural completa</p>
+                                <span class="pattern-prevalence">Correlacionado com 85% de taxa de sucesso em validação de MVP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavioral Analysis -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Análise Comportamental</h3>
+                    <div class="behavioral-insights">
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Narrativa Antes de Fundamentos (Hype Bias)</h4>
+                            <p>O pitch de "governança cognitiva de IA" está atrativo (narrativa visível), mas pode ofuscar a necessidade de validação quantitativa antes de escala, apesar de estrutura ser o que gera valuation sustentável.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Reframing do sucesso como "governança provada por evidência" vs "narrativa persuasiva sem validação"
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Pressão por Velocidade em Ambiente Competitivo</h4>
+                            <p>A percepção de janela de oportunidade fechando pode estar criando pressão por escala prematura, expondo o projeto a débito técnico e risco regulatório futuro.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Analisar em termos de vantagem defensável: governança estrutural é moat, velocidade sem estrutura é vulnerabilidade
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Padrão Positivo: Busca por Análise Estruturada</h4>
+                            <p>A estruturação em Delaware C-Corp e proteção via trade secret indicam reconhecimento da complexidade e disposição para decisão fundamentada (Governance + Legal + Financial).</p>
+                            <div class="behavior-reinforcement">
+                                <strong>Reforço Positivo:</strong> Continuar priorizando estrutura sobre narrativa para decisões de alto impacto estratégico e regulatório
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Based on Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Recomendações Baseadas em Padrões</h3>
+                    <div class="pattern-recommendations-list">
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority critical">CRÍTICA</span>
+                            <div class="rec-content">
+                                <h4>Implementar Estatuto Cognitivo do Decisor</h4>
+                                <p>Os padrões críticos detectados indicam alta probabilidade (82%) de barreiras regulatórias futuras (UE AI Act, LGPD) sem compliance preventivo. Recomenda-se estruturar governança formal nos próximos 4-6 meses.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority high">ALTA</span>
+                            <div class="rec-content">
+                                <h4>Validar Arquitetura Base Antes de Marketing Agressivo</h4>
+                                <p>Padrão de overpromise narrativo requer ação urgente: completar validação quantitativa + arquitetura base dentro de 6-9 meses para evitar credibilidade negativa com investidores.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority medium">MÉDIA</span>
+                            <div class="rec-content">
+                                <h4>Estruturar SAFE com Cláusulas Adequadas</h4>
+                                <p>Investimento de $8-15k em consultoria jurídica para SAFE bem estruturado reduz dilution futuro em 15-20% comparado a priced round prematuro.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. CONFIGURAÇÕES -->
+            <section id="section-configuracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚙️ Configurações</h1>
+                    <p class="page-subtitle">Personalize sua experiência no CIPAI</p>
+                </div>
+
+                <!-- Profile Settings -->
+                <div class="content-card">
+                    <h3 class="card-title">👤 Configurações de Perfil</h3>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" value="Executivo C-Level" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="executivo@email.com" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Profissão</label>
+                                <input type="text" value="C-Level Executive" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Idade</label>
+                                <input type="number" value="48" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Localização</label>
+                                <input type="text" value="São Paulo, SP" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="tel" value="(11) 99999-9999" class="form-input">
+                            </div>
+                        </div>
+                        <button class="btn-primary">💾 Salvar Alterações</button>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Preferências de Análise</h3>
+                    <div class="preferences-grid">
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Nível de Detalhe das Análises</h4>
+                                <select class="form-select">
+                                    <option>Básico</option>
+                                    <option>Intermediário</option>
+                                    <option selected>Avançado</option>
+                                    <option>Especialista</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Prioridade de Análise</h4>
+                                <select class="form-select">
+                                    <option>Velocidade (análise rápida)</option>
+                                    <option selected>Balanceado</option>
+                                    <option>Profundidade (análise completa)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Tom das Recomendações</h4>
+                                <select class="form-select">
+                                    <option>Conservador</option>
+                                    <option selected>Equilibrado</option>
+                                    <option>Agressivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Idioma da Interface</h4>
+                                <select class="form-select">
+                                    <option selected>🇧🇷 Português</option>
+                                    <option>🇺🇸 English</option>
+                                    <option>🇪🇸 Español</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="content-card">
+                    <h3 class="card-title">🔔 Notificações</h3>
+                    <div class="notifications-settings">
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Email de Análises Concluídas</h4>
+                                <p>Receber notificação quando uma análise for finalizada</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Alertas de Decisões Críticas</h4>
+                                <p>Notificar quando uma decisão requer atenção urgente</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Resumo Semanal</h4>
+                                <p>Receber relatório semanal de decisões e análises</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Sugestões de Análise</h4>
+                                <p>Receber sugestões de decisões similares para comparação</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Security -->
+                <div class="content-card">
+                    <h3 class="card-title">🔒 Privacidade e Segurança</h3>
+                    <div class="privacy-settings">
+                        <div class="privacy-item">
+                            <h4>Compartilhamento de Dados</h4>
+                            <p>Permitir uso anônimo de padrões para melhorar análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>Backup Automático</h4>
+                            <p>Fazer backup automático de todas as análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-actions">
+                            <button class="btn-secondary">📥 Exportar Todos os Dados</button>
+                            <button class="btn-secondary">🔄 Alterar Senha</button>
+                            <button class="btn-danger">🗑️ Excluir Conta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Info -->
+                <div class="content-card">
+                    <h3 class="card-title">ℹ️ Informações do Sistema</h3>
+                    <div class="system-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Versão do CIPAI</span>
+                            <span class="info-value">v2.3 Master Final</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Última Atualização</span>
+                            <span class="info-value">25 de Janeiro de 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modelo de IA</span>
+                            <span class="info-value">Claude Sonnet 4.5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status do Sistema</span>
+                            <span class="info-value badge-high">OPERACIONAL</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Cenários Processados</span>
+                            <span class="info-value">47</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Taxa de Confiança Média</span>
+                            <span class="info-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support -->
+                <div class="content-card">
+                    <h3 class="card-title">❓ Ajuda e Suporte</h3>
+                    <div class="support-links">
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📚</span>
+                            <div class="support-info">
+                                <h4>Central de Ajuda</h4>
+                                <p>Documentação completa e guias de uso</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">💬</span>
+                            <div class="support-info">
+                                <h4>Chat com Suporte</h4>
+                                <p>Fale com nossa equipe em tempo real</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📧</span>
+                            <div class="support-info">
+                                <h4>Enviar Feedback</h4>
+                                <p>Ajude-nos a melhorar o CIPAI</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">🐛</span>
+                            <div class="support-info">
+                                <h4>Reportar Problema</h4>
+                                <p>Informe bugs ou comportamentos inesperados</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

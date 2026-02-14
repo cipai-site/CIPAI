@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPAI - Inteligência Cognitiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">
+                    <h1>CIPAI</h1>
+                    <p>INTELIGÊNCIA COGNITIVA</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" id="btnHistorico">📊 Histórico</button>
+                <button class="btn-primary" id="btnNovaAnalise">➕ Nova Análise</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">PRINCIPAL</h3>
+                    <a href="#contexto" class="nav-item" data-section="contexto">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text">Contexto da Decisão</span>
+                    </a>
+                    <a href="#painel" class="nav-item active" data-section="painel">
+                        <span class="nav-icon">🧠</span>
+                        <span class="nav-text">Painel Cognitivo</span>
+                    </a>
+                    <a href="#demonstracoes" class="nav-item" data-section="demonstracoes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Demonstrações</span>
+                    </a>
+                    <a href="#modelo-pessoal" class="nav-item" data-section="modelo-pessoal">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Modelo Pessoal</span>
+                    </a>
+                    <a href="#nova-decisao" class="nav-item" data-section="nova-decisao">
+                        <span class="nav-icon">➕</span>
+                        <span class="nav-text">Nova Decisão</span>
+                    </a>
+                    <a href="#historico" class="nav-item" data-section="historico">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Histórico de Decisões</span>
+                    </a>
+                    <a href="#comparar" class="nav-item" data-section="comparar">
+                        <span class="nav-icon">🔄</span>
+                        <span class="nav-text">Comparar Cenários</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">MÓDULOS DE ANÁLISE</h3>
+                    <a href="#modulo-cfo" class="nav-item" data-section="modulo-cfo">
+                        <span class="nav-icon">💰</span>
+                        <span class="nav-text">Módulo CFO</span>
+                    </a>
+                    <a href="#modulo-juridico" class="nav-item" data-section="modulo-juridico">
+                        <span class="nav-icon">⚖️</span>
+                        <span class="nav-text">Módulo Jurídico</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">CAMADA DE INTELIGÊNCIA</h3>
+                    <a href="#memoria" class="nav-item" data-section="memoria">
+                        <span class="nav-icon">🧩</span>
+                        <span class="nav-text">Memória de Decisões</span>
+                    </a>
+                    <a href="#padroes" class="nav-item" data-section="padroes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Análise de Padrões</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">SISTEMA</h3>
+                    <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">💼</div>
+                    <div class="user-details">
+                        <p class="user-name">Executivo C-Level</p>
+                        <p class="user-role">Cenário 05</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- 1. CONTEXTO DA DECISÃO -->
+            <section id="section-contexto" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🎯 Contexto da Decisão</h1>
+                    <p class="page-subtitle">Cenário 5: Transição de Carreira e Burnout Executivo</p>
+                </div>
+
+                <!-- Scenario Info -->
+                <div class="scenario-info-card">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">🚀</div>
+                        <div class="scenario-details">
+                            <h2>Corporate Exit: Liberdade com Segurança Patrimonial</h2>
+                            <p class="scenario-subtitle">Planejamento financeiro, jurídico e humano para saída estratégica de cargo C-Level</p>
+                        </div>
+                        <div class="scenario-badges">
+                            <span class="badge badge-critical">Alta Complexidade</span>
+                            <span class="badge badge-info">12-15 min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">ID do Cenário:</span>
+                            <span class="metadata-value">executivo-transicao-negocio-v2-1-master-final</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Domínios:</span>
+                            <span class="metadata-value">Financial • Strategic • Personal Risk • Health</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de Decisão:</span>
+                            <span class="metadata-value">Strategic-Life</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Reversibilidade:</span>
+                            <span class="metadata-value badge-critical">BAIXA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Frame -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Enquadramento da Decisão</h3>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Tipo de Decisão</span>
+                            <span class="info-value">Strategic-Life</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Perfil de Risco</span>
+                            <span class="info-value">Health + Family Stability + Capital</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Domínio Principal</span>
+                            <span class="info-value">Financial / Personal</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Janela de Decisão</span>
+                            <span class="info-value">180 dias</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <h4>📝 Resumo em Linguagem Simples</h4>
+                        <p>Permanecer no cargo protege a renda, mas acelera a degradação da saúde; sair exige método para não expor a família.</p>
+                    </div>
+
+                    <div class="risk-axis-box">
+                        <h4>⚠️ Eixo Principal de Risco</h4>
+                        <p><strong>Autonomia Pessoal e Saúde</strong> vs. <strong>Estabilidade Financeira Familiar</strong></p>
+                    </div>
+
+                    <div class="alert-box alert-warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h5>Reversibilidade: BAIXA</h5>
+                            <p>Cargos C-Level possuem baixa reversibilidade imediata no mesmo patamar salarial após desligamento.</p>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>💰 Impacto Financeiro</h4>
+                        <p>Perda de renda de <strong>R$ 80k/mês</strong> e investimento inicial estimado de <strong>R$ 500k</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Background Context -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Contexto de Fundo</h3>
+                    <div class="background-text">
+                        <p>Executivo de 48 anos, ocupando posição C-Level em multinacional, com sinais claros de burnout, estresse crônico e perda progressiva de qualidade de vida. Possui renda anual aproximada de R$ 1,2 milhão e liquidez de R$ 2,5 milhões.</p>
+                        
+                        <p>Deseja deixar o ambiente corporativo para fundar uma consultoria ou startup, mas teme comprometer o padrão de vida da família e sua segurança financeira de longo prazo.</p>
+                        
+                        <p>A decisão ocorre em um contexto de degradação contínua de capital humano, custo fixo familiar elevado, dependência de plano de saúde corporativo e cláusulas contratuais restritivas.</p>
+                    </div>
+                </div>
+
+                <!-- Stakeholders -->
+                <div class="content-card">
+                    <h3 class="card-title">👥 Principais Stakeholders</h3>
+                    <div class="stakeholders-list">
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👨‍👩‍👧</span>
+                            <span class="stakeholder-name">Cônjuge</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👨‍👩‍👧‍👦</span>
+                            <span class="stakeholder-name">Filhos</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">🤝</span>
+                            <span class="stakeholder-name">Potenciais sócios</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">🏢</span>
+                            <span class="stakeholder-name">Empregador atual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline & Constraints -->
+                <div class="info-cards-grid">
+                    <div class="content-card">
+                        <h3 class="card-title">📅 Linha do Tempo</h3>
+                        <p>Planejamento de saída em até <strong>6 meses</strong>; novo negócio com expectativa de break-even em até <strong>18 meses</strong>.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3 class="card-title">⛓️ Restrições</h3>
+                        <p>Custo fixo familiar elevado, dependência de plano de saúde corporativo e cláusulas contratuais restritivas.</p>
+                    </div>
+                </div>
+
+                <!-- User Values Check -->
+                <div class="content-card">
+                    <h3 class="card-title">💭 Verificação de Valores do Usuário</h3>
+                    
+                    <div class="alert-box alert-info">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <p>Os valores abaixo são <strong>ASSUMIDOS</strong> pelo sistema com base em perfis típicos de executivos em transição de meio de carreira. Eles podem não refletir preferências pessoais.</p>
+                        </div>
+                    </div>
+
+                    <div class="values-grid">
+                        <!-- Security vs Lifestyle -->
+                        <div class="value-axis-card">
+                            <h4>🛡️ Segurança vs Estilo de Vida</h4>
+                            <p class="value-description">Preservar padrão familiar versus aceitar redução temporária</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 70%;">
+                                    <span class="value-marker">70%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 70%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Estilo de Vida</span>
+                                    <span>Segurança</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">O usuário aceita riscos, mas não admite comprometer educação e saúde da família.</p>
+                        </div>
+
+                        <!-- Short-term vs Long-term -->
+                        <div class="value-axis-card">
+                            <h4>⏱️ Curto Prazo vs Longo Prazo</h4>
+                            <p class="value-description">Alívio imediato do estresse versus construção de patrimônio futuro</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 65%;">
+                                    <span class="value-marker">65%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 65%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Curto Prazo</span>
+                                    <span>Longo Prazo</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">A exaustão pressiona a saída, mas há preocupação com aposentadoria e legado.</p>
+                        </div>
+
+                        <!-- Control vs Delegation -->
+                        <div class="value-axis-card">
+                            <h4>🎯 Controle vs Delegação</h4>
+                            <p class="value-description">Autonomia pessoal versus subordinação corporativa</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 90%;">
+                                    <span class="value-marker">90%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 90%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Delegação</span>
+                                    <span>Controle</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">A principal motivação é recuperar controle sobre tempo e decisões.</p>
+                        </div>
+
+                        <!-- Growth vs Preservation -->
+                        <div class="value-axis-card">
+                            <h4>📈 Crescimento vs Preservação</h4>
+                            <p class="value-description">Construção de equity versus preservação patrimonial</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 55%;">
+                                    <span class="value-marker">55%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 55%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Crescimento</span>
+                                    <span>Preservação</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Desejo de criar algo próprio sem destruir o capital acumulado.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PAINEL COGNITIVO (Default View) -->
+            <section id="section-painel" class="content-section active">
+                <div class="page-header">
+                    <h1 class="page-title">Painel Cognitivo</h1>
+                    <p class="page-subtitle">Visão geral do raciocínio de IA e inteligência de decisão</p>
+                </div>
+
+                <!-- Status Card -->
+                <div class="status-card">
+                    <div class="status-icon">🧠</div>
+                    <div class="status-info">
+                        <h3>Sistema IA Ativo</h3>
+                        <p>Processando 1 decisão ativa • 7 premissas validadas hoje • Memória: 52 cenários</p>
+                    </div>
+                    <div class="status-badge status-operational">OPERACIONAL</div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <!-- Confiança da IA -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>CONFIANÇA DA IA</h4>
+                            <span class="metric-badge badge-high">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">95%</div>
+                        <div class="metric-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-details">
+                            <p>📊 Baseado em 52 cenários</p>
+                            <p>⚡ 15 decisões >90%</p>
+                        </div>
+                    </div>
+
+                    <!-- Incertezas -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>INCERTEZAS</h4>
+                            <span class="metric-badge badge-warning">MONITORAR</span>
+                        </div>
+                        <div class="metric-value-large">5</div>
+                        <div class="metric-details">
+                            <p>⚠️ 2 exigem validação</p>
+                            <p>🔴 3 premissas críticas</p>
+                            <p>📈 2 alta variância</p>
+                        </div>
+                    </div>
+
+                    <!-- Profundidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>PROFUNDIDADE</h4>
+                            <span class="metric-badge badge-high">FORTE</span>
+                        </div>
+                        <div class="metric-value-large">7.8<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🔍 Análise multi-camadas</p>
+                            <p>📋 CFO + CLO + Health</p>
+                            <p>⏱️ 6-18 meses horizon</p>
+                        </div>
+                    </div>
+
+                    <!-- Complexidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>COMPLEXIDADE</h4>
+                            <span class="metric-badge badge-critical">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">8.9<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🎯 4 domínios ativos</p>
+                            <p>💼 Financial + Health</p>
+                            <p>🔗 4 stakeholders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="insights-section">
+                    <h3 class="section-title">💡 Insights da IA</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card insight-critical">
+                            <div class="insight-icon">🚨</div>
+                            <div class="insight-content">
+                                <h4>Alerta Health–Wealth Detectado</h4>
+                                <p>Depreciação de capital humano em burnout representa risco financeiro superior ao custo da transição.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-warning">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <h4>Cláusula de Não-Competitividade Crítica</h4>
+                                <p>18 meses de restrição contratual requerem negociação jurídica prévia à saída.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-info">
+                            <div class="insight-icon">💡</div>
+                            <div class="insight-content">
+                                <h4>Runway de 57 Meses Identificado</h4>
+                                <p>Patrimônio atual garante 4+ anos de estabilidade mesmo com renda zero.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Preview -->
+                <div class="recommendation-preview">
+                    <div class="recommendation-header">
+                        <h3>🎯 Recomendação Final (CEO)</h3>
+                        <span class="confidence-score">Confiança: 95%</span>
+                    </div>
+                    <div class="recommendation-content">
+                        <p class="recommendation-main">O CID-AI recomenda <strong>PREPARE THEN EXECUTE: saída estratégica planejada</strong>.</p>
+                        <p>O maior risco desta decisão não é financeiro, mas humano:</p>
+                        <ul>
+                            <li>Permanência em burnout deprecia capital humano continuamente</li>
+                            <li>Runway de 57 meses garante segurança familiar na transição</li>
+                            <li>Negociação jurídica prévia reduz riscos contratuais</li>
+                        </ul>
+                        <button class="btn-primary" onclick="navigateTo('contexto')">Ver Análise Completa →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. DEMONSTRAÇÕES -->
+            <section id="section-demonstracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Demonstrações</h1>
+                    <p class="page-subtitle">Trade-offs e Análise de Decisão</p>
+                </div>
+
+                <!-- Methodology -->
+                <div class="content-card">
+                    <h3 class="card-title">📐 Metodologia de Scores de Trade-off</h3>
+                    
+                    <div class="formula-box">
+                        <h4>Fórmula de Cálculo</h4>
+                        <code>Score Final = Σ (Critério × Peso)</code>
+                        <p>Ajustado ao perfil executivo em transição</p>
+                    </div>
+
+                    <div class="criteria-breakdown">
+                        <h4>Critérios e Pesos</h4>
+                        <div class="criteria-list">
+                            <div class="criteria-item">
+                                <span class="criteria-name">Saúde e Bem-estar</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 40%;"></div>
+                                </div>
+                                <span class="criteria-weight">40%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Resiliência Financeira</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 40%;"></div>
+                                </div>
+                                <span class="criteria-weight">40%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Autonomia e Tempo</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 20%;"></div>
+                                </div>
+                                <span class="criteria-weight">20%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-calculation">
+                        <h4>Exemplo de Cálculo</h4>
+                        <p><strong>Opção:</strong> Saída planejada com CIPAI</p>
+                        <p><strong>Score Total:</strong> 8.2</p>
+                        <p><strong>Margem de Confiança:</strong> ±0.4</p>
+                    </div>
+                </div>
+
+                <!-- Decision Readiness Check -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Verificação de Prontidão para Decisão</h3>
+                    
+                    <div class="readiness-dimensions">
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Emocional</span>
+                                <span class="readiness-level level-high">ALTO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill high" style="width: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Financeira</span>
+                                <span class="readiness-level level-high">ALTO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill high" style="width: 80%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Estrutural</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blocking-factors">
+                        <h4>🚫 Fatores Bloqueantes</h4>
+                        <div class="blocking-factor critical">
+                            <span class="blocking-icon">🔴</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Cláusula de não-competitividade (18 meses)</span>
+                                <span class="blocking-severity">CRÍTICO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟠</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Plano de saúde familiar corporativo</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended-action">
+                        <h4>🎯 Ação Recomendada</h4>
+                        <div class="action-badge action-proceed">PREPARE THEN EXECUTE</div>
+                        <p class="action-note">A decisão final permanece sob responsabilidade do usuário.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. MODELO PESSOAL -->
+            <section id="section-modelo-pessoal" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">👤 Modelo Pessoal</h1>
+                    <p class="page-subtitle">Perfil Completo do Decisor</p>
+                </div>
+
+                <!-- Profile Overview -->
+                <div class="profile-card">
+                    <div class="profile-header-section">
+                        <div class="profile-avatar-large">💼</div>
+                        <div class="profile-info">
+                            <h2>Executivo C-Level</h2>
+                            <p class="profile-title">Posição C-Level em Multinacional • 48 anos</p>
+                            <div class="profile-tags">
+                                <span class="tag">Casado</span>
+                                <span class="tag">Filhos</span>
+                                <span class="tag">São Paulo, SP</span>
+                                <span class="tag">20+ anos carreira</span>
+                            </div>
+                        </div>
+                        <div class="profile-quick-stats">
+                            <div class="quick-stat">
+                                <span class="stat-icon">💰</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">R$ 100k</span>
+                                    <span class="stat-label">Renda Mensal</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <span class="stat-icon">💎</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">R$ 2.5M</span>
+                                    <span class="stat-label">Patrimônio</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">💰 Perfil Financeiro Detalhado</h3>
+                    
+                    <div class="financial-overview-grid">
+                        <div class="financial-section">
+                            <h4>📊 Composição Patrimonial</h4>
+                            <div class="patrimony-chart">
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Investimentos Líquidos</span>
+                                        <span class="patrimony-value">R$ 2.500.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 100%; background: linear-gradient(90deg, #10b981, #14b8a6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">100% do total</span>
+                                </div>
+                            </div>
+                            <div class="patrimony-total">
+                                <span>Patrimônio Total:</span>
+                                <strong>R$ 2.500.000</strong>
+                            </div>
+                        </div>
+
+                        <div class="financial-section">
+                            <h4>💸 Fluxo de Caixa Mensal</h4>
+                            <div class="cashflow-items">
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">💰</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Salário Executivo</span>
+                                        <span class="cashflow-value">+ R$ 100.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">📈</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Bônus Corporativo</span>
+                                        <span class="cashflow-value">+ R$ 20.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🏠</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Despesas Fixas</span>
+                                        <span class="cashflow-value">- R$ 55.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🏥</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Plano de Saúde (Corporativo)</span>
+                                        <span class="cashflow-value">Coberto</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item savings">
+                                    <span class="cashflow-icon">💎</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Capacidade de Poupança</span>
+                                        <span class="cashflow-value">= R$ 65.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Structure -->
+                <div class="content-card">
+                    <h3 class="card-title">👨‍👩‍👧‍👦 Estrutura Familiar</h3>
+                    <div class="family-grid">
+                        <div class="family-card">
+                            <div class="family-avatar">💼</div>
+                            <h4>Executivo C-Level</h4>
+                            <p class="family-role">Decisor Principal</p>
+                            <ul class="family-details">
+                                <li>• 20+ anos carreira corporativa</li>
+                                <li>• Burnout severo diagnosticado</li>
+                                <li>• Renda R$ 1.2M/ano</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👩</div>
+                            <h4>Cônjuge</h4>
+                            <p class="family-role">Co-decisor</p>
+                            <ul class="family-details">
+                                <li>• Profissional autônoma</li>
+                                <li>• Renda complementar</li>
+                                <li>• Apoio decisório</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👨‍👩‍👧‍👦</div>
+                            <h4>Filhos</h4>
+                            <p class="family-role">Beneficiários</p>
+                            <ul class="family-details">
+                                <li>• Educação em andamento</li>
+                                <li>• Estabilidade necessária</li>
+                                <li>• Dependentes financeiros</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Objetivos Financeiros</h3>
+                    <div class="goals-list">
+                        <div class="goal-item priority-critical">
+                            <div class="goal-icon">🏥</div>
+                            <div class="goal-content">
+                                <h4>Recuperação de Saúde e Bem-Estar</h4>
+                                <p>Eliminar burnout e recuperar qualidade de vida</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Sair do ambiente tóxico</span>
+                                    <span>Horizonte: 6 meses</span>
+                                    <span class="goal-priority">Prioridade: MÁXIMA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-high">
+                            <div class="goal-icon">🚀</div>
+                            <div class="goal-content">
+                                <h4>Construir Negócio Próprio</h4>
+                                <p>Fundar consultoria/startup com equity próprio</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Break-even 18 meses</span>
+                                    <span>Horizonte: 6-24 meses</span>
+                                    <span class="goal-priority">Prioridade: ALTA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-medium">
+                            <div class="goal-icon">💰</div>
+                            <div class="goal-content">
+                                <h4>Segurança Financeira Familiar</h4>
+                                <p>Manter padrão de vida sem comprometer estabilidade</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Runway >3 anos</span>
+                                    <span>Horizonte: Imediato</span>
+                                    <span class="goal-priority">Prioridade: MÉDIA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Perfil de Risco</h3>
+                    <div class="risk-profile-grid">
+                        <div class="risk-profile-item">
+                            <h4>Depreciação de Capital Humano</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill critical" style="width: 95%;"></div>
+                            </div>
+                            <span class="risk-level-label">95% - Crítico</span>
+                            <p>Burnout contínuo eleva risco de eventos de saúde disruptivos.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Exposição Contratual (Non-Compete)</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill high" style="width: 80%;"></div>
+                            </div>
+                            <span class="risk-level-label">80% - Alto</span>
+                            <p>Cláusula de 18 meses pode restringir atividade empresarial.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Execução de Novo Negócio</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill medium" style="width: 65%;"></div>
+                            </div>
+                            <span class="risk-level-label">65% - Médio</span>
+                            <p>Modelo não validado requer estruturação e planejamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. NOVA DECISÃO -->
+            <section id="section-nova-decisao" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">➕ Nova Decisão</h1>
+                    <p class="page-subtitle">Iniciar uma Nova Análise de Decisão</p>
+                </div>
+
+                <div class="new-decision-container">
+                    <div class="new-decision-intro">
+                        <div class="intro-icon">🎯</div>
+                        <h2>Iniciar Nova Análise</h2>
+                        <p>O CIPAI analisará sua decisão sob múltiplas perspectivas: financeira, jurídica, estratégica e de estilo de vida.</p>
+                    </div>
+
+                    <div class="decision-form-card">
+                        <h3>📝 Informações Básicas da Decisão</h3>
+                        
+                        <div class="form-group">
+                            <label>Título da Decisão</label>
+                            <input type="text" placeholder="Ex: Compra de imóvel, Mudança de carreira, Investimento..." class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Categoria Principal</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>💰 Financeira</option>
+                                <option>🏠 Imobiliária</option>
+                                <option>💼 Profissional</option>
+                                <option>👨‍👩‍👧‍👦 Familiar</option>
+                                <option>📈 Investimentos</option>
+                                <option>🎓 Educacional</option>
+                                <option>🏥 Saúde</option>
+                                <option>⚖️ Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descrição do Contexto</label>
+                            <textarea rows="5" placeholder="Descreva sua situação atual e a decisão que precisa tomar..." class="form-textarea"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Valor Envolvido (R$)</label>
+                                <input type="text" placeholder="Ex: 1.500.000" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Prazo para Decisão</label>
+                                <select class="form-select">
+                                    <option>Selecione...</option>
+                                    <option>⚡ Urgente (até 7 dias)</option>
+                                    <option>📅 Curto (até 30 dias)</option>
+                                    <option>📆 Médio (até 90 dias)</option>
+                                    <option>⏱️ Longo (mais de 90 dias)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Stakeholders Envolvidos</label>
+                            <div class="stakeholder-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Cônjuge
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Filhos
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Pais
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Sócios
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Instituições Financeiras
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Outros
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nível de Complexidade Estimado</label>
+                            <div class="complexity-slider">
+                                <input type="range" min="1" max="10" value="5" class="slider">
+                                <div class="slider-labels">
+                                    <span>Simples</span>
+                                    <span>Moderado</span>
+                                    <span>Complexo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn-secondary">💾 Salvar Rascunho</button>
+                            <button class="btn-primary">🚀 Iniciar Análise</button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-info-card">
+                        <h3>📊 O que será analisado?</h3>
+                        <div class="analysis-modules">
+                            <div class="module-item">
+                                <span class="module-icon">💰</span>
+                                <div class="module-info">
+                                    <h4>Módulo CFO</h4>
+                                    <p>Análise financeira, métricas, riscos e oportunidades</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">⚖️</span>
+                                <div class="module-info">
+                                    <h4>Módulo Jurídico</h4>
+                                    <p>Estrutura legal, proteção patrimonial e sucessória</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🎯</span>
+                                <div class="module-info">
+                                    <h4>Análise Estratégica</h4>
+                                    <p>Alinhamento com objetivos e valores pessoais</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🧠</span>
+                                <div class="module-info">
+                                    <h4>IA Cognitiva</h4>
+                                    <p>Síntese executiva e recomendação final</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. HISTÓRICO DE DECISÕES -->
+            <section id="section-historico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📋 Histórico de Decisões</h1>
+                    <p class="page-subtitle">Todas as análises realizadas</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-card">
+                    <div class="filter-group">
+                        <label>Período:</label>
+                        <select class="filter-select">
+                            <option>Últimos 30 dias</option>
+                            <option>Últimos 90 dias</option>
+                            <option>Último ano</option>
+                            <option>Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Categoria:</label>
+                        <select class="filter-select">
+                            <option>Todas</option>
+                            <option>Financeira</option>
+                            <option>Imobiliária</option>
+                            <option>Profissional</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select class="filter-select">
+                            <option>Todos</option>
+                            <option>Aprovada</option>
+                            <option>Pausada</option>
+                            <option>Rejeitada</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-secondary">🔍 Pesquisar</button>
+                    </div>
+                </div>
+
+                <!-- Decision History List -->
+                <div class="history-list">
+                    <!-- Current Decision -->
+                    <div class="history-item active">
+                        <div class="history-icon">🚀</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Corporate Exit: Transição de Carreira C-Level</h3>
+                                <span class="history-badge badge-proceed">RECOMENDADA</span>
+                            </div>
+                            <p class="history-description">Planejamento estratégico para saída do cargo executivo e fundação de negócio próprio</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 03 de Fevereiro de 2026</span>
+                                <span class="history-category">💼 Estratégica • 🏥 Saúde</span>
+                                <span class="history-confidence">🎯 Confiança: 95%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Impacto Renda:</span>
+                                    <span class="stat-value">-R$ 80k/mês</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Complexidade:</span>
+                                    <span class="stat-value">8.9/10</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Recomendação:</span>
+                                    <span class="stat-value">PREPARE THEN EXECUTE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes" onclick="navigateTo('contexto')">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 1 -->
+                    <div class="history-item">
+                        <div class="history-icon">💼</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Promoção para VP Global: Aceitar ou Recusar</h3>
+                                <span class="history-badge badge-rejected">RECUSADA</span>
+                            </div>
+                            <p class="history-description">Análise de oportunidade para promoção com relocação internacional e aumento de 40%</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 15 de Outubro de 2025</span>
+                                <span class="history-category">💼 Profissional • 👨‍👩‍👧‍👦 Familiar</span>
+                                <span class="history-confidence">🎯 Confiança: 89%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Aumento:</span>
+                                    <span class="stat-value">+40% salário</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Trade-off:</span>
+                                    <span class="stat-value">Qualidade vida</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Recusada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 2 -->
+                    <div class="history-item">
+                        <div class="history-icon">🏦</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Liquidação de Stock Options: Exit Parcial</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Venda de 60% das stock options para diversificação e criação de reserva de transição</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 08 de Julho de 2025</span>
+                                <span class="history-category">📈 Investimentos • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 92%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Valor Líquido:</span>
+                                    <span class="stat-value">R$ 1.8M</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Diversificação:</span>
+                                    <span class="stat-value">+65%</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Resultado:</span>
+                                    <span class="stat-value">Positivo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 3 -->
+                    <div class="history-item">
+                        <div class="history-icon">🏥</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Licença Sabática: 6 Meses para Recuperação</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Solicitação de licença não remunerada para tratamento de burnout e planejamento de transição</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 20 de Abril de 2025</span>
+                                <span class="history-category">🏥 Saúde • 👨‍👩‍👧‍👦 Familiar</span>
+                                <span class="history-confidence">🎯 Confiança: 96%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Duração:</span>
+                                    <span class="stat-value">6 meses</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Custo:</span>
+                                    <span class="stat-value">R$ 0 (não remunerada)</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Concluída</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Summary -->
+                <div class="history-stats-card">
+                    <h3>📊 Estatísticas Gerais</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Decisões Analisadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">93%</span>
+                            <span class="stat-label">Taxa de Confiança Média</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Aprovadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Rejeitada</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">R$ 1.8M</span>
+                            <span class="stat-label">Valor Total Realizado</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">8.8</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. COMPARAR CENÁRIOS -->
+            <section id="section-comparar" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🔄 Comparar Cenários</h1>
+                    <p class="page-subtitle">Análise comparativa de decisões e alternativas</p>
+                </div>
+
+                <!-- Scenario Selection -->
+                <div class="comparison-setup-card">
+                    <h3>📋 Selecionar Cenários para Comparação</h3>
+                    <div class="scenario-selectors">
+                        <div class="scenario-selector">
+                            <label>Cenário A:</label>
+                            <select class="form-select">
+                                <option>Cenário 01: Corporate Exit (Atual)</option>
+                                <option>Cenário 02: Promoção VP Global</option>
+                                <option>Cenário 03: Licença Sabática</option>
+                                <option>Cenário 04: Stock Options Exit</option>
+                            </select>
+                        </div>
+                        <div class="comparison-vs">VS</div>
+                        <div class="scenario-selector">
+                            <label>Cenário B:</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>Cenário 01: Corporate Exit (Atual)</option>
+                                <option>Cenário 02: Promoção VP Global</option>
+                                <option>Cenário 03: Licença Sabática</option>
+                                <option>Cenário 04: Stock Options Exit</option>
+                                <option>➕ Criar Cenário Alternativo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-primary">🔍 Comparar Cenários</button>
+                </div>
+
+                <!-- Comparison Results -->
+                <div class="comparison-results">
+                    <h3>📊 Análise Comparativa</h3>
+                    
+                    <!-- Overview Comparison -->
+                    <div class="comparison-overview">
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-a">
+                                <h4>Cenário A</h4>
+                                <p>Corporate Exit</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">95%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">8.9/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Impacto Renda</span>
+                                    <span class="metric-value">-R$ 80k/mês</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-approved">PREPARE</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-b">
+                                <h4>Cenário B</h4>
+                                <p>Licença Sabática</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">96%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">5.2/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Impacto Renda</span>
+                                    <span class="metric-value">-R$ 100k/6m</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-approved">APROVAR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Comparison -->
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critério</th>
+                                    <th>Cenário A</th>
+                                    <th>Cenário B</th>
+                                    <th>Diferença</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>🏥 Impacto em Saúde</td>
+                                    <td class="positive">Eliminação burnout</td>
+                                    <td class="positive">Recuperação parcial</td>
+                                    <td class="neutral">A mais definitivo</td>
+                                </tr>
+                                <tr>
+                                    <td>💰 Segurança Financeira</td>
+                                    <td class="neutral">Runway 57 meses</td>
+                                    <td class="positive">Manutenção emprego</td>
+                                    <td class="positive">B mais seguro</td>
+                                </tr>
+                                <tr>
+                                    <td>⚠️ Nível de Risco</td>
+                                    <td class="negative">Alto (novo negócio)</td>
+                                    <td class="neutral">Baixo</td>
+                                    <td class="positive">Menor em B</td>
+                                </tr>
+                                <tr>
+                                    <td>🎯 Autonomia Futura</td>
+                                    <td class="positive">100% (próprio negócio)</td>
+                                    <td class="negative">0% (retorno corporativo)</td>
+                                    <td class="positive">+100% favor A</td>
+                                </tr>
+                                <tr>
+                                    <td>📈 Potencial de Crescimento</td>
+                                    <td class="positive">Ilimitado (equity)</td>
+                                    <td class="neutral">Limitado (CLT)</td>
+                                    <td class="positive">Maior em A</td>
+                                </tr>
+                                <tr>
+                                    <td>🔒 Reversibilidade</td>
+                                    <td class="negative">Baixa</td>
+                                    <td class="positive">Alta</td>
+                                    <td class="positive">Maior em B</td>
+                                </tr>
+                                <tr>
+                                    <td>⏱️ Horizonte Temporal</td>
+                                    <td class="neutral">18-24 meses</td>
+                                    <td class="positive">6 meses</td>
+                                    <td class="positive">Mais rápido B</td>
+                                </tr>
+                                <tr>
+                                    <td>👨‍👩‍👧‍👦 Impacto Familiar</td>
+                                    <td class="neutral">Transição necessária</td>
+                                    <td class="positive">Mínimo</td>
+                                    <td class="positive">Menor em B</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Comparison Conclusion -->
+                    <div class="comparison-conclusion-card">
+                        <h3>🎯 Síntese Comparativa</h3>
+                        <div class="conclusion-content">
+                            <div class="conclusion-winner">
+                                <div class="winner-badge">🏆</div>
+                                <h4>Cenário A: Corporate Exit (Planejado)</h4>
+                                <p><strong>Recomendado com 95% de confiança para solução definitiva</strong></p>
+                            </div>
+                            <div class="conclusion-reasons">
+                                <h4>Principais Razões:</h4>
+                                <ul>
+                                    <li>✅ Solução definitiva para burnout (vs temporária em B)</li>
+                                    <li>✅ Autonomia total sobre tempo e decisões (100% vs 0%)</li>
+                                    <li>✅ Potencial de crescimento ilimitado via equity próprio</li>
+                                    <li>✅ Runway de 57 meses garante segurança na transição</li>
+                                    <li>✅ Alinhamento com valores de controle (90% na escala)</li>
+                                    <li>⚠️ Requer planejamento: negociação jurídica + estruturação</li>
+                                </ul>
+                            </div>
+                            <div class="conclusion-note">
+                                <p><strong>Nota:</strong> O Cenário B (Licença Sabática) pode servir como etapa preparatória para o Cenário A, permitindo recuperação + planejamento antes da transição definitiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. MÓDULO CFO -->
+            <section id="section-modulo-cfo" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">💰 Análise CFO</h1>
+                    <p class="page-subtitle">Análise Financeira Estratégica</p>
+                </div>
+
+                <!-- Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CFO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>O custo fixo familiar de R$ 55k indica runway superior a 4 anos (57 meses) mesmo sem qualquer renda, garantindo ampla margem de segurança.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>O investimento inicial no novo negócio (R$ 500k) reduz a margem de segurança para R$ 2M, mas preserva conforto material durante toda a transição.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>O maior custo econômico visível é a perda do salário (R$ 100k/mês) e bônus corporativo (R$ 20k/mês), totalizando R$ 1.44M/ano.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">4</span>
+                            <p><strong>Métrica Health–Wealth Nexus (Depreciação de Capital Humano):</strong> A permanência em burnout eleva significativamente o risco de eventos de saúde com impacto financeiro potencial superior a vários anos de renda líquida.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">5</span>
+                            <p>Um evento de saúde catastrófico pode gerar custos diretos (tratamento, afastamento) e indiretos (perda de capacidade decisória e de geração de renda) superiores a R$ 2M–R$ 5M.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">6</span>
+                            <p><strong>Stress Test de Renda Zero:</strong> Mesmo com 0% de receita no novo negócio por período prolongado (18-24 meses), o patrimônio mantém o usuário em patamar financeiro elevado por 4+ anos.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">7</span>
+                            <p>Definir um limite máximo de perda financeira (30% do patrimônio = R$ 750k) impede decisões emocionais prolongadas e garante preservação de R$ 1.75M.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">8</span>
+                            <p><strong>Conclusão:</strong> O maior risco financeiro não é sair, mas permanecer em degradação contínua de capital humano com impacto econômico potencialmente superior à renda corporativa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Metrics -->
+                <div class="content-card">
+                    <h3 class="card-title">📊 Métricas Financeiras</h3>
+                    <div class="financial-metrics-grid">
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Runway Familiar Pós-Investimento</span>
+                            <span class="metric-value">57 meses</span>
+                            <span class="metric-status">SÓLIDO</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Fluxo de Caixa Mensal</span>
+                            <span class="metric-value">R$ 55k</span>
+                            <span class="metric-status">FIXO</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Capital em Risco (Negócio)</span>
+                            <span class="metric-value">R$ 800k</span>
+                            <span class="metric-status">CONTROLADO</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Renda Necessária (Break-even)</span>
+                            <span class="metric-value">R$ 60k/mês</span>
+                            <span class="metric-status">ATINGÍVEL</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Delta Plano de Saúde</span>
+                            <span class="metric-value">+R$ 6k/mês</span>
+                            <span class="metric-status">ADICIONAL</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Max Drawdown Permitido</span>
+                            <span class="metric-value">30%</span>
+                            <span class="metric-status">R$ 750k</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Risco Capital Humano</span>
+                            <span class="metric-value">ALTO</span>
+                            <span class="metric-status">BURNOUT</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Sobrevivência Pior Cenário</span>
+                            <span class="metric-value">>5 anos</span>
+                            <span class="metric-status">RENDA ZERO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CFO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CFO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-low">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Liquidez</span>
+                                <span class="risk-level">BAIXO</span>
+                            </div>
+                            <p class="risk-description">Liquidez robusta sustenta transição prolongada sem comprometer padrão de vida.</p>
+                            <span class="risk-metric">Métrica: Runway > 4 anos</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Saúde (Health Risk)</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Burnout contínuo eleva probabilidade de eventos de saúde disruptivos com impacto financeiro superior a vários anos de renda.</p>
+                            <span class="risk-metric">Métrica: Human capital degradation</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Execução</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Modelo de negócio ainda não validado requer estruturação, teste de mercado e ajustes.</p>
+                            <span class="risk-metric">Métrica: No product-market fit yet</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Oportunidade</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Renúncia a bônus corporativo (R$ 240k/ano) e progressão de carreira C-Level.</p>
+                            <span class="risk-metric">Métrica: Opportunity cost high</span>
+                        </div>
+                    </div>
+
+                    <div class="scenario-boxes">
+                        <div class="scenario-box scenario-worst">
+                            <h4>😰 Pior Cenário</h4>
+                            <p>Negócio não escala e recolocação corporativa é limitada no mesmo patamar salarial após desligamento.</p>
+                        </div>
+                        <div class="scenario-box scenario-best">
+                            <h4>😊 Melhor Cenário</h4>
+                            <p>Empreendimento constrói equity próprio com valor superior à remuneração corporativa anterior.</p>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Recuperação:</strong> 6 anos para equivaler patrimônio projetado caso permanecesse no cargo</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. MÓDULO JURÍDICO -->
+            <section id="section-modulo-juridico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚖️ Análise Jurídica (CLO)</h1>
+                    <p class="page-subtitle">Análise de Riscos Legais e Estruturais</p>
+                </div>
+
+                <!-- CLO Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CLO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>Cláusulas de não-competitividade (18 meses) exigem análise prévia detalhada e negociação estratégica para reduzir restrições.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p><strong>Estratégia de Saída Cirúrgica</strong> reduz riscos contratuais e preserva relacionamentos corporativos para futuras parcerias.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>Protocolo de Saída Amigável pode trocar bônus futuros (R$ 240k/ano) por redução ou eliminação de cláusulas de non-compete.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">4</span>
+                            <p>Estrutura societária adequada (LTDA ou S.A.) isola riscos do novo negócio do CPF pessoal e patrimônio familiar.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">5</span>
+                            <p><strong>Conclusão:</strong> Seguros profissionais (E&O, D&O) e estruturação jurídica prévia mitigam riscos residuais e garantem transição segura.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CLO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Exposição Legal (Non-Compete)</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Risco contratual por cláusula de não-competitividade que pode restringir atividade empresarial.</p>
+                            <span class="risk-metric">Métrica: 18-month clause</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Estratégia de Saída</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Saída abrupta sem negociação pode acionar penalidades contratuais desnecessárias e queimar pontes corporativas.</p>
+                            <span class="risk-metric">Métrica: No negotiated exit</span>
+                        </div>
+
+                        <div class="risk-indicator risk-low">
+                            <div class="risk-header">
+                                <span class="risk-category">Proteção de Ativos</span>
+                                <span class="risk-level">BAIXO</span>
+                            </div>
+                            <p class="risk-description">Necessidade de isolar riscos do novo negócio através de estrutura societária adequada (LTDA/S.A.).</p>
+                            <span class="risk-metric">Métrica: CPF isolation required</span>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Resolução:</strong> 6–18 meses para plena liberdade contratual após negociação bem-sucedida</p>
+                    </div>
+                </div>
+
+                <!-- Legal Recommendations -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Recomendações Jurídicas</h3>
+                    <div class="legal-recommendations">
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">📜</div>
+                            <div class="rec-content">
+                                <h4>1. Negociação de Saída Estratégica (Exit Package)</h4>
+                                <p><strong>Objetivo:</strong> Reduzir cláusulas restritivas e garantir transição amigável</p>
+                                <ul>
+                                    <li>Negociar redução de non-compete de 18 para 6-9 meses</li>
+                                    <li>Trocar bônus futuro por flexibilidade contratual</li>
+                                    <li>Obter carta de recomendação e manter network corporativo</li>
+                                    <li>Garantir continuidade de plano de saúde transitório (6 meses)</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 2-4 meses de negociação</span>
+                                    <span>💰 Investimento: R$ 15-30k (consultoria jurídica especializada)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">🏢</div>
+                            <div class="rec-content">
+                                <h4>2. Estruturação Societária do Novo Negócio</h4>
+                                <p><strong>Objetivo:</strong> Isolar riscos empresariais do patrimônio pessoal</p>
+                                <ul>
+                                    <li>Constituição de LTDA ou S.A. com capital social adequado</li>
+                                    <li>Segregação CPF vs CNPJ para proteção patrimonial</li>
+                                    <li>Contrato social com cláusulas de proteção aos sócios</li>
+                                    <li>Planejamento tributário (Simples vs Lucro Presumido)</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 1-2 meses</span>
+                                    <span>💰 Investimento: R$ 5-12k (constituição + registro)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-medium">
+                            <div class="rec-icon">🛡️</div>
+                            <div class="rec-content">
+                                <h4>3. Seguros Profissionais e Pessoais</h4>
+                                <p><strong>Objetivo:</strong> Mitigar riscos de saúde e responsabilidade empresarial</p>
+                                <ul>
+                                    <li>Seguro E&O (Errors & Omissions) para consultoria</li>
+                                    <li>Seguro D&O (Directors & Officers) se houver sócios</li>
+                                    <li>Plano de saúde familiar (+ R$ 6k/mês adicional)</li>
+                                    <li>Seguro de renda por incapacidade (24 meses cobertura)</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 1 mês</span>
+                                    <span>💰 Investimento: R$ 8-15k/mês (seguros + plano saúde)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. MEMÓRIA DE DECISÕES -->
+            <section id="section-memoria" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🧩 Memória de Decisões</h1>
+                    <p class="page-subtitle">Base de Conhecimento e Aprendizado Contínuo</p>
+                </div>
+
+                <!-- Memory Status -->
+                <div class="memory-status-card">
+                    <div class="memory-icon">🧠</div>
+                    <div class="memory-info">
+                        <h3>Sistema de Memória Ativo</h3>
+                        <p>47 cenários processados • 156 padrões identificados • Última atualização: Hoje, 14:32</p>
+                    </div>
+                    <div class="memory-badge">OPERACIONAL</div>
+                </div>
+
+                <!-- Memory Stats -->
+                <div class="memory-stats-grid">
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <span class="stat-number">47</span>
+                            <span class="stat-label">Cenários Armazenados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Taxa de Acerto</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-content">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">Padrões Identificados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <span class="stat-number">8.5</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Categories -->
+                <div class="content-card">
+                    <h3 class="card-title">📚 Categorias de Aprendizado</h3>
+                    <div class="learning-categories">
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>💰 Decisões Financeiras</h4>
+                                <span class="category-count">23 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Decisões com impacto >50% em liquidez requerem análise de risco elevada</p>
+                                <p><strong>Taxa de Sucesso:</strong> 89%</p>
+                                <p><strong>Complexidade Média:</strong> 8.2/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>🚀 Decisões de Transição de Carreira</h4>
+                                <span class="category-count">15 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Runway >4 anos permite transições seguras sem comprometer estabilidade familiar</p>
+                                <p><strong>Taxa de Sucesso:</strong> 92%</p>
+                                <p><strong>Complexidade Média:</strong> 8.8/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>💼 Decisões Profissionais</h4>
+                                <span class="category-count">8 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Negociação estratégica de saída reduz cláusulas restritivas em 60-80%</p>
+                                <p><strong>Taxa de Sucesso:</strong> 100%</p>
+                                <p><strong>Complexidade Média:</strong> 7.2/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>👨‍👩‍👧‍👦 Decisões Familiares</h4>
+                                <span class="category-count">4 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Estabilidade familiar tem prioridade sobre crescimento agressivo</p>
+                                <p><strong>Taxa de Sucesso:</strong> 100%</p>
+                                <p><strong>Complexidade Média:</strong> 9.1/10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Principais Aprendizados</h3>
+                    <div class="learnings-list">
+                        <div class="learning-item">
+                            <div class="learning-icon">🏥</div>
+                            <div class="learning-content">
+                                <h4>Burnout é Risco Financeiro Mensurável</h4>
+                                <p>Depreciação de capital humano em burnout gera custos diretos e indiretos >R$ 2-5M em eventos de saúde</p>
+                                <span class="learning-confidence">Confiança: 94% (baseado em 22 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">🎯</div>
+                            <div class="learning-content">
+                                <h4>Runway >4 Anos Garante Transições Seguras</h4>
+                                <p>Executivos com runway superior a 48 meses podem realizar transições sem comprometer estabilidade</p>
+                                <span class="learning-confidence">Confiança: 98% (baseado em 15 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">⚖️</div>
+                            <div class="learning-content">
+                                <h4>Negociação de Saída Reduz Restrições em 70%</h4>
+                                <p>Protocolo de saída amigável permite reduzir cláusulas de non-compete de 18 para 6-9 meses</p>
+                                <span class="learning-confidence">Confiança: 91% (baseado em 18 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">💎</div>
+                            <div class="learning-content">
+                                <h4>Liquidez Mínima: 12 Meses para Transições</h4>
+                                <p>Reserva inferior a 12 meses aumenta risco de decisões forçadas em transições de carreira</p>
+                                <span class="learning-confidence">Confiança: 96% (baseado em 28 casos)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Cases -->
+                <div class="content-card">
+                    <h3 class="card-title">🔍 Casos Similares na Memória</h3>
+                    <div class="similar-cases-list">
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">94%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Diretor Financeiro - Transição para Consultoria</h4>
+                                <p>Executivo 45 anos, R$ 2.2M patrimônio, saída do cargo corporativo</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: EXECUTAR</span>
+                                    <span>Resultado: Break-even em 14 meses</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">89%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>VP Comercial - Licença Sabática + Startup</h4>
+                                <p>Executiva 42 anos, R$ 1.8M patrimônio, burnout diagnosticado</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: PREPARAR</span>
+                                    <span>Resultado: Negócio escalado após 18 meses</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">82%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>C-Level Tech - Fundação de Produto Próprio</h4>
+                                <p>Executivo 50 anos, R$ 3.5M patrimônio, saída para SaaS B2B</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: EXECUTAR</span>
+                                    <span>Resultado: Exit em 4 anos (R$ 12M)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. ANÁLISE DE PADRÕES -->
+            <section id="section-padroes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Análise de Padrões</h1>
+                    <p class="page-subtitle">Identificação de Tendências e Insights Estratégicos</p>
+                </div>
+
+                <!-- Pattern Overview -->
+                <div class="patterns-overview-card">
+                    <h3>🔍 Padrões Detectados no Cenário Atual</h3>
+                    <div class="pattern-summary">
+                        <div class="pattern-stat">
+                            <span class="pattern-number">7</span>
+                            <span class="pattern-label">Padrões Principais</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">3</span>
+                            <span class="pattern-label">Alertas Críticos</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">94%</span>
+                            <span class="pattern-label">Confiança Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">🚨 Padrões Críticos Identificados</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">⚠️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 1: Burnout como Depreciação de Capital Humano</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Degradação contínua da saúde mental/física com impacto financeiro potencial >R$ 2-5M</p>
+                                    <p><strong>Precedentes:</strong> Observado em 31 casos similares, 88% resultaram em eventos de saúde disruptivos</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Priorizar saída antes de evento de saúde catastrófico irreversível
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">🔒</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 2: Cláusulas Restritivas Sem Negociação</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Non-compete de 18 meses sem tentativa de redução via protocolo de saída</p>
+                                    <p><strong>Precedentes:</strong> Em 82% dos casos com negociação, cláusulas foram reduzidas em 50-70%</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Executar negociação estratégica antes de formalizar desligamento
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">💰</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 3: Investimento Sem Limite de Perda Definido</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Ausência de max drawdown estabelecido (recomendado: 30% do patrimônio)</p>
+                                    <p><strong>Precedentes:</strong> 76% dos empreendedores sem limite predefinido excedem budget planejado</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Estabelecer limite de R$ 750k (30%) como gatilho de pivô ou encerramento
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Padrões de Alerta</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">🏥</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 4: Dependência de Plano de Saúde Corporativo</h4>
+                                <p>Saída imediata expõe família a custo adicional de R$ 6k/mês sem planejamento prévio</p>
+                                <span class="pattern-prevalence">Presente em 91% dos casos de desligamento não planejado</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">💼</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 5: Modelo de Negócio Não Validado</h4>
+                                <p>Ausência de product-market fit testado aumenta risco de execução em 65%</p>
+                                <span class="pattern-prevalence">Observado em 78% dos primeiros empreendimentos executivos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positive Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Padrões Positivos</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">💎</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 6: Runway Superior a 4 Anos</h4>
+                                <p>Patrimônio líquido de R$ 2.5M garante estabilidade prolongada mesmo com renda zero</p>
+                                <span class="pattern-prevalence">Presente em apenas 8% dos executivos em transição</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🎯</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 7: Alta Motivação por Autonomia (90%)</h4>
+                                <p>Valor de controle de 90% indica forte alinhamento com empreendedorismo</p>
+                                <span class="pattern-prevalence">Correlacionado com 89% de taxa de persistência em novos negócios</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavioral Analysis -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Análise Comportamental</h3>
+                    <div class="behavioral-insights">
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Status Quo Bias (Inércia Corporativa)</h4>
+                            <p>A segurança do salário atual (R$ 100k/mês) está ofuscando os custos de saúde a longo prazo e a depreciação de capital humano causada pelo burnout.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Visualizar concretamente os cenários de saúde e impactos financeiros de eventos disruptivos
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Ancoragem no Salário Corporativo</h4>
+                            <p>A renda mensal de R$ 100k pode estar servindo como âncora, dificultando a avaliação objetiva do runway de 57 meses e da viabilidade da transição.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Analisar em termos de runway temporal e custo de permanência em burnout
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Padrão Positivo: Busca por Análise Estruturada</h4>
+                            <p>A utilização do CIPAI indica reconhecimento da complexidade e disposição para decisão fundamentada.</p>
+                            <div class="behavior-reinforcement">
+                                <strong>Reforço Positivo:</strong> Continuar buscando análises objetivas para decisões importantes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Based on Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Recomendações Baseadas em Padrões</h3>
+                    <div class="pattern-recommendations-list">
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority critical">CRÍTICA</span>
+                            <div class="rec-content">
+                                <h4>Preparar Saída Estratégica com Protocolo de Negociação</h4>
+                                <p>Os padrões críticos detectados indicam alta probabilidade (95%) de sucesso com saída planejada. Recomenda-se iniciar negociação de cláusulas restritivas e estruturação jurídica nos próximos 2-4 meses.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority high">ALTA</span>
+                            <div class="rec-content">
+                                <h4>Estruturar LTDA/S.A. e Seguros Profissionais</h4>
+                                <p>Padrão de exposição empresarial sem segregação de riscos requer ação urgente: constituição societária + seguros E&O e D&O antes da saída corporativa.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority medium">MÉDIA</span>
+                            <div class="rec-content">
+                                <h4>Definir Limite de Drawdown (30% Patrimônio)</h4>
+                                <p>Estabelecer gatilho de R$ 750k como limite máximo de investimento no novo negócio para preservar estabilidade familiar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. CONFIGURAÇÕES -->
+            <section id="section-configuracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚙️ Configurações</h1>
+                    <p class="page-subtitle">Personalize sua experiência no CIPAI</p>
+                </div>
+
+                <!-- Profile Settings -->
+                <div class="content-card">
+                    <h3 class="card-title">👤 Configurações de Perfil</h3>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" value="Executivo C-Level" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="executivo@email.com" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Profissão</label>
+                                <input type="text" value="C-Level Executive" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Idade</label>
+                                <input type="number" value="48" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Localização</label>
+                                <input type="text" value="São Paulo, SP" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="tel" value="(11) 99999-9999" class="form-input">
+                            </div>
+                        </div>
+                        <button class="btn-primary">💾 Salvar Alterações</button>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Preferências de Análise</h3>
+                    <div class="preferences-grid">
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Nível de Detalhe das Análises</h4>
+                                <select class="form-select">
+                                    <option>Básico</option>
+                                    <option>Intermediário</option>
+                                    <option selected>Avançado</option>
+                                    <option>Especialista</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Prioridade de Análise</h4>
+                                <select class="form-select">
+                                    <option>Velocidade (análise rápida)</option>
+                                    <option selected>Balanceado</option>
+                                    <option>Profundidade (análise completa)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Tom das Recomendações</h4>
+                                <select class="form-select">
+                                    <option>Conservador</option>
+                                    <option selected>Equilibrado</option>
+                                    <option>Agressivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Idioma da Interface</h4>
+                                <select class="form-select">
+                                    <option selected>🇧🇷 Português</option>
+                                    <option>🇺🇸 English</option>
+                                    <option>🇪🇸 Español</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="content-card">
+                    <h3 class="card-title">🔔 Notificações</h3>
+                    <div class="notifications-settings">
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Email de Análises Concluídas</h4>
+                                <p>Receber notificação quando uma análise for finalizada</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Alertas de Decisões Críticas</h4>
+                                <p>Notificar quando uma decisão requer atenção urgente</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Resumo Semanal</h4>
+                                <p>Receber relatório semanal de decisões e análises</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Sugestões de Análise</h4>
+                                <p>Receber sugestões de decisões similares para comparação</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Security -->
+                <div class="content-card">
+                    <h3 class="card-title">🔒 Privacidade e Segurança</h3>
+                    <div class="privacy-settings">
+                        <div class="privacy-item">
+                            <h4>Compartilhamento de Dados</h4>
+                            <p>Permitir uso anônimo de padrões para melhorar análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>Backup Automático</h4>
+                            <p>Fazer backup automático de todas as análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-actions">
+                            <button class="btn-secondary">📥 Exportar Todos os Dados</button>
+                            <button class="btn-secondary">🔄 Alterar Senha</button>
+                            <button class="btn-danger">🗑️ Excluir Conta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Info -->
+                <div class="content-card">
+                    <h3 class="card-title">ℹ️ Informações do Sistema</h3>
+                    <div class="system-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Versão do CIPAI</span>
+                            <span class="info-value">v2.3 Master Final</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Última Atualização</span>
+                            <span class="info-value">25 de Janeiro de 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modelo de IA</span>
+                            <span class="info-value">Claude Sonnet 4.5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status do Sistema</span>
+                            <span class="info-value badge-high">OPERACIONAL</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Cenários Processados</span>
+                            <span class="info-value">47</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Taxa de Confiança Média</span>
+                            <span class="info-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support -->
+                <div class="content-card">
+                    <h3 class="card-title">❓ Ajuda e Suporte</h3>
+                    <div class="support-links">
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📚</span>
+                            <div class="support-info">
+                                <h4>Central de Ajuda</h4>
+                                <p>Documentação completa e guias de uso</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">💬</span>
+                            <div class="support-info">
+                                <h4>Chat com Suporte</h4>
+                                <p>Fale com nossa equipe em tempo real</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📧</span>
+                            <div class="support-info">
+                                <h4>Enviar Feedback</h4>
+                                <p>Ajude-nos a melhorar o CIPAI</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">🐛</span>
+                            <div class="support-info">
+                                <h4>Reportar Problema</h4>
+                                <p>Informe bugs ou comportamentos inesperados</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

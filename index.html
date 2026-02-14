@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIP-AI - Cognitive Intelligence for Decision-Making</title>
+    <meta name="description" content="AI-first decision intelligence system with transparent reasoning, confidence scoring, and longitudinal personal context. Working interactive prototype.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --border: #374155;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-tagline {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+            padding-left: 12px;
+            border-left: 1px solid var(--border);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 4px 8px;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 16px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            letter-spacing: 0.04em;
+        }
+
+        .lang-btn .flag {
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .lang-divider {
+            width: 1px;
+            height: 14px;
+            background: var(--border);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .prototype-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            box-shadow: 0 0 30px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 60px 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-title-tag {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.75rem;
+        }
+
+        .video-headline {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+        }
+
+        .video-sub {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 0 60px rgba(59, 130, 246, 0.12), 0 24px 60px rgba(0,0,0,0.5);
+            background: var(--bg-secondary);
+        }
+
+        .video-aspect {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+        }
+
+        .video-aspect iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .problem-icon {
+            font-size: 32px;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Solution Section */
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .feature-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        /* How It Works */
+        .how-steps {
+            display: grid;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 22px;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .architecture-note {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+        }
+
+        .architecture-note h4 {
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .architecture-note p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            padding: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .delaware-note {
+            color: #6b7280;
+            font-size: 12px;
+            margin-top: 0.6rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .hero {
+                padding: 120px 1.5rem 60px;
+            }
+
+            section {
+                padding: 60px 1.5rem;
+            }
+
+            .video-section {
+                padding: 40px 1.5rem 60px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo-tagline {
+                display: none;
+            }
+
+            .lang-toggle {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                margin-left: 0;
+                z-index: 10001;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            }
+
+            .lang-btn {
+                padding: 6px 12px;
+            }
+
+            .lang-btn span.label {
+                display: none;
+            }
+
+            .lang-btn .flag {
+                font-size: 18px;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">CIP-AI</div>
+                <div class="logo-tagline" data-i18n="nav.tagline">Cognitive Intelligence for Decision-Making</div>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+
+                <!-- Language Toggle -->
+                <div class="lang-toggle">
+                    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">
+                        <span class="flag">🇺🇸</span>
+                        <span class="label">EN</span>
+                    </button>
+                    <div class="lang-divider"></div>
+                    <button class="lang-btn" id="btn-pt" onclick="setLang('pt')">
+                        <span class="flag">🇧🇷</span>
+                        <span class="label">PT</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="prototype-badge" data-i18n="hero.badge">
+                ⚡ This is a working interactive prototype — not a pitch deck
+            </div>
+            <h1 data-i18n="hero.title">Cognitive Intelligence for Decision-Making</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+                AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context. Built for investors, advisors, and decision-makers who need explainable AI support.
+            </p>
+        </div>
+    </section>
+
+    <!-- Introductory Video Section -->
+    <div class="video-section">
+        <div class="video-header">
+            <div class="video-title-tag" data-i18n="video.label">Introducing CIP-AI</div>
+            <h2 class="video-headline" data-i18n="video.headline">DECISION POWER IS SCALING.<br>GOVERNANCE IS NOT.</h2>
+            <p class="video-sub" data-i18n="video.sub">Watch the introduction to CIP-AI's decision intelligence approach.</p>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-aspect">
+                <video
+                    id="intro-video"
+                    controls
+                    controlsList="nodownload"
+                    preload="metadata"
+                    poster="assets/video/poster.jpg"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="assets/video/cip-ai-intro.mp4" type="video/mp4">
+                    <track
+                        kind="subtitles"
+                        src="assets/video/cip-ai-intro-pt.srt"
+                        srclang="pt"
+                        label="Português"
+                        default>
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section>
+        <div class="section-header">
+            <div class="section-label" data-i18n="problem.label">The Problem</div>
+            <h2 data-i18n="problem.title">AI That You Can't Trust Won't Get Used</h2>
+            <p class="section-subtitle" data-i18n="problem.subtitle">
+                Most AI systems are black boxes. Decision-makers need transparency, confidence scores, and auditable reasoning — not just outputs.
+            </p>
+        </div>
+
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">🔮</div>
+                <h3 data-i18n="problem.card1.title">Black Box Problem</h3>
+                <p data-i18n="problem.card1.text">AI provides answers without showing reasoning. Decision-makers can't validate logic or identify blind spots.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">🎲</div>
+                <h3 data-i18n="problem.card2.title">Overconfidence</h3>
+                <p data-i18n="problem.card2.text">Systems present conclusions as certain when they're based on incomplete data or questionable assumptions.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">📋</div>
+                <h3 data-i18n="problem.card3.title">Context Loss</h3>
+                <p data-i18n="problem.card3.text">Each query starts from zero. No longitudinal understanding of objectives, constraints, or decision patterns.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">⚖️</div>
+                <h3 data-i18n="problem.card4.title">Authority Confusion</h3>
+                <p data-i18n="problem.card4.text">Unclear where AI recommendation ends and human decision begins. No clean audit trail.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section>
+        <div class="section-header">
+            <div class="section-label" data-i18n="solution.label">The Solution</div>
+            <h2 data-i18n="solution.title">Decision Intelligence with Transparent Reasoning</h2>
+            <p class="section-subtitle" data-i18n="solution.subtitle">
+                CIP-AI provides AI-powered decision support with full transparency, confidence scoring, and preserved human authority.
+            </p>
+        </div>
+
+        <div class="solution-features">
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3 data-i18n="solution.f1.title">Reasoning Chains</h3>
+                <p data-i18n="solution.f1.text">See every step of AI logic. Understand which data points, assumptions, and inferences led to each recommendation.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 data-i18n="solution.f2.title">Confidence Scores</h3>
+                <p data-i18n="solution.f2.text">Explicit confidence ratings for every claim. Know when AI is certain vs. when it's extrapolating from limited data.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3 data-i18n="solution.f3.title">Trade-offs Analysis</h3>
+                <p data-i18n="solution.f3.text">See multiple scenarios with clear pros/cons. Compare options systematically with weighted factors.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 data-i18n="solution.f4.title">Personal Decision Model (PDM)</h3>
+                <p data-i18n="solution.f4.text">Longitudinal decision context and pattern recognition (early-stage). Captures objectives, preferences, constraints, and historical outcomes over time.</p>
+                <p class="feature-note" data-i18n="solution.f4.note">This is not just decision history — it's an evolving personal decision context.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 data-i18n="solution.f5.title">Human Authority Preserved</h3>
+                <p data-i18n="solution.f5.text">Clear separation: AI recommends, human decides. Every decision is tagged with who made it and why.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3 data-i18n="solution.f6.title">Full Audit Trail</h3>
+                <p data-i18n="solution.f6.text">Complete record of reasoning, assumptions, data sources, and decision rationale. Built for governance and compliance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="section-header">
+            <div class="section-label" data-i18n="how.label">How It Works</div>
+            <h2 data-i18n="how.title">Built for Transparency and Trust</h2>
+        </div>
+
+        <div class="how-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 data-i18n="how.s1.title">You Frame the Decision</h3>
+                    <p data-i18n="how.s1.text">Define decision type, context, constraints, and key variables. System captures your specific requirements.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 data-i18n="how.s2.title">AI Builds Reasoning Chain</h3>
+                    <p data-i18n="how.s2.text">Multi-module analysis (CFO, CLO, etc.) with explicit reasoning steps, confidence scores, and identified assumptions.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 data-i18n="how.s3.title">You Review &amp; Decide</h3>
+                    <p data-i18n="how.s3.text">Examine reasoning, challenge assumptions, compare scenarios. You make the final decision with full context.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 data-i18n="how.s4.title">System Learns Context</h3>
+                    <p data-i18n="how.s4.text">Decision outcomes feed back into your Personal Decision Model (PDM), building longitudinal understanding over time.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="architecture-note">
+            <h4 data-i18n="how.note.title">🏗️ Architectural Intent</h4>
+            <p data-i18n="how.note.text">Designed to evolve into a decision intelligence system with persistent personal models, auditable reasoning, and pattern recognition. Early-stage implementation with production-grade architecture.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="contact.html" data-i18n="footer.contact">Contact</a>
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+            </div>
+            <p class="copyright" data-i18n="footer.copy">© 2026 CIP-AI. Cognitive Intelligence for Decision-Making.</p>
+            <p class="delaware-note" data-i18n="footer.delaware">
+                CIP-AI, Inc. — Delaware C Corporation (in formation)
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ─── Translation dictionary ───────────────────────────────────────────
+        const i18n = {
+            en: {
+                'nav.tagline':         'Cognitive Intelligence for Decision-Making',
+                'nav.howItWorks':      'How It Works',
+                'nav.contact':         'Contact',
+                // Hero
+                'hero.badge':          '⚡ This is a working interactive prototype — not a pitch deck',
+                'hero.title':          'Cognitive Intelligence for Decision-Making',
+                'hero.subtitle':       'AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context. Built for investors, advisors, and decision-makers who need explainable AI support.',
+                // Video
+                'video.label':         'Introducing CIP-AI',
+                'video.headline':      'DECISION POWER IS SCALING.<br>GOVERNANCE IS NOT.',
+                'video.sub':           'Watch the introduction to CIP-AI\'s decision intelligence approach.',
+                // Problem
+                'problem.label':       'The Problem',
+                'problem.title':       'AI That You Can\'t Trust Won\'t Get Used',
+                'problem.subtitle':    'Most AI systems are black boxes. Decision-makers need transparency, confidence scores, and auditable reasoning — not just outputs.',
+                'problem.card1.title': 'Black Box Problem',
+                'problem.card1.text':  'AI provides answers without showing reasoning. Decision-makers can\'t validate logic or identify blind spots.',
+                'problem.card2.title': 'Overconfidence',
+                'problem.card2.text':  'Systems present conclusions as certain when they\'re based on incomplete data or questionable assumptions.',
+                'problem.card3.title': 'Context Loss',
+                'problem.card3.text':  'Each query starts from zero. No longitudinal understanding of objectives, constraints, or decision patterns.',
+                'problem.card4.title': 'Authority Confusion',
+                'problem.card4.text':  'Unclear where AI recommendation ends and human decision begins. No clean audit trail.',
+                // Solution
+                'solution.label':      'The Solution',
+                'solution.title':      'Decision Intelligence with Transparent Reasoning',
+                'solution.subtitle':   'CIP-AI provides AI-powered decision support with full transparency, confidence scoring, and preserved human authority.',
+                'solution.f1.title':   'Reasoning Chains',
+                'solution.f1.text':    'See every step of AI logic. Understand which data points, assumptions, and inferences led to each recommendation.',
+                'solution.f2.title':   'Confidence Scores',
+                'solution.f2.text':    'Explicit confidence ratings for every claim. Know when AI is certain vs. when it\'s extrapolating from limited data.',
+                'solution.f3.title':   'Trade-offs Analysis',
+                'solution.f3.text':    'See multiple scenarios with clear pros/cons. Compare options systematically with weighted factors.',
+                'solution.f4.title':   'Personal Decision Model (PDM)',
+                'solution.f4.text':    'Longitudinal decision context and pattern recognition (early-stage). Captures objectives, preferences, constraints, and historical outcomes over time.',
+                'solution.f4.note':    'This is not just decision history — it\'s an evolving personal decision context.',
+                'solution.f5.title':   'Human Authority Preserved',
+                'solution.f5.text':    'Clear separation: AI recommends, human decides. Every decision is tagged with who made it and why.',
+                'solution.f6.title':   'Full Audit Trail',
+                'solution.f6.text':    'Complete record of reasoning, assumptions, data sources, and decision rationale. Built for governance and compliance.',
+                // How It Works
+                'how.label':           'How It Works',
+                'how.title':           'Built for Transparency and Trust',
+                'how.s1.title':        'You Frame the Decision',
+                'how.s1.text':         'Define decision type, context, constraints, and key variables. System captures your specific requirements.',
+                'how.s2.title':        'AI Builds Reasoning Chain',
+                'how.s2.text':         'Multi-module analysis (CFO, CLO, etc.) with explicit reasoning steps, confidence scores, and identified assumptions.',
+                'how.s3.title':        'You Review & Decide',
+                'how.s3.text':         'Examine reasoning, challenge assumptions, compare scenarios. You make the final decision with full context.',
+                'how.s4.title':        'System Learns Context',
+                'how.s4.text':         'Decision outcomes feed back into your Personal Decision Model (PDM), building longitudinal understanding over time.',
+                'how.note.title':      '🏗️ Architectural Intent',
+                'how.note.text':       'Designed to evolve into a decision intelligence system with persistent personal models, auditable reasoning, and pattern recognition. Early-stage implementation with production-grade architecture.',
+                // Footer
+                'footer.contact':      'Contact',
+                'footer.privacy':      'Privacy Policy',
+                'footer.copy':         '© 2026 CIP-AI. Cognitive Intelligence for Decision-Making.',
+                'footer.delaware':     'CIP-AI, Inc. — Delaware C Corporation (in formation)'
+            },
+            pt: {
+                'nav.tagline':         'Inteligência Cognitiva para Tomada de Decisões',
+                'nav.howItWorks':      'Como Funciona',
+                'nav.contact':         'Contato',
+                // Hero
+                'hero.badge':          '⚡ Este é um prototype interativo funcional — não é um pitch deck',
+                'hero.title':          'Inteligência Cognitiva para Tomada de Decisões',
+                'hero.subtitle':       'Sistema de inteligência para decisões com cadeias de raciocínio transparentes, pontuação de confiança e contexto pessoal longitudinal. Desenvolvido para investidores, assessores e tomadores de decisão que precisam de suporte de IA explicável.',
+                // Video
+                'video.label':         'Conheça o CIP-AI',
+                'video.headline':      'O PODER DE DECISÃO ESTÁ ESCALANDO.<br>A GOVERNANÇA, NÃO.',
+                'video.sub':           'Assista à introdução à abordagem de inteligência de decisão do CIP-AI.',
+                // Problem
+                'problem.label':       'O Problema',
+                'problem.title':       'IA que Você Não Pode Confiar Não Será Usada',
+                'problem.subtitle':    'A maioria dos sistemas de IA são caixas pretas. Os tomadores de decisão precisam de transparência, pontuações de confiança e raciocínio auditável — não apenas resultados.',
+                'problem.card1.title': 'Problema da Caixa Preta',
+                'problem.card1.text':  'A IA fornece respostas sem mostrar o raciocínio. Os tomadores de decisão não conseguem validar a lógica ou identificar pontos cegos.',
+                'problem.card2.title': 'Excesso de Confiança',
+                'problem.card2.text':  'Os sistemas apresentam conclusões como certas quando baseadas em dados incompletos ou premissas questionáveis.',
+                'problem.card3.title': 'Perda de Contexto',
+                'problem.card3.text':  'Cada consulta começa do zero. Sem compreensão longitudinal de objetivos, restrições ou padrões de decisão.',
+                'problem.card4.title': 'Confusão de Autoridade',
+                'problem.card4.text':  'Não está claro onde a recomendação da IA termina e a decisão humana começa. Sem trilha de auditoria clara.',
+                // Solution
+                'solution.label':      'A Solução',
+                'solution.title':      'Inteligência de Decisão com Raciocínio Transparente',
+                'solution.subtitle':   'CIP-AI fornece suporte a decisões com IA com total transparência, pontuação de confiança e autoridade humana preservada.',
+                'solution.f1.title':   'Cadeias de Raciocínio',
+                'solution.f1.text':    'Veja cada etapa da lógica de IA. Entenda quais pontos de dados, premissas e inferências levaram a cada recomendação.',
+                'solution.f2.title':   'Pontuações de Confiança',
+                'solution.f2.text':    'Classificações de confiança explícitas para cada afirmação. Saiba quando a IA tem certeza versus quando está extrapolando a partir de dados limitados.',
+                'solution.f3.title':   'Análise de Trade-offs',
+                'solution.f3.text':    'Veja múltiplos cenários com prós e contras claros. Compare opções sistematicamente com fatores ponderados.',
+                'solution.f4.title':   'Personal Decision Model (PDM)',
+                'solution.f4.text':    'Contexto de decisão longitudinal e reconhecimento de padrões (fase inicial). Captura objetivos, preferências, restrições e resultados históricos ao longo do tempo.',
+                'solution.f4.note':    'Isso não é apenas histórico de decisões — é um contexto de decisão pessoal em evolução.',
+                'solution.f5.title':   'Autoridade Humana Preservada',
+                'solution.f5.text':    'Separação clara: a IA recomenda, o humano decide. Cada decisão é marcada com quem a tomou e por quê.',
+                'solution.f6.title':   'Trilha de Auditoria Completa',
+                'solution.f6.text':    'Registro completo de raciocínio, premissas, fontes de dados e racional de decisão. Desenvolvido para governança e conformidade.',
+                // How It Works
+                'how.label':           'Como Funciona',
+                'how.title':           'Desenvolvido para Transparência e Confiança',
+                'how.s1.title':        'Você Formula a Decisão',
+                'how.s1.text':         'Defina tipo de decisão, contexto, restrições e variáveis-chave. O sistema captura seus requisitos específicos.',
+                'how.s2.title':        'A IA Constrói a Cadeia de Raciocínio',
+                'how.s2.text':         'Análise multi-módulo (CFO, CLO, etc.) com etapas de raciocínio explícitas, pontuações de confiança e premissas identificadas.',
+                'how.s3.title':        'Você Revisa e Decide',
+                'how.s3.text':         'Examine o raciocínio, questione as premissas, compare cenários. Você toma a decisão final com contexto completo.',
+                'how.s4.title':        'O Sistema Aprende o Contexto',
+                'how.s4.text':         'Os resultados das decisões alimentam o seu Personal Decision Model (PDM), construindo compreensão longitudinal ao longo do tempo.',
+                'how.note.title':      '🏗️ Intenção Arquitetural',
+                'how.note.text':       'Projetado para evoluir para um sistema de inteligência de decisão com modelos pessoais persistentes, raciocínio auditável e reconhecimento de padrões. Implementação em fase inicial com arquitetura de nível de produção.',
+                // Footer
+                'footer.contact':      'Contato',
+                'footer.privacy':      'Política de Privacidade',
+                'footer.copy':         '© 2026 CIP-AI. Inteligência Cognitiva para Tomada de Decisões.',
+                'footer.delaware':     'CIP-AI, Inc. — Delaware C Corporation (em constituição)'
+            }
+        };
+
+        // ─── Apply translations ───────────────────────────────────────────────
+        function applyLang(lang) {
+            const dict = i18n[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key] !== undefined) {
+                    el.innerHTML = dict[key];
+                }
+            });
+            document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
+        }
+
+        // ─── Set language + update button states ─────────────────────────────
+        function setLang(lang) {
+            applyLang(lang);
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+            localStorage.setItem('cip-lang', lang);
+        }
+
+        // ─── Init: restore saved preference ──────────────────────────────────
+        (function() {
+            const saved = localStorage.getItem('cip-lang');
+            if (saved && saved !== 'en') setLang(saved);
+        })();
+    </script>
+</body>
+</html>

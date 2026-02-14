@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - CIP-AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --border: #374155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .hero {
+            padding: 140px 2rem 60px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .email {
+            font-size: 24px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+
+        .email:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+        }
+
+        .delaware-note {
+            color: #6b7280;
+            font-size: 12px;
+            margin-top: 0.6rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .hero { padding: 120px 1.5rem 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">CIP-AI</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Entre em Contato</h1>
+        <p class="subtitle">Interessado em saber mais sobre CIP-AI? Entre em contato conosco.</p>
+    </div>
+
+    <section style="padding: 20px;">
+        <div class="contact-card">
+            <div class="contact-info">
+                <p style="margin-bottom: 1.5rem;">
+                    Para mais informações sobre CIP-AI, oportunidades de investimento ou demonstrações técnicas, entre em contato:
+                </p>
+                
+                <a href="/cdn-cgi/l/email-protection#375458594356544377545e47565e1954585a" class="email"><span class="__cf_email__" data-cfemail="9efdf1f0eafffdeadefdf7eefff7b0fdf1f3">[email&#160;protected]</span></a>
+                
+                <p style="margin-top: 2rem; font-size: 14px; color: var(--text-muted);">
+                    Responderemos dentro de 48 horas úteis.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="copyright">© 2026 CIP-AI. Cognitive Intelligence for Decision-Mak

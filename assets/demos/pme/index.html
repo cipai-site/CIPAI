@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPAI - Inteligência Cognitiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">
+                    <h1>CIPAI</h1>
+                    <p>INTELIGÊNCIA COGNITIVA</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" id="btnHistorico">📊 Histórico</button>
+                <button class="btn-primary" id="btnNovaAnalise">➕ Nova Análise</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">PRINCIPAL</h3>
+                    <a href="#contexto" class="nav-item" data-section="contexto">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text">Contexto da Decisão</span>
+                    </a>
+                    <a href="#painel" class="nav-item active" data-section="painel">
+                        <span class="nav-icon">🧠</span>
+                        <span class="nav-text">Painel Cognitivo</span>
+                    </a>
+                    <a href="#demonstracoes" class="nav-item" data-section="demonstracoes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Demonstrações</span>
+                    </a>
+                    <a href="#modelo-pessoal" class="nav-item" data-section="modelo-pessoal">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Modelo Pessoal</span>
+                    </a>
+                    <a href="#nova-decisao" class="nav-item" data-section="nova-decisao">
+                        <span class="nav-icon">➕</span>
+                        <span class="nav-text">Nova Decisão</span>
+                    </a>
+                    <a href="#historico" class="nav-item" data-section="historico">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Histórico de Decisões</span>
+                    </a>
+                    <a href="#comparar" class="nav-item" data-section="comparar">
+                        <span class="nav-icon">🔄</span>
+                        <span class="nav-text">Comparar Cenários</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">MÓDULOS DE ANÁLISE</h3>
+                    <a href="#modulo-cfo" class="nav-item" data-section="modulo-cfo">
+                        <span class="nav-icon">💰</span>
+                        <span class="nav-text">Módulo CFO</span>
+                    </a>
+                    <a href="#modulo-juridico" class="nav-item" data-section="modulo-juridico">
+                        <span class="nav-icon">⚖️</span>
+                        <span class="nav-text">Módulo Jurídico</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">CAMADA DE INTELIGÊNCIA</h3>
+                    <a href="#memoria" class="nav-item" data-section="memoria">
+                        <span class="nav-icon">🧩</span>
+                        <span class="nav-text">Memória de Decisões</span>
+                    </a>
+                    <a href="#padroes" class="nav-item" data-section="padroes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Análise de Padrões</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">SISTEMA</h3>
+                    <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">🏭</div>
+                    <div class="user-details">
+                        <p class="user-name">PME Familiar</p>
+                        <p class="user-role">Cenário 02</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- 1. CONTEXTO DA DECISÃO -->
+            <section id="section-contexto" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🎯 Contexto da Decisão</h1>
+                    <p class="page-subtitle">Cenário 2: O Impasse do Crescimento na PME Familiar</p>
+                </div>
+
+                <!-- Scenario Info -->
+                <div class="scenario-info-card">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">🏭</div>
+                        <div class="scenario-details">
+                            <h2>Faturamento vs. Lucro: O Gargalo da Gestão Familiar</h2>
+                            <p class="scenario-subtitle">Eficiência operacional, governança e separação patrimonial em empresa familiar de médio porte</p>
+                        </div>
+                        <div class="scenario-badges">
+                            <span class="badge badge-critical">Alta Complexidade</span>
+                            <span class="badge badge-info">12-18 min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">ID do Cenário:</span>
+                            <span class="metadata-value">pme-familiar-crescimento-v2-1-master-final</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Domínios:</span>
+                            <span class="metadata-value">Financial • Operational • Strategic</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de Decisão:</span>
+                            <span class="metadata-value">Strategic</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Reversibilidade:</span>
+                            <span class="metadata-value badge-warning">MÉDIA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Frame -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Enquadramento da Decisão</h3>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Tipo de Decisão</span>
+                            <span class="info-value">Strategic</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Perfil de Risco</span>
+                            <span class="info-value">Capital + Governance + Time at Risk</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Domínio Principal</span>
+                            <span class="info-value">Operational</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Janela de Decisão</span>
+                            <span class="info-value">60 dias</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <h4>📝 Resumo em Linguagem Simples</h4>
+                        <p>Decidir se vale investir R$ 500 mil para crescer ou corrigir a margem e a governança antes de expandir.</p>
+                    </div>
+
+                    <div class="risk-axis-box">
+                        <h4>⚠️ Eixo Principal de Risco</h4>
+                        <p><strong>Expansão Agressiva</strong> vs. <strong>Eficiência de Margem e Caixa</strong></p>
+                    </div>
+
+                    <div class="alert-box alert-warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h5>Reversibilidade: MÉDIA</h5>
+                            <p>Ativos fixos têm baixa liquidez e investimentos em marketing não são recuperáveis se a unidade econômica continuar negativa.</p>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>💰 Impacto Financeiro</h4>
+                        <p>Investimento de <strong>R$ 500k</strong>; faturamento de <strong>R$ 8M/ano</strong>; margem líquida atual de <strong>4%</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Background Context -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Contexto de Fundo</h3>
+                    <div class="background-text">
+                        <p>Empresa familiar de médio porte, atuante no setor industrial, administrada por um casal de sócios. O negócio fatura aproximadamente R$ 8 milhões por ano, porém apresenta lucro líquido recorrente inferior a 4%.</p>
+                        
+                        <p>Apesar do volume de vendas, o caixa permanece pressionado, gerando sensação constante de esforço sem retorno financeiro proporcional. Os sócios avaliam investir R$ 500 mil em expansão (máquinas e marketing) com o objetivo de dobrar o faturamento, sem antes corrigir distorções operacionais, financeiras e de governança.</p>
+                        
+                        <p>A decisão ocorre em um contexto de mistura recorrente de despesas pessoais com contas da empresa, ausência de acordo societário e resistência à delegação e profissionalização.</p>
+                    </div>
+                </div>
+
+                <!-- Stakeholders -->
+                <div class="content-card">
+                    <h3 class="card-title">👥 Principais Stakeholders</h3>
+                    <div class="stakeholders-list">
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👫</span>
+                            <span class="stakeholder-name">Sócios (casal)</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">💼</span>
+                            <span class="stakeholder-name">Gestor financeiro</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">🤝</span>
+                            <span class="stakeholder-name">Fornecedores estratégicos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline & Constraints -->
+                <div class="info-cards-grid">
+                    <div class="content-card">
+                        <h3 class="card-title">📅 Linha do Tempo</h3>
+                        <p>Estagnação de lucro observada nos últimos <strong>36 meses</strong>.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3 class="card-title">⛓️ Restrições</h3>
+                        <p>Mistura recorrente de despesas pessoais com contas da empresa, ausência de acordo societário e resistência à delegação.</p>
+                    </div>
+                </div>
+
+                <!-- User Values Check -->
+                <div class="content-card">
+                    <h3 class="card-title">💭 Verificação de Valores do Usuário</h3>
+                    
+                    <div class="alert-box alert-info">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <p>Os valores abaixo são <strong>ASSUMIDOS</strong> pelo sistema com base em perfis típicos de empresas familiares orientadas à segurança e longevidade do negócio.</p>
+                        </div>
+                    </div>
+
+                    <div class="values-grid">
+                        <!-- Security vs Lifestyle -->
+                        <div class="value-axis-card">
+                            <h4>🛡️ Segurança vs Estilo de Vida</h4>
+                            <p class="value-description">Preservação do negócio versus padrão de vida dos sócios</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 60%;">
+                                    <span class="value-marker">60%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 60%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Estilo de Vida</span>
+                                    <span>Segurança</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Retiradas elevadas preservam o padrão familiar, mas comprimem o capital de giro.</p>
+                        </div>
+
+                        <!-- Short-term vs Long-term -->
+                        <div class="value-axis-card">
+                            <h4>⏱️ Curto Prazo vs Longo Prazo</h4>
+                            <p class="value-description">Horizonte de decisão</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 50%;">
+                                    <span class="value-marker">50%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 50%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Curto Prazo</span>
+                                    <span>Longo Prazo</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Conflito entre sobrevivência imediata e sustentabilidade futura.</p>
+                        </div>
+
+                        <!-- Control vs Delegation -->
+                        <div class="value-axis-card">
+                            <h4>🎯 Controle vs Delegação</h4>
+                            <p class="value-description">Centralização versus delegação</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 85%;">
+                                    <span class="value-marker">85%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 85%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Delegação</span>
+                                    <span>Controle</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Decisões concentradas nos sócios geram gargalos operacionais e cognitivos.</p>
+                        </div>
+
+                        <!-- Growth vs Preservation -->
+                        <div class="value-axis-card">
+                            <h4>📈 Crescimento vs Preservação</h4>
+                            <p class="value-description">Crescimento versus proteção patrimonial</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 40%;">
+                                    <span class="value-marker">40%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 40%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Crescimento</span>
+                                    <span>Preservação</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Desejo de crescer existe, mas o medo de perder o que foi construído prevalece.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PAINEL COGNITIVO (Default View) -->
+            <section id="section-painel" class="content-section active">
+                <div class="page-header">
+                    <h1 class="page-title">Painel Cognitivo</h1>
+                    <p class="page-subtitle">Visão geral do raciocínio de IA e inteligência de decisão</p>
+                </div>
+
+                <!-- Status Card -->
+                <div class="status-card">
+                    <div class="status-icon">🧠</div>
+                    <div class="status-info">
+                        <h3>Sistema IA Ativo</h3>
+                        <p>Processando 1 decisão ativa • 5 premissas validadas hoje • Memória: 38 cenários</p>
+                    </div>
+                    <div class="status-badge status-operational">OPERACIONAL</div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <!-- Confiança da IA -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>CONFIANÇA DA IA</h4>
+                            <span class="metric-badge badge-high">MUITO ALTA</span>
+                        </div>
+                        <div class="metric-value-large">97%</div>
+                        <div class="metric-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 97%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-details">
+                            <p>📊 Baseado em 38 cenários</p>
+                            <p>⚡ 14 decisões PME >90%</p>
+                        </div>
+                    </div>
+
+                    <!-- Incertezas -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>INCERTEZAS</h4>
+                            <span class="metric-badge badge-critical">CRÍTICO</span>
+                        </div>
+                        <div class="metric-value-large">5</div>
+                        <div class="metric-details">
+                            <p>⚠️ 2 operacionais (margem)</p>
+                            <p>🔴 2 governança (confusão)</p>
+                            <p>📈 1 mercado (demanda)</p>
+                        </div>
+                    </div>
+
+                    <!-- Profundidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>PROFUNDIDADE</h4>
+                            <span class="metric-badge badge-high">FORTE</span>
+                        </div>
+                        <div class="metric-value-large">7.8<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🔍 Análise multi-período</p>
+                            <p>📋 CFO + CLO + Operational</p>
+                            <p>⏱️ 12-36 meses horizon</p>
+                        </div>
+                    </div>
+
+                    <!-- Complexidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>COMPLEXIDADE</h4>
+                            <span class="metric-badge badge-critical">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">8.5<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🎯 3 domínios ativos</p>
+                            <p>💼 Financial + Operational</p>
+                            <p>🔗 3 stakeholders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="insights-section">
+                    <h3 class="section-title">💡 Insights da IA</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card insight-critical">
+                            <div class="insight-icon">🚨</div>
+                            <div class="insight-content">
+                                <h4>Métrica de Vaidade Detectada</h4>
+                                <p>Fatura R$ 8M mas gera lucro equivalente ao de empresas com R$ 1M. Escala sem margem está destruindo valor, não criando.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-warning">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <h4>Confusão Patrimonial Crítica</h4>
+                                <p>R$ 45k/mês de despesas pessoais na PJ eliminam blindagem jurídica e expõem sócios a execução pessoal.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-info">
+                            <div class="insight-icon">💡</div>
+                            <div class="insight-content">
+                                <h4>Unidade Econômica Negativa</h4>
+                                <p>Margem bruta 15 pontos abaixo do setor (18% vs 32%). Expandir agora amplia prejuízo unitário.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Preview -->
+                <div class="recommendation-preview">
+                    <div class="recommendation-header">
+                        <h3>🎯 Recomendação Final (CEO)</h3>
+                        <span class="confidence-score">Confiança: 97%</span>
+                    </div>
+                    <div class="recommendation-content">
+                        <p class="recommendation-main">O CIPAI recomenda <strong>PAUSE: Corrigir fundamentos antes de expandir</strong>.</p>
+                        <p>A empresa enfrenta um problema estrutural de eficiência e governança, não de escala:</p>
+                        <ul>
+                            <li>Fatura R$ 8M mas gera lucro de empresa de R$ 1M</li>
+                            <li>Margem bruta 15 pontos abaixo do setor (18% vs 32%)</li>
+                            <li>Expansão amplia volume MAS também amplia prejuízo unitário</li>
+                        </ul>
+                        <button class="btn-primary" onclick="navigateTo('contexto')">Ver Análise Completa →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. DEMONSTRAÇÕES -->
+            <section id="section-demonstracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Demonstrações</h1>
+                    <p class="page-subtitle">Trade-offs e Análise de Decisão</p>
+                </div>
+
+                <!-- Methodology -->
+                <div class="content-card">
+                    <h3 class="card-title">📐 Metodologia de Scores de Trade-off</h3>
+                    
+                    <div class="formula-box">
+                        <h4>Fórmula de Cálculo</h4>
+                        <code>Score Final = Σ (Critério × Peso)</code>
+                        <p>Priorizando sustentabilidade operacional e eficiência de caixa</p>
+                    </div>
+
+                    <div class="criteria-breakdown">
+                        <h4>Critérios e Pesos</h4>
+                        <div class="criteria-list">
+                            <div class="criteria-item">
+                                <span class="criteria-name">Eficiência de Caixa</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 35%;"></div>
+                                </div>
+                                <span class="criteria-weight">35%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Proteção Patrimonial</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 25%;"></div>
+                                </div>
+                                <span class="criteria-weight">25%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Potencial de Crescimento</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 20%;"></div>
+                                </div>
+                                <span class="criteria-weight">20%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Autonomia de Gestão</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 20%;"></div>
+                                </div>
+                                <span class="criteria-weight">20%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-calculation">
+                        <h4>Exemplo de Cálculo</h4>
+                        <p><strong>Opção:</strong> Expansão imediata</p>
+                        <p><strong>Score Total:</strong> 2.8</p>
+                        <p><strong>Margem de Confiança:</strong> ±0.5</p>
+                    </div>
+                </div>
+
+                <!-- Decision Readiness Check -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Verificação de Prontidão para Decisão</h3>
+                    
+                    <div class="readiness-dimensions">
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Emocional</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 60%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Financeira</span>
+                                <span class="readiness-level level-low">BAIXO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill low" style="width: 35%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Estrutural</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blocking-factors">
+                        <h4>🚫 Fatores Bloqueantes</h4>
+                        <div class="blocking-factor critical">
+                            <span class="blocking-icon">🔴</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Confusão patrimonial crítica</span>
+                                <span class="blocking-severity">CRÍTICO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟠</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Margem operacional insuficiente</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟠</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Ausência de acordo de sócios</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended-action">
+                        <h4>🎯 Ação Recomendada</h4>
+                        <div class="action-badge action-pause">PAUSE</div>
+                        <p class="action-note">A decisão final permanece sob responsabilidade dos sócios.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. MODELO PESSOAL -->
+            <section id="section-modelo-pessoal" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">👤 Modelo Pessoal</h1>
+                    <p class="page-subtitle">Perfil Completo do Decisor</p>
+                </div>
+
+                <!-- Profile Overview -->
+                <div class="profile-card">
+                    <div class="profile-header-section">
+                        <div class="profile-avatar-large">🏭</div>
+                        <div class="profile-info">
+                            <h2>PME Familiar Industrial</h2>
+                            <p class="profile-title">Setor Industrial • Administração: Casal de Sócios</p>
+                            <div class="profile-tags">
+                                <span class="tag">Família</span>
+                                <span class="tag">2 Sócios</span>
+                                <span class="tag">Manufatura</span>
+                                <span class="tag">15+ anos atividade</span>
+                            </div>
+                        </div>
+                        <div class="profile-quick-stats">
+                            <div class="quick-stat">
+                                <span class="stat-icon">💰</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">R$ 8M</span>
+                                    <span class="stat-label">Faturamento/Ano</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <span class="stat-icon">📊</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">4%</span>
+                                    <span class="stat-label">Margem Líquida</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">💰 Perfil Financeiro Detalhado</h3>
+                    
+                    <div class="financial-overview-grid">
+                        <div class="financial-section">
+                            <h4>📊 Composição Patrimonial (Estimada)</h4>
+                            <div class="patrimony-chart">
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Ativos da Empresa (PJ)</span>
+                                        <span class="patrimony-value">R$ 2.500.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 60%; background: linear-gradient(90deg, #10b981, #14b8a6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">60% do total</span>
+                                </div>
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Patrimônio Pessoal (PF)</span>
+                                        <span class="patrimony-value">R$ 1.200.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 30%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">30% do total</span>
+                                </div>
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Capital de Giro Disponível</span>
+                                        <span class="patrimony-value">R$ 400.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 10%; background: linear-gradient(90deg, #6366f1, #8b5cf6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">10% do total</span>
+                                </div>
+                            </div>
+                            <div class="patrimony-total">
+                                <span>Patrimônio Total Estimado:</span>
+                                <strong>R$ 4.100.000</strong>
+                            </div>
+                        </div>
+
+                        <div class="financial-section">
+                            <h4>💸 Fluxo de Caixa Anual</h4>
+                            <div class="cashflow-items">
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">🏭</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Faturamento Bruto</span>
+                                        <span class="cashflow-value">+ R$ 8.000.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">📦</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Custos de Produção</span>
+                                        <span class="cashflow-value">- R$ 6.560.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🏢</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Despesas Operacionais</span>
+                                        <span class="cashflow-value">- R$ 880.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">👫</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Retiradas Pessoais (Pró-labore)</span>
+                                        <span class="cashflow-value">- R$ 540.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item savings">
+                                    <span class="cashflow-icon">💎</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">EBITDA (~4%)</span>
+                                        <span class="cashflow-value">= R$ 320.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Structure -->
+                <div class="content-card">
+                    <h3 class="card-title">👨‍👩‍👧‍👦 Estrutura Familiar e Societária</h3>
+                    <div class="family-grid">
+                        <div class="family-card">
+                            <div class="family-avatar">👨</div>
+                            <h4>Sócio 1</h4>
+                            <p class="family-role">Co-fundador</p>
+                            <ul class="family-details">
+                                <li>• 15+ anos no negócio</li>
+                                <li>• Gestão operacional</li>
+                                <li>• Quota: 50%</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👩</div>
+                            <h4>Sócio 2</h4>
+                            <p class="family-role">Co-fundadora</p>
+                            <ul class="family-details">
+                                <li>• Gestão financeira</li>
+                                <li>• Relação com fornecedores</li>
+                                <li>• Quota: 50%</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">⚠️</div>
+                            <h4>Governança</h4>
+                            <p class="family-role">Status Atual</p>
+                            <ul class="family-details">
+                                <li>• SEM acordo de sócios</li>
+                                <li>• Confusão patrimonial</li>
+                                <li>• Decisões centralizadas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Objetivos e Desafios</h3>
+                    <div class="goals-list">
+                        <div class="goal-item priority-critical">
+                            <div class="goal-icon">📊</div>
+                            <div class="goal-content">
+                                <h4>Corrigir Margem Operacional</h4>
+                                <p>Recuperar margem bruta para patamar mínimo de 25% (atualmente 18%)</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Margem bruta ≥ 25%</span>
+                                    <span>Horizonte: 12 meses</span>
+                                    <span class="goal-priority">Prioridade: MÁXIMA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-high">
+                            <div class="goal-icon">⚖️</div>
+                            <div class="goal-content">
+                                <h4>Separação Patrimonial PJ/PF</h4>
+                                <p>Eliminar confusão patrimonial e implementar governança básica</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Zero despesas pessoais na PJ</span>
+                                    <span>Horizonte: 6 meses</span>
+                                    <span class="goal-priority">Prioridade: ALTA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-medium">
+                            <div class="goal-icon">📈</div>
+                            <div class="goal-content">
+                                <h4>Expansão Sustentável</h4>
+                                <p>Crescer faturamento após correção de fundamentos estruturais</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Dobrar faturamento com margem</span>
+                                    <span>Horizonte: 24-36 meses</span>
+                                    <span class="goal-priority">Prioridade: MÉDIA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Perfil de Risco</h3>
+                    <div class="risk-profile-grid">
+                        <div class="risk-profile-item">
+                            <h4>Risco de Liquidez</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill critical" style="width: 85%;"></div>
+                            </div>
+                            <span class="risk-level-label">85% - Crítico</span>
+                            <p>Dependência estrutural de crédito de curto prazo; Current Ratio < 1.0.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Confusão Patrimonial</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill high" style="width: 90%;"></div>
+                            </div>
+                            <span class="risk-level-label">90% - Crítico</span>
+                            <p>R$ 45k/mês de despesas pessoais na PJ eliminam blindagem jurídica.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Ausência de Governança</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill high" style="width: 80%;"></div>
+                            </div>
+                            <span class="risk-level-label">80% - Alto</span>
+                            <p>Sem acordo de sócios; conflitos familiares podem paralisar operação.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. NOVA DECISÃO -->
+            <section id="section-nova-decisao" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">➕ Nova Decisão</h1>
+                    <p class="page-subtitle">Iniciar uma Nova Análise de Decisão</p>
+                </div>
+
+                <div class="new-decision-container">
+                    <div class="new-decision-intro">
+                        <div class="intro-icon">🎯</div>
+                        <h2>Iniciar Nova Análise</h2>
+                        <p>O CIPAI analisará sua decisão sob múltiplas perspectivas: financeira, jurídica, estratégica e de estilo de vida.</p>
+                    </div>
+
+                    <div class="decision-form-card">
+                        <h3>📝 Informações Básicas da Decisão</h3>
+                        
+                        <div class="form-group">
+                            <label>Título da Decisão</label>
+                            <input type="text" placeholder="Ex: Compra de imóvel, Mudança de carreira, Investimento..." class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Categoria Principal</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>💰 Financeira</option>
+                                <option>🏠 Imobiliária</option>
+                                <option>💼 Profissional</option>
+                                <option>👨‍👩‍👧‍👦 Familiar</option>
+                                <option>📈 Investimentos</option>
+                                <option>🎓 Educacional</option>
+                                <option>🏥 Saúde</option>
+                                <option>⚖️ Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descrição do Contexto</label>
+                            <textarea rows="5" placeholder="Descreva sua situação atual e a decisão que precisa tomar..." class="form-textarea"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Valor Envolvido (R$)</label>
+                                <input type="text" placeholder="Ex: 1.500.000" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Prazo para Decisão</label>
+                                <select class="form-select">
+                                    <option>Selecione...</option>
+                                    <option>⚡ Urgente (até 7 dias)</option>
+                                    <option>📅 Curto (até 30 dias)</option>
+                                    <option>📆 Médio (até 90 dias)</option>
+                                    <option>⏱️ Longo (mais de 90 dias)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Stakeholders Envolvidos</label>
+                            <div class="stakeholder-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Cônjuge
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Filhos
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Pais
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Sócios
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Instituições Financeiras
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Outros
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nível de Complexidade Estimado</label>
+                            <div class="complexity-slider">
+                                <input type="range" min="1" max="10" value="5" class="slider">
+                                <div class="slider-labels">
+                                    <span>Simples</span>
+                                    <span>Moderado</span>
+                                    <span>Complexo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn-secondary">💾 Salvar Rascunho</button>
+                            <button class="btn-primary">🚀 Iniciar Análise</button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-info-card">
+                        <h3>📊 O que será analisado?</h3>
+                        <div class="analysis-modules">
+                            <div class="module-item">
+                                <span class="module-icon">💰</span>
+                                <div class="module-info">
+                                    <h4>Módulo CFO</h4>
+                                    <p>Análise financeira, métricas, riscos e oportunidades</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">⚖️</span>
+                                <div class="module-info">
+                                    <h4>Módulo Jurídico</h4>
+                                    <p>Estrutura legal, proteção patrimonial e sucessória</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🎯</span>
+                                <div class="module-info">
+                                    <h4>Análise Estratégica</h4>
+                                    <p>Alinhamento com objetivos e valores pessoais</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🧠</span>
+                                <div class="module-info">
+                                    <h4>IA Cognitiva</h4>
+                                    <p>Síntese executiva e recomendação final</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. HISTÓRICO DE DECISÕES -->
+            <section id="section-historico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📋 Histórico de Decisões</h1>
+                    <p class="page-subtitle">Todas as análises realizadas</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-card">
+                    <div class="filter-group">
+                        <label>Período:</label>
+                        <select class="filter-select">
+                            <option>Últimos 30 dias</option>
+                            <option>Últimos 90 dias</option>
+                            <option>Último ano</option>
+                            <option>Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Categoria:</label>
+                        <select class="filter-select">
+                            <option>Todas</option>
+                            <option>Financeira</option>
+                            <option>Imobiliária</option>
+                            <option>Profissional</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select class="filter-select">
+                            <option>Todos</option>
+                            <option>Aprovada</option>
+                            <option>Pausada</option>
+                            <option>Rejeitada</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-secondary">🔍 Pesquisar</button>
+                    </div>
+                </div>
+
+                <!-- Decision History List -->
+                <div class="history-list">
+                    <!-- Current Decision -->
+                    <div class="history-item active">
+                        <div class="history-icon">🏭</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Expansão R$ 500k vs. Correção de Margem</h3>
+                                <span class="history-badge badge-paused">PAUSE</span>
+                            </div>
+                            <p class="history-description">Decisão entre investir em expansão imediata ou corrigir fundamentos estruturais primeiro</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 04 de Fevereiro de 2026</span>
+                                <span class="history-category">🏭 Industrial • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 97%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Investimento:</span>
+                                    <span class="stat-value">R$ 500k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Complexidade:</span>
+                                    <span class="stat-value">8.5/10</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Recomendação:</span>
+                                    <span class="stat-value">PAUSE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes" onclick="navigateTo('contexto')">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 1 -->
+                    <div class="history-item">
+                        <div class="history-icon">📊</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Contratação de CFO Externo</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Contratação de gestor financeiro profissional para estruturação de controles</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 22 de Novembro de 2025</span>
+                                <span class="history-category">💼 Gestão • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 89%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Custo Anual:</span>
+                                    <span class="stat-value">R$ 180k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Impacto:</span>
+                                    <span class="stat-value">Controles</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Implementada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 2 -->
+                    <div class="history-item">
+                        <div class="history-icon">⚖️</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Separação Patrimonial PJ/PF</h3>
+                                <span class="history-badge badge-inprogress">EM ANDAMENTO</span>
+                            </div>
+                            <p class="history-description">Eliminação de despesas pessoais na contabilidade da empresa e criação de pró-labore formal</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 08 de Setembro de 2025</span>
+                                <span class="history-category">⚖️ Jurídico • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 96%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Despesas PF:</span>
+                                    <span class="stat-value">R$ 45k/mês</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Prazo:</span>
+                                    <span class="stat-value">6 meses</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Resultado:</span>
+                                    <span class="stat-value">60% concluído</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 3 -->
+                    <div class="history-item">
+                        <div class="history-icon">📄</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Implementação de Acordo de Sócios</h3>
+                                <span class="history-badge badge-paused">PAUSADA</span>
+                            </div>
+                            <p class="history-description">Criação de acordo societário formal para prevenir conflitos e estruturar sucessão</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 15 de Junho de 2025</span>
+                                <span class="history-category">⚖️ Legal • 👨‍👩‍👧‍👦 Governança</span>
+                                <span class="history-confidence">🎯 Confiança: 88%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Custo Setup:</span>
+                                    <span class="stat-value">R$ 28k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Risco Reduzido:</span>
+                                    <span class="stat-value">Conflito familiar</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Negociação</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Summary -->
+                <div class="history-stats-card">
+                    <h3>📊 Estatísticas Gerais</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Decisões Analisadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Taxa de Confiança Média</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Aprovada</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Pausadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">R$ 208k</span>
+                            <span class="stat-label">Investimento Total em Governança</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">7.9</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. COMPARAR CENÁRIOS -->
+            <section id="section-comparar" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🔄 Comparar Cenários</h1>
+                    <p class="page-subtitle">Análise comparativa de decisões e alternativas</p>
+                </div>
+
+                <!-- Scenario Selection -->
+                <div class="comparison-setup-card">
+                    <h3>📋 Selecionar Cenários para Comparação</h3>
+                    <div class="scenario-selectors">
+                        <div class="scenario-selector">
+                            <label>Cenário A:</label>
+                            <select class="form-select">
+                                <option>Cenário 01: Corrigir Fundamentos (Atual)</option>
+                                <option>Cenário 02: Expansão Imediata R$ 500k</option>
+                                <option>Cenário 03: Separação PJ/PF</option>
+                                <option>Cenário 04: Acordo de Sócios</option>
+                            </select>
+                        </div>
+                        <div class="comparison-vs">VS</div>
+                        <div class="scenario-selector">
+                            <label>Cenário B:</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>Cenário 01: Corrigir Fundamentos (Atual)</option>
+                                <option>Cenário 02: Expansão Imediata R$ 500k</option>
+                                <option>Cenário 03: Separação PJ/PF</option>
+                                <option>Cenário 04: Acordo de Sócios</option>
+                                <option>➕ Criar Cenário Alternativo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-primary">🔍 Comparar Cenários</button>
+                </div>
+
+                <!-- Comparison Results -->
+                <div class="comparison-results">
+                    <h3>📊 Análise Comparativa</h3>
+                    
+                    <!-- Overview Comparison -->
+                    <div class="comparison-overview">
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-a">
+                                <h4>Cenário A</h4>
+                                <p>Corrigir Fundamentos</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">97%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">7.2/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Investimento</span>
+                                    <span class="metric-value">R$ 200k</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-approved">RECOMENDADO</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-b">
+                                <h4>Cenário B</h4>
+                                <p>Expansão Imediata</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">97%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">9.1/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Investimento</span>
+                                    <span class="metric-value">R$ 500k</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-rejected">NÃO RECOMENDADO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Comparison -->
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critério</th>
+                                    <th>Cenário A (Corrigir)</th>
+                                    <th>Cenário B (Expandir)</th>
+                                    <th>Diferença</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>💰 Eficiência de Caixa</td>
+                                    <td class="positive">Melhora margem</td>
+                                    <td class="negative">Piora liquidez</td>
+                                    <td class="positive">A preserva caixa</td>
+                                </tr>
+                                <tr>
+                                    <td>📊 Margem Bruta</td>
+                                    <td class="positive">18% → 25%</td>
+                                    <td class="negative">18% → 15%</td>
+                                    <td class="positive">+10pp favor A</td>
+                                </tr>
+                                <tr>
+                                    <td>⚠️ Risco de Liquidez</td>
+                                    <td class="positive">Current Ratio >1.0</td>
+                                    <td class="negative">Current Ratio <0.7</td>
+                                    <td class="positive">A reduz risco</td>
+                                </tr>
+                                <tr>
+                                    <td>🏭 Faturamento</td>
+                                    <td class="neutral">R$ 8M (mantém)</td>
+                                    <td class="positive">R$ 8M → 12M</td>
+                                    <td class="positive">+50% favor B</td>
+                                </tr>
+                                <tr>
+                                    <td>📈 EBITDA</td>
+                                    <td class="positive">R$ 320k → 800k</td>
+                                    <td class="negative">R$ 320k → 240k</td>
+                                    <td class="positive">+3x favor A</td>
+                                </tr>
+                                <tr>
+                                    <td>🔒 Reversibilidade</td>
+                                    <td class="positive">Alta (correção interna)</td>
+                                    <td class="negative">Baixa (ativos fixos)</td>
+                                    <td class="positive">Maior em A</td>
+                                </tr>
+                                <tr>
+                                    <td>⏱️ Horizonte Recuperação</td>
+                                    <td class="positive">12 meses</td>
+                                    <td class="negative">24-36 meses</td>
+                                    <td class="positive">Mais rápido A</td>
+                                </tr>
+                                <tr>
+                                    <td>⚖️ Proteção Patrimonial</td>
+                                    <td class="positive">Separa PJ/PF</td>
+                                    <td class="negative">Amplia confusão</td>
+                                    <td class="positive">A protege sócios</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Comparison Conclusion -->
+                    <div class="comparison-conclusion-card">
+                        <h3>🎯 Síntese Comparativa</h3>
+                        <div class="conclusion-content">
+                            <div class="conclusion-winner">
+                                <div class="winner-badge">🏆</div>
+                                <h4>Cenário A: Corrigir Fundamentos (Margem + Governança)</h4>
+                                <p><strong>Recomendado com 97% de confiança para sustentabilidade operacional</strong></p>
+                            </div>
+                            <div class="conclusion-reasons">
+                                <h4>Principais Razões:</h4>
+                                <ul>
+                                    <li>✅ Margem bruta sobe de 18% para 25% (vs piora para 15% em B)</li>
+                                    <li>✅ EBITDA triplica de R$ 320k para R$ 800k anual</li>
+                                    <li>✅ Current Ratio normaliza >1.0, reduzindo risco de liquidez</li>
+                                    <li>✅ Separação PJ/PF elimina confusão patrimonial e protege sócios</li>
+                                    <li>✅ Alta reversibilidade: correção interna vs ativos fixos</li>
+                                    <li>⚠️ Expansão pode ser feita APÓS corrigir margem e governança</li>
+                                </ul>
+                            </div>
+                            <div class="conclusion-note">
+                                <p><strong>Nota:</strong> O Cenário B (Expansão R$ 500k) pode ser implementado após 12-18 meses, quando margem operacional estiver normalizada e governança básica implementada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. MÓDULO CFO -->
+            <section id="section-modulo-cfo" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">💰 Análise CFO</h1>
+                    <p class="page-subtitle">Análise Financeira Estratégica</p>
+                </div>
+
+                <!-- Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CFO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>A margem bruta está aproximadamente 15 pontos percentuais abaixo da média do setor (18% vs 32%), resultado de ineficiências em compras, precificação e mix de produtos.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>Despesas pessoais recorrentes de R$ 45k/mês são lançadas como custos operacionais, distorcendo EBITDA real, margem e todos os indicadores de desempenho financeiro.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>Simulações financeiras mostram que aumentar faturamento sem corrigir margem acelera necessidade de capital de giro e consumo de caixa, não melhora resultado.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">4</span>
+                            <p><strong>Métrica de Vaidade Detectada:</strong> A empresa fatura R$ 8 milhões anuais, porém gera lucro equivalente ao de empresas com faturamento próximo de R$ 1 milhão.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">5</span>
+                            <p>Investir R$ 500k em expansão amplia volume, mas também amplia prejuízo unitário. O problema central não é escala, mas unidade econômica negativa.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">6</span>
+                            <p>O uso recorrente de crédito de curto prazo para honrar despesas operacionais eleva custo financeiro para patamares incompatíveis com a margem atual (4% EBITDA).</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">7</span>
+                            <p>Gap de capital de giro estimado em R$ 600k indica que a empresa opera estruturalmente descasada, dependendo de linhas de crédito rotativas.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">8</span>
+                            <p><strong>Conclusão:</strong> A correção de margem bruta e eficiência de caixa deve preceder qualquer expansão. Crescer com margem negativa destrói valor, não cria.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Metrics -->
+                <div class="content-card">
+                    <h3 class="card-title">📊 Métricas Financeiras</h3>
+                    <div class="financial-metrics-grid">
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Margem Bruta</span>
+                            <span class="metric-value">18%</span>
+                            <span class="metric-status">SETOR: 32%</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Gap de Capital de Giro</span>
+                            <span class="metric-value">R$ 600k</span>
+                            <span class="metric-status">CRÍTICO</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">EBITDA Atual</span>
+                            <span class="metric-value">R$ 320k</span>
+                            <span class="metric-status">4% MARGEM</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Despesas Pessoais na PJ</span>
+                            <span class="metric-value">R$ 45k/mês</span>
+                            <span class="metric-status">R$ 540k/ANO</span>
+                        </div>
+                        <div class="metric-box metric-negative">
+                            <span class="metric-label">Current Ratio</span>
+                            <span class="metric-value">0.85</span>
+                            <span class="metric-status">< 1.0 MÍNIMO</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Custo Expansão R$ 500k</span>
+                            <span class="metric-value">6.2%</span>
+                            <span class="metric-status">% FATURAMENTO</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">EBITDA Pós-Correção</span>
+                            <span class="metric-value">R$ 800k</span>
+                            <span class="metric-status">10% MARGEM</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Margem Meta</span>
+                            <span class="metric-value">25%</span>
+                            <span class="metric-status">BRUTA ALVO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CFO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CFO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Liquidez</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Dependência estrutural de crédito de curto prazo para honrar despesas operacionais. Current Ratio < 1.0.</p>
+                            <span class="risk-metric">Métrica: Current Ratio 0.85</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Solvência</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Lucro contábil não se converte em caixa disponível. EBITDA de apenas 4% limita capacidade de investimento.</p>
+                            <span class="risk-metric">Métrica: EBITDA 4%</span>
+                        </div>
+
+                        <div class="risk-indicator risk-critical">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Execução</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Expansão sem correção de processos amplia custos fixos sem cobertura de margem. Operating leverage elevado.</p>
+                            <span class="risk-metric">Métrica: High operating leverage</span>
+                        </div>
+
+                        <div class="risk-indicator risk-low">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Mercado</span>
+                                <span class="risk-level">BAIXO</span>
+                            </div>
+                            <p class="risk-description">Demanda estável. Os gargalos são internos (eficiência operacional e governança), não de mercado.</p>
+                            <span class="risk-metric">Métrica: Stable demand</span>
+                        </div>
+                    </div>
+
+                    <div class="scenario-boxes">
+                        <div class="scenario-box scenario-worst">
+                            <h4>😰 Pior Cenário</h4>
+                            <p>Expansão falha consome capital de giro em poucos meses e força os sócios a comprometer bens pessoais para honrar compromissos.</p>
+                        </div>
+                        <div class="scenario-box scenario-best">
+                            <h4>😊 Melhor Cenário</h4>
+                            <p>Correção de margem gera caixa suficiente para expansão com capital próprio, sem dependência de crédito externo.</p>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Recuperação:</strong> 24 meses após reestruturação de margem e caixa para atingir estado saudável</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. MÓDULO JURÍDICO -->
+            <section id="section-modulo-juridico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚖️ Análise Jurídica (CLO)</h1>
+                    <p class="page-subtitle">Análise de Riscos Legais e Estruturais</p>
+                </div>
+
+                <!-- CLO Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CLO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>Confusão patrimonial elimina a blindagem da pessoa jurídica, permitindo que credores atinjam bens pessoais dos sócios.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>Riscos trabalhistas decorrentes de informalidade e acúmulo de funções sem segregação clara de responsabilidades.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>Ausência de acordo de sócios cria risco crítico em eventos familiares (separação, sucessão, conflitos), podendo paralisar a operação.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">4</span>
+                            <p>Contratos com fornecedores contêm penalidades e juros elevados não revisados, aumentando custo de capital.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">5</span>
+                            <p><strong>Conclusão:</strong> Classificação inadequada de despesas aumenta exposição fiscal e elimina proteção patrimonial básica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CLO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-critical">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Confusão Patrimonial</span>
+                                <span class="risk-level">CRÍTICO</span>
+                            </div>
+                            <p class="risk-description">Despesas pessoais na PJ eliminam blindagem societária. Sócios podem ter bens pessoais executados.</p>
+                            <span class="risk-metric">Métrica: R$ 540k/ano PF na PJ</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Governança</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Ausência de acordo de sócios cria risco de paralisia decisória em eventos familiares críticos.</p>
+                            <span class="risk-metric">Métrica: No shareholders agreement</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco Trabalhista</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Informalidade e acúmulo de funções sem segregação adequada de responsabilidades e documentação.</p>
+                            <span class="risk-metric">Métrica: Informal structure</span>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Resolução:</strong> 6–9 meses para estruturar separação patrimonial completa e acordo de sócios</p>
+                    </div>
+                </div>
+
+                <!-- Legal Recommendations -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Recomendações Jurídicas</h3>
+                    <div class="legal-recommendations">
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">⚖️</div>
+                            <div class="rec-content">
+                                <h4>1. Separação Patrimonial PJ/PF (Prioridade Crítica)</h4>
+                                <p><strong>Objetivo:</strong> Eliminar confusão patrimonial e proteger bens pessoais</p>
+                                <ul>
+                                    <li>Criação de pró-labore formal para os sócios (R$ 15k/mês cada)</li>
+                                    <li>Transferência de todas despesas pessoais para PF dos sócios</li>
+                                    <li>Revisão de todos os lançamentos contábeis dos últimos 24 meses</li>
+                                    <li>Implementação de controles rígidos de segregação contábil</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 3-6 meses para implementação completa</span>
+                                    <span>💰 Investimento: R$ 12-18k (consultoria contábil + jurídica)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">📄</div>
+                            <div class="rec-content">
+                                <h4>2. Implementação de Acordo de Sócios</h4>
+                                <p><strong>Objetivo:</strong> Prevenir paralisia decisória e conflitos familiares</p>
+                                <ul>
+                                    <li>Definição clara de poderes e alçadas decisórias</li>
+                                    <li>Cláusulas de resolução de impasses (deadlock)</li>
+                                    <li>Regras de entrada/saída de sócios e sucessão</li>
+                                    <li>Proteção em casos de separação conjugal ou falecimento</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 4-6 meses (negociação + formalização)</span>
+                                    <span>💰 Investimento: R$ 28-35k (consultoria jurídica especializada)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-medium">
+                            <div class="rec-icon">👥</div>
+                            <div class="rec-content">
+                                <h4>3. Formalização de Relações Trabalhistas</h4>
+                                <p><strong>Objetivo:</strong> Reduzir exposição a passivos trabalhistas</p>
+                                <ul>
+                                    <li>Revisão de todas as funções e responsabilidades</li>
+                                    <li>Regularização de vínculos informais existentes</li>
+                                    <li>Implementação de descrições de cargo formais</li>
+                                    <li>Documentação adequada de processos e delegações</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 2-4 meses</span>
+                                    <span>💰 Investimento: R$ 8-12k (consultoria trabalhista)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. MEMÓRIA DE DECISÕES -->
+            <section id="section-memoria" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🧩 Memória de Decisões</h1>
+                    <p class="page-subtitle">Base de Conhecimento e Aprendizado Contínuo</p>
+                </div>
+
+                <!-- Memory Status -->
+                <div class="memory-status-card">
+                    <div class="memory-icon">🧠</div>
+                    <div class="memory-info">
+                        <h3>Sistema de Memória Ativo</h3>
+                        <p>38 cenários processados • 142 padrões identificados • Última atualização: Hoje, 14:32</p>
+                    </div>
+                    <div class="memory-badge">OPERACIONAL</div>
+                </div>
+
+                <!-- Memory Stats -->
+                <div class="memory-stats-grid">
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <span class="stat-number">38</span>
+                            <span class="stat-label">Cenários Armazenados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <span class="stat-number">94%</span>
+                            <span class="stat-label">Taxa de Acerto</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-content">
+                            <span class="stat-number">142</span>
+                            <span class="stat-label">Padrões Identificados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <span class="stat-number">7.9</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Categories -->
+                <div class="content-card">
+                    <h3 class="card-title">📚 Categorias de Aprendizado</h3>
+                    <div class="learning-categories">
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>🏭 Decisões de Investimento PME</h4>
+                                <span class="category-count">19 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Expansão >20% do faturamento sem margem saudável (>25%) acelera consumo de capital</p>
+                                <p><strong>Taxa de Sucesso:</strong> 91%</p>
+                                <p><strong>Complexidade Média:</strong> 8.0/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>📊 Decisões de Eficiência Operacional</h4>
+                                <span class="category-count">14 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Correção de margem bruta gera 3x mais caixa do que aumento de volume em empresas <R$ 10M</p>
+                                <p><strong>Taxa de Sucesso:</strong> 96%</p>
+                                <p><strong>Complexidade Média:</strong> 7.2/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>⚖️ Decisões de Governança Familiar</h4>
+                                <span class="category-count">9 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Acordo de sócios reduz risco de paralisia decisória em 85% dos casos de conflito familiar</p>
+                                <p><strong>Taxa de Sucesso:</strong> 93%</p>
+                                <p><strong>Complexidade Média:</strong> 8.3/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>💰 Decisões de Gestão Financeira</h4>
+                                <span class="category-count">6 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Confusão patrimonial PJ/PF aumenta exposição fiscal e elimina proteção de bens pessoais</p>
+                                <p><strong>Taxa de Sucesso:</strong> 89%</p>
+                                <p><strong>Complexidade Média:</strong> 7.8/10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Principais Aprendizados</h3>
+                    <div class="learnings-list">
+                        <div class="learning-item">
+                            <div class="learning-icon">📊</div>
+                            <div class="learning-content">
+                                <h4>Margem Bruta >25% Permite Crescimento Sustentável</h4>
+                                <p>PMEs com margem bruta superior a 25% conseguem financiar expansão com capital próprio em 80% dos casos</p>
+                                <span class="learning-confidence">Confiança: 96% (baseado em 24 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">⚖️</div>
+                            <div class="learning-content">
+                                <h4>Separação PJ/PF Reduz Risco Patrimonial em >70%</h4>
+                                <p>Empresas familiares que eliminam confusão patrimonial protegem bens pessoais dos sócios de execuções</p>
+                                <span class="learning-confidence">Confiança: 98% (baseado em 19 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">📄</div>
+                            <div class="learning-content">
+                                <h4>Acordo de Sócios Previne 85% dos Conflitos</h4>
+                                <p>Estruturação de acordo societário formal reduz risco de paralisia decisória em eventos familiares críticos</p>
+                                <span class="learning-confidence">Confiança: 93% (baseado em 16 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">💰</div>
+                            <div class="learning-content">
+                                <h4>Current Ratio >1.2 Garante Saúde Financeira</h4>
+                                <p>Empresas com liquidez corrente inferior a 1.2 dependem estruturalmente de crédito de curto prazo</p>
+                                <span class="learning-confidence">Confiança: 94% (baseado em 21 casos)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Cases -->
+                <div class="content-card">
+                    <h3 class="card-title">🔍 Casos Similares na Memória</h3>
+                    <div class="similar-cases-list">
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">94%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Distribuidora Peças Automotivas SP - Expansão Filial</h4>
+                                <p>Empresa familiar R$ 6M/ano, margem bruta 19%, oferta expansão R$ 400k</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: CORRIGIR PRIMEIRO</span>
+                                    <span>Resultado: Aumentou margem para 26%, expandiu após 14 meses com capital próprio</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">92%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Indústria Metalúrgica RS - Conflito Societário</h4>
+                                <p>PME R$ 10M/ano, 3 sócios familiares, dilema sucessão vs expansão</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: GOVERNANÇA PRIMEIRO</span>
+                                    <span>Resultado: Implementou acordo sócios, evitou paralisia em separação conjugal</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">89%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Comércio Materiais Construção MG - Confusão Patrimonial</h4>
+                                <p>Empresa R$ 5M/ano, R$ 35k/mês despesas PF na empresa, processo fiscal</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: SEPARAR PJ/PF</span>
+                                    <span>Resultado: Regularizou em 6 meses, protegeu bens pessoais dos sócios</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. ANÁLISE DE PADRÕES -->
+            <section id="section-padroes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Análise de Padrões</h1>
+                    <p class="page-subtitle">Identificação de Tendências e Insights Estratégicos</p>
+                </div>
+
+                <!-- Pattern Overview -->
+                <div class="patterns-overview-card">
+                    <h3>🔍 Padrões Detectados no Cenário Atual</h3>
+                    <div class="pattern-summary">
+                        <div class="pattern-stat">
+                            <span class="pattern-number">6</span>
+                            <span class="pattern-label">Padrões Principais</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">2</span>
+                            <span class="pattern-label">Alertas Críticos</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">96%</span>
+                            <span class="pattern-label">Confiança Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">🚨 Padrões Críticos Identificados</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">⚠️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 1: Confusão Patrimonial Elimina Blindagem Societária</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> R$ 540k/ano em despesas pessoais lançadas na PJ eliminam proteção patrimonial dos sócios</p>
+                                    <p><strong>Precedentes:</strong> Observado em 41 casos similares, 76% resultaram em execução de bens pessoais após processos</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Separar PJ/PF imediatamente com criação de pró-labore formal
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">📊</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 2: Métrica de Vaidade - Escala Sem Margem</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Faturamento R$ 8M mas lucro equivalente a empresa de R$ 1M. Margem 15pp abaixo do setor (18% vs 32%)</p>
+                                    <p><strong>Precedentes:</strong> Em 89% dos casos com margem <20%, expansão acelerou consumo de capital de giro</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Corrigir margem para >25% antes de qualquer expansão
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">💰</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 3: Ausência de Governança em Empresa Familiar</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Sem acordo de sócios, decisões críticas ficam vulneráveis a eventos familiares (separação, sucessão)</p>
+                                    <p><strong>Precedentes:</strong> 72% das PMEs familiares sem acordo enfrentaram paralisia decisória em eventos críticos</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Implementar acordo societário formal com cláusulas de deadlock
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Padrões de Alerta</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">💱</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 4: Gap de Capital de Giro Estrutural (R$ 600k)</h4>
+                                <p>Dependência crônica de crédito de curto prazo para honrar despesas operacionais. Current Ratio <1.0</p>
+                                <span class="pattern-prevalence">Presente em 79% das PMEs com margem <20%</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">⚖️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 5: Informalidade Trabalhista com Acúmulo de Funções</h4>
+                                <p>Ausência de segregação clara de responsabilidades pode gerar passivos trabalhistas significativos</p>
+                                <span class="pattern-prevalence">Observado em 64% das PMEs familiares sem RH estruturado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positive Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Padrões Positivos</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🛡️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 6: Margem Bruta Permite Reestruturação Rápida</h4>
+                                <p>Margem bruta de 18% está abaixo do setor mas ainda permite correção para 25% em 12-18 meses sem capital externo</p>
+                                <span class="pattern-prevalence">Presente em 28% das PMEs industriais bem gerenciadas</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🎯</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 7: Demanda Estável com Baixo Risco de Mercado</h4>
+                                <p>Setor com demanda previsível minimiza risco externo - gargalos são internos (eficiência + governança)</p>
+                                <span class="pattern-prevalence">Correlacionado com 87% de taxa de recuperação em empresas que corrigem processos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavioral Analysis -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Análise Comportamental</h3>
+                    <div class="behavioral-insights">
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Preferência por Volume vs Margem (Scale Bias)</h4>
+                            <p>O crescimento de faturamento (ativo visível - "empresa de R$ 8M") está ofuscando a baixa rentabilidade unitária (lucro de empresa R$ 1M), apesar de margem ser o que gera caixa e capacidade de investimento.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Reframing do sucesso como "margem que permite reinvestir" vs "faturamento que consome capital"
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Confusão Emocional PJ/PF em Empresa Familiar</h4>
+                            <p>A naturalização de R$ 45k/mês de despesas pessoais na empresa pode estar criando zona de conforto que dificulta separação necessária, expondo patrimônio pessoal dos sócios.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Analisar em termos de proteção patrimonial: patrimônio exposto SEM separação vs protegido COM pró-labore
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Padrão Positivo: Busca por Análise Estruturada</h4>
+                            <p>A utilização do CIPAI indica reconhecimento da complexidade e disposição para decisão fundamentada baseada em múltiplas perspectivas (CFO + CLO + Operational).</p>
+                            <div class="behavior-reinforcement">
+                                <strong>Reforço Positivo:</strong> Continuar buscando análises objetivas para decisões de alto impacto patrimonial e operacional
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Based on Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Recomendações Baseadas em Padrões</h3>
+                    <div class="pattern-recommendations-list">
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority critical">CRÍTICA</span>
+                            <div class="rec-content">
+                                <h4>Separar PJ/PF Imediatamente</h4>
+                                <p>Os padrões críticos detectados indicam alta probabilidade (98%) de execução de bens pessoais caso ocorram processos sem separação patrimonial. Recomenda-se implementar pró-labore formal e transferir despesas PF nos próximos 90 dias.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority high">ALTA</span>
+                            <div class="rec-content">
+                                <h4>Implementar Acordo de Sócios e Governança Básica</h4>
+                                <p>Padrão de ausência de governança em empresa familiar requer ação urgente: criação de acordo societário + cláusulas deadlock dentro de 4-6 meses para evitar paralisia em eventos críticos.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority medium">MÉDIA</span>
+                            <div class="rec-content">
+                                <h4>Postergar Expansão Até Corrigir Margem >25%</h4>
+                                <p>Investimento de R$ 200k em correção de processos e margem gera R$ 480k/ano adicional em EBITDA. Expansão pode ser feita com capital próprio após 12-18 meses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. CONFIGURAÇÕES -->
+            <section id="section-configuracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚙️ Configurações</h1>
+                    <p class="page-subtitle">Personalize sua experiência no CIPAI</p>
+                </div>
+
+                <!-- Profile Settings -->
+                <div class="content-card">
+                    <h3 class="card-title">👤 Configurações de Perfil</h3>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" value="Executivo C-Level" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="executivo@email.com" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Profissão</label>
+                                <input type="text" value="C-Level Executive" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Idade</label>
+                                <input type="number" value="48" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Localização</label>
+                                <input type="text" value="São Paulo, SP" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="tel" value="(11) 99999-9999" class="form-input">
+                            </div>
+                        </div>
+                        <button class="btn-primary">💾 Salvar Alterações</button>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Preferências de Análise</h3>
+                    <div class="preferences-grid">
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Nível de Detalhe das Análises</h4>
+                                <select class="form-select">
+                                    <option>Básico</option>
+                                    <option>Intermediário</option>
+                                    <option selected>Avançado</option>
+                                    <option>Especialista</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Prioridade de Análise</h4>
+                                <select class="form-select">
+                                    <option>Velocidade (análise rápida)</option>
+                                    <option selected>Balanceado</option>
+                                    <option>Profundidade (análise completa)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Tom das Recomendações</h4>
+                                <select class="form-select">
+                                    <option>Conservador</option>
+                                    <option selected>Equilibrado</option>
+                                    <option>Agressivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Idioma da Interface</h4>
+                                <select class="form-select">
+                                    <option selected>🇧🇷 Português</option>
+                                    <option>🇺🇸 English</option>
+                                    <option>🇪🇸 Español</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="content-card">
+                    <h3 class="card-title">🔔 Notificações</h3>
+                    <div class="notifications-settings">
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Email de Análises Concluídas</h4>
+                                <p>Receber notificação quando uma análise for finalizada</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Alertas de Decisões Críticas</h4>
+                                <p>Notificar quando uma decisão requer atenção urgente</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Resumo Semanal</h4>
+                                <p>Receber relatório semanal de decisões e análises</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Sugestões de Análise</h4>
+                                <p>Receber sugestões de decisões similares para comparação</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Security -->
+                <div class="content-card">
+                    <h3 class="card-title">🔒 Privacidade e Segurança</h3>
+                    <div class="privacy-settings">
+                        <div class="privacy-item">
+                            <h4>Compartilhamento de Dados</h4>
+                            <p>Permitir uso anônimo de padrões para melhorar análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>Backup Automático</h4>
+                            <p>Fazer backup automático de todas as análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-actions">
+                            <button class="btn-secondary">📥 Exportar Todos os Dados</button>
+                            <button class="btn-secondary">🔄 Alterar Senha</button>
+                            <button class="btn-danger">🗑️ Excluir Conta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Info -->
+                <div class="content-card">
+                    <h3 class="card-title">ℹ️ Informações do Sistema</h3>
+                    <div class="system-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Versão do CIPAI</span>
+                            <span class="info-value">v2.3 Master Final</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Última Atualização</span>
+                            <span class="info-value">25 de Janeiro de 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modelo de IA</span>
+                            <span class="info-value">Claude Sonnet 4.5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status do Sistema</span>
+                            <span class="info-value badge-high">OPERACIONAL</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Cenários Processados</span>
+                            <span class="info-value">47</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Taxa de Confiança Média</span>
+                            <span class="info-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support -->
+                <div class="content-card">
+                    <h3 class="card-title">❓ Ajuda e Suporte</h3>
+                    <div class="support-links">
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📚</span>
+                            <div class="support-info">
+                                <h4>Central de Ajuda</h4>
+                                <p>Documentação completa e guias de uso</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">💬</span>
+                            <div class="support-info">
+                                <h4>Chat com Suporte</h4>
+                                <p>Fale com nossa equipe em tempo real</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📧</span>
+                            <div class="support-info">
+                                <h4>Enviar Feedback</h4>
+                                <p>Ajude-nos a melhorar o CIPAI</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">🐛</span>
+                            <div class="support-info">
+                                <h4>Reportar Problema</h4>
+                                <p>Informe bugs ou comportamentos inesperados</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

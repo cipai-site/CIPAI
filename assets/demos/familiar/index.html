@@ -1,0 +1,2267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPAI - Inteligência Cognitiva - Cenário 04</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">
+                    <h1>CIPAI</h1>
+                    <p>INTELIGÊNCIA COGNITIVA</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" id="btnHistorico">📊 Histórico</button>
+                <button class="btn-primary" id="btnNovaAnalise">➕ Nova Análise</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">PRINCIPAL</h3>
+                    <a href="#contexto" class="nav-item" data-section="contexto">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text">Contexto da Decisão</span>
+                    </a>
+                    <a href="#painel" class="nav-item active" data-section="painel">
+                        <span class="nav-icon">🧠</span>
+                        <span class="nav-text">Painel Cognitivo</span>
+                    </a>
+                    <a href="#demonstracoes" class="nav-item" data-section="demonstracoes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Demonstrações</span>
+                    </a>
+                    <a href="#modelo-pessoal" class="nav-item" data-section="modelo-pessoal">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Modelo Pessoal</span>
+                    </a>
+                    <a href="#nova-decisao" class="nav-item" data-section="nova-decisao">
+                        <span class="nav-icon">➕</span>
+                        <span class="nav-text">Nova Decisão</span>
+                    </a>
+                    <a href="#historico" class="nav-item" data-section="historico">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Histórico de Decisões</span>
+                    </a>
+                    <a href="#comparar" class="nav-item" data-section="comparar">
+                        <span class="nav-icon">🔄</span>
+                        <span class="nav-text">Comparar Cenários</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">MÓDULOS DE ANÁLISE</h3>
+                    <a href="#modulo-cfo" class="nav-item" data-section="modulo-cfo">
+                        <span class="nav-icon">💰</span>
+                        <span class="nav-text">Módulo CFO</span>
+                    </a>
+                    <a href="#modulo-juridico" class="nav-item" data-section="modulo-juridico">
+                        <span class="nav-icon">⚖️</span>
+                        <span class="nav-text">Módulo Jurídico</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">CAMADA DE INTELIGÊNCIA</h3>
+                    <a href="#memoria" class="nav-item" data-section="memoria">
+                        <span class="nav-icon">🧩</span>
+                        <span class="nav-text">Memória de Decisões</span>
+                    </a>
+                    <a href="#padroes" class="nav-item" data-section="padroes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Análise de Padrões</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">SISTEMA</h3>
+                    <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">👨‍⚕️</div>
+                    <div class="user-details">
+                        <p class="user-name">Patriarca Família</p>
+                        <p class="user-role">Cenário 04</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- 1. CONTEXTO DA DECISÃO -->
+            <section id="section-contexto" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🎯 Contexto da Decisão</h1>
+                    <p class="page-subtitle">Cenário 4: Sucessão Patrimonial e Proteção de Legado</p>
+                </div>
+
+                <!-- Scenario Info -->
+                <div class="scenario-info-card">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">🏰</div>
+                        <div class="scenario-details">
+                            <h2>Patrimônio Imobiliário vs. Harmonia Familiar</h2>
+                            <p class="scenario-subtitle">Planejamento sucessório, controle vitalício e blindagem patrimonial</p>
+                        </div>
+                        <div class="scenario-badges">
+                            <span class="badge badge-critical">Alta Complexidade</span>
+                            <span class="badge badge-info">10-15 min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">ID do Cenário:</span>
+                            <span class="metadata-value">sucessao-familiar-imoveis-v2-1</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Domínios:</span>
+                            <span class="metadata-value">Legal • Financial • Strategic • Governance</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de Decisão:</span>
+                            <span class="metadata-value">Strategic</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Reversibilidade:</span>
+                            <span class="metadata-value badge-critical">BAIXA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Frame -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Enquadramento da Decisão</h3>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Tipo de Decisão</span>
+                            <span class="info-value">Strategic</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Stakes Profile</span>
+                            <span class="info-value">Family Harmony + Capital + Control at Risk</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Domínio Principal</span>
+                            <span class="info-value">Legal/Financial</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Janela de Decisão</span>
+                            <span class="info-value">90 dias</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <h4>📝 Resumo em Linguagem Simples</h4>
+                        <p>Manter imóveis em nome próprio expõe R$ 20M a impostos sucessórios, conflitos familiares e contágio por dívidas de R$ 4.2M de um herdeiro.</p>
+                    </div>
+
+                    <div class="risk-axis-box">
+                        <h4>⚠️ Eixo Principal de Risco</h4>
+                        <p><strong>Custo e Conflito no Inventário</strong> vs. <strong>Perda Percebida de Controle</strong></p>
+                    </div>
+
+                    <div class="alert-box alert-warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h5>Reversibilidade: BAIXA</h5>
+                            <p>A estruturação de holding com doação e cláusulas restritivas envolve atos jurídicos complexos e dificilmente reversíveis.</p>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>💰 Impacto Financeiro</h4>
+                        <p>Patrimônio de <strong>R$ 20M</strong>; vazamento potencial de <strong>R$ 1.5M - R$ 3M</strong> sem planejamento.</p>
+                    </div>
+                </div>
+
+                <!-- Background Context -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Contexto de Fundo</h3>
+                    <div class="background-text">
+                        <p>Patriarca com patrimônio imobiliário aproximado de R$ 20 milhões, composto majoritariamente por imóveis de renda. Possui três filhos com perfis financeiros distintos, histórico de conflitos interpessoais e existência de dívidas pessoais relevantes (R$ 4.2M) em nome de um dos herdeiros.</p>
+                        
+                        <p>A principal preocupação é que, em caso de falecimento, o patrimônio seja dilapidado por impostos sucessórios, custos judiciais, bloqueios de caixa e disputas familiares prolongadas.</p>
+                        
+                        <p>A decisão ocorre em um contexto de necessidade de preservar controle vitalício, manter renda integral dos aluguéis e evitar conflitos familiares na sucessão.</p>
+                    </div>
+                </div>
+
+                <!-- Stakeholders -->
+                <div class="content-card">
+                    <h3 class="card-title">👥 Principais Stakeholders</h3>
+                    <div class="stakeholders-list">
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👤</span>
+                            <span class="stakeholder-name">Patriarca (Decisor)</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👥</span>
+                            <span class="stakeholder-name">Cônjuge (Co-titular)</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👨‍👩‍👧</span>
+                            <span class="stakeholder-name">Três filhos (Herdeiros)</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">⚖️</span>
+                            <span class="stakeholder-name">Assessoria contábil e jurídica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline & Constraints -->
+                <div class="info-cards-grid">
+                    <div class="content-card">
+                        <h3 class="card-title">📅 Linha do Tempo</h3>
+                        <p>Horizonte sucessório imediato, considerando expectativa de vida de <strong>10-15 anos</strong>.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3 class="card-title">⛓️ Restrições</h3>
+                        <p>Manutenção integral da renda de aluguéis pelo patriarca em vida; necessidade de preservar autoridade e evitar conflitos familiares.</p>
+                    </div>
+                </div>
+
+                <!-- User Values Check -->
+                <div class="content-card">
+                    <h3 class="card-title">💭 Verificação de Valores do Usuário</h3>
+                    
+                    <div class="alert-box alert-info">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <p>Os valores abaixo são <strong>ASSUMIDOS</strong> pelo sistema com base em perfis de patriarcas conservadores focados em preservação do legado, controle e harmonia familiar.</p>
+                        </div>
+                    </div>
+
+                    <div class="values-grid">
+                        <!-- Security vs Lifestyle -->
+                        <div class="value-axis-card">
+                            <h4>🛡️ Segurança vs Estilo de Vida</h4>
+                            <p class="value-description">Integridade do patrimônio versus liquidez para consumo</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 80%;">
+                                    <span class="value-marker">80%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 80%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Estilo de Vida</span>
+                                    <span>Segurança</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">A prioridade é manter o bloco imobiliário intacto ao longo das gerações.</p>
+                        </div>
+
+                        <!-- Short-term vs Long-term -->
+                        <div class="value-axis-card">
+                            <h4>⏱️ Curto Prazo vs Longo Prazo</h4>
+                            <p class="value-description">Planejamento imediato versus intergeracional</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 95%;">
+                                    <span class="value-marker">95%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 95%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Curto Prazo</span>
+                                    <span>Longo Prazo</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Decisões orientadas quase exclusivamente ao cenário pós-sucessão.</p>
+                        </div>
+
+                        <!-- Control vs Delegation -->
+                        <div class="value-axis-card">
+                            <h4>🎯 Controle vs Delegação</h4>
+                            <p class="value-description">Autoridade central versus participação dos herdeiros</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 80%;">
+                                    <span class="value-marker">80%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 80%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Delegação</span>
+                                    <span>Controle</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">O patriarca deseja manter a palavra final enquanto estiver vivo e lúcido.</p>
+                        </div>
+
+                        <!-- Growth vs Preservation -->
+                        <div class="value-axis-card">
+                            <h4>📈 Crescimento vs Preservação</h4>
+                            <p class="value-description">Expansão patrimonial versus preservação</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 15%;">
+                                    <span class="value-marker">15%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 15%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Crescimento</span>
+                                    <span>Preservação</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Fase de vida orientada à proteção do legado, não à expansão.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PAINEL COGNITIVO (Default View) -->
+            <section id="section-painel" class="content-section active">
+                <div class="page-header">
+                    <h1 class="page-title">Painel Cognitivo</h1>
+                    <p class="page-subtitle">Visão geral do raciocínio de IA e inteligência de decisão</p>
+                </div>
+
+                <!-- Status Card -->
+                <div class="status-card">
+                    <div class="status-icon">🧠</div>
+                    <div class="status-info">
+                        <h3>Sistema IA Ativo</h3>
+                        <p>Processando 2 decisões ativas • 8 premissas validadas hoje • Memória: 47 cenários</p>
+                    </div>
+                    <div class="status-badge status-operational">OPERACIONAL</div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <!-- Confiança da IA -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>CONFIANÇA DA IA</h4>
+                            <span class="metric-badge badge-high">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">98%</div>
+                        <div class="metric-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 98%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-details">
+                            <p>📊 Baseado em 47 cenários</p>
+                            <p>⚡ ROI de 1.100%</p>
+                        </div>
+                    </div>
+
+                    <!-- Incertezas -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>INCERTEZAS</h4>
+                            <span class="metric-badge badge-warning">MONITORAR</span>
+                        </div>
+                        <div class="metric-value-large">5</div>
+                        <div class="metric-details">
+                            <p>⚠️ Dívidas de herdeiro</p>
+                            <p>🔴 Avaliação de imóveis</p>
+                            <p>📈 Alinhamento familiar</p>
+                        </div>
+                    </div>
+
+                    <!-- Profundidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>PROFUNDIDADE</h4>
+                            <span class="metric-badge badge-high">FORTE</span>
+                        </div>
+                        <div class="metric-value-large">7.8<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🔍 Análise multi-camadas</p>
+                            <p>📋 CFO + CLO + Governança</p>
+                            <p>⏱️ 10-15 anos horizonte</p>
+                        </div>
+                    </div>
+
+                    <!-- Complexidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>COMPLEXIDADE</h4>
+                            <span class="metric-badge badge-critical">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">9.2<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🎯 4 domínios ativos</p>
+                            <p>💼 Legal + Financial</p>
+                            <p>🔗 7 stakeholders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="insights-section">
+                    <h3 class="section-title">💡 Insights da IA</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card insight-critical">
+                            <div class="insight-icon">🚨</div>
+                            <div class="insight-content">
+                                <h4>Risco de Contágio Patrimonial</h4>
+                                <p>Dívidas de R$ 4.2M (21% do patrimônio) de um herdeiro podem bloquear todo o fluxo de caixa familiar em PF.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-warning">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <h4>Vazamento Sucessório de 15%</h4>
+                                <p>Sem planejamento, estima-se perda de R$ 2.4M - R$ 3M para impostos e custos de inventário.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-info">
+                            <div class="insight-icon">✅</div>
+                            <div class="insight-content">
+                                <h4>Controle Vitalício Preservado</h4>
+                                <p>Usufruto garante 100% da renda + poder decisório ao patriarca, eliminando trade-off aparente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Preview -->
+                <div class="recommendation-preview">
+                    <div class="recommendation-header">
+                        <h3>🎯 Recomendação Final (CEO)</h3>
+                        <span class="confidence-score">Confiança: 98%</span>
+                    </div>
+                    <div class="recommendation-content">
+                        <p class="recommendation-main">O CID-AI recomenda <strong>estruturar a sucessão patrimonial em vida</strong>.</p>
+                        <p>A estruturação via holding preserva simultaneamente:</p>
+                        <ul>
+                            <li>Controle vitalício e renda integral dos aluguéis</li>
+                            <li>Proteção contra impostos sucessórios (economia R$ 2.4M)</li>
+                            <li>Blindagem contra dívidas de herdeiros</li>
+                        </ul>
+                        <button class="btn-primary" onclick="navigateTo('contexto')">Ver Análise Completa →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. DEMONSTRAÇÕES -->
+            <section id="section-demonstracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Demonstrações</h1>
+                    <p class="page-subtitle">Trade-offs e Análise de Decisão</p>
+                </div>
+
+                <!-- Methodology -->
+                <div class="content-card">
+                    <h3 class="card-title">📐 Metodologia de Scores de Trade-off</h3>
+                    
+                    <div class="formula-box">
+                        <h4>Fórmula de Cálculo</h4>
+                        <code>Score Final = Σ (Critério × Peso)</code>
+                        <p>Ajustado ao perfil de risco ocupacional</p>
+                    </div>
+
+                    <div class="criteria-breakdown">
+                        <h4>Critérios e Pesos</h4>
+                        <div class="criteria-list">
+                            <div class="criteria-item">
+                                <span class="criteria-name">Continuidade Patrimonial</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 45%;"></div>
+                                </div>
+                                <span class="criteria-weight">45%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Eficiência Fiscal</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 35%;"></div>
+                                </div>
+                                <span class="criteria-weight">35%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Harmonia Familiar</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 20%;"></div>
+                                </div>
+                                <span class="criteria-weight">20%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-calculation">
+                        <h4>Exemplo de Cálculo</h4>
+                        <p><strong>Opção:</strong> Holding com doação e usufruto vitalício</p>
+                        <p><strong>Score Total:</strong> 9.1</p>
+                        <p><strong>Margem de Confiança:</strong> ±0.3</p>
+                    </div>
+                </div>
+
+                <!-- Decision Readiness Check -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Verificação de Prontidão para Decisão</h3>
+                    
+                    <div class="readiness-dimensions">
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Emocional</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 60%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Financeira</span>
+                                <span class="readiness-level level-high">ALTO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill high" style="width: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Estrutural</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blocking-factors">
+                        <h4>🚫 Fatores Bloqueantes</h4>
+                        <div class="blocking-factor critical">
+                            <span class="blocking-icon">🔴</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Dívidas pessoais de herdeiro</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟡</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Avaliações imobiliárias pendentes</span>
+                                <span class="blocking-severity">MÉDIO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended-action">
+                        <h4>🎯 Ação Recomendada</h4>
+                        <div class="action-badge action-proceed">PROCEED WITH STRUCTURE</div>
+                        <p class="action-note">A decisão final permanece sob responsabilidade do patriarca.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. MODELO PESSOAL -->
+            <section id="section-modelo-pessoal" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">👤 Modelo Pessoal</h1>
+                    <p class="page-subtitle">Perfil Completo do Decisor</p>
+                </div>
+
+                <!-- Profile Overview -->
+                <div class="profile-card">
+                    <div class="profile-header-section">
+                        <div class="profile-avatar-large">👤</div>
+                        <div class="profile-info">
+                            <h2>Patriarca Família</h2>
+                            <p class="profile-title">Empresário Aposentado • 60-70 anos (estimado)</p>
+                            <div class="profile-tags">
+                                <span class="tag">Casado</span>
+                                <span class="tag">3 Filhos</span>
+                                <span class="tag">Perfil Conservador</span>
+                                <span class="tag">Foco: Legado</span>
+                            </div>
+                        </div>
+                        <div class="profile-quick-stats">
+                            <div class="quick-stat">
+                                <span class="stat-icon">🏠</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">R$ 20M</span>
+                                    <span class="stat-label">Imóveis Renda</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <span class="stat-icon">💰</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">R$ 400k</span>
+                                    <span class="stat-label">Liquidez</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">💰 Perfil Patrimonial Detalhado</h3>
+                    
+                    <div class="financial-overview-grid">
+                        <div class="financial-section">
+                            <h4>📊 Composição Patrimonial</h4>
+                            <div class="patrimony-chart">
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Imóveis de Renda</span>
+                                        <span class="patrimony-value">R$ 20.000.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 98%; background: linear-gradient(90deg, #10b981, #14b8a6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">98% do total</span>
+                                </div>
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Liquidez</span>
+                                        <span class="patrimony-value">R$ 400.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 2%; background: linear-gradient(90deg, #6366f1, #8b5cf6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">2% do total</span>
+                                </div>
+                            </div>
+                            <div class="patrimony-total">
+                                <span>Patrimônio Total Estimado:</span>
+                                <strong>R$ 20.400.000</strong>
+                            </div>
+                        </div>
+
+                        <div class="financial-section">
+                            <h4>💸 Fluxo de Caixa Mensal</h4>
+                            <div class="cashflow-items">
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">🏠</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Renda de Aluguéis</span>
+                                        <span class="cashflow-value">~ R$ 100k/mês</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">👥</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Cônjuge (Co-titular)</span>
+                                        <span class="cashflow-value">Comunhão parcial</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">👨‍👩‍👧</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Três filhos (Herdeiros)</span>
+                                        <span class="cashflow-value">3 pessoas</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🚨</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Filho 3 (Endividado)</span>
+                                        <span class="cashflow-value">R$ 4.2M passivo</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item savings">
+                                    <span class="cashflow-icon">💼</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Assessoria</span>
+                                        <span class="cashflow-value">Jurídico + Contábil</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Structure -->
+                <div class="content-card">
+                    <h3 class="card-title">👨‍👩‍👧‍👦 Estrutura Familiar</h3>
+                    <div class="family-grid">
+                        <div class="family-card">
+                            <div class="family-avatar">👤</div>
+                            <h4>Patriarca</h4>
+                            <p class="family-role">Titular do Patrimônio</p>
+                            <ul class="family-details">
+                                <li>• Empresário aposentado</li>
+                                <li>• R$ 20M em imóveis de renda</li>
+                                <li>• Perfil conservador</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👥</div>
+                            <h4>Cônjuge</h4>
+                            <p class="family-role">Co-titular</p>
+                            <ul class="family-details">
+                                <li>• Casamento em comunhão</li>
+                                <li>• 50% meação</li>
+                                <li>• Co-gestora do patrimônio</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👨</div>
+                            <h4>Filho 1</h4>
+                            <p class="family-role">Herdeiro</p>
+                            <ul class="family-details">
+                                <li>• Profissional estável</li>
+                                <li>• Casado com filhos</li>
+                                <li>• Perfil conservador</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👨</div>
+                            <h4>Filho 2</h4>
+                            <p class="family-role">Herdeiro</p>
+                            <ul class="family-details">
+                                <li>• Empresário</li>
+                                <li>• Casado recentemente</li>
+                                <li>• Perfil moderado</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👨</div>
+                            <h4>Filho 3</h4>
+                            <p class="family-role">Herdeiro (Risco)</p>
+                            <ul class="family-details">
+                                <li>• Dívidas: R$ 4.2M</li>
+                                <li>• Histórico de conflitos</li>
+                                <li>• RISCO PATRIMONIAL</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Objetivos do Planejamento</h3>
+                    <div class="goals-list">
+                        <div class="goal-item priority-critical">
+                            <div class="goal-icon">🏰</div>
+                            <div class="goal-content">
+                                <h4>Preservação do Legado</h4>
+                                <p>Garantir continuidade do patrimônio ao longo das gerações</p>
+                                <div class="goal-meta">
+                                    <span>Patrimônio: R$ 20M</span>
+                                    <span>Horizonte: Intergeracional</span>
+                                    <span class="goal-priority">Prioridade: MÁXIMA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-high">
+                            <div class="goal-icon">👑</div>
+                            <div class="goal-content">
+                                <h4>Controle Vitalício</h4>
+                                <p>Manter poder decisório e renda até o falecimento</p>
+                                <div class="goal-meta">
+                                    <span>Renda: R$ 100k/mês</span>
+                                    <span>Horizonte: Vitalício</span>
+                                    <span class="goal-priority">Prioridade: ALTA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-medium">
+                            <div class="goal-icon">👨‍👩‍👧</div>
+                            <div class="goal-content">
+                                <h4>Harmonia Familiar</h4>
+                                <p>Evitar conflitos sucessórios entre herdeiros</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Governança estruturada</span>
+                                    <span>Horizonte: Imediato</span>
+                                    <span class="goal-priority">Prioridade: ALTA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Perfil de Risco</h3>
+                    <div class="risk-profile-grid">
+                        <div class="risk-profile-item">
+                            <h4>Risco de Contágio Patrimonial</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill critical" style="width: 90%;"></div>
+                            </div>
+                            <span class="risk-level-label">90% - Crítico</span>
+                            <p>Dívidas de R$ 4.2M de herdeiro podem contaminar fluxo de caixa em PF.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Vazamento Sucessório</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill high" style="width: 85%;"></div>
+                            </div>
+                            <span class="risk-level-label">85% - Alto</span>
+                            <p>Inventário pode consumir R$ 2.4M - R$ 3M em custos e impostos.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Risco de Conflito Familiar</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill medium" style="width: 60%;"></div>
+                            </div>
+                            <span class="risk-level-label">60% - Médio</span>
+                            <p>Histórico de desentendimentos pode gerar litígio prolongado.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. NOVA DECISÃO -->
+            <section id="section-nova-decisao" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">➕ Nova Decisão</h1>
+                    <p class="page-subtitle">Iniciar uma Nova Análise de Decisão</p>
+                </div>
+
+                <div class="new-decision-container">
+                    <div class="new-decision-intro">
+                        <div class="intro-icon">🎯</div>
+                        <h2>Iniciar Nova Análise</h2>
+                        <p>O CIPAI analisará sua decisão sob múltiplas perspectivas: financeira, jurídica, estratégica e de estilo de vida.</p>
+                    </div>
+
+                    <div class="decision-form-card">
+                        <h3>📝 Informações Básicas da Decisão</h3>
+                        
+                        <div class="form-group">
+                            <label>Título da Decisão</label>
+                            <input type="text" placeholder="Ex: Compra de imóvel, Mudança de carreira, Investimento..." class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Categoria Principal</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>💰 Financeira</option>
+                                <option>🏠 Imobiliária</option>
+                                <option>💼 Profissional</option>
+                                <option>👨‍👩‍👧‍👦 Familiar</option>
+                                <option>📈 Investimentos</option>
+                                <option>🎓 Educacional</option>
+                                <option>🏥 Saúde</option>
+                                <option>⚖️ Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descrição do Contexto</label>
+                            <textarea rows="5" placeholder="Descreva sua situação atual e a decisão que precisa tomar..." class="form-textarea"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Valor Envolvido (R$)</label>
+                                <input type="text" placeholder="Ex: 1.500.000" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Prazo para Decisão</label>
+                                <select class="form-select">
+                                    <option>Selecione...</option>
+                                    <option>⚡ Urgente (até 7 dias)</option>
+                                    <option>📅 Curto (até 30 dias)</option>
+                                    <option>📆 Médio (até 90 dias)</option>
+                                    <option>⏱️ Longo (mais de 90 dias)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Stakeholders Envolvidos</label>
+                            <div class="stakeholder-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Cônjuge
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Filhos
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Pais
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Sócios
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Instituições Financeiras
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Outros
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nível de Complexidade Estimado</label>
+                            <div class="complexity-slider">
+                                <input type="range" min="1" max="10" value="5" class="slider">
+                                <div class="slider-labels">
+                                    <span>Simples</span>
+                                    <span>Moderado</span>
+                                    <span>Complexo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn-secondary">💾 Salvar Rascunho</button>
+                            <button class="btn-primary">🚀 Iniciar Análise</button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-info-card">
+                        <h3>📊 O que será analisado?</h3>
+                        <div class="analysis-modules">
+                            <div class="module-item">
+                                <span class="module-icon">💰</span>
+                                <div class="module-info">
+                                    <h4>Módulo CFO</h4>
+                                    <p>Análise financeira, métricas, riscos e oportunidades</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">⚖️</span>
+                                <div class="module-info">
+                                    <h4>Módulo Jurídico</h4>
+                                    <p>Estrutura legal, proteção patrimonial e sucessória</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🎯</span>
+                                <div class="module-info">
+                                    <h4>Análise Estratégica</h4>
+                                    <p>Alinhamento com objetivos e valores pessoais</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🧠</span>
+                                <div class="module-info">
+                                    <h4>IA Cognitiva</h4>
+                                    <p>Síntese executiva e recomendação final</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. HISTÓRICO DE DECISÕES -->
+            <section id="section-historico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📋 Histórico de Decisões</h1>
+                    <p class="page-subtitle">Todas as análises realizadas</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-card">
+                    <div class="filter-group">
+                        <label>Período:</label>
+                        <select class="filter-select">
+                            <option>Últimos 30 dias</option>
+                            <option>Últimos 90 dias</option>
+                            <option>Último ano</option>
+                            <option>Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Categoria:</label>
+                        <select class="filter-select">
+                            <option>Todas</option>
+                            <option>Financeira</option>
+                            <option>Imobiliária</option>
+                            <option>Profissional</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select class="filter-select">
+                            <option>Todos</option>
+                            <option>Aprovada</option>
+                            <option>Pausada</option>
+                            <option>Rejeitada</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-secondary">🔍 Pesquisar</button>
+                    </div>
+                </div>
+
+                <!-- Decision History List -->
+                <div class="history-list">
+                    <!-- Current Decision -->
+                    <div class="history-item active">
+                        <div class="history-icon">🏰</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Sucessão Familiar: Proteção de Legado</h3>
+                                <span class="history-badge badge-active">EM ANÁLISE</span>
+                            </div>
+                            <p class="history-description">Estruturação sucessória de patrimônio de R$ 20M com proteção contra dívidas e custos</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 03 de Fevereiro de 2026</span>
+                                <span class="history-category">⚖️ Legal • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 98%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Patrimônio:</span>
+                                    <span class="stat-value">R$ 20M</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Complexidade:</span>
+                                    <span class="stat-value">9.2/10</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Recomendação:</span>
+                                    <span class="stat-value">PROCEED</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes" onclick="navigateTo('contexto')">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 1 -->
+                    <div class="history-item">
+                        <div class="history-icon">🏢</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Aquisição de Edifício Comercial: Diversificação de Renda</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Compra de edifício comercial de 8 andares em região prime para locação corporativa</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 15 de Março de 2023</span>
+                                <span class="history-category">🏢 Imobiliário • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 92%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Investimento:</span>
+                                    <span class="stat-value">R$ 5.5M</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Yield:</span>
+                                    <span class="stat-value">7.2% a.a.</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Implementada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 2 -->
+                    <div class="history-item">
+                        <div class="history-icon">🏭</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Venda de Participação Societária: Exit Estratégico</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Venda de 80% de participação em empresa operacional para fundo de private equity</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 20 de Julho de 2020</span>
+                                <span class="history-category">💼 Estratégica • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 89%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Valor:</span>
+                                    <span class="stat-value">R$ 8M</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Múltiplo:</span>
+                                    <span class="stat-value">4.5x EBITDA</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Resultado:</span>
+                                    <span class="stat-value">Positivo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 3 -->
+                    <div class="history-item">
+                        <div class="history-icon">👨‍👩‍👧</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Doação Parcial de Imóvel com Usufruto</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Doação de 30% de imóvel residencial para filhos com reserva de usufruto vitalício</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 10 de Janeiro de 2019</span>
+                                <span class="history-category">⚖️ Legal • 👨‍👩‍👧 Familiar</span>
+                                <span class="history-confidence">🎯 Confiança: 95%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Valor Doado:</span>
+                                    <span class="stat-value">R$ 900k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Economia Fiscal:</span>
+                                    <span class="stat-value">R$ 120k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Concluída</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Summary -->
+                <div class="history-stats-card">
+                    <h3>📊 Estatísticas Gerais</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Decisões Analisadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Taxa de Confiança Média</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Aprovadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Em Análise</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">R$ 22M</span>
+                            <span class="stat-label">Valor Total Envolvido</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">8.8</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. COMPARAR CENÁRIOS -->
+            <section id="section-comparar" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🔄 Comparar Cenários</h1>
+                    <p class="page-subtitle">Análise comparativa de decisões e alternativas</p>
+                </div>
+
+                <!-- Scenario Selection -->
+                <div class="comparison-setup-card">
+                    <h3>📋 Selecionar Cenários para Comparação</h3>
+                    <div class="scenario-selectors">
+                        <div class="scenario-selector">
+                            <label>Cenário A:</label>
+                            <select class="form-select">
+                                <option>Cenário 04: Sucessão Familiar (Atual)</option>
+                                <option>Cenário 01: Imóvel de Lazer</option>
+                                <option>Cenário 02: Expansão Consultório</option>
+                                <option>Cenário 03: Reestruturação Investimentos</option>
+                            </select>
+                        </div>
+                        <div class="comparison-vs">VS</div>
+                        <div class="scenario-selector">
+                            <label>Cenário B:</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>Cenário 01: Imóvel de Lazer</option>
+                                <option>Cenário 02: Expansão Consultório</option>
+                                <option>Cenário 03: Reestruturação Investimentos</option>
+                                <option>Cenário 04: Sucessão Familiar (Atual)</option>
+                                <option>➕ Criar Cenário Alternativo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-primary">🔍 Comparar Cenários</button>
+                </div>
+
+                <!-- Comparison Results -->
+                <div class="comparison-results">
+                    <h3>📊 Análise Comparativa</h3>
+                    
+                    <!-- Overview Comparison -->
+                    <div class="comparison-overview">
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-a">
+                                <h4>Cenário A</h4>
+                                <p>Sucessão Familiar</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">98%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">9.2/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Patrimônio</span>
+                                    <span class="metric-value">R$ 20M</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-approved">PROCEED</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-b">
+                                <h4>Cenário B</h4>
+                                <p>Manter em Pessoa Física</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">45%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">3.5/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Patrimônio</span>
+                                    <span class="metric-value">R$ 20M</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-pause">NÃO RECOMENDADO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Comparison -->
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critério</th>
+                                    <th>Cenário A</th>
+                                    <th>Cenário B</th>
+                                    <th>Diferença</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>💰 Economia Fiscal</td>
+                                    <td class="positive">R$ 2.4M (Holding)</td>
+                                    <td class="negative">R$ 0 (Inventário)</td>
+                                    <td class="positive">+R$ 2.4M favor A</td>
+                                </tr>
+                                <tr>
+                                    <td>🎯 Proteção Patrimonial</td>
+                                    <td class="positive">92% (Blindado)</td>
+                                    <td class="negative">15% (Exposto)</td>
+                                    <td class="positive">+77% favor A</td>
+                                </tr>
+                                <tr>
+                                    <td>⚠️ Risco de Contágio</td>
+                                    <td class="positive">Baixo (Isolado)</td>
+                                    <td class="negative">Alto (R$ 4.2M)</td>
+                                    <td class="positive">Menor em A</td>
+                                </tr>
+                                <tr>
+                                    <td>👑 Controle Vitalício</td>
+                                    <td class="positive">100% (Usufruto)</td>
+                                    <td class="positive">100% (Propriedade)</td>
+                                    <td class="neutral">Igual</td>
+                                </tr>
+                                <tr>
+                                    <td>📈 Eficiência Sucessória</td>
+                                    <td class="positive">98% (Imediato)</td>
+                                    <td class="negative">8-12 anos (Litígio)</td>
+                                    <td class="positive">+90% favor A</td>
+                                </tr>
+                                <tr>
+                                    <td>🔒 Custo de Estruturação</td>
+                                    <td class="neutral">R$ 200k</td>
+                                    <td class="positive">R$ 0</td>
+                                    <td class="neutral">-R$ 200k em B</td>
+                                </tr>
+                                <tr>
+                                    <td>⏱️ Tempo de Implementação</td>
+                                    <td class="neutral">6-8 meses</td>
+                                    <td class="positive">Imediato</td>
+                                    <td class="neutral">+6 meses em B</td>
+                                </tr>
+                                <tr>
+                                    <td>👨‍👩‍👧‍👦 Harmonia Familiar</td>
+                                    <td class="positive">Alta (Regras claras)</td>
+                                    <td class="negative">Baixa (Conflito)</td>
+                                    <td class="positive">Maior em A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Comparison Conclusion -->
+                    <div class="comparison-conclusion-card">
+                        <h3>🎯 Síntese Comparativa</h3>
+                        <div class="conclusion-content">
+                            <div class="conclusion-winner">
+                                <div class="winner-badge">🏆</div>
+                                <h4>Cenário A: Sucessão com Holding</h4>
+                                <p><strong>Recomendado com 98% de confiança</strong></p>
+                            </div>
+                            <div class="conclusion-reasons">
+                                <h4>Principais Razões:</h4>
+                                <ul>
+                                    <li>✅ Economia fiscal de R$ 2.4M em custos de inventário</li>
+                                    <li>✅ Proteção patrimonial de 92% contra dívidas e litígios</li>
+                                    <li>✅ Eliminação de risco de contágio (R$ 4.2M isolado)</li>
+                                    <li>✅ Controle vitalício preservado via usufruto (100% renda)</li>
+                                    <li>✅ Sucessão eficiente e imediata (98% vs 8-12 anos)</li>
+                                    <li>✅ Governança estruturada com regras claras e harmonia familiar</li>
+                                </ul>
+                            </div>
+                            <div class="conclusion-note">
+                                <p><strong>Nota:</strong> O Cenário B (Manter em PF) expõe o patrimônio a custos de R$ 2.4M–R$ 3M, bloqueio de caixa e conflitos prolongados entre herdeiros. A estruturação via holding tem ROI de 1.100% considerando economia vs custo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. MÓDULO CFO -->
+            <section id="section-modulo-cfo" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">💰 Análise CFO</h1>
+                    <p class="page-subtitle">Análise Financeira Estratégica</p>
+                </div>
+
+                <!-- Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CFO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>Custos totais de inventário (ITCMD, honorários advocatícios e despesas processuais) podem atingir entre 12% e 18% do patrimônio, resultando em vazamento de R$ 2.4M a R$ 3.6M.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>A ausência de liquidez imediata entre herdeiros tende a forçar a venda de imóveis com deságio de 15-25% para pagamento de impostos e partilha.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">3</span>
+                            <p><strong>Risco de Contágio Patrimonial:</strong> Dívidas pessoais de R$ 4.2M de um herdeiro podem gerar penhoras e bloquear o fluxo de caixa de TODO o patrimônio mantido em Pessoa Física.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">4</span>
+                            <p>O custo de estruturação de uma holding patrimonial (R$ 200k) é significativamente inferior ao custo financeiro e emocional do inventário tradicional (R$ 2.4M-R$ 3.6M).</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">5</span>
+                            <p>Tributação recorrente via Pessoa Jurídica (Lucro Presumido) reduz a carga efetiva sobre a renda de aluguéis de 27.5% (IRPF) para aproximadamente 11.33% (PJ).</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">6</span>
+                            <p><strong>Índice de Vazamento Sucessório:</strong> Sem planejamento, estima-se vazamento de ~15% do patrimônio (R$ 3M) para Estado e custos jurídicos; com estruturação adequada via holding, esse vazamento pode ser reduzido para ~2% (R$ 400k).</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">7</span>
+                            <p>ROI da estruturação: economia de R$ 2.4M em custos evitados dividido por investimento de R$ 200k resulta em retorno de 1.100% (11x) sobre o capital investido.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">8</span>
+                            <p><strong>Conclusão:</strong> A inércia sucessória gera perda financeira estrutural de R$ 2.4M-R$ 3M e risco sistêmico ao patrimônio familiar. A estruturação é imperativa do ponto de vista financeiro.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Metrics -->
+                <div class="content-card">
+                    <h3 class="card-title">📊 Métricas Financeiras</h3>
+                    <div class="financial-metrics-grid">
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Economia Fiscal Anual (PJ vs PF)</span>
+                            <span class="metric-value">R$ 180k</span>
+                            <span class="metric-status">RECORRENTE</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Custo de Inventário Evitado</span>
+                            <span class="metric-value">R$ 2.4M</span>
+                            <span class="metric-status">ECONOMIA</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Custo de Estruturação (Holding)</span>
+                            <span class="metric-value">R$ 200k</span>
+                            <span class="metric-status">INVESTIMENTO</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Exposição a Dívidas de Herdeiro</span>
+                            <span class="metric-value">R$ 4.2M</span>
+                            <span class="metric-status">RISCO ALTO</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Vazamento Sem Planejamento</span>
+                            <span class="metric-value">~15%</span>
+                            <span class="metric-status">R$ 3M</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Taxa de Proteção Patrimonial</span>
+                            <span class="metric-value">92%</span>
+                            <span class="metric-status">COM HOLDING</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CFO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CFO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Liquidez</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Bloqueio de caixa para pagamento de impostos sucessórios (ITCMD) pode atingir R$ 2M-R$ 3M, forçando venda de imóveis.</p>
+                            <span class="risk-metric">Métrica: Tax gap > R$ 2M</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Contágio</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Dívida de R$ 4.2M de um herdeiro pode contaminar todo o fluxo de caixa do patrimônio mantido em Pessoa Física.</p>
+                            <span class="risk-metric">Métrica: Mapa de Contágio Patrimonial</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Execução</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Risco de avaliação inadequada na integralização dos imóveis na holding pode gerar autuação fiscal.</p>
+                            <span class="risk-metric">Métrica: Valuation variance ~15%</span>
+                        </div>
+                    </div>
+
+                    <div class="scenario-boxes">
+                        <div class="scenario-box scenario-worst">
+                            <h4>😰 Pior Cenário</h4>
+                            <p>Inventário prolongado (8-12 anos) com bloqueio judicial de receitas compromete o sustento da família e força liquidação.</p>
+                        </div>
+                        <div class="scenario-box scenario-best">
+                            <h4>😊 Melhor Cenário</h4>
+                            <p>Holding estruturada garante continuidade imediata do fluxo de caixa e economia de R$ 2.4M em custos evitados.</p>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Recuperação:</strong> 12-14 meses para retorno financeiro completo do investimento em estruturação</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. MÓDULO JURÍDICO -->
+            <section id="section-modulo-juridico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚖️ Análise Jurídica (CLO)</h1>
+                    <p class="page-subtitle">Análise de Riscos Legais e Estruturais</p>
+                </div>
+
+                <!-- CLO Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CLO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>Cláusulas de usufruto vitalício asseguram 100% da renda dos aluguéis e controle econômico ao patriarca durante toda a vida, eliminando trade-off entre doação e controle.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>Cláusulas de incomunicabilidade e impenhorabilidade protegem o patrimônio contra cônjuges e credores de herdeiros, blindando R$ 20M contra contágio de R$ 4.2M em dívidas.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">3</span>
+                            <p><strong>Risco de Pessoa Física:</strong> Dívidas de herdeiros (R$ 4.2M) entram automaticamente no inventário quando bens permanecem em Pessoa Física, bloqueando fluxo de caixa e gerando litígio prolongado.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">4</span>
+                            <p>Acordo de sócios e regimento interno da holding estabelecem regras de convivência, quóruns de decisão e critérios objetivos, evitando conflitos familiares e decisões unilaterais.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">5</span>
+                            <p><strong>Conclusão:</strong> Estruturação adequada respeita a legítima dos herdeiros (50%), preserva controle vitalício (usufruto) e reduz drasticamente risco de questionamento judicial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CLO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco Sucessório</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Inventário sem estrutura tende a ser longo (8-12 anos) e conflituoso, com bloqueio de receitas e litígio entre herdeiros.</p>
+                            <span class="risk-metric">Métrica: Expected duration > 8 years</span>
+                        </div>
+
+                        <div class="risk-indicator risk-low">
+                            <div class="risk-header">
+                                <span class="risk-category">Exposição Legal</span>
+                                <span class="risk-level">BAIXO</span>
+                            </div>
+                            <p class="risk-description">Riscos externos (litígios, questionamentos) reduzidos significativamente com estrutura adequada de holding.</p>
+                            <span class="risk-metric">Métrica: No active litigation</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Governança</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Ausência de regras claras de convivência societária e critérios objetivos gera conflitos familiares recorrentes.</p>
+                            <span class="risk-metric">Métrica: No internal bylaws</span>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Resolução:</strong> 6-8 meses para estruturação completa (holding + doação + usufruto)</p>
+                    </div>
+                </div>
+
+                <!-- Legal Recommendations -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Recomendações Jurídicas</h3>
+                    <div class="legal-recommendations">
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">🏢</div>
+                            <div class="rec-content">
+                                <h4>1. Constituição de Holding + Doação de Cotas</h4>
+                                <p><strong>Objetivo:</strong> Estruturar sucessão em vida com economia fiscal e proteção patrimonial</p>
+                                <ul>
+                                    <li>Integralização dos imóveis na holding patrimonial (R$ 20M)</li>
+                                    <li>Doação de cotas aos 3 herdeiros com reserva de usufruto vitalício</li>
+                                    <li>Economia de R$ 2.4M em custos de inventário (ITCMD + honorários)</li>
+                                    <li>Blindagem contra dívidas de R$ 4.2M de um herdeiro</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 6-8 meses</span>
+                                    <span>💰 Investimento: R$ 180-220k</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">👑</div>
+                            <div class="rec-content">
+                                <h4>2. Usufruto Vitalício e Cláusulas Restritivas</h4>
+                                <p><strong>Objetivo:</strong> Preservar controle e renda integral ao patriarca durante toda a vida</p>
+                                <ul>
+                                    <li>Usufruto vitalício: 100% da renda de aluguéis (R$ 100k/mês)</li>
+                                    <li>Incomunicabilidade: proteção contra cônjuges de herdeiros</li>
+                                    <li>Impenhorabilidade: blindagem contra credores e penhoras</li>
+                                    <li>Inalienabilidade temporária: impede venda por herdeiros (10 anos)</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: Incluso na estruturação</span>
+                                    <span>💰 Investimento: Sem custo adicional</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-medium">
+                            <div class="rec-icon">📜</div>
+                            <div class="rec-content">
+                                <h4>3. Acordo de Sócios e Regimento Interno Digital</h4>
+                                <p><strong>Objetivo:</strong> Estabelecer governança estruturada e evitar conflitos familiares</p>
+                                <ul>
+                                    <li>Regras automáticas de votação por quórum (maioria 2/3)</li>
+                                    <li>Prestação de contas periódica obrigatória (trimestral)</li>
+                                    <li>Critérios objetivos para reformas, vendas e alocações</li>
+                                    <li>Mediação automática: conflitos resolvidos por regras, não confrontos</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 2-3 meses</span>
+                                    <span>💰 Investimento: R$ 15-25k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. MEMÓRIA DE DECISÕES -->
+            <section id="section-memoria" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🧩 Memória de Decisões</h1>
+                    <p class="page-subtitle">Base de Conhecimento e Aprendizado Contínuo</p>
+                </div>
+
+                <!-- Memory Status -->
+                <div class="memory-status-card">
+                    <div class="memory-icon">🧠</div>
+                    <div class="memory-info">
+                        <h3>Sistema de Memória Ativo</h3>
+                        <p>47 cenários processados • 156 padrões identificados • Última atualização: Hoje, 14:32</p>
+                    </div>
+                    <div class="memory-badge">OPERACIONAL</div>
+                </div>
+
+                <!-- Memory Stats -->
+                <div class="memory-stats-grid">
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <span class="stat-number">47</span>
+                            <span class="stat-label">Cenários Armazenados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Taxa de Acerto</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-content">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">Padrões Identificados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <span class="stat-number">8.5</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Categories -->
+                <div class="content-card">
+                    <h3 class="card-title">📚 Categorias de Aprendizado</h3>
+                    <div class="learning-categories">
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>⚖️ Decisões Sucessórias</h4>
+                                <span class="category-count">15 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Planejamento sucessório em vida reduz custos em 12-18% do patrimônio</p>
+                                <p><strong>Taxa de Sucesso:</strong> 95%</p>
+                                <p><strong>Complexidade Média:</strong> 9.2/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>🏠 Decisões Imobiliárias</h4>
+                                <span class="category-count">18 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Concentração >80% em imóveis requer blindagem patrimonial via holding</p>
+                                <p><strong>Taxa de Sucesso:</strong> 92%</p>
+                                <p><strong>Complexidade Média:</strong> 7.8/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>💰 Decisões Financeiras</h4>
+                                <span class="category-count">10 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Tributação PJ (11%) vs PF (27%) justifica estruturação quando renda >R$ 50k/mês</p>
+                                <p><strong>Taxa de Sucesso:</strong> 89%</p>
+                                <p><strong>Complexidade Média:</strong> 6.5/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>👨‍👩‍👧‍👦 Decisões Familiares</h4>
+                                <span class="category-count">4 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Governança estruturada (regimento interno) reduz conflitos em 85%</p>
+                                <p><strong>Taxa de Sucesso:</strong> 100%</p>
+                                <p><strong>Complexidade Média:</strong> 8.5/10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Principais Aprendizados</h3>
+                    <div class="learnings-list">
+                        <div class="learning-item">
+                            <div class="learning-icon">⚖️</div>
+                            <div class="learning-content">
+                                <h4>Planejamento Sucessório Reduz Custos em 12-18%</h4>
+                                <p>Sucessão estruturada em vida economiza R$ 2.4M-R$ 3.6M em inventário para patrimônio de R$ 20M</p>
+                                <span class="learning-confidence">Confiança: 98% (baseado em 15 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">🛡️</div>
+                            <div class="learning-content">
+                                <h4>Blindagem Patrimonial Essencial com Herdeiros Endividados</h4>
+                                <p>Dívidas de herdeiros (>R$ 1M) contaminam patrimônio em PF em 92% dos casos sem estrutura</p>
+                                <span class="learning-confidence">Confiança: 96% (baseado em 22 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">👑</div>
+                            <div class="learning-content">
+                                <h4>Usufruto Vitalício Preserva Controle Total</h4>
+                                <p>100% da renda e controle econômico mantidos durante toda a vida do patriarca</p>
+                                <span class="learning-confidence">Confiança: 100% (baseado em 18 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">📊</div>
+                            <div class="learning-content">
+                                <h4>ROI de Estruturação: 1.100% (11x)</h4>
+                                <p>Investimento de R$ 200k em holding retorna R$ 2.4M em economia fiscal e custos evitados</p>
+                                <span class="learning-confidence">Confiança: 95% (baseado em 12 casos)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Cases -->
+                <div class="content-card">
+                    <h3 class="card-title">🔍 Casos Similares na Memória</h3>
+                    <div class="similar-cases-list">
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">96%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Empresário Aposentado - Holding de Imóveis Comerciais</h4>
+                                <p>Patriarca 68 anos, R$ 18M em imóveis comerciais, 3 herdeiros, dívidas R$ 3.8M</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: ESTRUTURAR</span>
+                                    <span>Resultado: Economia R$ 2.1M + blindagem total</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">91%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Produtor Rural - Sucessão com Usufruto</h4>
+                                <p>Patriarca 72 anos, R$ 25M em terras, 4 herdeiros, conflitos familiares históricos</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: HOLDING + REGIMENTO</span>
+                                    <span>Resultado: Harmonia + economia R$ 3.2M</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">88%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Industrial - Doação de Participação Societária</h4>
+                                <p>Patriarca 65 anos, R$ 30M empresa + imóveis, 2 herdeiros, gestão sucessória</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: HOLDING + GOVERNANÇA</span>
+                                    <span>Resultado: Transição suave + economia R$ 4.5M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. ANÁLISE DE PADRÕES -->
+            <section id="section-padroes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Análise de Padrões</h1>
+                    <p class="page-subtitle">Identificação de Tendências e Insights Estratégicos</p>
+                </div>
+
+                <!-- Pattern Overview -->
+                <div class="patterns-overview-card">
+                    <h3>🔍 Padrões Detectados no Cenário Atual</h3>
+                    <div class="pattern-summary">
+                        <div class="pattern-stat">
+                            <span class="pattern-number">7</span>
+                            <span class="pattern-label">Padrões Principais</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">3</span>
+                            <span class="pattern-label">Alertas Críticos</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">94%</span>
+                            <span class="pattern-label">Confiança Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">🚨 Padrões Críticos Identificados</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">⚠️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 1: Risco de Contágio Patrimonial</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Dívidas de R$ 4.2M de um herdeiro podem bloquear 100% do fluxo de caixa em PF</p>
+                                    <p><strong>Precedentes:</strong> Observado em 92% dos casos sem estrutura, 89% resultaram em litígio prolongado</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Blindagem patrimonial via holding com cláusulas de impenhorabilidade
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">💸</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 2: Vazamento Sucessório de 15%</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Custos de inventário (ITCMD + honorários) atingem R$ 2.4M–R$ 3.6M</p>
+                                    <p><strong>Precedentes:</strong> Em 96% dos casos sem planejamento, vazamento excede 12% do patrimônio</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Estruturação em vida reduz vazamento para ~2% (economia de R$ 2.4M)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">⏳</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 3: Inventário Prolongado (8-12 anos)</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Sem estrutura, inventário tende a bloquear fluxo por 8-12 anos</p>
+                                    <p><strong>Precedentes:</strong> 85% dos inventários sem planejamento geraram conflitos e bloqueio de renda</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Sucessão estruturada garante continuidade imediata do fluxo de caixa
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Padrões de Alerta</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">📉</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 4: Ausência de Governança Familiar</h4>
+                                <p>Sem regimento interno, decisões geram conflitos em 78% dos casos de sucessão</p>
+                                <span class="pattern-prevalence">Presente em 82% dos litígios familiares</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">⚖️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 5: Concentração Patrimonial em Imóveis (98%)</h4>
+                                <p>Baixa liquidez dificulta pagamento de impostos sucessórios sem venda forçada</p>
+                                <span class="pattern-prevalence">Observado em 91% dos inventários com bloqueio de caixa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positive Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Padrões Positivos</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">👑</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 6: Renda Recorrente de R$ 100k/mês</h4>
+                                <p>Fluxo de caixa estável e previsível facilita planejamento de longo prazo</p>
+                                <span class="pattern-prevalence">Presente em apenas 8% das famílias brasileiras</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🎯</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 7: Decisão Proativa (Antecipação)</h4>
+                                <p>Planejamento sucessório em vida evita custos e conflitos posteriores</p>
+                                <span class="pattern-prevalence">Correlacionado com 98% de taxa de sucesso na transição</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavioral Analysis -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Análise Comportamental</h3>
+                    <div class="behavioral-insights">
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Inércia e Evitação de Conflito</h4>
+                            <p>A tendência de manter status quo (patrimônio em PF) está impedindo estruturação necessária por medo de conflito familiar ou complexidade percebida.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Quantificar custos da inércia (R$ 2.4M-R$ 3M) vs. custo de estruturação (R$ 200k)
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Ilusão de Controle Total</h4>
+                            <p>A crença de que manter tudo em nome próprio garante controle ignora riscos de bloqueio judicial e litígio sucessório.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Demonstrar que usufruto vitalício preserva 100% do controle econômico
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Padrão Positivo: Proatividade e Planejamento</h4>
+                            <p>A busca por estruturação em vida indica visão de longo prazo e responsabilidade familiar.</p>
+                            <div class="behavior-reinforcement">
+                                <strong>Reforço Positivo:</strong> Decisões antecipadas evitam 85% dos conflitos sucessórios observados
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Based on Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Recomendações Baseadas em Padrões</h3>
+                    <div class="pattern-recommendations-list">
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority critical">CRÍTICA</span>
+                            <div class="rec-content">
+                                <h4>Estruturar Holding Patrimonial Imediatamente</h4>
+                                <p>Os padrões críticos indicam ROI de 1.100% (economia R$ 2.4M vs investimento R$ 200k) e risco de contágio de R$ 4.2M. Recomenda-se iniciar estruturação em até 90 dias.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority high">ALTA</span>
+                            <div class="rec-content">
+                                <h4>Implementar Governança com Regimento Interno</h4>
+                                <p>Padrão de conflitos familiares requer regras claras de convivência, quóruns e prestação de contas para evitar litígios.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority medium">MÉDIA</span>
+                            <div class="rec-content">
+                                <h4>Diversificar 5-10% do Patrimônio em Liquidez</h4>
+                                <p>Reduzir concentração de 98% em imóveis para facilitar pagamento de impostos e despesas extraordinárias.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. CONFIGURAÇÕES -->
+            <section id="section-configuracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚙️ Configurações</h1>
+                    <p class="page-subtitle">Personalize sua experiência no CIPAI</p>
+                </div>
+
+                <!-- Profile Settings -->
+                <div class="content-card">
+                    <h3 class="card-title">👤 Configurações de Perfil</h3>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" value="Patriarca Família" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="patriarca.familia@email.com" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Profissão</label>
+                                <input type="text" value="Empresário Aposentado" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Idade</label>
+                                <input type="number" value="65" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Localização</label>
+                                <input type="text" value="São Paulo, SP" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="tel" value="(11) 99999-9999" class="form-input">
+                            </div>
+                        </div>
+                        <button class="btn-primary">💾 Salvar Alterações</button>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Preferências de Análise</h3>
+                    <div class="preferences-grid">
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Nível de Detalhe das Análises</h4>
+                                <select class="form-select">
+                                    <option>Básico</option>
+                                    <option>Intermediário</option>
+                                    <option selected>Avançado</option>
+                                    <option>Especialista</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Prioridade de Análise</h4>
+                                <select class="form-select">
+                                    <option>Velocidade (análise rápida)</option>
+                                    <option selected>Balanceado</option>
+                                    <option>Profundidade (análise completa)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Tom das Recomendações</h4>
+                                <select class="form-select">
+                                    <option>Conservador</option>
+                                    <option selected>Equilibrado</option>
+                                    <option>Agressivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Idioma da Interface</h4>
+                                <select class="form-select">
+                                    <option selected>🇧🇷 Português</option>
+                                    <option>🇺🇸 English</option>
+                                    <option>🇪🇸 Español</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="content-card">
+                    <h3 class="card-title">🔔 Notificações</h3>
+                    <div class="notifications-settings">
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Email de Análises Concluídas</h4>
+                                <p>Receber notificação quando uma análise for finalizada</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Alertas de Decisões Críticas</h4>
+                                <p>Notificar quando uma decisão requer atenção urgente</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Resumo Semanal</h4>
+                                <p>Receber relatório semanal de decisões e análises</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Sugestões de Análise</h4>
+                                <p>Receber sugestões de decisões similares para comparação</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Security -->
+                <div class="content-card">
+                    <h3 class="card-title">🔒 Privacidade e Segurança</h3>
+                    <div class="privacy-settings">
+                        <div class="privacy-item">
+                            <h4>Compartilhamento de Dados</h4>
+                            <p>Permitir uso anônimo de padrões para melhorar análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>Backup Automático</h4>
+                            <p>Fazer backup automático de todas as análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-actions">
+                            <button class="btn-secondary">📥 Exportar Todos os Dados</button>
+                            <button class="btn-secondary">🔄 Alterar Senha</button>
+                            <button class="btn-danger">🗑️ Excluir Conta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Info -->
+                <div class="content-card">
+                    <h3 class="card-title">ℹ️ Informações do Sistema</h3>
+                    <div class="system-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Versão do CIPAI</span>
+                            <span class="info-value">v2.3 Master Final</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Última Atualização</span>
+                            <span class="info-value">25 de Janeiro de 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modelo de IA</span>
+                            <span class="info-value">Claude Sonnet 4.5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status do Sistema</span>
+                            <span class="info-value badge-high">OPERACIONAL</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Cenários Processados</span>
+                            <span class="info-value">47</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Taxa de Confiança Média</span>
+                            <span class="info-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support -->
+                <div class="content-card">
+                    <h3 class="card-title">❓ Ajuda e Suporte</h3>
+                    <div class="support-links">
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📚</span>
+                            <div class="support-info">
+                                <h4>Central de Ajuda</h4>
+                                <p>Documentação completa e guias de uso</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">💬</span>
+                            <div class="support-info">
+                                <h4>Chat com Suporte</h4>
+                                <p>Fale com nossa equipe em tempo real</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📧</span>
+                            <div class="support-info">
+                                <h4>Enviar Feedback</h4>
+                                <p>Ajude-nos a melhorar o CIPAI</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">🐛</span>
+                            <div class="support-info">
+                                <h4>Reportar Problema</h4>
+                                <p>Informe bugs ou comportamentos inesperados</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

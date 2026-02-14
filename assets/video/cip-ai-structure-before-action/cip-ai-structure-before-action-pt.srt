@@ -1,0 +1,75 @@
+1
+00:00:00,750 --> 00:00:01,996
+A maioria das decisões falha, 
+
+2
+00:00:02,406 --> 00:00:04,086
+não por causa de uma análise ruim.
+
+3
+00:00:04,496 --> 00:00:07,543
+Mas porque cada parte é analisada separadamente.
+
+4
+00:00:07,793 --> 00:00:09,666
+Finanças olham para os números.
+
+5
+00:00:10,076 --> 00:00:12,469
+Operações olham para a execução.
+
+6
+00:00:12,799 --> 00:00:14,766
+Consultores olham para o seu domínio.
+
+7
+00:00:15,016 --> 00:00:17,309
+Cada perspectiva - está correta.
+
+8
+00:00:17,719 --> 00:00:19,173
+E ainda assim 
+
+9
+00:00:19,423 --> 00:00:20,923
+A decisão final parece
+
+10
+00:00:21,233 --> 00:00:22,033
+Incompleta.
+
+11
+00:00:22,443 --> 00:00:25,256
+Porque a realidade não é dividida em departamentos.
+
+12
+00:00:25,506 --> 00:00:26,779
+Dinheiro afeta o tempo.
+
+13
+00:00:27,109 --> 00:00:28,723
+Negócios afetam a família.
+
+14
+00:00:28,973 --> 00:00:30,493
+Risco afeta a liberdade.
+
+15
+00:00:30,743 --> 00:00:31,889
+Tudo interage.
+
+16
+00:00:32,299 --> 00:00:33,479
+Ver o todo 
+
+17
+00:00:33,969 --> 00:00:36,609
+não significa - mais complexidade.
+
+18
+00:00:36,859 --> 00:00:38,119
+Significa compreender, 
+
+19
+00:00:38,369 --> 00:00:41,449
+como uma decisão - transforma todas as outras.

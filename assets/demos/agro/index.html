@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPAI - Inteligência Cognitiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">
+                    <h1>CIPAI</h1>
+                    <p>INTELIGÊNCIA COGNITIVA</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" id="btnHistorico">📊 Histórico</button>
+                <button class="btn-primary" id="btnNovaAnalise">➕ Nova Análise</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">PRINCIPAL</h3>
+                    <a href="#contexto" class="nav-item" data-section="contexto">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text">Contexto da Decisão</span>
+                    </a>
+                    <a href="#painel" class="nav-item active" data-section="painel">
+                        <span class="nav-icon">🧠</span>
+                        <span class="nav-text">Painel Cognitivo</span>
+                    </a>
+                    <a href="#demonstracoes" class="nav-item" data-section="demonstracoes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Demonstrações</span>
+                    </a>
+                    <a href="#modelo-pessoal" class="nav-item" data-section="modelo-pessoal">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Modelo Pessoal</span>
+                    </a>
+                    <a href="#nova-decisao" class="nav-item" data-section="nova-decisao">
+                        <span class="nav-icon">➕</span>
+                        <span class="nav-text">Nova Decisão</span>
+                    </a>
+                    <a href="#historico" class="nav-item" data-section="historico">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Histórico de Decisões</span>
+                    </a>
+                    <a href="#comparar" class="nav-item" data-section="comparar">
+                        <span class="nav-icon">🔄</span>
+                        <span class="nav-text">Comparar Cenários</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">MÓDULOS DE ANÁLISE</h3>
+                    <a href="#modulo-cfo" class="nav-item" data-section="modulo-cfo">
+                        <span class="nav-icon">💰</span>
+                        <span class="nav-text">Módulo CFO</span>
+                    </a>
+                    <a href="#modulo-juridico" class="nav-item" data-section="modulo-juridico">
+                        <span class="nav-icon">⚖️</span>
+                        <span class="nav-text">Módulo Jurídico</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">CAMADA DE INTELIGÊNCIA</h3>
+                    <a href="#memoria" class="nav-item" data-section="memoria">
+                        <span class="nav-icon">🧩</span>
+                        <span class="nav-text">Memória de Decisões</span>
+                    </a>
+                    <a href="#padroes" class="nav-item" data-section="padroes">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Análise de Padrões</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">SISTEMA</h3>
+                    <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">🚜</div>
+                    <div class="user-details">
+                        <p class="user-name">Produtor Rural</p>
+                        <p class="user-role">Cenário 03</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- 1. CONTEXTO DA DECISÃO -->
+            <section id="section-contexto" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🎯 Contexto da Decisão</h1>
+                    <p class="page-subtitle">Cenário 3: O Dilema do Agro - Maquinário vs. Proteção</p>
+                </div>
+
+                <!-- Scenario Info -->
+                <div class="scenario-info-card">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">🚜</div>
+                        <div class="scenario-details">
+                            <h2>Expansão Operacional vs. Sobrevivência à Safra</h2>
+                            <p class="scenario-subtitle">Resiliência financeira, sucessória e gestão de risco para produtor rural de médio porte</p>
+                        </div>
+                        <div class="scenario-badges">
+                            <span class="badge badge-critical">Alta Complexidade</span>
+                            <span class="badge badge-info">10-12 min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">ID do Cenário:</span>
+                            <span class="metadata-value">agro-soja-milho-parana-v2-1-master-final</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Domínios:</span>
+                            <span class="metadata-value">Financial • Strategic • Commodities • Succession</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de Decisão:</span>
+                            <span class="metadata-value">Strategic</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Reversibilidade:</span>
+                            <span class="metadata-value badge-critical">BAIXA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Frame -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Enquadramento da Decisão</h3>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Tipo de Decisão</span>
+                            <span class="info-value">Strategic</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Perfil de Risco</span>
+                            <span class="info-value">Capital + Asset Survival + Legacy</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Domínio Principal</span>
+                            <span class="info-value">Financial</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Janela de Decisão</span>
+                            <span class="info-value">15 dias</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <h4>📝 Resumo em Linguagem Simples</h4>
+                        <p>Financiar um trator novo agora pode comprometer a sobrevivência da atividade rural se clima e preços não forem protegidos.</p>
+                    </div>
+
+                    <div class="risk-axis-box">
+                        <h4>⚠️ Eixo Principal de Risco</h4>
+                        <p><strong>Eficiência Operacional</strong> vs. <strong>Continuidade da Atividade Rural e Preservação da Terra</strong></p>
+                    </div>
+
+                    <div class="alert-box alert-warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h5>Reversibilidade: BAIXA</h5>
+                            <p>Financiamentos rurais possuem alienação do bem e cláusulas de aceleração; quebra de safra sem seguro gera perdas irreversíveis.</p>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>💰 Impacto Financeiro</h4>
+                        <p>Dívida de <strong>R$ 600k</strong>; receita bruta anual estimada em <strong>R$ 1.2M</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Background Context -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Contexto de Fundo</h3>
+                    <div class="background-text">
+                        <p>Produtor rural do Paraná com 100 hectares cultivados (soja e milho). O maquinário atual possui 12 anos de uso e demanda manutenção recorrente.</p>
+                        
+                        <p>Há oferta de financiamento subsidiado para aquisição de um trator novo no valor de R$ 600 mil. O dilema surge porque o valor da parcela compromete o orçamento destinado ao seguro agrícola e à proteção de preços via hedge.</p>
+                        
+                        <p>A decisão ocorre em um contexto de risco climático elevado (La Niña), volatilidade cambial e pressão sucessória familiar, com endividamento próximo ao limite e ausência de estrutura sucessória formal.</p>
+                    </div>
+                </div>
+
+                <!-- Stakeholders -->
+                <div class="content-card">
+                    <h3 class="card-title">👥 Principais Stakeholders</h3>
+                    <div class="stakeholders-list">
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">👨‍👩‍👧‍👦</span>
+                            <span class="stakeholder-name">Família e herdeiros diretos</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">🌾</span>
+                            <span class="stakeholder-name">Cooperativa agrícola</span>
+                        </div>
+                        <div class="stakeholder-item">
+                            <span class="stakeholder-icon">🏦</span>
+                            <span class="stakeholder-name">Instituição financeira</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline & Constraints -->
+                <div class="info-cards-grid">
+                    <div class="content-card">
+                        <h3 class="card-title">📅 Linha do Tempo</h3>
+                        <p>Decisão vinculada ao fechamento do plano de custeio da safra <strong>2026/27</strong>.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3 class="card-title">⛓️ Restrições</h3>
+                        <p>Endividamento próximo ao limite, dependência climática elevada e ausência de estrutura sucessória formal.</p>
+                    </div>
+                </div>
+
+                <!-- User Values Check -->
+                <div class="content-card">
+                    <h3 class="card-title">💭 Verificação de Valores do Usuário</h3>
+                    
+                    <div class="alert-box alert-info">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <p>Os valores abaixo são <strong>ASSUMIDOS</strong> pelo sistema com base em perfis típicos de produtores focados em continuidade, legado familiar e preservação da terra.</p>
+                        </div>
+                    </div>
+
+                    <div class="values-grid">
+                        <!-- Security vs Lifestyle -->
+                        <div class="value-axis-card">
+                            <h4>🛡️ Segurança vs Estilo de Vida</h4>
+                            <p class="value-description">Preservação da terra versus conforto operacional</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 90%;">
+                                    <span class="value-marker">90%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 90%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Estilo de Vida</span>
+                                    <span>Segurança</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">No agro, a terra é o ativo central e deve ser protegida acima de bens móveis.</p>
+                        </div>
+
+                        <!-- Short-term vs Long-term -->
+                        <div class="value-axis-card">
+                            <h4>⏱️ Curto Prazo vs Longo Prazo</h4>
+                            <p class="value-description">Decisão de safra versus planejamento multi-safra</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 75%;">
+                                    <span class="value-marker">75%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 75%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Curto Prazo</span>
+                                    <span>Longo Prazo</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Decisões precisam sobreviver a ciclos ruins consecutivos.</p>
+                        </div>
+
+                        <!-- Control vs Delegation -->
+                        <div class="value-axis-card">
+                            <h4>🎯 Controle vs Delegação</h4>
+                            <p class="value-description">Controle físico versus uso de instrumentos financeiros</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 60%;">
+                                    <span class="value-marker">60%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 60%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Delegação</span>
+                                    <span>Controle</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">O produtor valoriza controle operacional, mas proteção de risco exige delegação.</p>
+                        </div>
+
+                        <!-- Growth vs Preservation -->
+                        <div class="value-axis-card">
+                            <h4>📈 Crescimento vs Preservação</h4>
+                            <p class="value-description">Produtividade versus continuidade</p>
+                            <div class="value-slider">
+                                <div class="value-position" style="left: 80%;">
+                                    <span class="value-marker">80%</span>
+                                </div>
+                                <div class="slider-track">
+                                    <div class="slider-fill" style="width: 80%;"></div>
+                                </div>
+                                <div class="slider-labels">
+                                    <span>Crescimento</span>
+                                    <span>Preservação</span>
+                                </div>
+                            </div>
+                            <p class="value-explanation">Em ambiente climático adverso, preservar capital e terra é prioridade.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PAINEL COGNITIVO (Default View) -->
+            <section id="section-painel" class="content-section active">
+                <div class="page-header">
+                    <h1 class="page-title">Painel Cognitivo</h1>
+                    <p class="page-subtitle">Visão geral do raciocínio de IA e inteligência de decisão</p>
+                </div>
+
+                <!-- Status Card -->
+                <div class="status-card">
+                    <div class="status-icon">🧠</div>
+                    <div class="status-info">
+                        <h3>Sistema IA Ativo</h3>
+                        <p>Processando 1 decisão ativa • 7 premissas validadas hoje • Memória: 52 cenários</p>
+                    </div>
+                    <div class="status-badge status-operational">OPERACIONAL</div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <!-- Confiança da IA -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>CONFIANÇA DA IA</h4>
+                            <span class="metric-badge badge-high">MUITO ALTA</span>
+                        </div>
+                        <div class="metric-value-large">97%</div>
+                        <div class="metric-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 97%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-details">
+                            <p>📊 Baseado em 47 cenários</p>
+                            <p>⚡ 18 decisões agro >95%</p>
+                        </div>
+                    </div>
+
+                    <!-- Incertezas -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>INCERTEZAS</h4>
+                            <span class="metric-badge badge-critical">CRÍTICO</span>
+                        </div>
+                        <div class="metric-value-large">7</div>
+                        <div class="metric-details">
+                            <p>⚠️ 3 climáticas (La Niña)</p>
+                            <p>🔴 2 cambiais (dólar)</p>
+                            <p>📈 2 preços futuros</p>
+                        </div>
+                    </div>
+
+                    <!-- Profundidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>PROFUNDIDADE</h4>
+                            <span class="metric-badge badge-high">FORTE</span>
+                        </div>
+                        <div class="metric-value-large">8.2<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🔍 Análise multi-safra</p>
+                            <p>📋 CFO + CLO + Agro</p>
+                            <p>⏱️ 3-5 safras horizon</p>
+                        </div>
+                    </div>
+
+                    <!-- Complexidade -->
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4>COMPLEXIDADE</h4>
+                            <span class="metric-badge badge-critical">ALTA</span>
+                        </div>
+                        <div class="metric-value-large">8.9<span class="metric-unit">/10</span></div>
+                        <div class="metric-details">
+                            <p>🎯 4 domínios ativos</p>
+                            <p>💼 Financial + Commodities</p>
+                            <p>🔗 3 stakeholders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="insights-section">
+                    <h3 class="section-title">💡 Insights da IA</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card insight-critical">
+                            <div class="insight-icon">🚨</div>
+                            <div class="insight-content">
+                                <h4>Alerta de Sobrevivência Detectado</h4>
+                                <p>Resiliência a Ciclo Zero: com trator financiado sem seguro, uma quebra >40% na primeira safra compromete continuidade.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-warning">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <h4>Descasamento Cambial Crítico</h4>
+                                <p>Receita dolarizada vs dívida em reais expõe produtor a risco de quebra dupla (clima + câmbio).</p>
+                            </div>
+                        </div>
+                        <div class="insight-card insight-info">
+                            <div class="insight-icon">💡</div>
+                            <div class="insight-content">
+                                <h4>Hedge Cognitivo Identificado</h4>
+                                <p>Seguro agrícola não é custo, mas ativo de liquidez condicional que impede execução da terra.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Preview -->
+                <div class="recommendation-preview">
+                    <div class="recommendation-header">
+                        <h3>🎯 Recomendação Final (CEO)</h3>
+                        <span class="confidence-score">Confiança: 97%</span>
+                    </div>
+                    <div class="recommendation-content">
+                        <p class="recommendation-main">O CIPAI recomenda <strong>PROTECT FIRST: proteger antes de investir</strong>.</p>
+                        <p>No agro, continuidade é definida pela capacidade de atravessar safras ruins, não pelo nível tecnológico do equipamento:</p>
+                        <ul>
+                            <li>Trator financiado reduz resiliência a ciclos adversos drasticamente</li>
+                            <li>Seguro agrícola + hedge garantem sobrevivência multi-safra</li>
+                            <li>Compra do trator deve ocorrer APÓS proteção da receita</li>
+                        </ul>
+                        <button class="btn-primary" onclick="navigateTo('contexto')">Ver Análise Completa →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. DEMONSTRAÇÕES -->
+            <section id="section-demonstracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Demonstrações</h1>
+                    <p class="page-subtitle">Trade-offs e Análise de Decisão</p>
+                </div>
+
+                <!-- Methodology -->
+                <div class="content-card">
+                    <h3 class="card-title">📐 Metodologia de Scores de Trade-off</h3>
+                    
+                    <div class="formula-box">
+                        <h4>Fórmula de Cálculo</h4>
+                        <code>Score Final = Σ (Critério × Peso)</code>
+                        <p>Priorizando continuidade e preservação do legado rural</p>
+                    </div>
+
+                    <div class="criteria-breakdown">
+                        <h4>Critérios e Pesos</h4>
+                        <div class="criteria-list">
+                            <div class="criteria-item">
+                                <span class="criteria-name">Preservação da Terra</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 50%;"></div>
+                                </div>
+                                <span class="criteria-weight">50%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Proteção de Receita</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 30%;"></div>
+                                </div>
+                                <span class="criteria-weight">30%</span>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-name">Eficiência Operacional</span>
+                                <div class="criteria-bar">
+                                    <div class="criteria-fill" style="width: 20%;"></div>
+                                </div>
+                                <span class="criteria-weight">20%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-calculation">
+                        <h4>Exemplo de Cálculo</h4>
+                        <p><strong>Opção:</strong> Compra imediata do trator</p>
+                        <p><strong>Score Total:</strong> 2.9</p>
+                        <p><strong>Margem de Confiança:</strong> ±0.5</p>
+                    </div>
+                </div>
+
+                <!-- Decision Readiness Check -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Verificação de Prontidão para Decisão</h3>
+                    
+                    <div class="readiness-dimensions">
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Emocional</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 60%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Financeira</span>
+                                <span class="readiness-level level-low">BAIXO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill low" style="width: 35%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="readiness-item">
+                            <div class="readiness-header">
+                                <span class="readiness-dimension">Prontidão Estrutural</span>
+                                <span class="readiness-level level-medium">MÉDIO</span>
+                            </div>
+                            <div class="readiness-bar">
+                                <div class="readiness-fill medium" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blocking-factors">
+                        <h4>🚫 Fatores Bloqueantes</h4>
+                        <div class="blocking-factor critical">
+                            <span class="blocking-icon">🔴</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Risco climático elevado sem seguro</span>
+                                <span class="blocking-severity">CRÍTICO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟠</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Ausência de hedge acima do break-even</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                        <div class="blocking-factor high">
+                            <span class="blocking-icon">🟠</span>
+                            <div class="blocking-content">
+                                <span class="blocking-name">Endividamento com impacto sucessório</span>
+                                <span class="blocking-severity">ALTO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended-action">
+                        <h4>🎯 Ação Recomendada</h4>
+                        <div class="action-badge action-protect">PROTECT FIRST</div>
+                        <p class="action-note">A decisão final permanece sob responsabilidade do produtor.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. MODELO PESSOAL -->
+            <section id="section-modelo-pessoal" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">👤 Modelo Pessoal</h1>
+                    <p class="page-subtitle">Perfil Completo do Decisor</p>
+                </div>
+
+                <!-- Profile Overview -->
+                <div class="profile-card">
+                    <div class="profile-header-section">
+                        <div class="profile-avatar-large">🚜</div>
+                        <div class="profile-info">
+                            <h2>Produtor Rural</h2>
+                            <p class="profile-title">100 hectares (Soja e Milho) • Paraná</p>
+                            <div class="profile-tags">
+                                <span class="tag">Família</span>
+                                <span class="tag">Herdeiros</span>
+                                <span class="tag">2ª Geração</span>
+                                <span class="tag">25+ anos atividade</span>
+                            </div>
+                        </div>
+                        <div class="profile-quick-stats">
+                            <div class="quick-stat">
+                                <span class="stat-icon">💰</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">R$ 1.2M</span>
+                                    <span class="stat-label">Receita Bruta/Ano</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <span class="stat-icon">🌾</span>
+                                <div class="stat-info">
+                                    <span class="stat-value">100 ha</span>
+                                    <span class="stat-label">Área Cultivada</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">💰 Perfil Financeiro Detalhado</h3>
+                    
+                    <div class="financial-overview-grid">
+                        <div class="financial-section">
+                            <h4>📊 Composição Patrimonial</h4>
+                            <div class="patrimony-chart">
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Terra (100 hectares)</span>
+                                        <span class="patrimony-value">R$ 3.000.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 75%; background: linear-gradient(90deg, #10b981, #14b8a6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">75% do total</span>
+                                </div>
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Maquinário e Equipamentos</span>
+                                        <span class="patrimony-value">R$ 800.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 20%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">20% do total</span>
+                                </div>
+                                <div class="patrimony-item">
+                                    <div class="patrimony-header">
+                                        <span class="patrimony-label">Capital de Giro</span>
+                                        <span class="patrimony-value">R$ 200.000</span>
+                                    </div>
+                                    <div class="patrimony-bar">
+                                        <div class="patrimony-fill" style="width: 5%; background: linear-gradient(90deg, #6366f1, #8b5cf6);"></div>
+                                    </div>
+                                    <span class="patrimony-percent">5% do total</span>
+                                </div>
+                            </div>
+                            <div class="patrimony-total">
+                                <span>Patrimônio Total:</span>
+                                <strong>R$ 4.000.000</strong>
+                            </div>
+                        </div>
+
+                        <div class="financial-section">
+                            <h4>💸 Fluxo de Caixa Anual</h4>
+                            <div class="cashflow-items">
+                                <div class="cashflow-item positive">
+                                    <span class="cashflow-icon">🌾</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Receita Bruta (Safras)</span>
+                                        <span class="cashflow-value">+ R$ 1.200.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🚜</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Custos de Produção</span>
+                                        <span class="cashflow-value">- R$ 700.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🔧</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Manutenção Maquinário</span>
+                                        <span class="cashflow-value">- R$ 40.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item negative">
+                                    <span class="cashflow-icon">🏦</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Dívidas e Financiamentos</span>
+                                        <span class="cashflow-value">- R$ 120.000</span>
+                                    </div>
+                                </div>
+                                <div class="cashflow-item savings">
+                                    <span class="cashflow-icon">💎</span>
+                                    <div class="cashflow-details">
+                                        <span class="cashflow-label">Margem Líquida</span>
+                                        <span class="cashflow-value">= R$ 300.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Structure -->
+                <div class="content-card">
+                    <h3 class="card-title">👨‍👩‍👧‍👦 Estrutura Familiar</h3>
+                    <div class="family-grid">
+                        <div class="family-card">
+                            <div class="family-avatar">🚜</div>
+                            <h4>Produtor Rural</h4>
+                            <p class="family-role">Decisor Principal</p>
+                            <ul class="family-details">
+                                <li>• 25+ anos na atividade rural</li>
+                                <li>• 2ª geração na propriedade</li>
+                                <li>• Receita R$ 1.2M/ano</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👨‍👩‍👧</div>
+                            <h4>Família</h4>
+                            <p class="family-role">Co-gestora</p>
+                            <ul class="family-details">
+                                <li>• Apoio nas operações</li>
+                                <li>• Gestão administrativa</li>
+                                <li>• Planejamento familiar</li>
+                            </ul>
+                        </div>
+                        <div class="family-card">
+                            <div class="family-avatar">👨‍👩‍👧‍👦</div>
+                            <h4>Herdeiros</h4>
+                            <p class="family-role">Sucessores</p>
+                            <ul class="family-details">
+                                <li>• Futura geração</li>
+                                <li>• Sucessão não estruturada</li>
+                                <li>• Dependentes da atividade</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Objetivos Financeiros</h3>
+                    <div class="goals-list">
+                        <div class="goal-item priority-critical">
+                            <div class="goal-icon">🌾</div>
+                            <div class="goal-content">
+                                <h4>Preservação da Terra</h4>
+                                <p>Manter a propriedade na família e evitar perda patrimonial</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Zero risco de execução</span>
+                                    <span>Horizonte: Permanente</span>
+                                    <span class="goal-priority">Prioridade: MÁXIMA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-high">
+                            <div class="goal-icon">🛡️</div>
+                            <div class="goal-content">
+                                <h4>Proteção Contra Riscos Climáticos</h4>
+                                <p>Implementar seguro agrícola e hedge de preços</p>
+                                <div class="goal-meta">
+                                    <span>Meta: 60% produção protegida</span>
+                                    <span>Horizonte: Safra 2026/27</span>
+                                    <span class="goal-priority">Prioridade: ALTA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item priority-medium">
+                            <div class="goal-icon">👨‍👩‍👧‍👦</div>
+                            <div class="goal-content">
+                                <h4>Estruturar Sucessão Familiar</h4>
+                                <p>Formalizar transferência patrimonial para herdeiros</p>
+                                <div class="goal-meta">
+                                    <span>Meta: Holding estruturada</span>
+                                    <span>Horizonte: 12-18 meses</span>
+                                    <span class="goal-priority">Prioridade: MÉDIA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Profile -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Perfil de Risco</h3>
+                    <div class="risk-profile-grid">
+                        <div class="risk-profile-item">
+                            <h4>Risco Climático (La Niña)</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill critical" style="width: 90%;"></div>
+                            </div>
+                            <span class="risk-level-label">90% - Crítico</span>
+                            <p>Quebra de safra >40% compromete continuidade sem seguro agrícola.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Descasamento Cambial</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill high" style="width: 75%;"></div>
+                            </div>
+                            <span class="risk-level-label">75% - Alto</span>
+                            <p>Receita dolarizada vs dívida em reais expõe a volatilidade cambial.</p>
+                        </div>
+                        <div class="risk-profile-item">
+                            <h4>Risco Sucessório</h4>
+                            <div class="risk-level-bar">
+                                <div class="risk-level-fill high" style="width: 70%;"></div>
+                            </div>
+                            <span class="risk-level-label">70% - Alto</span>
+                            <p>Ausência de estrutura sucessória pode travar inventário e partilha.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. NOVA DECISÃO -->
+            <section id="section-nova-decisao" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">➕ Nova Decisão</h1>
+                    <p class="page-subtitle">Iniciar uma Nova Análise de Decisão</p>
+                </div>
+
+                <div class="new-decision-container">
+                    <div class="new-decision-intro">
+                        <div class="intro-icon">🎯</div>
+                        <h2>Iniciar Nova Análise</h2>
+                        <p>O CIPAI analisará sua decisão sob múltiplas perspectivas: financeira, jurídica, estratégica e de estilo de vida.</p>
+                    </div>
+
+                    <div class="decision-form-card">
+                        <h3>📝 Informações Básicas da Decisão</h3>
+                        
+                        <div class="form-group">
+                            <label>Título da Decisão</label>
+                            <input type="text" placeholder="Ex: Compra de imóvel, Mudança de carreira, Investimento..." class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Categoria Principal</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>💰 Financeira</option>
+                                <option>🏠 Imobiliária</option>
+                                <option>💼 Profissional</option>
+                                <option>👨‍👩‍👧‍👦 Familiar</option>
+                                <option>📈 Investimentos</option>
+                                <option>🎓 Educacional</option>
+                                <option>🏥 Saúde</option>
+                                <option>⚖️ Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descrição do Contexto</label>
+                            <textarea rows="5" placeholder="Descreva sua situação atual e a decisão que precisa tomar..." class="form-textarea"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Valor Envolvido (R$)</label>
+                                <input type="text" placeholder="Ex: 1.500.000" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Prazo para Decisão</label>
+                                <select class="form-select">
+                                    <option>Selecione...</option>
+                                    <option>⚡ Urgente (até 7 dias)</option>
+                                    <option>📅 Curto (até 30 dias)</option>
+                                    <option>📆 Médio (até 90 dias)</option>
+                                    <option>⏱️ Longo (mais de 90 dias)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Stakeholders Envolvidos</label>
+                            <div class="stakeholder-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Cônjuge
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Filhos
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Pais
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Sócios
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Instituições Financeiras
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Outros
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nível de Complexidade Estimado</label>
+                            <div class="complexity-slider">
+                                <input type="range" min="1" max="10" value="5" class="slider">
+                                <div class="slider-labels">
+                                    <span>Simples</span>
+                                    <span>Moderado</span>
+                                    <span>Complexo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn-secondary">💾 Salvar Rascunho</button>
+                            <button class="btn-primary">🚀 Iniciar Análise</button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-info-card">
+                        <h3>📊 O que será analisado?</h3>
+                        <div class="analysis-modules">
+                            <div class="module-item">
+                                <span class="module-icon">💰</span>
+                                <div class="module-info">
+                                    <h4>Módulo CFO</h4>
+                                    <p>Análise financeira, métricas, riscos e oportunidades</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">⚖️</span>
+                                <div class="module-info">
+                                    <h4>Módulo Jurídico</h4>
+                                    <p>Estrutura legal, proteção patrimonial e sucessória</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🎯</span>
+                                <div class="module-info">
+                                    <h4>Análise Estratégica</h4>
+                                    <p>Alinhamento com objetivos e valores pessoais</p>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <span class="module-icon">🧠</span>
+                                <div class="module-info">
+                                    <h4>IA Cognitiva</h4>
+                                    <p>Síntese executiva e recomendação final</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. HISTÓRICO DE DECISÕES -->
+            <section id="section-historico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📋 Histórico de Decisões</h1>
+                    <p class="page-subtitle">Todas as análises realizadas</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-card">
+                    <div class="filter-group">
+                        <label>Período:</label>
+                        <select class="filter-select">
+                            <option>Últimos 30 dias</option>
+                            <option>Últimos 90 dias</option>
+                            <option>Último ano</option>
+                            <option>Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Categoria:</label>
+                        <select class="filter-select">
+                            <option>Todas</option>
+                            <option>Financeira</option>
+                            <option>Imobiliária</option>
+                            <option>Profissional</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select class="filter-select">
+                            <option>Todos</option>
+                            <option>Aprovada</option>
+                            <option>Pausada</option>
+                            <option>Rejeitada</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-secondary">🔍 Pesquisar</button>
+                    </div>
+                </div>
+
+                <!-- Decision History List -->
+                <div class="history-list">
+                    <!-- Current Decision -->
+                    <div class="history-item active">
+                        <div class="history-icon">🚜</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Trator Novo vs. Proteção da Safra</h3>
+                                <span class="history-badge badge-protect">PROTECT FIRST</span>
+                            </div>
+                            <p class="history-description">Decisão entre investimento em maquinário ou proteção de safra via seguro e hedge</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 04 de Fevereiro de 2026</span>
+                                <span class="history-category">🌾 Agro • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 97%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Dívida Trator:</span>
+                                    <span class="stat-value">R$ 600k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Complexidade:</span>
+                                    <span class="stat-value">8.9/10</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Recomendação:</span>
+                                    <span class="stat-value">PROTECT FIRST</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes" onclick="navigateTo('contexto')">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 1 -->
+                    <div class="history-item">
+                        <div class="history-icon">🌾</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Expansão de 50 Hectares: Compra de Terra Adjacente</h3>
+                                <span class="history-badge badge-paused">PAUSADA</span>
+                            </div>
+                            <p class="history-description">Análise de oportunidade para expansão da área cultivada com terra vizinha</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 18 de Novembro de 2025</span>
+                                <span class="history-category">🌾 Expansão • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 78%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Investimento:</span>
+                                    <span class="stat-value">R$ 1.5M</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Trade-off:</span>
+                                    <span class="stat-value">Liquidez atual</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Pausada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 2 -->
+                    <div class="history-item">
+                        <div class="history-icon">🛡️</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Implementação de Seguro Agrícola + Hedge</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Contratação de seguro agrícola e proteção via hedge para 40% da produção de soja</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 12 de Agosto de 2025</span>
+                                <span class="history-category">🛡️ Proteção • 💰 Financeira</span>
+                                <span class="history-confidence">🎯 Confiança: 94%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Custo Anual:</span>
+                                    <span class="stat-value">R$ 42k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Cobertura:</span>
+                                    <span class="stat-value">40% produção</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Resultado:</span>
+                                    <span class="stat-value">Positivo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Past Decision 3 -->
+                    <div class="history-item">
+                        <div class="history-icon">👨‍👩‍👧‍👦</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <h3>Estruturação de Holding Rural Familiar</h3>
+                                <span class="history-badge badge-approved">APROVADA</span>
+                            </div>
+                            <p class="history-description">Criação de estrutura sucessória para preservação patrimonial e planejamento tributário</p>
+                            <div class="history-meta">
+                                <span class="history-date">📅 05 de Maio de 2025</span>
+                                <span class="history-category">⚖️ Legal • 👨‍👩‍👧‍👦 Sucessão</span>
+                                <span class="history-confidence">🎯 Confiança: 91%</span>
+                            </div>
+                            <div class="history-summary">
+                                <div class="summary-stat">
+                                    <span class="stat-label">Custo Setup:</span>
+                                    <span class="stat-value">R$ 35k</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Economia Tributária:</span>
+                                    <span class="stat-value">~R$ 180k/ano</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-label">Status:</span>
+                                    <span class="stat-value">Implementada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-icon" title="Ver Detalhes">👁️</button>
+                            <button class="btn-icon" title="Comparar">🔄</button>
+                            <button class="btn-icon" title="Exportar">📥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Summary -->
+                <div class="history-stats-card">
+                    <h3>📊 Estatísticas Gerais</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Decisões Analisadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">90%</span>
+                            <span class="stat-label">Taxa de Confiança Média</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Aprovadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Pausada</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">R$ 77k</span>
+                            <span class="stat-label">Investimento Total Realizado</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">8.2</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. COMPARAR CENÁRIOS -->
+            <section id="section-comparar" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🔄 Comparar Cenários</h1>
+                    <p class="page-subtitle">Análise comparativa de decisões e alternativas</p>
+                </div>
+
+                <!-- Scenario Selection -->
+                <div class="comparison-setup-card">
+                    <h3>📋 Selecionar Cenários para Comparação</h3>
+                    <div class="scenario-selectors">
+                        <div class="scenario-selector">
+                            <label>Cenário A:</label>
+                            <select class="form-select">
+                                <option>Cenário 01: Trator Novo (Atual)</option>
+                                <option>Cenário 02: Expansão 50ha</option>
+                                <option>Cenário 03: Seguro + Hedge</option>
+                                <option>Cenário 04: Holding Rural</option>
+                            </select>
+                        </div>
+                        <div class="comparison-vs">VS</div>
+                        <div class="scenario-selector">
+                            <label>Cenário B:</label>
+                            <select class="form-select">
+                                <option>Selecione...</option>
+                                <option>Cenário 01: Trator Novo (Atual)</option>
+                                <option>Cenário 02: Expansão 50ha</option>
+                                <option>Cenário 03: Seguro + Hedge</option>
+                                <option>Cenário 04: Holding Rural</option>
+                                <option>➕ Criar Cenário Alternativo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-primary">🔍 Comparar Cenários</button>
+                </div>
+
+                <!-- Comparison Results -->
+                <div class="comparison-results">
+                    <h3>📊 Análise Comparativa</h3>
+                    
+                    <!-- Overview Comparison -->
+                    <div class="comparison-overview">
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-a">
+                                <h4>Cenário A</h4>
+                                <p>Trator Novo</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">97%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">8.9/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Dívida</span>
+                                    <span class="metric-value">R$ 600k</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-warning">PAUSAR</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-column">
+                            <div class="comparison-header scenario-b">
+                                <h4>Cenário B</h4>
+                                <p>Proteção Safra</p>
+                            </div>
+                            <div class="comparison-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Confiança IA</span>
+                                    <span class="metric-value">97%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Complexidade</span>
+                                    <span class="metric-value">6.5/10</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Custo Anual</span>
+                                    <span class="metric-value">R$ 100k</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Recomendação</span>
+                                    <span class="metric-value badge-approved">PROTECT FIRST</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Comparison -->
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critério</th>
+                                    <th>Cenário A (Trator)</th>
+                                    <th>Cenário B (Proteção)</th>
+                                    <th>Diferença</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>🌾 Preservação da Terra</td>
+                                    <td class="negative">Risco elevado</td>
+                                    <td class="positive">Protegida</td>
+                                    <td class="positive">B garante terra</td>
+                                </tr>
+                                <tr>
+                                    <td>💰 Resiliência a Ciclo Zero</td>
+                                    <td class="negative">&lt;1 safra</td>
+                                    <td class="positive">1.5+ safras</td>
+                                    <td class="positive">+50% favor B</td>
+                                </tr>
+                                <tr>
+                                    <td>⚠️ Risco Climático</td>
+                                    <td class="negative">Sem proteção</td>
+                                    <td class="positive">60% protegido</td>
+                                    <td class="positive">B reduz risco</td>
+                                </tr>
+                                <tr>
+                                    <td>🚜 Eficiência Operacional</td>
+                                    <td class="positive">+20% produtividade</td>
+                                    <td class="neutral">Mantém atual</td>
+                                    <td class="positive">+20% favor A</td>
+                                </tr>
+                                <tr>
+                                    <td>📈 Break-Even</td>
+                                    <td class="negative">R$ 124/saca</td>
+                                    <td class="positive">R$ 115/saca</td>
+                                    <td class="positive">-R$ 9 favor B</td>
+                                </tr>
+                                <tr>
+                                    <td>🔒 Reversibilidade</td>
+                                    <td class="negative">Baixa (dívida 5 anos)</td>
+                                    <td class="positive">Alta (anual)</td>
+                                    <td class="positive">Maior em B</td>
+                                </tr>
+                                <tr>
+                                    <td>⏱️ Horizonte Recuperação</td>
+                                    <td class="neutral">3 safras</td>
+                                    <td class="positive">Imediato</td>
+                                    <td class="positive">Mais rápido B</td>
+                                </tr>
+                                <tr>
+                                    <td>👨‍👩‍👧‍👦 Impacto Sucessório</td>
+                                    <td class="negative">Dívida no inventário</td>
+                                    <td class="positive">Mínimo</td>
+                                    <td class="positive">Menor em B</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Comparison Conclusion -->
+                    <div class="comparison-conclusion-card">
+                        <h3>🎯 Síntese Comparativa</h3>
+                        <div class="conclusion-content">
+                            <div class="conclusion-winner">
+                                <div class="winner-badge">🏆</div>
+                                <h4>Cenário B: Proteção da Safra (Seguro + Hedge)</h4>
+                                <p><strong>Recomendado com 97% de confiança para sobrevivência multi-safra</strong></p>
+                            </div>
+                            <div class="conclusion-reasons">
+                                <h4>Principais Razões:</h4>
+                                <ul>
+                                    <li>✅ Preserva resiliência a ciclo zero: 1.5+ safras vs &lt;1 safra</li>
+                                    <li>✅ Protege terra de execução em caso de quebra de safra</li>
+                                    <li>✅ Reduz break-even em R$ 9/saca (R$ 124 → R$ 115)</li>
+                                    <li>✅ Alta reversibilidade: renovação anual vs dívida 5 anos</li>
+                                    <li>✅ Alinhamento com valores de preservação (80% na escala)</li>
+                                    <li>⚠️ Trator pode ser adquirido APÓS proteção estar implementada</li>
+                                </ul>
+                            </div>
+                            <div class="conclusion-note">
+                                <p><strong>Nota:</strong> O Cenário A (Trator Novo) pode ser implementado na safra seguinte, após garantir proteção adequada e validar estabilidade financeira com seguro/hedge ativos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. MÓDULO CFO -->
+            <section id="section-modulo-cfo" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">💰 Análise CFO</h1>
+                    <p class="page-subtitle">Análise Financeira Estratégica</p>
+                </div>
+
+                <!-- Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CFO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>A parcela anual do trator representa cerca de 11.7% da receita bruta (R$ 140k/ano sobre R$ 1.2M), comprimindo significativamente a margem líquida já reduzida.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>O custo de manutenção do trator atual (R$ 40k/ano) é substancialmente inferior ao impacto do novo endividamento (R$ 140k/ano + alienação do bem).</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>O custo do seguro agrícola (R$ 55k) e do hedge (R$ 45k) representa 8.3% da receita e garante solvência mínima em caso de quebra de safra — exatamente os R$ 100k economizados ao não comprar o trator.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">4</span>
+                            <p><strong>Métrica de Sobrevivência — Resiliência a Ciclo Zero:</strong> Sem o novo trator, o produtor suporta aproximadamente 1,5 safras consecutivas com perda severa antes de comprometer a terra.</p>
+                        </div>
+                        <div class="reasoning-step step-critical">
+                            <span class="step-number">5</span>
+                            <p>Com o trator financiado e sem seguro pleno, uma quebra superior a 40% na primeira safra já compromete a continuidade da atividade e pode forçar venda parcial da terra.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">6</span>
+                            <p>A receita é dolarizada (soja/milho cotados em USD) enquanto a dívida é em reais, criando risco de descasamento cambial que pode elevar o custo real da dívida.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">7</span>
+                            <p>Em cenário de quebra de safra, o trator não gera receita, mas a obrigação financeira permanece, acelerando consumo do capital de giro (R$ 200k).</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">8</span>
+                            <p><strong>Conclusão:</strong> A proteção da receita e da sobrevivência multi-safra deve preceder investimentos em Capex. O trator pode ser adquirido após garantir resiliência financeira.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Metrics -->
+                <div class="content-card">
+                    <h3 class="card-title">📊 Métricas Financeiras</h3>
+                    <div class="financial-metrics-grid">
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Leverage Ratio</span>
+                            <span class="metric-value">1.8x</span>
+                            <span class="metric-status">RECEITA BRUTA</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Capital de Giro Disponível</span>
+                            <span class="metric-value">R$ 200k</span>
+                            <span class="metric-status">LIMITADO</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Parcela Trator Novo</span>
+                            <span class="metric-value">R$ 140k/ano</span>
+                            <span class="metric-status">11.7% RECEITA</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Manutenção Trator Atual</span>
+                            <span class="metric-value">R$ 40k/ano</span>
+                            <span class="metric-status">3.3% RECEITA</span>
+                        </div>
+                        <div class="metric-box metric-warning">
+                            <span class="metric-label">Custo Seguro + Hedge</span>
+                            <span class="metric-value">R$ 100k/ano</span>
+                            <span class="metric-status">8.3% RECEITA</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Economia ao NÃO Comprar</span>
+                            <span class="metric-value">R$ 100k/ano</span>
+                            <span class="metric-status">= PROTEÇÃO</span>
+                        </div>
+                        <div class="metric-box metric-critical">
+                            <span class="metric-label">Resiliência Ciclo Zero</span>
+                            <span class="metric-value">&lt;1 safra</span>
+                            <span class="metric-status">COM TRATOR</span>
+                        </div>
+                        <div class="metric-box metric-positive">
+                            <span class="metric-label">Resiliência com Proteção</span>
+                            <span class="metric-value">1.5+ safras</span>
+                            <span class="metric-status">SEM TRATOR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CFO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CFO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Liquidez</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Compra do trator consome capital de giro essencial para a safra e reduz margem de segurança drasticamente.</p>
+                            <span class="risk-metric">Métrica: Working capital residual baixo</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Solvência</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Dependência de safra cheia para honrar dívida. DSCR próximo ao limite mínimo aceitável (1.2x).</p>
+                            <span class="risk-metric">Métrica: DSCR ~1.05</span>
+                        </div>
+
+                        <div class="risk-indicator risk-critical">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco de Mercado</span>
+                                <span class="risk-level">CRÍTICO</span>
+                            </div>
+                            <p class="risk-description">Exposição total a clima (La Niña), preço (volatilidade) e câmbio (dólar) sem proteção adequada.</p>
+                            <span class="risk-metric">Métrica: Unhedged exposure 100%</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco Cambial</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Receita dolarizada vs dívida em reais cria descasamento que pode elevar custo real da dívida.</p>
+                            <span class="risk-metric">Métrica: Currency mismatch</span>
+                        </div>
+                    </div>
+
+                    <div class="scenario-boxes">
+                        <div class="scenario-box scenario-worst">
+                            <h4>😰 Pior Cenário</h4>
+                            <p>Quebra de safra combinada com queda do dólar força venda parcial da terra para quitação de dívidas.</p>
+                        </div>
+                        <div class="scenario-box scenario-best">
+                            <h4>😊 Melhor Cenário</h4>
+                            <p>Safra forte e hedge bem executado preservam liquidez e crédito, permitindo investimento futuro.</p>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Recuperação:</strong> 3 safras para estabilizar caixa após Capex do trator</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. MÓDULO JURÍDICO -->
+            <section id="section-modulo-juridico" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚖️ Análise Jurídica (CLO)</h1>
+                    <p class="page-subtitle">Análise de Riscos Legais e Estruturais</p>
+                </div>
+
+                <!-- CLO Reasoning Chain -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Cadeia de Raciocínio CLO</h3>
+                    <div class="reasoning-chain">
+                        <div class="reasoning-step">
+                            <span class="step-number">1</span>
+                            <p>Garantias cruzadas entre custeio e investimento ampliam o risco de perda da terra em caso de inadimplência.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">2</span>
+                            <p>Dívida do trator entra no inventário e pode travar a sucessão da propriedade, criando conflitos entre herdeiros.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">3</span>
+                            <p>Cláusulas de aceleração permitem vencimento antecipado da dívida em caso de descumprimento, forçando venda de ativos.</p>
+                        </div>
+                        <div class="reasoning-step">
+                            <span class="step-number">4</span>
+                            <p>Ausência de estrutura sucessória rural (holding/testamento) eleva risco de conflitos familiares e perda de eficiência tributária.</p>
+                        </div>
+                        <div class="reasoning-step step-conclusion">
+                            <span class="step-number">5</span>
+                            <p><strong>Conclusão:</strong> Endividamento reduz flexibilidade jurídica em renegociações futuras e compromete planejamento sucessório.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLO Risk Snapshot -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Snapshot de Riscos CLO</h3>
+                    
+                    <div class="risk-indicators">
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco Sucessório</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Dívida vinculada ao trator pode bloquear inventário e partilha da terra entre herdeiros.</p>
+                            <span class="risk-metric">Métrica: Debt enters probate</span>
+                        </div>
+
+                        <div class="risk-indicator risk-medium">
+                            <div class="risk-header">
+                                <span class="risk-category">Exposição Legal (Garantias)</span>
+                                <span class="risk-level">MÉDIO</span>
+                            </div>
+                            <p class="risk-description">Garantias cruzadas entre custeio e investimento ampliam risco de execução da terra.</p>
+                            <span class="risk-metric">Métrica: Cross-default clauses</span>
+                        </div>
+
+                        <div class="risk-indicator risk-high">
+                            <div class="risk-header">
+                                <span class="risk-category">Risco Contratual</span>
+                                <span class="risk-level">ALTO</span>
+                            </div>
+                            <p class="risk-description">Contratos futuros de soja/milho com penalidades severas (washout elevado).</p>
+                            <span class="risk-metric">Métrica: High washout penalty</span>
+                        </div>
+                    </div>
+
+                    <div class="time-horizon-box">
+                        <h4>⏱️ Horizonte Temporal</h4>
+                        <p><strong>Resolução:</strong> 6–12 meses para estruturar proteção contratual e sucessão familiar</p>
+                    </div>
+                </div>
+
+                <!-- Legal Recommendations -->
+                <div class="content-card">
+                    <h3 class="card-title">📋 Recomendações Jurídicas</h3>
+                    <div class="legal-recommendations">
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">🛡️</div>
+                            <div class="rec-content">
+                                <h4>1. Contratação de Seguro Agrícola + Hedge</h4>
+                                <p><strong>Objetivo:</strong> Proteger receita e evitar execução da terra</p>
+                                <ul>
+                                    <li>Seguro agrícola cobrindo no mínimo 60% da produção</li>
+                                    <li>Hedge de preços para 50-60% da safra via contratos futuros</li>
+                                    <li>Proteção cambial se >40% da receita for dolarizada</li>
+                                    <li>Garantir que seguro cobre custos de produção + parcela do trator</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: Antes do plantio da safra 2026/27</span>
+                                    <span>💰 Investimento: R$ 100k/ano (seguro R$ 55k + hedge R$ 45k)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-high">
+                            <div class="rec-icon">👨‍👩‍👧‍👦</div>
+                            <div class="rec-content">
+                                <h4>2. Estruturação de Holding Rural Familiar</h4>
+                                <p><strong>Objetivo:</strong> Proteger terra e facilitar sucessão</p>
+                                <ul>
+                                    <li>Constituição de Holding Rural para a propriedade</li>
+                                    <li>Planejamento sucessório com proteção de herdeiros</li>
+                                    <li>Segregação de dívidas operacionais vs patrimoniais</li>
+                                    <li>Otimização tributária (ITCMD reduzido em sucessão)</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 6-12 meses</span>
+                                    <span>💰 Investimento: R$ 35-50k (constituição + planejamento)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-rec-item priority-medium">
+                            <div class="rec-icon">📜</div>
+                            <div class="rec-content">
+                                <h4>3. Revisão de Contratos e Garantias</h4>
+                                <p><strong>Objetivo:</strong> Reduzir exposição a cláusulas de aceleração</p>
+                                <ul>
+                                    <li>Renegociar garantias cruzadas com banco</li>
+                                    <li>Isolar garantia do trator de outras linhas de crédito</li>
+                                    <li>Revisar penalidades de washout em contratos futuros</li>
+                                    <li>Garantir cláusulas de renegociação em caso de sinistro</li>
+                                </ul>
+                                <div class="rec-timeline">
+                                    <span>⏱️ Prazo: 2-4 meses</span>
+                                    <span>💰 Investimento: R$ 8-15k (consultoria jurídica rural)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. MEMÓRIA DE DECISÕES -->
+            <section id="section-memoria" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">🧩 Memória de Decisões</h1>
+                    <p class="page-subtitle">Base de Conhecimento e Aprendizado Contínuo</p>
+                </div>
+
+                <!-- Memory Status -->
+                <div class="memory-status-card">
+                    <div class="memory-icon">🧠</div>
+                    <div class="memory-info">
+                        <h3>Sistema de Memória Ativo</h3>
+                        <p>47 cenários processados • 156 padrões identificados • Última atualização: Hoje, 14:32</p>
+                    </div>
+                    <div class="memory-badge">OPERACIONAL</div>
+                </div>
+
+                <!-- Memory Stats -->
+                <div class="memory-stats-grid">
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <span class="stat-number">47</span>
+                            <span class="stat-label">Cenários Armazenados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Taxa de Acerto</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-content">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">Padrões Identificados</span>
+                        </div>
+                    </div>
+                    <div class="memory-stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <span class="stat-number">8.5</span>
+                            <span class="stat-label">Complexidade Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Categories -->
+                <div class="content-card">
+                    <h3 class="card-title">📚 Categorias de Aprendizado</h3>
+                    <div class="learning-categories">
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>🌾 Decisões de Investimento Rural</h4>
+                                <span class="category-count">23 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Capex >30% da receita sem proteção climática eleva risco de perda patrimonial</p>
+                                <p><strong>Taxa de Sucesso:</strong> 89%</p>
+                                <p><strong>Complexidade Média:</strong> 8.2/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>🛡️ Decisões de Proteção de Safra</h4>
+                                <span class="category-count">18 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Seguro + hedge aumenta resiliência a ciclo zero em 150%+ nas propriedades rurais</p>
+                                <p><strong>Taxa de Sucesso:</strong> 94%</p>
+                                <p><strong>Complexidade Média:</strong> 7.8/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>👨‍👩‍👧‍👦 Decisões Sucessórias Rurais</h4>
+                                <span class="category-count">12 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Holding rural reduz ITCMD em 40-60% e elimina conflitos entre herdeiros</p>
+                                <p><strong>Taxa de Sucesso:</strong> 96%</p>
+                                <p><strong>Complexidade Média:</strong> 8.5/10</p>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-header">
+                                <h4>📈 Decisões de Gestão de Risco</h4>
+                                <span class="category-count">8 cenários</span>
+                            </div>
+                            <div class="category-insights">
+                                <p><strong>Padrão Principal:</strong> Descasamento cambial em dívidas gera perdas médias de 25% em ciclos adversos</p>
+                                <p><strong>Taxa de Sucesso:</strong> 91%</p>
+                                <p><strong>Complexidade Média:</strong> 9.1/10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Principais Aprendizados</h3>
+                    <div class="learnings-list">
+                        <div class="learning-item">
+                            <div class="learning-icon">🌾</div>
+                            <div class="learning-content">
+                                <h4>Proteção da Safra Preserva Terra em Ciclos Adversos</h4>
+                                <p>Seguro agrícola + hedge reduz risco de execução da terra em >80% em cenários de quebra de safra severa</p>
+                                <span class="learning-confidence">Confiança: 97% (baseado em 28 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">🛡️</div>
+                            <div class="learning-content">
+                                <h4>Resiliência a Ciclo Zero >1.5 Safras Garante Continuidade</h4>
+                                <p>Produtores com margem de segurança superior a 1.5 safras consecutivas mantêm atividade sem perda patrimonial</p>
+                                <span class="learning-confidence">Confiança: 94% (baseado em 22 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">⚖️</div>
+                            <div class="learning-content">
+                                <h4>Holding Rural Reduz ITCMD em 40-60%</h4>
+                                <p>Estruturação de holding rural familiar permite economia de 40-60% em ITCMD e facilita sucessão</p>
+                                <span class="learning-confidence">Confiança: 96% (baseado em 18 casos)</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-item">
+                            <div class="learning-icon">💎</div>
+                            <div class="learning-content">
+                                <h4>Capital de Giro Mínimo: 20% da Receita Bruta</h4>
+                                <p>Reserva inferior a 20% da receita aumenta risco de decisões forçadas em safras ruins</p>
+                                <span class="learning-confidence">Confiança: 91% (baseado em 25 casos)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Cases -->
+                <div class="content-card">
+                    <h3 class="card-title">🔍 Casos Similares na Memória</h3>
+                    <div class="similar-cases-list">
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">96%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Produtor Soja/Milho MS - Financiamento Colheitadeira</h4>
+                                <p>Propriedade 120 ha, R$ 1.4M receita/ano, oferta R$ 800k colheitadeira</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: PROTECT FIRST</span>
+                                    <span>Resultado: Implementou seguro + hedge, comprou máquina safra seguinte</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">91%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Produtor Café SP - Expansão 50 Hectares</h4>
+                                <p>Propriedade 80 ha, R$ 900k receita/ano, oportunidade expansão R$ 1.2M</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: PAUSAR</span>
+                                    <span>Resultado: Estruturou holding, expandiu após 18 meses</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="similar-case-item">
+                            <div class="case-similarity">
+                                <span class="similarity-score">88%</span>
+                                <span class="similarity-label">Similar</span>
+                            </div>
+                            <div class="case-content">
+                                <h4>Produtor Arroz RS - Proteção La Niña</h4>
+                                <p>Propriedade 150 ha, R$ 1.8M receita/ano, dilema seguro vs expansão</p>
+                                <div class="case-outcome">
+                                    <span>Decisão: PROTECT FIRST</span>
+                                    <span>Resultado: Quebra 35% compensada pelo seguro, terra preservada</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. ANÁLISE DE PADRÕES -->
+            <section id="section-padroes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">📊 Análise de Padrões</h1>
+                    <p class="page-subtitle">Identificação de Tendências e Insights Estratégicos</p>
+                </div>
+
+                <!-- Pattern Overview -->
+                <div class="patterns-overview-card">
+                    <h3>🔍 Padrões Detectados no Cenário Atual</h3>
+                    <div class="pattern-summary">
+                        <div class="pattern-stat">
+                            <span class="pattern-number">7</span>
+                            <span class="pattern-label">Padrões Principais</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">3</span>
+                            <span class="pattern-label">Alertas Críticos</span>
+                        </div>
+                        <div class="pattern-stat">
+                            <span class="pattern-number">94%</span>
+                            <span class="pattern-label">Confiança Média</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">🚨 Padrões Críticos Identificados</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">⚠️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 1: Endividamento com Impacto em Resiliência a Ciclo Zero</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Dívida de R$ 600k reduz resiliência de 1.5+ safras para <1 safra em caso de quebra</p>
+                                    <p><strong>Precedentes:</strong> Observado em 34 casos similares, 82% resultaram em perda patrimonial após safra ruim</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Proteger receita via seguro + hedge antes de investir em Capex
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">🌾</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 2: Risco Climático Elevado Sem Proteção</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> La Niña com probabilidade elevada, mas sem seguro agrícola ou hedge implementado</p>
+                                    <p><strong>Precedentes:</strong> Em 87% dos casos com quebra >40%, produtores sem seguro perderam terra em 2-3 safras</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Implementar proteção mínima de 60% da produção antes da safra 2026/27
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item critical">
+                            <div class="pattern-icon">💰</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 3: Investimento Visível vs Proteção Invisível</h4>
+                                <div class="pattern-description">
+                                    <p><strong>Detecção:</strong> Viés cognitivo priorizando trator (ativo visível) sobre seguro (proteção invisível)</p>
+                                    <p><strong>Precedentes:</strong> 78% dos produtores que priorizaram Capex sobre proteção enfrentaram crise financeira em 3 anos</p>
+                                    <p><strong>Indicador de Risco:</strong> CRÍTICO</p>
+                                </div>
+                                <div class="pattern-recommendation">
+                                    <strong>Recomendação:</strong> Reframing: seguro não é custo, mas ativo de liquidez condicional
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ Padrões de Alerta</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">💱</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 4: Descasamento Cambial (Receita USD, Dívida BRL)</h4>
+                                <p>Receita dolarizada vs dívida em reais expõe a volatilidade cambial que pode elevar custo real da dívida em 25-40%</p>
+                                <span class="pattern-prevalence">Presente em 83% das dívidas rurais sem hedge cambial</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item warning">
+                            <div class="pattern-icon">⚖️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 5: Sucessão Não Estruturada com Dívida Ativa</h4>
+                                <p>Dívida do trator trava inventário e pode gerar conflitos entre herdeiros na partilha da terra</p>
+                                <span class="pattern-prevalence">Observado em 68% dos casos de sucessão com endividamento elevado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positive Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">✅ Padrões Positivos</h3>
+                    <div class="patterns-list">
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🛡️</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 6: Resiliência 1.5+ Safras Sem Capex</h4>
+                                <p>Capital de giro de R$ 200k + margem líquida permitem sobrevivência de 1.5+ safras consecutivas ruins sem nova dívida</p>
+                                <span class="pattern-prevalence">Presente em apenas 12% dos produtores de médio porte</span>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item positive">
+                            <div class="pattern-icon">🎯</div>
+                            <div class="pattern-content">
+                                <h4>Padrão 7: Alta Priorização de Preservação (80%)</h4>
+                                <p>Valor de preservação de 80% indica forte alinhamento com proteção da terra familiar</p>
+                                <span class="pattern-prevalence">Correlacionado com 91% de taxa de continuidade multi-geracional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavioral Analysis -->
+                <div class="content-card">
+                    <h3 class="card-title">🧠 Análise Comportamental</h3>
+                    <div class="behavioral-insights">
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Preferência por Investimento Visível (Tangibility Bias)</h4>
+                            <p>O trator (ativo visível e tangível) está ofuscando a importância do seguro agrícola (proteção invisível mas essencial), apesar de ambos terem impacto similar na continuidade da operação.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Reframing do seguro como "ativo de liquidez condicional" que impede execução da terra
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Viés Detectado: Ancoragem na Eficiência Operacional</h4>
+                            <p>O ganho de 20% em produtividade com o trator novo pode estar servindo como âncora, dificultando a avaliação objetiva do risco de perda patrimonial em caso de quebra de safra.</p>
+                            <div class="behavior-correction">
+                                <strong>Estratégia de Correção:</strong> Analisar em termos de resiliência a ciclo zero: <1 safra COM trator vs 1.5+ safras SEM trator
+                            </div>
+                        </div>
+
+                        <div class="behavior-item">
+                            <h4>Padrão Positivo: Busca por Análise Estruturada</h4>
+                            <p>A utilização do CIPAI indica reconhecimento da complexidade e disposição para decisão fundamentada baseada em múltiplas perspectivas (CFO + CLO + Agro).</p>
+                            <div class="behavior-reinforcement">
+                                <strong>Reforço Positivo:</strong> Continuar buscando análises objetivas para decisões de alto impacto patrimonial
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Based on Patterns -->
+                <div class="content-card">
+                    <h3 class="card-title">💡 Recomendações Baseadas em Padrões</h3>
+                    <div class="pattern-recommendations-list">
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority critical">CRÍTICA</span>
+                            <div class="rec-content">
+                                <h4>Implementar Proteção de Safra ANTES do Trator</h4>
+                                <p>Os padrões críticos detectados indicam alta probabilidade (97%) de perda patrimonial caso ocorra quebra de safra sem proteção. Recomenda-se implementar seguro agrícola + hedge nos próximos 60 dias, antes do plantio da safra 2026/27.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority high">ALTA</span>
+                            <div class="rec-content">
+                                <h4>Estruturar Holding Rural e Sucessão Familiar</h4>
+                                <p>Padrão de exposição sucessória com dívida ativa requer ação urgente: constituição de holding rural + planejamento sucessório dentro de 6-12 meses para evitar travamento de inventário.</p>
+                            </div>
+                        </div>
+
+                        <div class="pattern-rec-item">
+                            <span class="rec-priority medium">MÉDIA</span>
+                            <div class="rec-content">
+                                <h4>Postergar Compra do Trator para Safra 2027/28</h4>
+                                <p>Economia de R$ 100k/ano no financiamento cobre exatamente o custo de seguro + hedge. Trator pode ser adquirido após validar estabilidade com proteção ativa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. CONFIGURAÇÕES -->
+            <section id="section-configuracoes" class="content-section">
+                <div class="page-header">
+                    <h1 class="page-title">⚙️ Configurações</h1>
+                    <p class="page-subtitle">Personalize sua experiência no CIPAI</p>
+                </div>
+
+                <!-- Profile Settings -->
+                <div class="content-card">
+                    <h3 class="card-title">👤 Configurações de Perfil</h3>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" value="Executivo C-Level" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="executivo@email.com" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Profissão</label>
+                                <input type="text" value="C-Level Executive" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Idade</label>
+                                <input type="number" value="48" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Localização</label>
+                                <input type="text" value="São Paulo, SP" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="tel" value="(11) 99999-9999" class="form-input">
+                            </div>
+                        </div>
+                        <button class="btn-primary">💾 Salvar Alterações</button>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="content-card">
+                    <h3 class="card-title">🎯 Preferências de Análise</h3>
+                    <div class="preferences-grid">
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Nível de Detalhe das Análises</h4>
+                                <select class="form-select">
+                                    <option>Básico</option>
+                                    <option>Intermediário</option>
+                                    <option selected>Avançado</option>
+                                    <option>Especialista</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Prioridade de Análise</h4>
+                                <select class="form-select">
+                                    <option>Velocidade (análise rápida)</option>
+                                    <option selected>Balanceado</option>
+                                    <option>Profundidade (análise completa)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Tom das Recomendações</h4>
+                                <select class="form-select">
+                                    <option>Conservador</option>
+                                    <option selected>Equilibrado</option>
+                                    <option>Agressivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preference-item">
+                            <div class="preference-header">
+                                <h4>Idioma da Interface</h4>
+                                <select class="form-select">
+                                    <option selected>🇧🇷 Português</option>
+                                    <option>🇺🇸 English</option>
+                                    <option>🇪🇸 Español</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="content-card">
+                    <h3 class="card-title">🔔 Notificações</h3>
+                    <div class="notifications-settings">
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Email de Análises Concluídas</h4>
+                                <p>Receber notificação quando uma análise for finalizada</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Alertas de Decisões Críticas</h4>
+                                <p>Notificar quando uma decisão requer atenção urgente</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Resumo Semanal</h4>
+                                <p>Receber relatório semanal de decisões e análises</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-toggle">
+                            <div class="toggle-info">
+                                <h4>Sugestões de Análise</h4>
+                                <p>Receber sugestões de decisões similares para comparação</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Security -->
+                <div class="content-card">
+                    <h3 class="card-title">🔒 Privacidade e Segurança</h3>
+                    <div class="privacy-settings">
+                        <div class="privacy-item">
+                            <h4>Compartilhamento de Dados</h4>
+                            <p>Permitir uso anônimo de padrões para melhorar análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>Backup Automático</h4>
+                            <p>Fazer backup automático de todas as análises</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+
+                        <div class="privacy-actions">
+                            <button class="btn-secondary">📥 Exportar Todos os Dados</button>
+                            <button class="btn-secondary">🔄 Alterar Senha</button>
+                            <button class="btn-danger">🗑️ Excluir Conta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Info -->
+                <div class="content-card">
+                    <h3 class="card-title">ℹ️ Informações do Sistema</h3>
+                    <div class="system-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Versão do CIPAI</span>
+                            <span class="info-value">v2.3 Master Final</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Última Atualização</span>
+                            <span class="info-value">25 de Janeiro de 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modelo de IA</span>
+                            <span class="info-value">Claude Sonnet 4.5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status do Sistema</span>
+                            <span class="info-value badge-high">OPERACIONAL</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Cenários Processados</span>
+                            <span class="info-value">47</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Taxa de Confiança Média</span>
+                            <span class="info-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support -->
+                <div class="content-card">
+                    <h3 class="card-title">❓ Ajuda e Suporte</h3>
+                    <div class="support-links">
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📚</span>
+                            <div class="support-info">
+                                <h4>Central de Ajuda</h4>
+                                <p>Documentação completa e guias de uso</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">💬</span>
+                            <div class="support-info">
+                                <h4>Chat com Suporte</h4>
+                                <p>Fale com nossa equipe em tempo real</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">📧</span>
+                            <div class="support-info">
+                                <h4>Enviar Feedback</h4>
+                                <p>Ajude-nos a melhorar o CIPAI</p>
+                            </div>
+                        </a>
+                        <a href="#" class="support-link">
+                            <span class="support-icon">🐛</span>
+                            <div class="support-info">
+                                <h4>Reportar Problema</h4>
+                                <p>Informe bugs ou comportamentos inesperados</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
