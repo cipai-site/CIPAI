@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en" data-lang="en">
 <head>
@@ -311,13 +312,16 @@
             height: 0;
         }
 
-        .video-aspect iframe {
+        /* (AJUSTE CRÍTICO) o <video> precisa ser absoluto, senão fica com altura 0 */
+        .video-aspect video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             border: none;
+            object-fit: cover;
+            background: #000;
         }
 
         /* Problem Section */
@@ -630,13 +634,13 @@
                     id="intro-video"
                     controls
                     controlsList="nodownload"
-                    preload="metadata"
-                    style="width: 100%; height: 100%; object-fit: cover;">
+                    preload="metadata">
                     <source src="assets/video/cip-ai-intro.mp4" type="video/mp4">
+                    <!-- (AJUSTE CRÍTICO) GitHub Pages/Chrome suportam melhor .vtt do que .srt -->
                     <track
                         kind="subtitles"
                         src="assets/video/cip-ai-intro-pt.vtt"
-                        srclang="pt-BR"
+                        srclang="pt"
                         label="Português"
                         default>
                     Seu navegador não suporta o elemento de vídeo.
@@ -844,7 +848,7 @@
                 'how.s1.text':         'Define decision type, context, constraints, and key variables. System captures your specific requirements.',
                 'how.s2.title':        'AI Builds Reasoning Chain',
                 'how.s2.text':         'Multi-module analysis (CFO, CLO, etc.) with explicit reasoning steps, confidence scores, and identified assumptions.',
-                'how.s3.title':        'You Review &amp; Decide',
+                'how.s3.title':        'You Review & Decide',
                 'how.s3.text':         'Examine reasoning, challenge assumptions, compare scenarios. You make the final decision with full context.',
                 'how.s4.title':        'System Learns Context',
                 'how.s4.text':         'Decision outcomes feed back into your Personal Decision Model (PDM), building longitudinal understanding over time.',
@@ -946,3 +950,4 @@
     </script>
 </body>
 </html>
+```
