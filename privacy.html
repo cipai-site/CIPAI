@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - CIP-AI</title>
+    <title>Privacy Policy — CIP-AI</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg-primary: #0a0e1a;
@@ -30,9 +26,7 @@
 
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             background: rgba(10, 14, 26, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
@@ -57,6 +51,15 @@
             background-clip: text;
             text-decoration: none;
         }
+
+        .nav-back {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: var(--accent); }
 
         .hero {
             padding: 140px 2rem 40px;
@@ -96,29 +99,36 @@
         }
 
         .notice-box {
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.25);
             border-radius: 8px;
             padding: 1.5rem;
             margin: 2rem 0;
         }
 
-        .notice-box strong {
+        .notice-box strong { color: var(--accent); }
+
+        .email-link {
             color: var(--accent);
+            text-decoration: none;
         }
+
+        .email-link:hover { text-decoration: underline; }
 
         footer {
             border-top: 1px solid var(--border);
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             color: var(--text-muted);
             font-size: 14px;
+            margin-top: 2rem;
         }
 
         .delaware-note {
             color: #6b7280;
             font-size: 12px;
             margin-top: 0.6rem;
+            letter-spacing: 0.03em;
         }
 
         @media (max-width: 768px) {
@@ -133,17 +143,18 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">CIP-AI</a>
+            <a href="index.html" class="nav-back">← Back</a>
         </div>
     </nav>
 
     <div class="hero">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: February 2026</p>
+        <p class="last-updated">Last Updated: May 2026</p>
     </div>
 
     <section>
         <div class="notice-box">
-            <p><strong>Important Notice:</strong> CIP-AI is currently a working interactive prototype for evaluation purposes. This privacy policy describes our intended data handling practices.</p>
+            <p><strong>Important Notice:</strong> CIP-AI is currently an early operational prototype under active development. This privacy policy describes our intended data handling practices.</p>
         </div>
 
         <h2>1. Overview</h2>
@@ -162,10 +173,10 @@
         <h2>3. Data Use</h2>
         <p>Information is used exclusively for:</p>
         <p>
-            • Providing decision intelligence services<br>
-            • Improving system accuracy<br>
+            • Providing decision governance services<br>
+            • Improving system accuracy and governance logic<br>
             • Communicating about updates<br>
-            • Ensuring security
+            • Ensuring security and auditability
         </p>
 
         <p><strong>We do NOT:</strong></p>
@@ -177,7 +188,7 @@
 
         <h2>4. Data Security</h2>
         <p>
-            We implement industry-standard security measures including encryption, access control, and audit logs.
+            We implement industry-standard security measures including encryption, access control, and immutable audit logs.
         </p>
 
         <h2>5. Your Rights</h2>
@@ -192,7 +203,7 @@
         <h2>6. Contact</h2>
         <p>
             Questions about privacy?<br>
-            Email: <a href="/cdn-cgi/l/email-protection#20505249564143596043495041490e434f4d" style="color: var(--accent); text-decoration: none;"><span class="__cf_email__" data-cfemail="f787859e8196948eb7949e87969ed994989a">[email&#160;protected]</span></a>
+            Email: <a class="email-link" id="privacy-email" href="#">—</a>
         </p>
 
         <div class="notice-box" style="margin-top: 3rem;">
@@ -201,4 +212,19 @@
     </section>
 
     <footer>
-        <p>© 2026 CIP-AI. Cognitive Intelligence for Decision-Mak
+        <p>© 2026 CIP-AI. Decision Governance Infrastructure.</p>
+        <p class="delaware-note">CIP-AI by CIPAI Inc. &nbsp;·&nbsp; Delaware C Corporation &nbsp;·&nbsp; US Provisional Patent #64/063,591</p>
+    </footer>
+
+    <script>
+        // ─── Email construction (bypasses Cloudflare obfuscation) ────────────
+        (function() {
+            const u = 'founder';
+            const d = 'cipai.ai';
+            const el = document.getElementById('privacy-email');
+            el.href = 'mailto:' + u + '@' + d;
+            el.textContent = u + '@' + d;
+        })();
+    </script>
+</body>
+</html>
