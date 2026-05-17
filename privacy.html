@@ -52,6 +52,12 @@
             text-decoration: none;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
         .nav-back {
             font-size: 14px;
             color: var(--text-muted);
@@ -60,6 +66,36 @@
         }
 
         .nav-back:hover { color: var(--accent); }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 4px 8px;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 16px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .lang-btn .flag { font-size: 16px; line-height: 1; }
+        .lang-btn:hover { color: var(--text-primary); background: rgba(255,255,255,0.08); }
+        .lang-btn.active { background: var(--accent); color: #fff; }
+        .lang-divider { width: 1px; height: 14px; background: var(--border); }
 
         .hero {
             padding: 140px 2rem 40px;
@@ -143,77 +179,90 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">CIP-AI</a>
-            <a href="index.html" class="nav-back">← Back</a>
+            <div class="nav-right">
+                <a href="index.html" class="nav-back" data-i18n="nav.back">← Back</a>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">
+                        <span class="flag">🇺🇸</span>
+                        <span>EN</span>
+                    </button>
+                    <div class="lang-divider"></div>
+                    <button class="lang-btn" id="btn-pt" onclick="setLang('pt')">
+                        <span class="flag">🇧🇷</span>
+                        <span>PT</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <div class="hero">
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: May 2026</p>
+        <h1 data-i18n="pp.title">Privacy Policy</h1>
+        <p class="last-updated" data-i18n="pp.updated">Last Updated: May 2026</p>
     </div>
 
     <section>
         <div class="notice-box">
-            <p><strong>Important Notice:</strong> CIP-AI is currently an early operational prototype under active development. This privacy policy describes our intended data handling practices.</p>
+            <p data-i18n="pp.notice"><strong>Important Notice:</strong> CIP-AI is currently an early operational prototype under active development. This privacy policy describes our intended data handling practices.</p>
         </div>
 
-        <h2>1. Overview</h2>
-        <p>
+        <h2 data-i18n="pp.s1.title">1. Overview</h2>
+        <p data-i18n="pp.s1.text">
             CIP-AI is committed to protecting your privacy and handling data with transparency. This policy outlines how we collect, use, and protect information.
         </p>
 
-        <h2>2. Information Collection</h2>
-        <p>During prototype evaluation, we may collect:</p>
-        <p>
+        <h2 data-i18n="pp.s2.title">2. Information Collection</h2>
+        <p data-i18n="pp.s2.intro">During prototype evaluation, we may collect:</p>
+        <p data-i18n="pp.s2.items">
             • Contact Information (if voluntarily provided)<br>
             • Usage Data (anonymized analytics)<br>
             • Feedback and evaluation notes
         </p>
 
-        <h2>3. Data Use</h2>
-        <p>Information is used exclusively for:</p>
-        <p>
+        <h2 data-i18n="pp.s3.title">3. Data Use</h2>
+        <p data-i18n="pp.s3.intro">Information is used exclusively for:</p>
+        <p data-i18n="pp.s3.items">
             • Providing decision governance services<br>
             • Improving system accuracy and governance logic<br>
             • Communicating about updates<br>
             • Ensuring security and auditability
         </p>
 
-        <p><strong>We do NOT:</strong></p>
-        <p>
+        <p data-i18n="pp.s3.donot.label"><strong>We do NOT:</strong></p>
+        <p data-i18n="pp.s3.donot.items">
             • Sell your data to third parties<br>
             • Use your data for marketing without consent<br>
             • Share your information without permission
         </p>
 
-        <h2>4. Data Security</h2>
-        <p>
+        <h2 data-i18n="pp.s4.title">4. Data Security</h2>
+        <p data-i18n="pp.s4.text">
             We implement industry-standard security measures including encryption, access control, and immutable audit logs.
         </p>
 
-        <h2>5. Your Rights</h2>
-        <p>You have the right to:</p>
-        <p>
+        <h2 data-i18n="pp.s5.title">5. Your Rights</h2>
+        <p data-i18n="pp.s5.intro">You have the right to:</p>
+        <p data-i18n="pp.s5.items">
             • Access your data<br>
             • Request deletion<br>
             • Opt-out of data collection<br>
             • Correct inaccurate information
         </p>
 
-        <h2>6. Contact</h2>
+        <h2 data-i18n="pp.s6.title">6. Contact</h2>
         <p>
-            Questions about privacy?<br>
-            Email: <a class="email-link" id="privacy-email" href="#">—</a>
+            <span data-i18n="pp.s6.text">Questions about privacy?</span><br>
+            <span data-i18n="pp.s6.email.label">Email:</span> <a class="email-link" id="privacy-email" href="#">—</a>
         </p>
 
         <div class="notice-box" style="margin-top: 3rem;">
-            <p><strong>Current Status:</strong> This policy reflects our intended practices. During the prototype phase, we collect minimal data for evaluation purposes only.</p>
+            <p data-i18n="pp.status"><strong>Current Status:</strong> This policy reflects our intended practices. During the prototype phase, we collect minimal data for evaluation purposes only.</p>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 CIP-AI. Decision Governance Infrastructure.</p>
-        <p class="delaware-note">CIP-AI by CIPAI Inc. &nbsp;·&nbsp; Delaware C Corporation &nbsp;·&nbsp; US Provisional Patent #64/063,591</p>
+        <p data-i18n="footer.copy">© 2026 CIP-AI. Decision Governance Infrastructure.</p>
+        <p class="delaware-note" data-i18n="footer.delaware">CIP-AI by CIPAI Inc. &nbsp;·&nbsp; Delaware C Corporation &nbsp;·&nbsp; US Provisional Patent #64/063,591</p>
     </footer>
 
     <script>
@@ -224,6 +273,86 @@
             const el = document.getElementById('privacy-email');
             el.href = 'mailto:' + u + '@' + d;
             el.textContent = u + '@' + d;
+        })();
+
+        // ─── i18n dictionary ─────────────────────────────────────────────────
+        const i18n = {
+            en: {
+                'nav.back':           '← Back',
+                'pp.title':           'Privacy Policy',
+                'pp.updated':         'Last Updated: May 2026',
+                'pp.notice':          '<strong>Important Notice:</strong> CIP-AI is currently an early operational prototype under active development. This privacy policy describes our intended data handling practices.',
+                'pp.s1.title':        '1. Overview',
+                'pp.s1.text':         'CIP-AI is committed to protecting your privacy and handling data with transparency. This policy outlines how we collect, use, and protect information.',
+                'pp.s2.title':        '2. Information Collection',
+                'pp.s2.intro':        'During prototype evaluation, we may collect:',
+                'pp.s2.items':        '• Contact Information (if voluntarily provided)<br>• Usage Data (anonymized analytics)<br>• Feedback and evaluation notes',
+                'pp.s3.title':        '3. Data Use',
+                'pp.s3.intro':        'Information is used exclusively for:',
+                'pp.s3.items':        '• Providing decision governance services<br>• Improving system accuracy and governance logic<br>• Communicating about updates<br>• Ensuring security and auditability',
+                'pp.s3.donot.label':  '<strong>We do NOT:</strong>',
+                'pp.s3.donot.items':  '• Sell your data to third parties<br>• Use your data for marketing without consent<br>• Share your information without permission',
+                'pp.s4.title':        '4. Data Security',
+                'pp.s4.text':         'We implement industry-standard security measures including encryption, access control, and immutable audit logs.',
+                'pp.s5.title':        '5. Your Rights',
+                'pp.s5.intro':        'You have the right to:',
+                'pp.s5.items':        '• Access your data<br>• Request deletion<br>• Opt-out of data collection<br>• Correct inaccurate information',
+                'pp.s6.title':        '6. Contact',
+                'pp.s6.text':         'Questions about privacy?',
+                'pp.s6.email.label':  'Email:',
+                'pp.status':          '<strong>Current Status:</strong> This policy reflects our intended practices. During the prototype phase, we collect minimal data for evaluation purposes only.',
+                'footer.copy':        '© 2026 CIP-AI. Decision Governance Infrastructure.',
+                'footer.delaware':    'CIP-AI by CIPAI Inc. · Delaware C Corporation · US Provisional Patent #64/063,591'
+            },
+            pt: {
+                'nav.back':           '← Voltar',
+                'pp.title':           'Política de Privacidade',
+                'pp.updated':         'Última Atualização: Maio de 2026',
+                'pp.notice':          '<strong>Aviso Importante:</strong> CIP-AI é atualmente um protótipo operacional inicial em desenvolvimento ativo. Esta política de privacidade descreve nossas práticas pretendidas de tratamento de dados.',
+                'pp.s1.title':        '1. Visão Geral',
+                'pp.s1.text':         'CIP-AI está comprometida com a proteção da sua privacidade e o tratamento de dados com transparência. Esta política descreve como coletamos, usamos e protegemos informações.',
+                'pp.s2.title':        '2. Coleta de Informações',
+                'pp.s2.intro':        'Durante a avaliação do protótipo, podemos coletar:',
+                'pp.s2.items':        '• Informações de Contato (se fornecidas voluntariamente)<br>• Dados de Uso (análises anonimizadas)<br>• Feedback e notas de avaliação',
+                'pp.s3.title':        '3. Uso de Dados',
+                'pp.s3.intro':        'As informações são usadas exclusivamente para:',
+                'pp.s3.items':        '• Fornecer serviços de governança decisional<br>• Melhorar a precisão do sistema e a lógica de governança<br>• Comunicar atualizações<br>• Garantir segurança e auditabilidade',
+                'pp.s3.donot.label':  '<strong>NÃO fazemos:</strong>',
+                'pp.s3.donot.items':  '• Vender seus dados a terceiros<br>• Usar seus dados para marketing sem consentimento<br>• Compartilhar suas informações sem permissão',
+                'pp.s4.title':        '4. Segurança de Dados',
+                'pp.s4.text':         'Implementamos medidas de segurança padrão da indústria, incluindo criptografia, controle de acesso e logs de auditoria imutáveis.',
+                'pp.s5.title':        '5. Seus Direitos',
+                'pp.s5.intro':        'Você tem o direito de:',
+                'pp.s5.items':        '• Acessar seus dados<br>• Solicitar exclusão<br>• Optar por não participar da coleta de dados<br>• Corrigir informações imprecisas',
+                'pp.s6.title':        '6. Contato',
+                'pp.s6.text':         'Dúvidas sobre privacidade?',
+                'pp.s6.email.label':  'E-mail:',
+                'pp.status':          '<strong>Status Atual:</strong> Esta política reflete nossas práticas pretendidas. Durante a fase de protótipo, coletamos dados mínimos apenas para fins de avaliação.',
+                'footer.copy':        '© 2026 CIP-AI. Infraestrutura de Governança Decisional.',
+                'footer.delaware':    'CIP-AI by CIPAI Inc. · Delaware C Corporation · Patente Provisional EUA #64/063,591'
+            }
+        };
+
+        function applyLang(lang) {
+            const dict = i18n[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key] !== undefined) el.innerHTML = dict[key];
+            });
+            document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
+            document.title = lang === 'pt' ? 'Política de Privacidade — CIP-AI' : 'Privacy Policy — CIP-AI';
+        }
+
+        function setLang(lang) {
+            applyLang(lang);
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+            localStorage.setItem('cip-lang', lang);
+        }
+
+        (function() {
+            const saved = localStorage.getItem('cip-lang');
+            if (saved && saved !== 'en') setLang(saved);
         })();
     </script>
 </body>
