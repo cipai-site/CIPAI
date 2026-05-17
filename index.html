@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIP-AI - Cognitive Intelligence for Decision-Making</title>
-    <meta name="description" content="AI-first decision intelligence system with transparent reasoning, confidence scoring, and longitudinal personal context. Working interactive prototype.">
+    <title>CIP-AI — Decision Governance Infrastructure</title>
+    <meta name="description" content="Decision governance infrastructure for institutional decision workflows. Structured reasoning, human-in-the-loop enforcement, immutable decision records, and independent audit layer. By CIPAI Inc.">
     <style>
         * {
             margin: 0;
@@ -520,6 +520,113 @@
             letter-spacing: 0.03em;
         }
 
+        /* Infrastructure Section */
+        .infra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .infra-capability {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.4rem 1.6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .infra-capability-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .infra-capability h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .infra-capability p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.4rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        .partner-logo-item span {
+            font-size: 18px;
+        }
+
+        /* Partners Section */
+        .partners-banner {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.06));
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 16px;
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .partners-banner .section-label {
+            margin-bottom: 1.2rem;
+        }
+
+        .partners-banner h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .partners-banner p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.75;
+        }
+
+        .partners-pillars {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .partners-pillar {
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            padding: 0.5rem 1.2rem;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -584,7 +691,7 @@
         <div class="nav-container">
             <div class="logo-container">
                 <div class="logo">CIP-AI</div>
-                <div class="logo-tagline" data-i18n="nav.tagline">Cognitive Intelligence for Decision-Making</div>
+                <div class="logo-tagline" data-i18n="nav.tagline">Decision Governance Infrastructure</div>
             </div>
             <div class="nav-links">
                 <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
@@ -610,11 +717,11 @@
     <section class="hero">
         <div class="hero-content">
             <div class="prototype-badge" data-i18n="hero.badge">
-                ⚡ This is a working interactive prototype — not a pitch deck
+                ⚡ Early operational prototype — governance architecture in active development
             </div>
-            <h1 data-i18n="hero.title">Cognitive Intelligence for Decision-Making</h1>
+            <h1 data-i18n="hero.title">Decision Governance Infrastructure</h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle">
-                AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context. Built for investors, advisors, and decision-makers who need explainable AI support.
+                Governance for decisions where trust, traceability, and human authority matter.
             </p>
         </div>
     </section>
@@ -649,8 +756,8 @@
     <!-- Problem Section -->
     <section>
         <div class="section-header">
-            <div class="section-label" data-i18n="problem.label">The Problem</div>
-            <h2 data-i18n="problem.title">AI That You Can't Trust Won't Get Used</h2>
+            <div class="section-label" data-i18n="problem.label">The Governance Gap</div>
+            <h2 data-i18n="problem.title">Decision Workflows Without Trust Won't Scale</h2>
             <p class="section-subtitle" data-i18n="problem.subtitle">
                 Most AI systems are black boxes. Decision-makers need transparency, confidence scores, and auditable reasoning — not just outputs.
             </p>
@@ -733,6 +840,80 @@
         </div>
     </section>
 
+    <!-- Enterprise Architecture Section -->
+    <section id="enterprise-architecture">
+        <div class="section-header">
+            <div class="section-label" data-i18n="infra.label">Enterprise Architecture</div>
+            <h2 data-i18n="infra.title">Decision Governance Architecture</h2>
+            <p class="section-subtitle" data-i18n="infra.subtitle">Built for institutional deployment from day one — governance-first, not governance-added-later.</p>
+        </div>
+
+        <div class="infra-grid">
+            <div class="infra-capability">
+                <div class="infra-capability-icon">⚙️</div>
+                <div>
+                    <h4 data-i18n="infra.c1.title">Multi-Model Orchestration</h4>
+                    <p data-i18n="infra.c1.text">Coordinates specialized AI models in structured reasoning workflows — not a single black-box model.</p>
+                </div>
+            </div>
+            <div class="infra-capability">
+                <div class="infra-capability-icon">👤</div>
+                <div>
+                    <h4 data-i18n="infra.c2.title">Human-in-the-Loop Enforcement</h4>
+                    <p data-i18n="infra.c2.text">Mandatory human validation before any decision is finalized. Constitutional by design — not optional.</p>
+                </div>
+            </div>
+            <div class="infra-capability">
+                <div class="infra-capability-icon">🔒</div>
+                <div>
+                    <h4 data-i18n="infra.c3.title">Immutable Decision Records</h4>
+                    <p data-i18n="infra.c3.text">SHA-256 integrity verification on every decision snapshot. Tamper-proof audit trail for governance and compliance.</p>
+                </div>
+            </div>
+            <div class="infra-capability">
+                <div class="infra-capability-icon">🛡️</div>
+                <div>
+                    <h4 data-i18n="infra.c4.title">Independent AI Audit Layer</h4>
+                    <p data-i18n="infra.c4.text">A dedicated review node independently audits every AI recommendation before it reaches the human decision-maker.</p>
+                </div>
+            </div>
+            <div class="infra-capability">
+                <div class="infra-capability-icon">☁️</div>
+                <div>
+                    <h4 data-i18n="infra.c5.title">Cloud-First Architecture</h4>
+                    <p data-i18n="infra.c5.text">Built on enterprise-grade cloud infrastructure with scalability and security from the ground up.</p>
+                </div>
+            </div>
+            <div class="infra-capability">
+                <div class="infra-capability-icon">🏗️</div>
+                <div>
+                    <h4 data-i18n="infra.c6.title">Enterprise Deployment Roadmap</h4>
+                    <p data-i18n="infra.c6.text">Designed for on-premise and hybrid deployment in regulated industries — legal, financial, and healthcare sectors.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="partner-logos">
+            <div class="partner-logo-item"><span>☁️</span> Microsoft Azure</div>
+        </div>
+    </section>
+
+    <!-- For Partners Section -->
+    <section id="for-partners">
+        <div class="partners-banner">
+            <div class="section-label" data-i18n="partners.label">For Enterprise &amp; Infrastructure Partners</div>
+            <h2 data-i18n="partners.title">Built for Institutional Decision Governance</h2>
+            <p data-i18n="partners.text">CIP-AI is building a governance-first infrastructure for institutional decision workflows — focused on structured reasoning, auditability, human authority enforcement, and traceable decision records. We are actively seeking infrastructure partners, enterprise co-development opportunities, and strategic investors aligned with responsible decision governance. Initially focused on financial, legal, governance, and strategic decision environments.</p>
+            <div class="partners-pillars">
+                <span class="partners-pillar" data-i18n="partners.p1">Institutional Decision Workflows</span>
+                <span class="partners-pillar" data-i18n="partners.p2">Explainable AI Reasoning</span>
+                <span class="partners-pillar" data-i18n="partners.p3">Auditability &amp; Traceability</span>
+                <span class="partners-pillar" data-i18n="partners.p4">Multi-Model Orchestration</span>
+                <span class="partners-pillar" data-i18n="partners.p5">Decision Governance</span>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works -->
     <section id="how-it-works">
         <div class="section-header">
@@ -787,9 +968,9 @@
                 <a href="contact.html" data-i18n="footer.contact">Contact</a>
                 <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
             </div>
-            <p class="copyright" data-i18n="footer.copy">© 2026 CIP-AI. Cognitive Intelligence for Decision-Making.</p>
+            <p class="copyright" data-i18n="footer.copy">© 2026 CIP-AI. Decision Governance Infrastructure.</p>
             <p class="delaware-note" data-i18n="footer.delaware">
-                CIP-AI, Inc. — Delaware C Corporation — Incorporated May 2026
+                CIP-AI by CIPAI Inc. &nbsp;·&nbsp; Delaware C Corporation &nbsp;·&nbsp; US Provisional Patent #64/063,591
             </p>
         </div>
     </footer>
@@ -798,20 +979,20 @@
         // ─── Translation dictionary ───────────────────────────────────────────
         const i18n = {
             en: {
-                'nav.tagline':         'Cognitive Intelligence for Decision-Making',
+                'nav.tagline':         'Decision Governance Infrastructure',
                 'nav.howItWorks':      'How It Works',
                 'nav.contact':         'Contact',
                 // Hero
-                'hero.badge':          '⚡ This is a working interactive prototype — not a pitch deck',
-                'hero.title':          'Cognitive Intelligence for Decision-Making',
-                'hero.subtitle':       'AI-first decision intelligence system with transparent reasoning chains, confidence scoring, and longitudinal personal context. Built for investors, advisors, and decision-makers who need explainable AI support.',
+                'hero.badge':          '⚡ Early operational prototype — governance architecture in active development',
+                'hero.title':          'Decision Governance Infrastructure',
+                'hero.subtitle':       'Governance for decisions where trust, traceability, and human authority matter.',
                 // Video
                 'video.label':         'Introducing CIP-AI',
                 'video.headline':      'DECISION POWER IS SCALING.<br>GOVERNANCE IS NOT.',
-                'video.sub':           'Watch the introduction to CIP-AI\'s decision intelligence approach.',
+                'video.sub':           'Watch the introduction to CIP-AI\'s decision governance approach.',
                 // Problem
-                'problem.label':       'The Problem',
-                'problem.title':       'AI That You Can\'t Trust Won\'t Get Used',
+                'problem.label':       'The Governance Gap',
+                'problem.title':       'Decision Workflows Without Trust Won\'t Scale',
                 'problem.subtitle':    'Most AI systems are black boxes. Decision-makers need transparency, confidence scores, and auditable reasoning — not just outputs.',
                 'problem.card1.title': 'Black Box Problem',
                 'problem.card1.text':  'AI provides answers without showing reasoning. Decision-makers can\'t validate logic or identify blind spots.',
@@ -838,6 +1019,31 @@
                 'solution.f5.text':    'Clear separation: AI recommends, human decides. Every decision is tagged with who made it and why.',
                 'solution.f6.title':   'Full Audit Trail',
                 'solution.f6.text':    'Complete record of reasoning, assumptions, data sources, and decision rationale. Built for governance and compliance.',
+                // Infrastructure
+                'infra.label':         'Enterprise Architecture',
+                'infra.title':         'Decision Governance Architecture',
+                'infra.subtitle':      'Built for institutional deployment from day one — governance-first, not governance-added-later.',
+                'infra.c1.title':      'Multi-Model Orchestration',
+                'infra.c1.text':       'Coordinates specialized AI models in structured reasoning workflows — not a single black-box model.',
+                'infra.c2.title':      'Human-in-the-Loop Enforcement',
+                'infra.c2.text':       'Mandatory human validation before any decision is finalized. Constitutional by design — not optional.',
+                'infra.c3.title':      'Immutable Decision Records',
+                'infra.c3.text':       'SHA-256 integrity verification on every decision snapshot. Tamper-proof audit trail for governance and compliance.',
+                'infra.c4.title':      'Independent AI Audit Layer',
+                'infra.c4.text':       'A dedicated review node independently audits every AI recommendation before it reaches the human decision-maker.',
+                'infra.c5.title':      'Cloud-First Architecture',
+                'infra.c5.text':       'Built on enterprise-grade cloud infrastructure with scalability and security from the ground up.',
+                'infra.c6.title':      'Enterprise Deployment Roadmap',
+                'infra.c6.text':       'Designed for on-premise and hybrid deployment in regulated industries — legal, financial, and healthcare sectors.',
+                // Partners
+                'partners.label':      'For Enterprise & Infrastructure Partners',
+                'partners.title':      'Built for Institutional Decision Governance',
+                'partners.text':       'CIP-AI is building a governance-first infrastructure for institutional decision workflows — focused on structured reasoning, auditability, human authority enforcement, and traceable decision records. We are actively seeking infrastructure partners, enterprise co-development opportunities, and strategic investors aligned with responsible decision governance. Initially focused on financial, legal, governance, and strategic decision environments.',
+                'partners.p1':         'Institutional Decision Workflows',
+                'partners.p2':         'Explainable Reasoning',
+                'partners.p3':         'Auditability & Traceability',
+                'partners.p4':         'Human Authority Enforcement',
+                'partners.p5':         'Decision Governance',
                 // How It Works
                 'how.label':           'How It Works',
                 'how.title':           'Built for Transparency and Trust',
@@ -854,24 +1060,24 @@
                 // Footer
                 'footer.contact':      'Contact',
                 'footer.privacy':      'Privacy Policy',
-                'footer.copy':         '© 2026 CIP-AI. Cognitive Intelligence for Decision-Making.',
-                'footer.delaware':     'CIP-AI, Inc. — Delaware C Corporation — Incorporated May 2026'
+                'footer.copy':         '© 2026 CIP-AI. Decision Governance Infrastructure.',
+                'footer.delaware':     'CIP-AI by CIPAI Inc. · Delaware C Corporation · US Provisional Patent #64/063,591'
             },
             pt: {
-                'nav.tagline':         'Inteligência Cognitiva para Tomada de Decisões',
+                'nav.tagline':         'Infraestrutura de Governança de Decisões',
                 'nav.howItWorks':      'Como Funciona',
                 'nav.contact':         'Contato',
                 // Hero
-                'hero.badge':          '⚡ Este é um prototype interativo funcional — não é um pitch deck',
-                'hero.title':          'Inteligência Cognitiva para Tomada de Decisões',
-                'hero.subtitle':       'Sistema de inteligência para decisões com cadeias de raciocínio transparentes, pontuação de confiança e contexto pessoal longitudinal. Desenvolvido para investidores, assessores e tomadores de decisão que precisam de suporte de IA explicável.',
+                'hero.badge':          '⚡ Protótipo operacional inicial — arquitetura de governança em desenvolvimento ativo',
+                'hero.title':          'Infraestrutura de Governança Decisional',
+                'hero.subtitle':       'Governança para decisões onde confiança, rastreabilidade e autoridade humana são essenciais.',
                 // Video
                 'video.label':         'Conheça o CIP-AI',
                 'video.headline':      'O PODER DE DECISÃO ESTÁ ESCALANDO.<br>A GOVERNANÇA, NÃO.',
-                'video.sub':           'Assista à introdução à abordagem de inteligência de decisão do CIP-AI.',
+                'video.sub':           'Assista à introdução à abordagem de governança de decisões do CIP-AI.',
                 // Problem
-                'problem.label':       'O Problema',
-                'problem.title':       'IA que Você Não Pode Confiar Não Será Usada',
+                'problem.label':       'O Gap de Governança',
+                'problem.title':       'Fluxos de Decisão Sem Confiança Não Escalam',
                 'problem.subtitle':    'A maioria dos sistemas de IA são caixas pretas. Os tomadores de decisão precisam de transparência, pontuações de confiança e raciocínio auditável — não apenas resultados.',
                 'problem.card1.title': 'Problema da Caixa Preta',
                 'problem.card1.text':  'A IA fornece respostas sem mostrar o raciocínio. Os tomadores de decisão não conseguem validar a lógica ou identificar pontos cegos.',
@@ -898,6 +1104,31 @@
                 'solution.f5.text':    'Separação clara: a IA recomenda, o humano decide. Cada decisão é marcada com quem a tomou e por quê.',
                 'solution.f6.title':   'Trilha de Auditoria Completa',
                 'solution.f6.text':    'Registro completo de raciocínio, premissas, fontes de dados e racional de decisão. Desenvolvido para governança e conformidade.',
+                // Infrastructure
+                'infra.label':         'Arquitetura Enterprise',
+                'infra.title':         'Arquitetura de Governança Decisional',
+                'infra.subtitle':      'Desenvolvido para implantação institucional desde o primeiro dia — governança integrada, não adicionada depois.',
+                'infra.c1.title':      'Orquestração Multi-Modelo',
+                'infra.c1.text':       'Coordena modelos de IA especializados em fluxos de raciocínio estruturado — não um único modelo caixa-preta.',
+                'infra.c2.title':      'Human-in-the-Loop Obrigatório',
+                'infra.c2.text':       'Validação humana obrigatória antes de qualquer decisão ser finalizada. Constitucional por design — não opcional.',
+                'infra.c3.title':      'Registros de Decisão Imutáveis',
+                'infra.c3.text':       'Verificação de integridade SHA-256 em cada snapshot de decisão. Trilha de auditoria inviolável para governança e compliance.',
+                'infra.c4.title':      'Camada de Auditoria de IA Independente',
+                'infra.c4.text':       'Um nó de revisão dedicado audita de forma independente cada recomendação de IA antes de chegar ao tomador de decisão.',
+                'infra.c5.title':      'Arquitetura Cloud-First',
+                'infra.c5.text':       'Construído sobre infraestrutura cloud enterprise com escalabilidade e segurança desde a base.',
+                'infra.c6.title':      'Roadmap de Implantação Enterprise',
+                'infra.c6.text':       'Projetado para implantação on-premise e híbrida em setores regulados — jurídico, financeiro e saúde.',
+                // Partners
+                'partners.label':      'Para Parceiros Enterprise e de Infraestrutura',
+                'partners.title':      'Desenvolvido para Governança Decisional Institucional',
+                'partners.text':       'CIP-AI está construindo uma infraestrutura governance-first para fluxos de decisão institucional — focada em raciocínio estruturado, auditabilidade, autoridade humana e registros de decisão rastreáveis. Buscamos ativamente parceiros de infraestrutura, oportunidades de co-desenvolvimento enterprise e investidores estratégicos alinhados com governança decisional responsável. Inicialmente focada em ambientes de decisão financeiros, jurídicos, de governança e estratégicos.',
+                'partners.p1':         'Fluxos de Decisão Institucional',
+                'partners.p2':         'Raciocínio Explicável',
+                'partners.p3':         'Auditabilidade e Rastreabilidade',
+                'partners.p4':         'Autoridade Humana',
+                'partners.p5':         'Governança Decisional',
                 // How It Works
                 'how.label':           'Como Funciona',
                 'how.title':           'Desenvolvido para Transparência e Confiança',
@@ -914,8 +1145,8 @@
                 // Footer
                 'footer.contact':      'Contato',
                 'footer.privacy':      'Política de Privacidade',
-                'footer.copy':         '© 2026 CIP-AI. Inteligência Cognitiva para Tomada de Decisões.',
-                'footer.delaware':     'CIP-AI, Inc. — Delaware C Corporation — Incorporada em Maio de 2026'
+                'footer.copy':         '© 2026 CIP-AI. Infraestrutura de Governança Decisional.',
+                'footer.delaware':     'CIP-AI by CIPAI Inc. · Delaware C Corporation · Patente Provisional EUA #64/063,591'
             }
         };
 
