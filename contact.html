@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - CIP-AI</title>
+    <title>Contact — CIP-AI</title>
+    <meta name="description" content="Contact CIPAI Inc. for partnership, investment, or enterprise inquiries.">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg-primary: #0a0e1a;
@@ -30,9 +27,7 @@
 
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             background: rgba(10, 14, 26, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
@@ -58,6 +53,52 @@
             text-decoration: none;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-back {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: var(--accent); }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 4px 8px;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 16px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .lang-btn .flag { font-size: 16px; line-height: 1; }
+        .lang-btn:hover { color: var(--text-primary); background: rgba(255,255,255,0.08); }
+        .lang-btn.active { background: var(--accent); color: #fff; }
+        .lang-divider { width: 1px; height: 14px; background: var(--border); }
+
         .hero {
             padding: 140px 2rem 60px;
             max-width: 700px;
@@ -76,6 +117,7 @@
             font-size: 18px;
             color: var(--text-secondary);
             margin-bottom: 3rem;
+            line-height: 1.7;
         }
 
         .contact-card {
@@ -90,45 +132,81 @@
         .contact-info {
             font-size: 16px;
             color: var(--text-secondary);
-            margin-bottom: 2rem;
             line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        .email {
-            font-size: 24px;
+        .email-link {
+            font-size: 22px;
             color: var(--accent);
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            margin: 1rem 0;
+            margin: 1.2rem 0;
+            word-break: break-all;
         }
 
-        .email:hover {
-            text-decoration: underline;
+        .email-link:hover { text-decoration: underline; }
+
+        .response-note {
+            margin-top: 2rem;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .topics {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .topics-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .topic-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .topic-pill {
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            font-size: 13px;
+            color: var(--text-secondary);
         }
 
         footer {
             border-top: 1px solid var(--border);
             padding: 3rem 2rem;
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 5rem;
         }
 
         .copyright {
             color: var(--text-muted);
             font-size: 14px;
-            margin-bottom: 0.5rem;
         }
 
         .delaware-note {
             color: #6b7280;
             font-size: 12px;
             margin-top: 0.6rem;
+            letter-spacing: 0.03em;
         }
 
         @media (max-width: 768px) {
             h1 { font-size: 36px; }
             .hero { padding: 120px 1.5rem 40px; }
+            .email-link { font-size: 18px; }
         }
     </style>
 </head>
@@ -136,29 +214,121 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">CIP-AI</a>
+            <div class="nav-right">
+                <a href="index.html" class="nav-back" data-i18n="nav.back">← Back</a>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">
+                        <span class="flag">🇺🇸</span>
+                        <span>EN</span>
+                    </button>
+                    <div class="lang-divider"></div>
+                    <button class="lang-btn" id="btn-pt" onclick="setLang('pt')">
+                        <span class="flag">🇧🇷</span>
+                        <span>PT</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <div class="hero">
-        <h1>Entre em Contato</h1>
-        <p class="subtitle">Interessado em saber mais sobre CIP-AI? Entre em contato conosco.</p>
+        <h1 data-i18n="contact.title">Contact</h1>
+        <p class="subtitle" data-i18n="contact.subtitle">Interested in learning more about CIP-AI? Get in touch.</p>
     </div>
 
-    <section style="padding: 20px;">
+    <section style="padding: 0 2rem 0;">
         <div class="contact-card">
-            <div class="contact-info">
-                <p style="margin-bottom: 1.5rem;">
-                    Para mais informações sobre CIP-AI, oportunidades de investimento ou demonstrações técnicas, entre em contato:
-                </p>
-                
-                <a href="/cdn-cgi/l/email-protection#375458594356544377545e47565e1954585a" class="email"><span class="__cf_email__" data-cfemail="9efdf1f0eafffdeadefdf7eefff7b0fdf1f3">[email&#160;protected]</span></a>
-                
-                <p style="margin-top: 2rem; font-size: 14px; color: var(--text-muted);">
-                    Responderemos dentro de 48 horas úteis.
-                </p>
+            <p class="contact-info" data-i18n="contact.info">
+                For information about CIP-AI, investment opportunities, or enterprise demonstrations, reach out directly:
+            </p>
+
+            <!-- Email constructed via JS to prevent Cloudflare obfuscation -->
+            <a class="email-link" id="contact-email" href="#">—</a>
+
+            <p class="response-note" data-i18n="contact.response">
+                We respond within 48 business hours.
+            </p>
+
+            <div class="topics">
+                <p class="topics-label" data-i18n="contact.topics.label">Topics</p>
+                <div class="topic-pills">
+                    <span class="topic-pill" data-i18n="contact.t1">Enterprise Partnerships</span>
+                    <span class="topic-pill" data-i18n="contact.t2">Investment Inquiries</span>
+                    <span class="topic-pill" data-i18n="contact.t3">Technical Demonstrations</span>
+                    <span class="topic-pill" data-i18n="contact.t4">Infrastructure Programs</span>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p class="copyright">© 2026 CIP-AI. Cognitive Intelligence for Decision-Mak
+        <p class="copyright" data-i18n="footer.copy">© 2026 CIP-AI. Decision Governance Infrastructure.</p>
+        <p class="delaware-note" data-i18n="footer.delaware">CIP-AI by CIPAI Inc. &nbsp;·&nbsp; Delaware C Corporation &nbsp;·&nbsp; US Provisional Patent #64/063,591</p>
+    </footer>
+
+    <script>
+        // ─── Email construction (bypasses Cloudflare obfuscation) ────────────
+        (function() {
+            const u = 'founder';
+            const d = 'cipai.ai';
+            const el = document.getElementById('contact-email');
+            el.href = 'mailto:' + u + '@' + d;
+            el.textContent = u + '@' + d;
+        })();
+
+        // ─── i18n dictionary ─────────────────────────────────────────────────
+        const i18n = {
+            en: {
+                'nav.back':             '← Back',
+                'contact.title':        'Contact',
+                'contact.subtitle':     'Interested in learning more about CIP-AI? Get in touch.',
+                'contact.info':         'For information about CIP-AI, investment opportunities, or enterprise demonstrations, reach out directly:',
+                'contact.response':     'We respond within 48 business hours.',
+                'contact.topics.label': 'Topics',
+                'contact.t1':           'Enterprise Partnerships',
+                'contact.t2':           'Investment Inquiries',
+                'contact.t3':           'Technical Demonstrations',
+                'contact.t4':           'Infrastructure Programs',
+                'footer.copy':          '© 2026 CIP-AI. Decision Governance Infrastructure.',
+                'footer.delaware':      'CIP-AI by CIPAI Inc. · Delaware C Corporation · US Provisional Patent #64/063,591'
+            },
+            pt: {
+                'nav.back':             '← Voltar',
+                'contact.title':        'Contato',
+                'contact.subtitle':     'Interessado em saber mais sobre CIP-AI? Entre em contato conosco.',
+                'contact.info':         'Para informações sobre CIP-AI, oportunidades de investimento ou demonstrações técnicas, entre em contato diretamente:',
+                'contact.response':     'Respondemos dentro de 48 horas úteis.',
+                'contact.topics.label': 'Tópicos',
+                'contact.t1':           'Parcerias Enterprise',
+                'contact.t2':           'Oportunidades de Investimento',
+                'contact.t3':           'Demonstrações Técnicas',
+                'contact.t4':           'Programas de Infraestrutura',
+                'footer.copy':          '© 2026 CIP-AI. Infraestrutura de Governança Decisional.',
+                'footer.delaware':      'CIP-AI by CIPAI Inc. · Delaware C Corporation · Patente Provisional EUA #64/063,591'
+            }
+        };
+
+        function applyLang(lang) {
+            const dict = i18n[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key] !== undefined) el.innerHTML = dict[key];
+            });
+            document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
+            document.title = lang === 'pt' ? 'Contato — CIP-AI' : 'Contact — CIP-AI';
+        }
+
+        function setLang(lang) {
+            applyLang(lang);
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+            localStorage.setItem('cip-lang', lang);
+        }
+
+        (function() {
+            const saved = localStorage.getItem('cip-lang');
+            if (saved && saved !== 'en') setLang(saved);
+        })();
+    </script>
+</body>
+</html>
